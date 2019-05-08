@@ -7,6 +7,15 @@ Exit Rooms: W-Boat Landing
 Room Name: Hallway 1
 Room Description:  This is a hallway.
 Exit Rooms: S-Boat Landing, N-Visitor Centre_SE
-Room Name: Vistor Centre_SE
+Room Name: Visitor Centre_SE
 Room Description:  This is the South East Corner of the Visitor Centre
-Exit Rooms: S-Hallway 1
+Exit Rooms: S-Hallway 1, N-Visitor Centre_NE, W-Visitor Centre_SW
+Room Name: Visitor Centre_NE
+Room Description:  This is the North East Corner of the Visitor Centre
+Exit Rooms: W-Visitor Centre_NW, S-Visitor Centre_SE, E-Hallway 3
+Room Name: Visitor Centre_SW
+Room Description:  This is the South West Corner of the Visitor Centre
+Exit Rooms: N-Visitor Centre_NW, E-Visitor Centre_SE
+Room Name: Visitor Centre_NW
+Room Description:  This is the North West Corner of the Visitor Centre
+Exit Rooms: S-Visitor Centre_SW, E-Visitor Centre_NE, W-Hallway 2, N-Hallway 7
