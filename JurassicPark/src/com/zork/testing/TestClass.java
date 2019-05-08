@@ -6,6 +6,6 @@ public class TestClass {
 		System.out.println("Testing123");
 		System.out.print("hi");
 		System.out.println("tada");
-		System.out.println("No settings file.");
+		System.out.println("DO NOT PUSH YOUR settings file.");
 	}
 }
