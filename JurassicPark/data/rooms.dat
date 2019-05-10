@@ -1,6 +1,6 @@
 Room Name: Hallway 1
 Room Description: You are on a pathway. In front of you is the Visitor Centre, behind is the Boat Landing.
-Exit Rooms: N-Visitor Centre_SE, S-Boat Landing
+Exit Rooms: N-Visitor Centre_SE, S-Boat Landing_B
 Room Name: Hallway 2
 Room Description:  You are on a pathway. To the left are the Staff Quarters and to your right is the Visitor Centre.
 Exit Rooms: E-Visitor Centre_NW, W-Staff Quarters_NE
@@ -14,7 +14,7 @@ Room Name: Hallway 5
 Room Description:  This is a hallway.
 Exit Rooms: E-Aquatic_NW, W-Beach 1_S
 Room Name: Hallway 6
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is an Equipment Yard, behind you is the Staff Quaters.
 Exit Rooms: N-Equipment Yard, S-Staff Quarters_NW
 Room Name: Hallway 7
 Room Description:  This is a hallway.
@@ -125,15 +125,15 @@ Room Name: Staff Quarters_SW
 Room Description:   You are in the South West Corner of the Staff Quarters.
 Exit Rooms: N-Staff Quarters_NW, E-Staff Quarters_SE
 Room Name: Equipment Yard
-Room Description: This is the equipment yard.
+Room Description: You are in the Equipment Yard, you see [stuff] around you.
 Exit Rooms: N-Quarry_S, S-Hallway 6
 Room Name: Quarry_S
-Room Description: This is the south end of the Quarry.
+Room Description: You are on the south end of the Quarry. To the right is a pathway, in the distance, you can see the Triceratops enclosure.
 Exit Rooms: N-Quarry_N, E-Hallway 9, S-Equipment Yard
 Room Name: Quarry_N
-Room Description: This is the north end of the Quarry.
+Room Description: You are on the north end of the Quarry. In front of you is a pathway, in the distance, you can see the Pterodactyl enclosure.
 Exit Rooms: N-Hallway 12, S-Quarry_S
-Room Name: River_SW
+Room Name: River 1_SW
 Room Description: This is the South West part of the river.
 Exit Rooms: E-River 1_SE, W-Triceratops_NE
 Room Name: River 1_SE
