@@ -60,13 +60,13 @@ Room Description:  This is a hallway.
 Exit Rooms: N-Trex_SE, S-Communications Centre_NW
 Room Name: Hallway 21
 Room Description:  This is a hallway.
-Exit Rooms: E-Trex_SW, S-Stegosauras Control, W-Stegosauras_NE
+Exit Rooms: E-Trex_SW, W-Stegosauras_NE
 Room Name: Hallway 22
 Room Description:  This is a hallway.
 Exit Rooms: N-Records_E, S-Stegosauras_NE
 Room Name: Hallway 23
 Room Description:  This is a hallway.
-Exit Rooms: E-Cabin, S-Trex Control, W-Trex_NE
+Exit Rooms: E-Cabin, W-Trex_NE
 Room Name: Hallway 24
 Room Description:  This is a hallway.
 Exit Rooms: N-Waterfall, S-Cabin
@@ -91,12 +91,15 @@ Exit Rooms: E-Hills_NW, W-Jungle_SE
 Room Name: Hallway 31
 Room Description:  This is a hallway.
 Exit Rooms: N-Jungle_SE, S-Observatory_E
-Room Name: Boat Landing
-Room Description:  This is where you started, the Boat Landing.
-Exit Rooms: N-Hallway 1, E-Supply Shed
+Room Name: Boat Landing_A
+Room Description: This is where you started, the Boat Landing.
+Exit Rooms: E-Supply Shed
 Room Name: Supply Shed
 Room Description:  This is the Supply Shed, next to the Boat Landing.
-Exit Rooms: W-Boat Landing
+Exit Rooms: W-Boat Landing_B
+Room Name: Boat Landing_B
+Room Description: You have entered the facility, good luck.
+Exit Rooms: N-Hallway 1, E-Supply Shed
 Room Name: Visitor Centre_SE
 Room Description:  This is the South East Corner of the Visitor Centre.
 Exit Rooms: N-Visitor Centre_NE, S-Hallway 1, W-Visitor Centre_SW
@@ -132,7 +135,7 @@ Room Description: This is the north end of the Quarry.
 Exit Rooms: N-Hallway 12, S-Quarry_S
 Room Name: River_SW
 Room Description: This is the South West part of the river.
-Exit Rooms: E-River 1_SE, S-Triceratops Control, W-Triceratops_NE
+Exit Rooms: E-River 1_SE, W-Triceratops_NE
 Room Name: River 1_SE
 Room Description: This is the South East part of the river.
 Exit Rooms: N-River 1_NE, W-River 1_SW
@@ -150,7 +153,7 @@ Room Description: This is the pool.
 Exit Rooms: W-Hotel_N
 Room Name: Clearing_2
 Room Description: This is a clearing.
-Exit Rooms: N-Bridge, E-Pterodactyl_NW, S-Pterodactyl Control
+Exit Rooms: N-Bridge, E-Pterodactyl_NW
 Room Name: Bridge
 Room Description: This is the bridge.
 Exit Rooms: N-Forest_SW, S-Clearing 2
@@ -166,3 +169,237 @@ Exit Rooms: N-Lake, W-Forest_NW
 Room Name: Lake
 Room Description: This is the lake.
 Exit Rooms: N-Hallway 19, E-Hallway 18, S-Forest_NE
+Room Name: Server Room
+Room Description: This is the server room.
+Exit Rooms: E-Hallway 17, S-Hallway 14, W-Hallway 18
+Room Name: Mechanical Room_W
+Room Description: This is the west end of the mechanical room.
+Exit Rooms: N-Hallway 14, E-Mechanical Room_E
+Room Name: Mechanical Room_E
+Room Description: This is the east end of the mechanical room.
+Exit Rooms: E-Hallway 15, W-Mechanical Room_W
+Room Name: Munitions Shed_NW
+Room Description: This is the North West corner of the munitions shed.
+Exit Rooms: N-Hallway 16, E-Munitions Shed_NE, S-Munitions_SW, W-Hallway 15
+Room Name: Munitions Shed_NE
+Room Description: This is the North East corner of the munitions shed.
+Exit Rooms: W-Munitions Shed_NW
+Room Name: Munitions Shed_SW
+Room Description: This is the South West corner of the munitions shed.
+Exit Rooms: N-Munitions Shed_NW
+Room Name: Communications Centre_SW
+Room Description: This is the South West corner of the Communications Centre.
+Exit Rooms: N-Communications Centre_NW, E-Communications Centre_SE, W-Hallway 17
+Room Name: Communications Centre_SE
+Room Description: This is the South East corner of the Communications Centre.
+Exit Rooms: S-Hallway 16, W-Communications Centre_SW
+Room Name: Communications Centre_NW
+Room Description: This is the North West corner of the Communications Centre.
+Exit Rooms: N-Hallway 20, S-Communications Centre_SW
+Room Name: Cabin
+Room Description: This is the cabin.
+Exit Rooms: N-Hallway 24, W-Hallway 23
+Room Name: Records_W
+Room Description: This is the west end of the records room.
+Exit Rooms: E-Records_E
+Room Name: Records_E
+Room Description: This is the east end of the records room.
+Exit Rooms: N-Hallway 25, S-Hallway 22, W-Records_W
+Room Name: Cliff 2_W
+Room Description: This is the west end of the cliff.
+Exit Rooms: E-Cliff 2_, W-Hallway 25
+Room Name: Cliff 2_E
+Room Description: This is the east end of the cliff.
+Exit Rooms: E-Main Control Centre_SW, W-Cliff 2_W
+Room Name: Main Control Centre_SW
+Room Description: This is the South West corner of the Main Control Centre.
+Exit Rooms: N-Main Control Centre_NW, E-Main Control Centre_SE, W-Cliff 2_E
+Room Name: Main Control Centre_NW
+Room Description: This is the North West corner of the Main Control Centre.
+Exit Rooms: E-Main Control Centre_NE, S-Main Control Centre_SW
+Room Name: Main Control Centre_NE
+Room Description: This is the North East corner of the Main Control Centre.
+Exit Rooms: S-Main Control Centre_SE, W-Main Control Centre_NW
+Room Name: Main Control Centre_SE
+Room Description: This is the South East corner of the Main Control Centre.
+Exit Rooms: N-Main Control Centre_NE, E-Hallway 26, W-Main Control Centre_SW
+Room Name: Waterfall
+Room Description: This is the waterfall.
+Exit Rooms: E-River 2_W, S-Hallway 24, W-Hallway 26
+Room Name: River 2_W
+Room Description: This is the west end of the river.
+Exit Rooms: E-River_E, W-Waterfall
+Room Name: River 2_E
+Room Description: This is the east end of the river.
+Exit Rooms: E-Shipyard_N, W-River 2_W
+Room Name: Shipyard_N
+Room Description: This is the north end of the shipyard.
+Exit Rooms: S-Shipyard_S, W-River 2_E
+Room Name: Shipyard_S
+Room Description: This is the south end of the shipyard.
+Exit Rooms: N-Shipyard_N, S-Beach 2_N
+Room Name: Beach 2_N
+Room Description: This is the north end of the beach.
+Exit Rooms: N-Shipyard_S, S-Beach 2_S
+Room Name: Beach 2_S
+Room Description: This is the south end of the beach.
+Exit Rooms: N-Beach 2_N, S-Cave 1
+Room Name: Cave 1
+Room Description: This is a cave.
+Exit Rooms: N-Beach 2_S, E-Airstrip_N
+Room Name: Airstrip_N
+Room Description: This is the north end of the airstrip.
+Exit Rooms: S-Airstrip_S, W-Cave 1
+Room Name: Airstrip_S
+Room Description: This is the south end of the airstrip.
+Exit Rooms: N-Airstrip_N, E-Helipad
+Room Name: Helipad
+Room Description: This is the helipad.
+Exit Rooms: S-Cliff 1_NW, W-Airstrip_S
+Room Name: Cliff 1_NW
+Room Description: This is the North West corner of the cliff.
+Exit Rooms: N-Helipad, S-Cliff 1_SW
+Room Name: Cliff 1_SW
+Room Description: This is the South West corner of the cliff.
+Exit Rooms: N-Cliff 1_SW, E-Cliff 1_SE, W-Hallway 27
+Room Name: Cliff 1_SE
+Room Description: This is the South East corner of the cliff.
+Exit Rooms: E-Hallway 28, W-Cliff 1_SW
+Room Name: Breeding Centre_W
+Room Description: This is the west end of the breeding centre.
+Exit Rooms: N-Hallway 28, E-Breeding Centre_C
+Room Name: Breeding Centre_C
+Room Description: This is the centre of the breeding centre.
+Exit Rooms: E-Breeding Centre_E, S-Hallway 29, W-Breeding Centre_W
+Room Name: Breeding Centre_E
+Room Description: This is the east end of the breeding centre.
+Exit Rooms: W-Breeding Centre_C
+Room Name: Hills_NW
+Room Description: This is the North West corner of the hills.
+Exit Rooms: E-Hills_NE, S-Hills_SW, W-Hallway 30
+Room Name: Hills_NE
+Room Description: This is the North East corner of the hills.
+Exit Rooms: N-Hallway 29, S-Hills_SE, W-Hills_NW
+Room Name: Hills_SE
+Room Description: This is the South East corner of the hills
+Exit Rooms: N-Hills_NE, S-Plains_E, W-Hills_SW
+Room Name: Hills_SW
+Room Description: This is the South West corner of the hills
+Exit Rooms: N-Hills_NW, E-Hills_SE, S-Plains_W
+Room Name: Plains_W
+Room Description: This is the west end of the plains.
+Exit Rooms: N-Hills_SW, E-Plains_E, S-Hallway 11
+Room Name: Plains_E
+Room Description: This is the east end of the plains.
+Exit Rooms: N-Hills_SE, W-Plains_W
+Room Name: Jungle_NW
+Room Description: This is the North West corner of the jungle.
+Exit Rooms: N-Velociraptor_NE, E-Jungle_NE, S-Jungle_SW, W-Velociraptor_SC
+Room Name: Jungle_NE
+Room Description: This is the North East corner of the jungle.
+Exit Rooms: S-Jungle_SE, W-Jungle_NE
+Room Name: Jungle_SE
+Room Description: This is the South East corner of the jungle.
+Exit Rooms: N-Jungle_NE, E-Hallway 30, S-Hallway 31, W-Jungle_SW
+Room Name: Jungle_SW
+Room Description: This is the South West corner of the jungle.
+Exit Rooms: N-Jungle_NE, E-Jungle_SE
+Room Name: Observatory_E
+Room Description: This is the east end of the observatory.
+Exit Rooms: N-Hallway 31, W-Observatory_W
+Room Name: Observatory_W
+Room Description: This is the west end of the observatory.
+Exit Rooms: E-Observatory_E, S-Moutain Top
+Room Name: Mountain Top
+Room Description: This is the mountain top.
+Exit Rooms: N-Observatory_W, S-Cave 2
+Room Name: Cave 2
+Room Description: This is a cave.
+Exit Rooms: N-Mountain Top, S-Beach 1_N
+Room Name: Beach 1_N
+Room Description: This is the north end of a beach.
+Exit Rooms: N-Cave 2, E-Hallway 8, S-Beach 1_C
+Room Name: Beach 1_C
+Room Description: This is the centre of a beach.
+Exit Rooms: N-Beach 1_N, S-Beach 1_S
+Room Name: Beach 1_S
+Room Description: This is the south end of a beach.
+Exit Rooms: N-Beach 1_N, E-Hallway 5, W-Hallway 4
+Room Name: Bronchiosauras Control
+Room Description: This is the control centre for the Bronchiosauras enclosure.
+Exit Rooms: N-Bronchiosauras_SE
+Room Name: Triceratops Control
+Room Description: This is the control centre for the Triceratops enclosure.
+Exit Rooms: W-Triceratops_SE
+Room Name: Dilophosauras Control
+Room Description: This is the control centre for the Dilophosauras enclosure.
+Exit Rooms: W-Dilophosauras_NE
+Room Name: Pterodactyl Control
+Room Description: This is the control centre for the Pterodactyl enclosure.
+Exit Rooms: E-Pterodactyl_SW
+Room Name: Stegosauras Control
+Room Description: This is the control centre for the Stegosauras enclosure.
+Exit Rooms: W-Stegosauras_SE
+Room Name: Trex Control
+Room Description: This is the control centre for the Trex enclosure.
+Exit Rooms: W-Trex_SE
+Room Name: Velociraptor Control
+Room Description: This is the control centre for the Velociraptor enclosure.
+Exit Rooms: S-Velociraptor_NW
+Room Name: Spinosauras Control
+Room Description: This is the control centre for the Spinosauras enclosure.
+Exit Rooms: W-Spinosauras_NE
+Room Name: Aquatic Control
+Room Description: This is the control centre for the Aquatic enclosure.
+Exit Rooms: N-Aquatic_SE
+Room Name: Bronchiosauras_NW
+Room Description: This is the North West corner of the Bronchiosauras enclosure.
+Exit Rooms: E-Bronchiosauras_NE, S-Bronchiosauras_SE, W-Hallway 3
+Room Name: Bronchiosauras_NE
+Room Description: This is the North East corner of the Bronchiosauras enclosure.
+Exit Rooms: E-Hallway 4, S-Bronchiosauras_SE, W-Bronchiosauras_NW
+Room Name: Bronchiosauras_SE
+Room Description: This is the South East corner of the Bronchiosauras enclosure.
+Exit Rooms: N-Bronchiosauras_NE, S-Bronchiosauras Control, W-Bronchiosauras_SW
+Room Name: Bronchiosauras_SW
+Room Description: This is the South West corner of the Bronchiosauras enclosure.
+Exit Rooms: N-Bronchiosauras_NW, E-Bronchiosauras_SE
+Room Name: Triceratops_NE
+Room Description: This is the North East corner of the Triceratops enclosure.
+Exit Rooms: E-River 1_SW, S-Triceratops_SE, W-Triceratops_NW
+Room Name: Triceratops_NW
+Room Description: This is the North West corner of the Triceratops enclosure.
+Exit Rooms: N-Hallway 10, E-Triceratops_NE, S-Triceratops_SW, W-Hallway 9
+Room Name: Triceratops_SW
+Room Description: This is the South West corner of the Triceratops enclosure.
+Exit Rooms: N-Triceratops_NW, E-Triceratops_SE
+Room Name: Triceratops_SE
+Room Description: This is the South East corner of the Triceratops enclosure.
+Exit Rooms: N-Triceratops_NE, E-Triceratops Control, S-Hallway 7, W-Triceratops_SW
+Room Name: Dilophasauras_NW
+Room Description: This is the North West corner of the Dilophasauras enclosure.
+Exit Rooms: E-Dilophasauras_NE, S-Dilophasauras_SW, W-Hallway 13
+Room Name: Dilophasauras_NE
+Room Description: This is the North East corner of the Dilophasauras enclosure.
+Exit Rooms: E-Dilophasauras Control, S-Dilophasauras_SE, W-Dilophasauras_NW
+Room Name: Dilophasauras_SE
+Room Description: This is the South East corner of the Dilophasauras enclosure.
+Exit Rooms: N-Dilophasauras_NE, W-Dilophasauras_SW
+Room Name: Dilophasauras_SW
+Room Description: This is the South West corner of the Dilophasauras enclosure.
+Exit Rooms: N-Dilophasauras_NW, E-Dilophasauras_SE, S-Hallway 10
+Room Name: Pterodactyl_NW
+Room Description: This is the North West corner of the Pterodactyl enclosure.
+Exit Rooms: E-Pterodactyl_NE, S-Pterodactyl_SW, W-Clearing 2
+Room Name: Pterodactyl_NE
+Room Description: This is the North East corner of the Pterodactyl enclosure.
+Exit Rooms: S-Pterodactyl_SE, W-Pterodactyl_NW
+Room Name: Pterodactyl_SE
+Room Description: This is the South East corner of the Pterodactyl enclosure.
+Exit Rooms: N-Pterodactyl_NE, E-Hallway 13, S-Hallway 12, W-Pterodactyl_SW
+Room Name: Pterodactyl_SW
+Room Description: This is the South West corner of the Pterodactyl enclosure.
+Exit Rooms: N-Pterodactyl_NW, E-Pterodactyl_SE, W-Pterodactyl Control
+Room Name: Stegosauras_NW
+Room Description: This is the North West corner of the Stegosauras enclosure.
+Exit Rooms: E-Stegosauras_NE, S-Stegosauras_SW
