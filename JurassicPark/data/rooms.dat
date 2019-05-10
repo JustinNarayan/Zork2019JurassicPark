@@ -60,13 +60,13 @@ Room Description:  This is a hallway.
 Exit Rooms: N-Trex_SE, S-Communications Centre_NW
 Room Name: Hallway 21
 Room Description:  This is a hallway.
-Exit Rooms: E-Trex_SW, S-Stegosauras Control, W-Stegosauras_NE
+Exit Rooms: E-Trex_SW, W-Stegosauras_NE
 Room Name: Hallway 22
 Room Description:  This is a hallway.
 Exit Rooms: N-Records_E, S-Stegosauras_NE
 Room Name: Hallway 23
 Room Description:  This is a hallway.
-Exit Rooms: E-Cabin, S-Trex Control, W-Trex_NE
+Exit Rooms: E-Cabin, W-Trex_NE
 Room Name: Hallway 24
 Room Description:  This is a hallway.
 Exit Rooms: N-Waterfall, S-Cabin
@@ -135,7 +135,7 @@ Room Description: This is the north end of the Quarry.
 Exit Rooms: N-Hallway 12, S-Quarry_S
 Room Name: River_SW
 Room Description: This is the South West part of the river.
-Exit Rooms: E-River 1_SE, S-Triceratops Control, W-Triceratops_NE
+Exit Rooms: E-River 1_SE, W-Triceratops_NE
 Room Name: River 1_SE
 Room Description: This is the South East part of the river.
 Exit Rooms: N-River 1_NE, W-River 1_SW
@@ -153,7 +153,7 @@ Room Description: This is the pool.
 Exit Rooms: W-Hotel_N
 Room Name: Clearing_2
 Room Description: This is a clearing.
-Exit Rooms: N-Bridge, E-Pterodactyl_NW, S-Pterodactyl Control
+Exit Rooms: N-Bridge, E-Pterodactyl_NW
 Room Name: Bridge
 Room Description: This is the bridge.
 Exit Rooms: N-Forest_SW, S-Clearing 2
@@ -330,19 +330,19 @@ Room Description: This is the control centre for the Bronchiosauras enclosure.
 Exit Rooms: N-Bronchiosauras_SE
 Room Name: Triceratops Control
 Room Description: This is the control centre for the Triceratops enclosure.
-Exit Rooms: N-River 1_SW, W-Triceratops_SE
+Exit Rooms: W-Triceratops_SE
 Room Name: Dilophosauras Control
 Room Description: This is the control centre for the Dilophosauras enclosure.
 Exit Rooms: W-Dilophosauras_NE
 Room Name: Pterodactyl Control
 Room Description: This is the control centre for the Pterodactyl enclosure.
-Exit Rooms: N-Clearing 2, E-Pterodactyl_SW
+Exit Rooms: E-Pterodactyl_SW
 Room Name: Stegosauras Control
 Room Description: This is the control centre for the Stegosauras enclosure.
-Exit Rooms: N-Hallway 21, W-Stegosauras_SE
+Exit Rooms: W-Stegosauras_SE
 Room Name: Trex Control
 Room Description: This is the control centre for the Trex enclosure.
-Exit Rooms: N-Hallway 23, W-Trex_SE
+Exit Rooms: W-Trex_SE
 Room Name: Velociraptor Control
 Room Description: This is the control centre for the Velociraptor enclosure.
 Exit Rooms: S-Velociraptor_NW
@@ -400,3 +400,6 @@ Exit Rooms: N-Pterodactyl_NE, E-Hallway 13, S-Hallway 12, W-Pterodactyl_SW
 Room Name: Pterodactyl_SW
 Room Description: This is the South West corner of the Pterodactyl enclosure.
 Exit Rooms: N-Pterodactyl_NW, E-Pterodactyl_SE, W-Pterodactyl Control
+Room Name: Stegosauras_NW
+Room Description: This is the North West corner of the Stegosauras enclosure.
+Exit Rooms: E-Stegosauras_NE, S-Stegosauras_SW
