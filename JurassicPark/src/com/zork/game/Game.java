@@ -193,19 +193,20 @@ class Game {
 			//Print out the siren message in-story to open the facilities
 			if(currentRoom.getRoomName().equals(SIREN_POSITION)) {
 				if(getTimeLeft()==-1) setTimeLeft(MAX_TIME);
-				System.out.println("\nInside the shed, you hear sirens begin to blare and an alert\n"
-						+ "message sounds through the speakers: \n"
-						+ "\t\"Attention! Attention everyone on Jurassic Park! Worsening conditions\n"
-						+ "\thave made it unsafe to continue work here. All staff personnel must evacuate\n"
-						+ "\tthe island immediately. Approaching storms from the south of the island\n"
-						+ "\tare forcing all personnel to make their way to the northeast shipyard.\n"
-						+ "\tI repeat, all personnel to the northeast shipyard. Control centers are losing power,\n"
-						+ "\tmeaning enclosure doors may be starting to open due to technical malfunctions.\n"
-						+ "\tThe last personnel ship will evacuate in "+getTimeLeft()/TIME_IN_HOUR+" hours. I repeat, you have\n"
-						+ "\t"+getTimeLeft()/TIME_IN_HOUR+" hours to get off the island. Over and out.\"\n\n"
-						+ "You hear clanging of metal outside of the shed - the security doors have opened.\n"
-						+ "You have limited time to gather information on the island before you need to escape.\n"
-						+ "You'll need to evade the creates unleashed on the island, and if not, face death.");
+				
+				System.out.println(Formatter.blockText("Inside the shed, you hear sirens begin to blare and an alert "
+						+ "message sounds through the speakers:", Formatter.getCutoff(), "") + "\n");
+				System.out.println(Formatter.blockText("\"Attention! Attention everyone on Jurassic Park! Worsening "
+						+ "conditions have made it unsafe to continue work here. All staff personnel must evacuate "
+						+ "the island immediately. Approaching storms from the south of the island "
+						+ "are forcing all personnel to make their way to the northeast shipyard. "
+						+ "I repeat, all personnel to the northeast shipyard. Control centers are losing power, "
+						+ "meaning enclosure doors may be starting to open due to technical malfunctions. "
+						+ "The last personnel ship will evacuate in "+getTimeLeft()/TIME_IN_HOUR+" hours. I repeat, you have "
+						+ getTimeLeft()/TIME_IN_HOUR+" hours to get off the island. Over and out.\"", Formatter.getCutoff(), "\t") + "\n");
+				System.out.println(Formatter.blockText("You hear clanging of metal outside of the shed - the security "
+						+ "doors have opened. You have limited time to gather information on the island before you "
+						+ "need to escape. You'll need to evade the creates unleashed on the island, and if not, face death.", Formatter.getCutoff(), " ") + "\n");
 				
 			}
 		}
