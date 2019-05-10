@@ -206,7 +206,7 @@ class Game {
 						+ getTimeLeft()/TIME_IN_HOUR+" hours to get off the island. Over and out.\"", Formatter.getCutoff(), "\t") + "\n");
 				System.out.println(Formatter.blockText("You hear clanging of metal outside of the shed - the security "
 						+ "doors have opened. You have limited time to gather information on the island before you "
-						+ "need to escape. You'll need to evade the creates unleashed on the island, and if not, face death.", Formatter.getCutoff(), " ") + "\n");
+						+ "need to escape. You'll need to evade the creaters unleashed on the island, and if not, face death.", Formatter.getCutoff(), " ") + "\n");
 				
 			}
 		}

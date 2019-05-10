@@ -46,8 +46,31 @@ public class Formatter {
 		return start+newString;
 	}
 	
+	/* Coverts a number of minutes to a 24 hour clock
+	 * 
+	 * @ param minutes		The number of minutes
+	 * 
+	 * @return				The time in the format of hh:mm
+	 */
+	
+	public static String properTime(int minutes) {
+		String time = "";
+		int hours = minutes/60;
+		if(hours<10) time = "0"+hours;
+		else time = ""+hours;
+		time += ":";
+		int mins = minutes%60;
+		if(mins<10) time += "0"+mins;
+		else time += mins;
+		return time;
+	}
+	
 	public static int getCutoff() {
 		return FORMAT_BLOCK_TEXT_CUTOFF;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(properTime(78));
 	}
 	
 }
