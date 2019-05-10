@@ -1,7 +1,7 @@
 package com.zork.game;
 
 public class Formatter {
-	private static final int FORMAT_BLOCK_TEXT_TOLERANCE = 5;
+	private static final int FORMAT_BLOCK_TEXT_TOLERANCE = 5; //If this is 0, no word will be split between two lines
 	private static final int FORMAT_BLOCK_TEXT_CUTOFF = 56;
 
 	/* Converts a long string message into a properly formatted 
