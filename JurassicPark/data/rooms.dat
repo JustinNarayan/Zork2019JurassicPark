@@ -209,7 +209,7 @@ Room Name: Cliff 2_W
 Room Description: This is the west end of the cliff.
 Exit Rooms: E-Cliff 2_, W-Hallway 25
 Room Name: Cliff 2_E
-Room Description: This is the east end of the cliff.
+Room Description: This is the East end of the cliff.
 Exit Rooms: E-Main Control Centre_SW, W-Cliff 2_W
 Room Name: Main Control Centre_SW
 Room Description: This is the South West corner of the Main Control Centre.
