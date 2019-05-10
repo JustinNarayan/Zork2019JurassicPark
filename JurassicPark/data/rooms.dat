@@ -125,7 +125,7 @@ Room Name: Staff Quarters_SW
 Room Description:   You are in the South West Corner of the Staff Quarters.
 Exit Rooms: N-Staff Quarters_NW, E-Staff Quarters_SE
 Room Name: Equipment Yard
-Room Description: This is the equipment yard.
+Room Description: This is the equipment yard. TEST
 Exit Rooms: N-Quarry_S, S-Hallway 6
 Room Name: Quarry_S
 Room Description: This is the south end of the Quarry.
