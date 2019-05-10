@@ -1,229 +1,168 @@
 Room Name: Hallway 1
 Room Description:  This is a hallway.
 Exit Rooms: N-Visitor Centre_SE, S-Boat Landing
-
 Room Name: Hallway 2
 Room Description:  This is a hallway.
 Exit Rooms: E-Visitor Centre_NW, W-Staff Quarters_NE
-
 Room Name: Hallway 3
 Room Description:  This is a hallway.
 Exit Rooms: E-Bronchiosauras_NW, W-Visitor Centre_WE
-
 Room Name: Hallway 4
 Room Description:  This is a hallway.
 Exit Rooms: E-Beach 1_S, W-Bronchiosauras_NE
-
 Room Name: Hallway 5
 Room Description:  This is a hallway.
 Exit Rooms: E-Aquatic_NW, W-Beach 1_S
-
 Room Name: Hallway 6
 Room Description:  This is a hallway.
 Exit Rooms: N-Equipment Yard, S-Staff Quarters_NW
-
 Room Name: Hallway 7
 Room Description:  This is a hallway.
 Exit Rooms: N-Triceratops_NE, S-Visitor Centre_NW
-
 Room Name: Hallway 8
 Room Description:  This is a hallway.
 Exit Rooms: E-Spinosauras_SW, W-Beach 1_N
-
 Room Name: Hallway 9
 Room Description:  This is a hallway.
 Exit Rooms: E-Triceratops_NW, W-Quarry_S
-
 Room Name: Hallway 10
 Room Description:  This is a hallway.
 Exit Rooms: N-Dilophosauras_SW, S-Triceratops_NW
-
 Room Name: Hallway 11
 Room Description:  This is a hallway.
 Exit Rooms: N-Plains_W, S-Spinosauras_NE
-
 Room Name: Hallway 12
 Room Description:  This is a hallway.
 Exit Rooms: N-Pterodactyl_SE, S-Quarry_N
-
 Room Name: Hallway 13
 Room Description:  This is a hallway.
 Exit Rooms: E-Dilophosauras_NW, W-Pterodactyl_SE
-
 Room Name: Hallway 14
 Room Description:  This is a hallway.
 Exit Rooms: N-Server Room, S-Mechanical Room_W
-
 Room Name: Hallway 15
 Room Description:  This is a hallway.
 Exit Rooms: E-Munitions Shed_NW, W-Mechanical Room_E
-
 Room Name: Hallway 16
 Room Description:  This is a hallway.
 Exit Rooms: N-Communications Centre_SE, S-Munitions Shed_NW
-
 Room Name: Hallway 17
 Room Description:  This is a hallway.
 Exit Rooms: E-Communications Centre_SW, W-Server Room
-
 Room Name: Hallway 18
 Room Description:  This is a hallway.
 Exit Rooms: E-Server Room, W-Lake
-
 Room Name: Hallway 19
 Room Description:  This is a hallway.
 Exit Rooms: N-Stegosauras_SE, S-Lake
-
 Room Name: Hallway 20
 Room Description:  This is a hallway.
 Exit Rooms: N-Trex_SE, S-Communications Centre_NW
-
 Room Name: Hallway 21
 Room Description:  This is a hallway.
 Exit Rooms: E-Trex_SW, S-Stegosauras Control, W-Stegosauras_NE
-
 Room Name: Hallway 22
 Room Description:  This is a hallway.
 Exit Rooms: N-Records_E, S-Stegosauras_NE
-
 Room Name: Hallway 23
 Room Description:  This is a hallway.
 Exit Rooms: E-Cabin, S-Trex Control, W-Trex_NE
-
 Room Name: Hallway 24
 Room Description:  This is a hallway.
 Exit Rooms: N-Waterfall, S-Cabin
-
 Room Name: Hallway 25
 Room Description:  This is a hallway.
 Exit Rooms: E-Cliff 2_W, S-Records_E
-
 Room Name: Hallway 26
 Room Description:  This is a hallway.
 Exit Rooms: E-Waterfall, W-Main Control Centre_SE
-
 Room Name: Hallway 27
 Room Description:  This is a hallway.
 Exit Rooms: E-Cliff 1_SW, S-Velociraptor_NE
-
 Room Name: Hallway 28
 Room Description:  This is a hallway.
 Exit Rooms: S-Breeding Centre_W, W-Cliff 1_SE
-
 Room Name: Hallway 29
 Room Description:  This is a hallway.
 Exit Rooms: N-Breeding Centre_C, S-Hills_NE
-
 Room Name: Hallway 30
 Room Description:  This is a hallway.
 Exit Rooms: E-Hills_NW, W-Jungle_SE
-
 Room Name: Hallway 31
 Room Description:  This is a hallway.
 Exit Rooms: N-Jungle_SE, S-Observatory_E
-
-
-
-
 Room Name: Boat Landing
 Room Description:  This is where you started, the Boat Landing.
 Exit Rooms: N-Hallway 1, E-Supply Shed
-
 Room Name: Supply Shed
 Room Description:  This is the Supply Shed, next to the Boat Landing.
 Exit Rooms: W-Boat Landing
-
 Room Name: Visitor Centre_SE
 Room Description:  This is the South East Corner of the Visitor Centre.
 Exit Rooms: N-Visitor Centre_NE, S-Hallway 1, W-Visitor Centre_SW
-
 Room Name: Visitor Centre_NE
 Room Description:  This is the North East Corner of the Visitor Centre.
 Exit Rooms:  E-Hallway 3, S-Visitor Centre_SE,  W-Visitor Centre_NW
-
 Room Name: Visitor Centre_SW
 Room Description:  This is the South West Corner of the Visitor Centre.
 Exit Rooms: N-Visitor Centre_NW, E-Visitor Centre_SE
-
 Room Name: Visitor Centre_NW
 Room Description:  This is the North West Corner of the Visitor Centre.
 Exit Rooms: E-Visitor Centre_NE, S-Visitor Centre_SW, W-Hallway 2, N-Hallway 7
-
 Room Name: Staff Quarters_NE
 Room Description:  This is the North East Corner of the Staff Quarters.
 Exit Rooms: E-Hallway 2, S-Staff Quarters_SE, W-Staff Quarters_NW
-
 Room Name: Staff Quarters_NW
 Room Description:  This is the North West Corner of the Staff Quarters.
 Exit Rooms: N-Hallway 6, E-Staff Quarters_NE, S-Staff Quarters_SW
-
 Room Name: Staff Quarters_SE
 Room Description:  This is the South East Corner of the Staff Quarters.
 Exit Rooms: N-Staff Quarters_NE, W-Staff Quarters_SW
-
 Room Name: Staff Quarters_SW
 Room Description:  This is the South West Corner of the Staff Quarters.
 Exit Rooms: N-Staff Quarters_NW, E-Staff Quarters_SE
-
 Room Name: Equipment Yard
 Room Description: This is the equipment yard.
 Exit Rooms: N-Quarry_S, S-Hallway 6
-
 Room Name: Quarry_S
 Room Description: This is the south end of the Quarry.
 Exit Rooms: N-Quarry_N, E-Hallway 9, S-Equipment Yard
-
 Room Name: Quarry_N
 Room Description: This is the north end of the Quarry.
 Exit Rooms: N-Hallway 12, S-Quarry_S
-
 Room Name: River_SW
 Room Description: This is the South West part of the river.
 Exit Rooms: E-River 1_SE, S-Triceratops Control, W-Triceratops_NE
-
 Room Name: River 1_SE
 Room Description: This is the South East part of the river.
 Exit Rooms: N-River 1_NE, W-River 1_SW
-
 Room Name: River 1_NE
 Room Description: This is the North East part of the river.
 Exit Rooms: E-Clearing 1, S-River 1_SE
-
 Room Name: Clearing
 Room Description: This is a clearing.
 Exit Rooms: N-Hotel_S, W-River 1_NE
-
 Room Name: Hotel_S
 Room Description: This is the south end of the hotel.
 Exit Rooms: N-Hotel_N, S-Clearing
-
 Room Name: Pool
 Room Description: This is the pool.
 Exit Rooms: W-Hotel_N
-
 Room Name: Clearing_2
 Room Description: This is a clearing.
 Exit Rooms: N-Bridge, E-Pterodactyl_NW, S-Pterodactyl Control
-
 Room Name: Bridge
 Room Description: This is the bridge.
 Exit Rooms: N-Forest_SW, S-Clearing 2
-
 Room Name: Forest_SW
 Room Description: This is the South West corner of the forest.
 Exit Rooms: N-Forest_NW, S-Bridge
-
 Room Name: Forest_NW
 Room Description: This is the North West corner of the forest.
 Exit Rooms: E-Forest_NE, S-Forest_SW
-
 Room Name: Forest_NE
 Room Description: This is the North East corner of the forest.
 Exit Rooms: N-Lake, W-Forest_NW
-
 Room Name: Lake
 Room Description: This is the lake.
 Exit Rooms: N-Hallway 19, E-Hallway 18, S-Forest_NE
-
-
-
