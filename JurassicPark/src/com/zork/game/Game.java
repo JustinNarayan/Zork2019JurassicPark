@@ -24,6 +24,11 @@ import java.util.Scanner;
 class Game {
 	private Parser parser;
 	private Room currentRoom;
+	private int timeLeft = -1; //-1 means time has not been initialized; 1440 minutes when really initialized
+	private final int MAX_TIME = 1440;
+	private final int TIME_IN_HOUR = 60;
+	private final String SIREN_POSITION = "Supply Shed";
+	
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -184,7 +189,36 @@ class Game {
 		else {
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());
+			
+			//Print out the siren message in-story to open the facilities
+			if(currentRoom.getRoomName().equals(SIREN_POSITION)) {
+				if(getTimeLeft()==-1) setTimeLeft(MAX_TIME);
+				System.out.println("\nInside the shed, you hear sirens begin to blare and an alert\n"
+						+ "message sounds through the speakers: \n"
+						+ "\t\"Attention! Attention everyone on Jurassic Park! Worsening conditions\n"
+						+ "\thave made it unsafe to continue work here. All staff personnel must evacuate\n"
+						+ "\tthe island immediately. Approaching storms from the south of the island\n"
+						+ "\tare forcing all personnel to make their way to the northeast shipyard.\n"
+						+ "\tI repeat, all personnel to the northeast shipyard. Control centers are losing power,\n"
+						+ "\tmeaning enclosure doors may be starting to open due to technical malfunctions.\n"
+						+ "\tThe last personnel ship will evacuate in "+getTimeLeft()/TIME_IN_HOUR+" hours. I repeat, you have\n"
+						+ "\t"+getTimeLeft()/TIME_IN_HOUR+" hours to get off the island. Over and out.\"\n\n"
+						+ "You hear clanging of metal outside of the shed - the security doors have opened.\n"
+						+ "You have limited time to gather information on the island before you need to escape.\n"
+						+ "You'll need to evade the creates unleashed on the island, and if not, face death.");
+				
+			}
 		}
+	}
+	
+	
+	
+	private int getTimeLeft() {
+		return timeLeft;
+	}
+	
+	private void setTimeLeft(int newTime) {
+		timeLeft = newTime;
 	}
 
 }
