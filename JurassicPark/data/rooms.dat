@@ -1,6 +1,6 @@
 Room Name: Hallway 1
 Room Description: You are on a pathway. In front of you is the Visitor Centre, behind is the Boat Landing.
-Exit Rooms: N-Visitor Centre_SE, S-Boat Landing
+Exit Rooms: N-Visitor Centre_SE, S-Boat Landing_B
 Room Name: Hallway 2
 Room Description:  You are on a pathway. To the left are the Staff Quarters and to your right is the Visitor Centre.
 Exit Rooms: E-Visitor Centre_NW, W-Staff Quarters_NE
