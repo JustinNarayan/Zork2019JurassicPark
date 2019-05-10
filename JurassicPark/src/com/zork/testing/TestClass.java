@@ -25,7 +25,7 @@ public class TestClass {
 	}
 	
    public static void play() {
-   	String filename = "C:\\Users\\zacve\\git\\Zork2019JurassicPark\\JurassicPark\\src\\com\\zork\\testing\\Jurassic Park.mp3";
+   	String filename = "JurassicPark\\src\\com\\zork\\testing\\Jurassic Park.mp3";
    	try {
        	
            FileInputStream fis     = new FileInputStream(filename);
