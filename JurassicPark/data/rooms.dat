@@ -1,11 +1,11 @@
 Room Name: Hallway 1
-Room Description:  This is a hallway.
+Room Description: You are on a pathway. In front of you is the Visitor Centre, behind is the Boat Landing.
 Exit Rooms: N-Visitor Centre_SE, S-Boat Landing
 Room Name: Hallway 2
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left are the Staff Quarters and to your right is the Visitor Centre.
 Exit Rooms: E-Visitor Centre_NW, W-Staff Quarters_NE
 Room Name: Hallway 3
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Visitor Centre and to your right is the Bronchiosauras enclosure.
 Exit Rooms: E-Bronchiosauras_NW, W-Visitor Centre_NE
 Room Name: Hallway 4
 Room Description:  This is a hallway.
@@ -92,37 +92,37 @@ Room Name: Hallway 31
 Room Description:  This is a hallway.
 Exit Rooms: N-Jungle_SE, S-Observatory_E
 Room Name: Boat Landing_A
-Room Description: This is where you started, the Boat Landing.
+Room Description: This is the Boat Landing, where you start. To your right is a shed which looked to have supply in it.
 Exit Rooms: E-Supply Shed
 Room Name: Supply Shed
-Room Description:  This is the Supply Shed, next to the Boat Landing.
+Room Description:  This is the Boat Landing, where you start. To your right is a shed which looked to have supply in it and there appears to be a clearing ahead of you.
 Exit Rooms: W-Boat Landing_B
 Room Name: Boat Landing_B
 Room Description: You have entered the facility, good luck.
 Exit Rooms: N-Hallway 1, E-Supply Shed
 Room Name: Visitor Centre_SE
-Room Description:  This is the South East Corner of the Visitor Centre.
+Room Description: You have entered the South East corner of the Visitor Centre. 
 Exit Rooms: N-Visitor Centre_NE, S-Hallway 1, W-Visitor Centre_SW
 Room Name: Visitor Centre_NE
-Room Description:  This is the North East Corner of the Visitor Centre.
+Room Description: You are in the North East Corner of the Visitor Centre. To the right is a glass door; in the distance, you can see the Bronchiosaurus enclosure.
 Exit Rooms:  E-Hallway 3, S-Visitor Centre_SE,  W-Visitor Centre_NW
 Room Name: Visitor Centre_SW
-Room Description:  This is the South West Corner of the Visitor Centre.
+Room Description:  You are in the South West Corner of the Visitor Centre.
 Exit Rooms: N-Visitor Centre_NW, E-Visitor Centre_SE
 Room Name: Visitor Centre_NW
-Room Description:  This is the North West Corner of the Visitor Centre.
+Room Description:  You are in the North West Corner of the Visitor Centre. To the left and ahead of you, there are glass doors; in the distance, you can see the Staff Quarters to the left and the Triceratops enclosure ahead. 
 Exit Rooms: E-Visitor Centre_NE, S-Visitor Centre_SW, W-Hallway 2, N-Hallway 7
 Room Name: Staff Quarters_NE
-Room Description:  This is the North East Corner of the Staff Quarters.
+Room Description:  You are in the North East Corner of the Staff Quarters. To the right is a glass door; in the distance, you can see the Visitor Centre.
 Exit Rooms: E-Hallway 2, S-Staff Quarters_SE, W-Staff Quarters_NW
 Room Name: Staff Quarters_NW
-Room Description:  This is the North West Corner of the Staff Quarters.
+Room Description:   You are in the North West Corner of the Staff Quarters. In front of you is a glass door; in the distance, you can see an Equipment Yard. 
 Exit Rooms: N-Hallway 6, E-Staff Quarters_NE, S-Staff Quarters_SW
 Room Name: Staff Quarters_SE
-Room Description:  This is the South East Corner of the Staff Quarters.
+Room Description:   You are in the South East Corner of the Staff Quarters.
 Exit Rooms: N-Staff Quarters_NE, W-Staff Quarters_SW
 Room Name: Staff Quarters_SW
-Room Description:  This is the South West Corner of the Staff Quarters.
+Room Description:   You are in the South West Corner of the Staff Quarters.
 Exit Rooms: N-Staff Quarters_NW, E-Staff Quarters_SE
 Room Name: Equipment Yard
 Room Description: This is the equipment yard.
