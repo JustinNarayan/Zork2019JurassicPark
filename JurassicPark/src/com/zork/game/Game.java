@@ -1,9 +1,12 @@
 package com.zork.game;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
+import javazoom.jl.player.Player;
 
 /**
  * Class Game - the main class of the "Zork" game.
@@ -131,6 +134,24 @@ class Game {
 		System.out.println("-------------------------------------------------------------------");
 		System.out.println(currentRoom.longDescription());
 	}
+	
+	/*
+	 * Plays a sound from a specific directory
+	 */
+	public static void play(String file) {
+	   	String filename = file;
+	   	try {
+	       	
+	           FileInputStream fis     = new FileInputStream(filename);
+	           BufferedInputStream bis = new BufferedInputStream(fis);
+	           Player player = new Player(bis);
+	           player.play();
+	       }
+	       catch (Exception e) {
+	           System.out.println("Problem playing file " + filename);
+	           System.out.println(e);
+	       }
+	   }
 
 	/**
 	 * Given a command, process (that is: execute) the command. If this command ends
