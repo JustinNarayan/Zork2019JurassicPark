@@ -93,7 +93,7 @@ class Room {
 	 * constructor).
 	 */
 	public String shortDescription() {
-		return "You are in: " + roomName + "\n\n" + description;
+		return roomName + "\n\n" + description;
 	}
 
 	/**
@@ -101,7 +101,7 @@ class Room {
 	 * Exits: north west
 	 */
 	public String longDescription() {
-		return "You are in: " + roomName + "\n" + description + "\n" + exitString();
+		return roomName + "\n" + Formatter.blockText(description, Formatter.getCutoff(), "") + "\n" + exitString();
 	}
 
 	/**
