@@ -23,7 +23,7 @@ Room Name: Hallway 8
 Room Description:  This is a hallway.
 Exit Rooms: E-Spinosauras_SW, W-Beach 1_N
 Room Name: Hallway 9
-Room Description:  You are on a pathway. To the right is the Triceratops enclosure.
+Room Description:  You are on a pathway. To the left is the Quarry, to the right is the Triceratops enclosure.
 Exit Rooms: E-Triceratops_NW, W-Quarry_S
 Room Name: Hallway 10
 Room Description:  This is a hallway.
@@ -32,7 +32,7 @@ Room Name: Hallway 11
 Room Description:  This is a hallway.
 Exit Rooms: N-Plains_W, S-Spinosauras_NE
 Room Name: Hallway 12
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Pterodactyl enclosure, behind you is the Quarry
 Exit Rooms: N-Pterodactyl_SE, S-Quarry_N
 Room Name: Hallway 13
 Room Description:  This is a hallway.
@@ -403,3 +403,30 @@ Exit Rooms: N-Pterodactyl_NW, E-Pterodactyl_SE, W-Pterodactyl Control
 Room Name: Stegosauras_NW
 Room Description: This is the North West corner of the Stegosauras enclosure.
 Exit Rooms: E-Stegosauras_NE, S-Stegosauras_SW
+Room Name: Stegosauras_NE
+Room Description: This is the North East corner of the Stegosauras enclosure.
+Exit Rooms: E-Hallway 21, S-Stegosauras_SE, W-Stegosaurus_NW, N-Hallway 22
+Room Name: Stegosauras_SW
+Room Description: This is the South West corner of the Stegosauras enclosure.
+Exit Rooms: E-Stegosauras_SE, N-Stegosauras_NW
+Room Name: Stegosauras_SE
+Room Description: This is the North West corner of the Stegosauras enclosure.
+Exit Rooms: E-Stegosauras_Control, S-Hallway 19, W-Stegosaurus_SW, N-Stegosaurus_NE
+Room Name: Trex_NW
+Room Description: This is the North West corner of the T-Rex enclosure.
+Exit Rooms: S-Trex_SW, E-Trex_NC
+Room Name: Trex_SW
+Room Description: This is the South West corner of the T-Rex enclosure.
+Exit Rooms: W-Hallway 21, N-Trex_NW, E-Trex_SC
+Room Name: Trex_NC
+Room Description: This the center of the North half of the T-Rex enclosure.
+Exit Rooms: W-Trex_NW, S-Trex_SC, E-Trex_NE
+Room Name: Trex_SC
+Room Description: This is the center of the South half of the T-Rex enclosure.
+Exit Rooms: W-Trex_SW, N-Trex_NC, E-Trex_SE
+Room Name: Trex_NE
+Room Description: This is the North East corner of the T-Rex enclosure. 
+Exit Rooms: W-Trex_NC, S-Trex_NE, E-Hallway 23
+Room Name: Trex_SE
+Room Description: This is the South East corner of the T-Rex enclosure.
+Exit Rooms: N-Trex_NE, S-Hallway 20, W-Trex_SC, E-Trex_Control
