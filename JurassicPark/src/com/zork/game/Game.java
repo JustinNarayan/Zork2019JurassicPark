@@ -156,8 +156,9 @@ class Game {
 	/**
 	 * Given a command, process (that is: execute) the command. If this command ends
 	 * the game, true is returned, otherwise false is returned.
+	 * @param inFight 
 	 */
-	private boolean processCommand(Command command) {
+	private boolean processCommand(Command command, boolean inFight) {
 		if (command.isUnknown()) {
 			System.out.println("I don't know what you mean...");
 			return false;
@@ -179,6 +180,7 @@ class Game {
 			else
 				return true; // signal that we want to quit
 			break;
+		}
 		case "use":
 			use(command);
 			break;
@@ -191,7 +193,7 @@ class Game {
 					}
 				}
 			
-			
+			}
 		}
 		
 
