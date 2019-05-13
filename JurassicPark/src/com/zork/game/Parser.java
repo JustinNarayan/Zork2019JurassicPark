@@ -34,11 +34,13 @@ class Parser {
 		System.out.print("> "); // print prompt
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		try {
-			inputLine = reader.readLine();
+			inputLine = reader.readLine().toLowerCase();
 		} catch (java.io.IOException exc) {
 			System.out.println("There was an error during reading: " + exc.getMessage());
 		}
+		
 		StringTokenizer tokenizer = new StringTokenizer(inputLine);
+		
 		if (tokenizer.hasMoreTokens())
 			word1 = tokenizer.nextToken(); // get first word
 		else

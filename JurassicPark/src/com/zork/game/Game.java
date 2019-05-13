@@ -163,20 +163,37 @@ class Game {
 			return false;
 		}
 		String commandWord = command.getCommandWord();
-		if (commandWord.equals("help") || commandWord.equals("?"))
+		switch(commandWord) {
+		case "help":
 			printHelp();
-		else if (commandWord.equals("go"))
+			break;
+		case "?":
+			printHelp();
+			break;
+		case "go":
 			goRoom(command);
-		else if (commandWord.equals("quit")) {
+			break;
+		case "quit":
 			if (command.hasSecondWord())
 				System.out.println("Quit what?");
 			else
 				return true; // signal that we want to quit
-		} else if (commandWord.equals("eat")) {
-			System.out.println("Do you really think you should be eating at a time like this?");
+			break;
+		case "use":
+			use(command);
+			break;
+		default:
+				if(!inFight) {
+					switch(commandWord) {
+					case "look":
+						look(command);
+						
+					}
+				}
+			
+			
 		}
-		return false;
-	}
+		
 
 // implementations of user commands:
 	/**
