@@ -408,7 +408,7 @@ Room Description: This is the North East corner of the Stegosauras enclosure.
 Exit Rooms: E-Hallway 21, S-Stegosauras_SE, W-Stegosaurus_NW, N-Hallway 22
 Room Name: Stegosauras_SW
 Room Description: This is the South West corner of the Stegosauras enclosure.
-Exit Rooms: E-Stegosauras_SE, N-Stegosauras_NW
+Exit Rooms: E-Stegosauras_SE, N-Stegosauras
 Room Name: Stegosauras_SE
 Room Description: This is the North West corner of the Stegosauras enclosure.
 Exit Rooms: E-Stegosauras_Control, S-Hallway 19, W-Stegosaurus_SW, N-Stegosaurus_NE
