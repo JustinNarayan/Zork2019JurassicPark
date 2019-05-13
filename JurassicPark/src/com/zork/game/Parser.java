@@ -21,7 +21,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 class Parser {
-	
 	private CommandWords commands; // holds all valid command words
 
 	public Parser() {
@@ -40,16 +39,12 @@ class Parser {
 			System.out.println("There was an error during reading: " + exc.getMessage());
 		}
 		StringTokenizer tokenizer = new StringTokenizer(inputLine);
-		
 		if (tokenizer.hasMoreTokens())
 			word1 = tokenizer.nextToken(); // get first word
-		
 		else
 			word1 = null;
-		
 		if (tokenizer.hasMoreTokens())
 			word2 = tokenizer.nextToken(); // get second word
-		
 		else
 			word2 = null;
 // note: we just ignore the rest of the input line.
