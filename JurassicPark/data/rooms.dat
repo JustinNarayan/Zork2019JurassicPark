@@ -297,13 +297,13 @@ Room Description: This is the North West corner of the jungle.
 Exit Rooms: N-Velociraptor_NE, E-Jungle_NE, S-Jungle_SW, W-Velociraptor_SC
 Room Name: Jungle_NE
 Room Description: This is the North East corner of the jungle.
-Exit Rooms: S-Jungle_SE, W-Jungle_NE
+Exit Rooms: S-Jungle_SE, E-Jungle_NE
 Room Name: Jungle_SE
 Room Description: This is the South East corner of the jungle.
 Exit Rooms: N-Jungle_NE, E-Hallway 30, S-Hallway 31, W-Jungle_SW
 Room Name: Jungle_SW
 Room Description: This is the South West corner of the jungle.
-Exit Rooms: N-Jungle_NE, E-Jungle_SE
+Exit Rooms: N-Jungle_NW, E-Jungle_SE
 Room Name: Observatory_E
 Room Description: This is the east end of the observatory.
 Exit Rooms: N-Hallway 31, W-Observatory_W
@@ -324,7 +324,7 @@ Room Description: This is the centre of a beach.
 Exit Rooms: N-Beach 1_N, S-Beach 1_S
 Room Name: Beach 1_S
 Room Description: This is the south end of a beach.
-Exit Rooms: N-Beach 1_N, E-Hallway 5, W-Hallway 4
+Exit Rooms: N-Beach 1_C, E-Hallway 5, W-Hallway 4
 Room Name: Bronchiosauras Control
 Room Description: This is the control centre for the Bronchiosauras enclosure.
 Exit Rooms: N-Bronchiosauras_SE
@@ -430,3 +430,48 @@ Exit Rooms: W-Trex_NC, S-Trex_NE, E-Hallway 23
 Room Name: Trex_SE
 Room Description: This is the South East corner of the T-Rex enclosure.
 Exit Rooms: N-Trex_NE, S-Hallway 20, W-Trex_SC, E-Trex_Control
+Room Name: Dilophosauras_SE
+Room Description: This is the South East corner of the Dilophosauras enclosure.
+Exit Rooms: N-Dilophosauras_NE, W-Dilophosauras_SW
+Room Name: Dilophosauras_NE
+Room Description: This is the South East corner of the Dilophosauras enclosure.
+Exit Rooms: E-Dilophosauras Control, W-Dilophosauras_NW, S-Dilophosauras_SE
+Room Name: Dilophosauras_NW
+Room Description: This is the North West corner of the Dilophosauras enclosure.
+Exit Rooms: W-Hallway 13, E-Dilophosauras_NE, S-Dilophosauras_SW
+Room Name: Dilophosauras_SW
+Room Description: This is the South West corner of the Dilophosauras enclosure.
+Exit Rooms: N-Dilophosauras_NW, S-Hallway 10, E-Dilophosauras_SE
+Room Name: Spinosauras_NE
+Room Description: This is the North East corner of the Spinosauras enclosure.
+Exit Rooms: W-Spinosauras_NW, N-Hallway 11, E-Spinosauras Control
+Room Name: Spinosauras_NW
+Room Description: This is the North West corner of the Spinosauras enclosure.
+Exit Rooms: S-Spinosauras_SW, E-Spinosauras_NE
+Room Name: Spinosauras_SW
+Room Description: This is the South West corner of the Spinosauras enclosure.
+Exit Rooms: N-Spinosauras_NW, W-Hallway 8
+Room Name: Aquatic_NW
+Room Description: This is the North West corner of the Aquatic.
+Exit Rooms: W-Hallway 5, S-Aquatic_SW
+Room Name: Aquatic_SW
+Room Description: This is the South West corner of the Aquatic.
+Exit Rooms: N-Aquatic_NW, E-Aquatic_SE
+Room Name: Aquatic_SE
+Room Description: This is the South East corner of the Aquatic.
+Exit Rooms: S-Aquatic Control, W-Aquatic_SW
+Room Name: Velociraptor_NW
+Room Description: This is the North West corner of the Velociraptor enclosure.
+Exit Rooms: N-Velociraptor Control, E-Velociraptor_NC, S-Velociraptor_SW
+Room Name: Velociraptor_NC
+Room Description: This is the North Center corner of the Velociraptor enclosure.
+Exit Rooms: W-Velociraptor_NW, S-Velociraptor_SC, E-Velociraptor_NE
+Room Name: Velociraptor_NE
+Room Description: This is the North East corner of the Velociraptor enclosure.
+Exit Rooms: N-Hallway 27, S-Jungle_NW, W-Velociraptor_NC
+Room Name: Velociraptor_SW
+Room Description: This is the South West corner of the Velociraptor enclosure.
+Exit Rooms: N-Velociraptor_NW, E-Velociraptor_SC
+Room Name: Velociraptor_SC
+Room Description: This is the South Center corner of the Velociraptor enclosure.
+Exit Rooms: N-Velociraptor_NC, W-Velociraptor_SW, E-Jungle_NW
