@@ -46,7 +46,7 @@ public class Formatter {
 		return start+newString;
 	}
 	
-	/* Coverts a number of minutes to a 24 hour clock
+	/* Converts a number of minutes to a 24 hour clock
 	 * 
 	 * @ param minutes		The number of minutes
 	 * 
