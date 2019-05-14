@@ -426,7 +426,7 @@ Room Description: This is the center of the South half of the T-Rex enclosure.
 Exit Rooms: W-Trex_SW, N-Trex_NC, E-Trex_SE
 Room Name: Trex_NE
 Room Description: This is the North East corner of the T-Rex enclosure. 
-Exit Rooms: W-Trex_NC, S-Trex_NE, E-Hallway 23
+Exit Rooms: W-Trex_NC, S-Trex_SE, E-Hallway 23
 Room Name: Trex_SE
 Room Description: This is the South East corner of the T-Rex enclosure.
 Exit Rooms: N-Trex_NE, S-Hallway 20, W-Trex_SC, E-Trex_Control
