@@ -181,7 +181,7 @@ class Game {
 				return true; // signal that we want to quit
 			break;
 		}
-		case "use":
+		/*case "use":
 			use(command);
 			break;
 		default:
@@ -193,7 +193,8 @@ class Game {
 					}
 				}
 			
-			}
+			}*/
+			return false;
 		}
 		
 
