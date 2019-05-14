@@ -180,7 +180,7 @@ Room Description: This is the east end of the mechanical room.
 Exit Rooms: E-Hallway 15, W-Mechanical Room_W
 Room Name: Munitions Shed_NW
 Room Description: This is the North West corner of the munitions shed.
-Exit Rooms: N-Hallway 16, E-Munitions Shed_NE, S-Munitions_SW, W-Hallway 15
+Exit Rooms: N-Hallway 16, E-Munitions Shed_NE, S-Munitions Shed_SW, W-Hallway 15
 Room Name: Munitions Shed_NE
 Room Description: This is the North East corner of the munitions shed.
 Exit Rooms: W-Munitions Shed_NW
@@ -261,7 +261,7 @@ Room Description: This is the North West corner of the cliff.
 Exit Rooms: N-Helipad, S-Cliff 1_SW
 Room Name: Cliff 1_SW
 Room Description: This is the South West corner of the cliff.
-Exit Rooms: N-Cliff 1_SW, E-Cliff 1_SE, W-Hallway 27
+Exit Rooms: N-Cliff 1_NW, E-Cliff 1_SE, W-Hallway 27
 Room Name: Cliff 1_SE
 Room Description: This is the South East corner of the cliff.
 Exit Rooms: E-Hallway 28, W-Cliff 1_SW
@@ -297,7 +297,7 @@ Room Description: This is the North West corner of the jungle.
 Exit Rooms: N-Velociraptor_NE, E-Jungle_NE, S-Jungle_SW, W-Velociraptor_SC
 Room Name: Jungle_NE
 Room Description: This is the North East corner of the jungle.
-Exit Rooms: S-Jungle_SE, E-Jungle_NE
+Exit Rooms: S-Jungle_SE, W-Jungle_NW
 Room Name: Jungle_SE
 Room Description: This is the South East corner of the jungle.
 Exit Rooms: N-Jungle_NE, E-Hallway 30, S-Hallway 31, W-Jungle_SW
@@ -309,7 +309,7 @@ Room Description: This is the east end of the observatory.
 Exit Rooms: N-Hallway 31, W-Observatory_W
 Room Name: Observatory_W
 Room Description: This is the west end of the observatory.
-Exit Rooms: E-Observatory_E, S-Moutain Top
+Exit Rooms: E-Observatory_E, S-Mountain Top
 Room Name: Mountain Top
 Room Description: This is the mountain top.
 Exit Rooms: N-Observatory_W, S-Cave 2
@@ -354,7 +354,7 @@ Room Description: This is the control centre for the Aquatic enclosure.
 Exit Rooms: N-Aquatic_SE
 Room Name: Bronchiosauras_NW
 Room Description: This is the North West corner of the Bronchiosauras enclosure.
-Exit Rooms: E-Bronchiosauras_NE, S-Bronchiosauras_SE, W-Hallway 3
+Exit Rooms: E-Bronchiosauras_NE, S-Bronchiosauras_SW, W-Hallway 3
 Room Name: Bronchiosauras_NE
 Room Description: This is the North East corner of the Bronchiosauras enclosure.
 Exit Rooms: E-Hallway 4, S-Bronchiosauras_SE, W-Bronchiosauras_NW
@@ -405,13 +405,13 @@ Room Description: This is the North West corner of the Stegosauras enclosure.
 Exit Rooms: E-Stegosauras_NE, S-Stegosauras_SW
 Room Name: Stegosauras_NE
 Room Description: This is the North East corner of the Stegosauras enclosure.
-Exit Rooms: E-Hallway 21, S-Stegosauras_SE, W-Stegosaurus_NW, N-Hallway 22
+Exit Rooms: E-Hallway 21, S-Stegosauras_SE, W-Stegosauras_NW, N-Hallway 22
 Room Name: Stegosauras_SW
 Room Description: This is the South West corner of the Stegosauras enclosure.
 Exit Rooms: E-Stegosauras_SE, N-Stegosauras
 Room Name: Stegosauras_SE
 Room Description: This is the North West corner of the Stegosauras enclosure.
-Exit Rooms: E-Stegosauras_Control, S-Hallway 19, W-Stegosaurus_SW, N-Stegosaurus_NE
+Exit Rooms: E-Stegosauras_Control, S-Hallway 19, W-Stegosauras_SW, N-Stegosauras_NE
 Room Name: Trex_NW
 Room Description: This is the North West corner of the T-Rex enclosure.
 Exit Rooms: S-Trex_SW, E-Trex_NC
