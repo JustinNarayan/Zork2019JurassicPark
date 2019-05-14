@@ -32,6 +32,9 @@ class Game {
 	private final int TIME_IN_HOUR = 60;
 	private final String SIREN_POSITION = "Supply Shed";
 	
+	
+	private Dinosaur test;
+	
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -39,7 +42,14 @@ class Game {
 	// In a hashmap keys are case sensitive.
 	// masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the Great
 	// Room (assuming you have one).
-	private HashMap<String, Room> masterRoomMap;
+	private static HashMap<String, Room> masterRoomMap;
+	
+	
+	public static HashMap<String, Room> getMasterRoomMap() {
+		return masterRoomMap;
+	}
+	
+	
 
 	private void initRooms(String fileName) throws Exception {
 		masterRoomMap = new HashMap<String, Room>();
@@ -112,12 +122,14 @@ class Game {
 	 */
 	public void play() {
 		printWelcome();
-		// Enter the main command loop.  Here we repeatedly read commands and execute them until the game is over.
-
+		// Enter the main command loop.  Here we repeatedly read commands and execute them until the game is over.		
+		
+		test = new TyrannosaurusRex(masterRoomMap.get("TREX_NW"));
+		
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
-			finished = processCommand(command);
+			finished = processCommand(command, false); //FALSE is for inFight variable, not yet implemented
 		}
 		System.out.println("Thank you for playing.");
 	}
