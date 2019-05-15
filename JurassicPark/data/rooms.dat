@@ -430,18 +430,6 @@ Exit Rooms: W-Trex_NC, S-Trex_SE, E-Hallway 23
 Room Name: Trex_SE
 Room Description: This is the South East corner of the T-Rex enclosure.
 Exit Rooms: N-Trex_NE, S-Hallway 20, W-Trex_SC, E-Trex_Control
-Room Name: Dilophosauras_SE
-Room Description: This is the South East corner of the Dilophosauras enclosure.
-Exit Rooms: N-Dilophosauras_NE, W-Dilophosauras_SW
-Room Name: Dilophosauras_NE
-Room Description: This is the South East corner of the Dilophosauras enclosure.
-Exit Rooms: E-Dilophosauras Control, W-Dilophosauras_NW, S-Dilophosauras_SE
-Room Name: Dilophosauras_NW
-Room Description: This is the North West corner of the Dilophosauras enclosure.
-Exit Rooms: W-Hallway 13, E-Dilophosauras_NE, S-Dilophosauras_SW
-Room Name: Dilophosauras_SW
-Room Description: This is the South West corner of the Dilophosauras enclosure.
-Exit Rooms: N-Dilophosauras_NW, S-Hallway 10, E-Dilophosauras_SE
 Room Name: Spinosauras_NE
 Room Description: This is the North East corner of the Spinosauras enclosure.
 Exit Rooms: W-Spinosauras_NW, N-Hallway 11, E-Spinosauras Control
