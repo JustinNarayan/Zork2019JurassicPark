@@ -27,14 +27,13 @@ import javazoom.jl.player.Player;
 class Game {
 	private Parser parser;
 	private Room currentRoom;
-	private int timeLeft = -1; //-1 means time has not been initialized; 1440 minutes when really initialized
+	private int timeLeft = -1; // -1 means time has not been initialized; 1440 minutes when really initialized
 	private final int MAX_TIME = 1440;
 	private final int TIME_IN_HOUR = 60;
 	private final String SIREN_POSITION = "Supply Shed";
-	
-	
+
 	private Dinosaur test;
-	
+
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -43,13 +42,10 @@ class Game {
 	// masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the Great
 	// Room (assuming you have one).
 	private static HashMap<String, Room> masterRoomMap;
-	
-	
+
 	public static HashMap<String, Room> getMasterRoomMap() {
 		return masterRoomMap;
 	}
-	
-	
 
 	private void initRooms(String fileName) throws Exception {
 		masterRoomMap = new HashMap<String, Room>();
@@ -122,14 +118,15 @@ class Game {
 	 */
 	public void play() {
 		printWelcome();
-		// Enter the main command loop.  Here we repeatedly read commands and execute them until the game is over.		
-		
+		// Enter the main command loop. Here we repeatedly read commands and execute
+		// them until the game is over.
+
 		test = new TyrannosaurusRex(masterRoomMap.get("TREX_NW"));
-		
+
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
-			finished = processCommand(command, false); //FALSE is for inFight variable, not yet implemented
+			finished = processCommand(command, false); // FALSE is for inFight variable, not yet implemented
 		}
 		System.out.println("Thank you for playing.");
 	}
@@ -139,31 +136,29 @@ class Game {
 	 */
 	private void printWelcome() {
 		System.out.println("-------------------------------------------------------------------");
-		System.out.print(
-				"Welcome to Isla Nublar, the site of Jurassic Park! \nYou are a reporter who is looking "
+		System.out.print("Welcome to Isla Nublar, the site of Jurassic Park! \nYou are a reporter who is looking "
 				+ "to write an article to \nexpose the dangerous experiments being conducted on the island. "
 				+ "\nType '?' or 'help' if you need help. \n");
 		System.out.println("-------------------------------------------------------------------");
 		System.out.println(currentRoom.longDescription());
 	}
-	
+
 	/*
 	 * Plays a sound from a specific directory
 	 */
 	public static void play(String file) {
-	   	String filename = file;
-	   	try {
-	       	
-	           FileInputStream fis     = new FileInputStream(filename);
-	           BufferedInputStream bis = new BufferedInputStream(fis);
-	           Player player = new Player(bis);
-	           player.play();
-	       }
-	       catch (Exception e) {
-	           System.out.println("Problem playing file " + filename);
-	           System.out.println(e);
-	       }
-	   }
+		String filename = file;
+		try {
+
+			FileInputStream fis = new FileInputStream(filename);
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			Player player = new Player(bis);
+			player.play();
+		} catch (Exception e) {
+			System.out.println("Problem playing file " + filename);
+			System.out.println(e);
+		}
+	}
 
 	/**
 	 * Given a command, process (that is: execute) the command. If this command ends
@@ -191,24 +186,55 @@ class Game {
 				System.out.println("Quit what?");
 			else
 				return true; // signal that we want to quit
-			break;
-		}
-		/*case "use":
+			break;		
+		case "use":
 			use(command);
 			break;
+		case "climb":
+			climb(command);
+			break
+		case "inventory":
+			checkInventory(command);
+			break;
+		case "ammo":
+			checkAmmo(command);
+			break;			
+		case "drop":
+			drop(command);
+			break;
+		case "grab":
+			grab(command);
+			break;
+		case "attack":
+			attack(command);	
+			
 		default:
-				if(!inFight) {
+				if(!inFight) { //the following commands are for when you are not in battle
 					switch(commandWord) {
 					case "look":
 						look(command);
+					case "search":
+						search(command);						
+					case "heal":
+						heal(command);		
+						break;
+					case "time":
+						checkTime(command);
+						break;
+					}
+					} else {
+						System.out.println("You must do a battle command");
+						
+							
+						}
+					
 						
 					}
-				}
-			
-			}*/
-			return false;
-		}
-		
+				
+
+	return false;
+
+	}
 
 // implementations of user commands:
 	/**
@@ -242,11 +268,12 @@ class Game {
 		else {
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());
-			
-			//Print out the siren message in-story to open the facilities
-			if(currentRoom.getRoomName().equals(SIREN_POSITION)) {
-				if(getTimeLeft()==-1) setTimeLeft(MAX_TIME);
-				
+
+			// Print out the siren message in-story to open the facilities
+			if (currentRoom.getRoomName().equals(SIREN_POSITION)) {
+				if (getTimeLeft() == -1)
+					setTimeLeft(MAX_TIME);
+
 				System.out.println(Formatter.blockText("Inside the shed, you hear sirens begin to blare and an alert "
 						+ "message sounds through the speakers:", Formatter.getCutoff(), "") + "\n");
 				System.out.println(Formatter.blockText("\"Attention! Attention everyone on Jurassic Park! Worsening "
@@ -255,22 +282,22 @@ class Game {
 						+ "are forcing all personnel to make their way to the northeast shipyard. "
 						+ "I repeat, all personnel to the northeast shipyard. Control centers are losing power, "
 						+ "meaning enclosure doors may be starting to open due to technical malfunctions. "
-						+ "The last personnel ship will evacuate in "+getTimeLeft()/TIME_IN_HOUR+" hours. I repeat, you have "
-						+ getTimeLeft()/TIME_IN_HOUR+" hours to get off the island. Over and out.\"", Formatter.getCutoff(), "\t") + "\n");
+						+ "The last personnel ship will evacuate in " + getTimeLeft() / TIME_IN_HOUR
+						+ " hours. I repeat, you have " + getTimeLeft() / TIME_IN_HOUR
+						+ " hours to get off the island. Over and out.\"", Formatter.getCutoff(), "\t") + "\n");
 				System.out.println(Formatter.blockText("You hear clanging of metal outside of the shed - the security "
 						+ "doors have opened. You have limited time to gather information on the island before you "
-						+ "need to escape. You'll need to evade the creaters unleashed on the island, and if not, face death.", Formatter.getCutoff(), " ") + "\n");
-				
+						+ "need to escape. You'll need to evade the creaters unleashed on the island, and if not, face death.",
+						Formatter.getCutoff(), " ") + "\n");
+
 			}
 		}
 	}
-	
-	
-	
+
 	private int getTimeLeft() {
 		return timeLeft;
 	}
-	
+
 	private void setTimeLeft(int newTime) {
 		timeLeft = newTime;
 	}
