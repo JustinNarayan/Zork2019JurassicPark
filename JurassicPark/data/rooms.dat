@@ -352,9 +352,6 @@ Exit Rooms: S-Velociraptor_NW
 Room Name: Spinosauras Control
 Room Description: This is the control centre for the Spinosauras enclosure.
 Exit Rooms: W-Spinosauras_NE
-Room Name: Aquatic Control
-Room Description: This is the control centre for the Aquatic enclosure.
-Exit Rooms: N-Aquatic_SE
 Room Name: Bronchiosauras_NW
 Room Description: This is the North West corner of the Bronchiosauras enclosure.
 Exit Rooms: E-Bronchiosauras_NE, S-Bronchiosauras_SW, W-Hallway 3
@@ -450,7 +447,7 @@ Room Description: This is the South West corner of the Aquatic.
 Exit Rooms: N-Aquatic_NW, E-Aquatic_SE
 Room Name: Aquatic_SE
 Room Description: This is the South East corner of the Aquatic.
-Exit Rooms: S-Aquatic Control, W-Aquatic_SW
+Exit Rooms: W-Aquatic_SW
 Room Name: Velociraptor_NW
 Room Description: This is the North West corner of the Velociraptor enclosure.
 Exit Rooms: N-Velociraptor Control, E-Velociraptor_NC, S-Velociraptor_SW
