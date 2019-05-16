@@ -63,7 +63,13 @@ public abstract class Dinosaur {
 				//It will go in the loop until it moves into a valid position
 			} else {
 				//This is a valid room to move to
-				currentRoom = nextRoom;
+				if(!nextRoom.getRoomInventory().hasDinosaurs()) {
+					currentRoom.getRoomInventory().removeDinosaur(this);
+					currentRoom = nextRoom;
+					currentRoom.getRoomInventory().addDinosaur(this);				
+				} else {
+					System.out.println(nextRoom.getRoomName()+" has dinos.");
+				}
 				return currentRoom;
 			}
 		}

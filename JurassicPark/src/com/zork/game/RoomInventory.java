@@ -9,4 +9,17 @@ public class RoomInventory extends Inventory {
 		if(dinosaurs.size()>0) return true;
 		return false;
 	}
+	
+	public void addDinosaur(Dinosaur dinosaur) {
+		dinosaurs.add(dinosaur);
+	}
+	
+	public boolean removeDinosaur(Dinosaur dinosaur) {
+		if(dinosaurs.contains(dinosaur)) {
+			dinosaurs.remove(dinosaur);
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
