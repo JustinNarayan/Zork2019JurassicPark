@@ -122,6 +122,7 @@ class Game {
 		// them until the game is over.
 
 		test = new TyrannosaurusRex(masterRoomMap.get("TREX_NW"));
+		masterRoomMap.get("TREX_NC").getRoomInventory().addDinosaur(new TyrannosaurusRex(masterRoomMap.get("TREX_NC")));
 
 		boolean finished = false;
 		while (!finished) {
@@ -172,6 +173,10 @@ class Game {
 		}
 		String commandWord = command.getCommandWord();
 		switch(commandWord) {
+		case "test":
+			test.moveToNewRoom();
+			test.printCurrentRoom();
+			break;
 		case "help":
 			printHelp();
 			break;
@@ -188,42 +193,42 @@ class Game {
 				return true; // signal that we want to quit
 			break;		
 		case "use":
-			use(command);
+			//use(command);
 			break;
 		case "climb":
-			climb(command);
-			break
+			//climb(command);
+			break;
 		case "inventory":
-			checkInventory(command);
+			//checkInventory(command);
 			break;
 		case "ammo":
-			checkAmmo(command);
+			//checkAmmo(command);
 			break;			
 		case "drop":
-			drop(command);
+			//drop(command);
 			break;
 		case "grab":
-			grab(command);
+			//grab(command);
 			break;
 		case "attack":
-			attack(command);	
+			//attack(command);	
 			
 		default:
 				if(!inFight) { //the following commands are for when you are not in battle
 					switch(commandWord) {
 					case "look":
-						look(command);
+						//look(command);
 					case "search":
-						search(command);						
+						//search(command);						
 					case "heal":
-						heal(command);		
+						//heal(command);		
 						break;
 					case "time":
-						checkTime(command);
+						//checkTime(command);
 						break;
 					}
 					} else {
-						System.out.println("You must do a battle command");
+						System.out.println("You must do a battle command!");
 						
 							
 						}
