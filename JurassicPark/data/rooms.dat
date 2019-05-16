@@ -101,7 +101,7 @@ Room Name: Boat Landing_B
 Room Description: You have entered the facility, good luck. In front of you, you can see the Visitor Centre in the distance.
 Exit Rooms: N-Hallway 1, E-Supply Shed
 Room Name: Visitor Centre_SE
-Room Description: You have entered the South East corner of the Visitor Centre. 
+Room Description: You are in the South East corner of the Visitor Centre. 
 Exit Rooms: N-Visitor Centre_NE, S-Hallway 1, W-Visitor Centre_SW
 Room Name: Visitor Centre_NE
 Room Description: You are in the North East Corner of the Visitor Centre. To the right is a glass door; in the distance, you can see the Bronchiosaurus enclosure.
@@ -134,38 +134,41 @@ Room Name: Quarry_N
 Room Description: You are on the north end of the Quarry. In front of you is a pathway, in the distance, you can see the Pterodactyl enclosure.
 Exit Rooms: N-Hallway 12, S-Quarry_S
 Room Name: River 1_SW
-Room Description: This is the South West part of the river.
+Room Description: You are in a river and are wet. To the left is the Triceratops enclosure and to the right is more river. 
 Exit Rooms: E-River 1_SE, W-Triceratops_NE
 Room Name: River 1_SE
-Room Description: This is the South East part of the river.
+Room Description: You are in a river and are wet. The river extends further to the right and in front of you.
 Exit Rooms: N-River 1_NE, W-River 1_SW
 Room Name: River 1_NE
-Room Description: This is the North East part of the river.
+Room Description: You are in a river and are wet. To the left is a clearing and behind you is more river.
 Exit Rooms: E-Clearing 1, S-River 1_SE
 Room Name: Clearing
-Room Description: This is a clearing.
+Room Description: You have stumbled upon a clearing amongst trees. In front of you is a hotel and to your left is a river. 
 Exit Rooms: N-Hotel_S, W-River 1_NE
 Room Name: Hotel_S
-Room Description: This is the south end of the hotel.
+Room Description: You have entered the hotel. The hotel extends more in front of you and there is a clearing behind you. 
 Exit Rooms: N-Hotel_N, S-Clearing
+Room Name: Hotel_N
+Room Description: You are still in the hotel. To the right is a pool and the hotel extends further behind you.
+Exit Rooms: S-Hotel_S, E-Pool
 Room Name: Pool
-Room Description: This is the pool.
+Room Description: You have jumped in a pool, have fun! To your left is the hotel.
 Exit Rooms: W-Hotel_N
-Room Name: Clearing_2
-Room Description: This is a clearing.
-Exit Rooms: N-Bridge, E-Pterodactyl_NW
-Room Name: Bridge
-Room Description: This is the bridge.
-Exit Rooms: N-Forest_SW, S-Clearing 2
-Room Name: Forest_SW
-Room Description: This is the South West corner of the forest.
-Exit Rooms: N-Forest_NW, S-Bridge
-Room Name: Forest_NW
-Room Description: This is the North West corner of the forest.
-Exit Rooms: E-Forest_NE, S-Forest_SW
-Room Name: Forest_NE
-Room Description: This is the North East corner of the forest.
-Exit Rooms: N-Lake, W-Forest_NW
+Room Name: Bridge_S
+Room Description: You are on a rickety bridge, be careful because there are Ptyrodactyls nearby.
+Exit Rooms: N-Bridge_C, E-Pterodactyl_NW
+Room Name: Bridge_C
+Room Description: You are on a rickety bridge, be careful because there are Ptyrodactyls nearby.
+Exit Rooms: N-Bridge_N, S-Bridge_S
+Room Name: Bridge_N
+Room Description: You are on a rickety bridge, be careful because there are Ptyrodactyls nearby.
+Exit Rooms: N-Forest_W, S-Bridge_C
+Room Name: Forest_W
+Room Description: This is the west side of the forest.
+Exit Rooms: E-Forest_E, S-Brige_N
+Room Name: Forest_E
+Room Description: This is the east side of the forest.
+Exit Rooms: N-Lake, W-Forest_W
 Room Name: Lake
 Room Description: This is the lake.
 Exit Rooms: N-Hallway 19, E-Hallway 18, S-Forest_NE
@@ -390,7 +393,7 @@ Room Description: This is the South West corner of the Dilophasauras enclosure.
 Exit Rooms: N-Dilophasauras_NW, E-Dilophasauras_SE, S-Hallway 10
 Room Name: Pterodactyl_NW
 Room Description: This is the North West corner of the Pterodactyl enclosure.
-Exit Rooms: E-Pterodactyl_NE, S-Pterodactyl_SW, W-Clearing 2
+Exit Rooms: E-Pterodactyl_NE, S-Pterodactyl_SW, W-Bridge_S
 Room Name: Pterodactyl_NE
 Room Description: This is the North East corner of the Pterodactyl enclosure.
 Exit Rooms: S-Pterodactyl_SE, W-Pterodactyl_NW
