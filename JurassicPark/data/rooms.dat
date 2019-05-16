@@ -17,17 +17,17 @@ Room Name: Hallway 6
 Room Description:  You are on a pathway. In front of you is an Equipment Yard and behind you is the Staff Quaters.
 Exit Rooms: N-Equipment Yard, S-Staff Quarters_NW
 Room Name: Hallway 7
-Room Description: You are on a pathway. In front of you is the Triceratops enclosure and behind you is the Visitor Centre.
-Exit Rooms: N-Triceratops_NE, S-Visitor Centre_NW
+Room Description: You are on a pathway. In front of you is the Dilophosaurus enclosure and behind you is the Visitor Centre.
+Exit Rooms: N-Dilophosaurus_NE, S-Visitor Centre_NW
 Room Name: Hallway 8
 Room Description:  You are on a pathway. To the left is the Beach and to the right is the Spinosaurus enclosure.
 Exit Rooms: E-Spinosauras_SW, W-Beach 1_N
 Room Name: Hallway 9
-Room Description:  You are on a pathway. To the left is the Quarry and to the right is the Triceratops enclosure.
-Exit Rooms: E-Triceratops_NW, W-Quarry_S
+Room Description:  You are on a pathway. To the left is the Quarry and to the right is the Dilophosaurus enclosure.
+Exit Rooms: E-Dilophosaurus_NW, W-Quarry_S
 Room Name: Hallway 10
-Room Description:  You are on a pathway. In front of you is the Dilophosauras enclosure and behind you is the Triceratops enclosure.
-Exit Rooms: N-Dilophosauras_SW, S-Triceratops_NW
+Room Description:  You are on a pathway. In front of you is the Triceratops enclosure and behind you is the Dilophosaurus enclosure.
+Exit Rooms: N-Triceratops_SW, S-Dilophosaurus_NW
 Room Name: Hallway 11
 Room Description:  You are on a pathway. In front of you is are the plains and behind you is the Spinosauras enclosure.
 Exit Rooms: N-Plains_W, S-Spinosauras_NE
@@ -35,8 +35,8 @@ Room Name: Hallway 12
 Room Description:  You are on a pathway. In front of you is the Pterodactyl enclosure and behind you is the Quarry
 Exit Rooms: N-Pterodactyl_SE, S-Quarry_N
 Room Name: Hallway 13
-Room Description:  You are on a pathway. To the left is the Pteradactyl enclosure and to the right is the Dilophosauras enclosure. 
-Exit Rooms: E-Dilophosauras_NW, W-Pterodactyl_SE
+Room Description:  You are on a pathway. To the left is the Pteradactyl enclosure and to the right is the Triceratops enclosure. 
+Exit Rooms: E-Triceratops_NW, W-Pterodactyl_SE
 Room Name: Hallway 14
 Room Description:  You are on a pathway. In front of you is the Server Room and behind you is the Mechanical Room.
 Exit Rooms: N-Server Room, S-Mechanical Room_W
@@ -110,7 +110,7 @@ Room Name: Visitor Centre_SW
 Room Description:  You are in the South West Corner of the Visitor Centre.
 Exit Rooms: N-Visitor Centre_NW, E-Visitor Centre_SE
 Room Name: Visitor Centre_NW
-Room Description:  You are in the North West Corner of the Visitor Centre. To the left and ahead of you, there are glass doors; in the distance, you can see the Staff Quarters to the left and the Triceratops enclosure ahead. 
+Room Description:  You are in the North West Corner of the Visitor Centre. To the left and ahead of you, there are glass doors; in the distance, you can see the Staff Quarters to the left and the Dilophosaurus enclosure ahead. 
 Exit Rooms: E-Visitor Centre_NE, S-Visitor Centre_SW, W-Hallway 2, N-Hallway 7
 Room Name: Staff Quarters_NE
 Room Description:  You are in the North East Corner of the Staff Quarters. To the right is a glass door; in the distance, you can see the Visitor Centre.
@@ -128,14 +128,14 @@ Room Name: Equipment Yard
 Room Description: You are in the Equipment Yard, you see [stuff] around you.
 Exit Rooms: N-Quarry_S, S-Hallway 6
 Room Name: Quarry_S
-Room Description: You are on the south end of the Quarry. To the right is a pathway, in the distance, you can see the Triceratops enclosure.
+Room Description: You are on the south end of the Quarry. To the right is a pathway, in the distance, you can see the Dilophosaurus enclosure.
 Exit Rooms: N-Quarry_N, E-Hallway 9, S-Equipment Yard
 Room Name: Quarry_N
 Room Description: You are on the north end of the Quarry. In front of you is a pathway, in the distance, you can see the Pterodactyl enclosure.
 Exit Rooms: N-Hallway 12, S-Quarry_S
 Room Name: River 1_SW
-Room Description: You are in a river and are wet. To the left is the Triceratops enclosure and to the right is more river. 
-Exit Rooms: E-River 1_SE, W-Triceratops_NE
+Room Description: You are in a river and are wet. To the left is the Dilophosaurus enclosure and to the right is more river. 
+Exit Rooms: E-River 1_SE, W-Dilophosaurus_NE
 Room Name: River 1_SE
 Room Description: You are in a river and are wet. The river extends further to the right and in front of you.
 Exit Rooms: N-River 1_NE, W-River 1_SW
@@ -331,12 +331,12 @@ Exit Rooms: N-Beach 1_C, E-Hallway 5, W-Hallway 4
 Room Name: Bronchiosauras Control
 Room Description: This is the control centre for the Bronchiosauras enclosure.
 Exit Rooms: N-Bronchiosauras_SE
+Room Name: Dilophosaurus Control
+Room Description: This is the control centre for the Dilophosaurus enclosure.
+Exit Rooms: W-Dilophosaurus_SE
 Room Name: Triceratops Control
 Room Description: This is the control centre for the Triceratops enclosure.
-Exit Rooms: W-Triceratops_SE
-Room Name: Dilophosauras Control
-Room Description: This is the control centre for the Dilophosauras enclosure.
-Exit Rooms: W-Dilophosauras_NE
+Exit Rooms: W-Triceratops_NE
 Room Name: Pterodactyl Control
 Room Description: This is the control centre for the Pterodactyl enclosure.
 Exit Rooms: E-Pterodactyl_SW
@@ -367,30 +367,30 @@ Exit Rooms: N-Bronchiosauras_NE, S-Bronchiosauras Control, W-Bronchiosauras_SW
 Room Name: Bronchiosauras_SW
 Room Description: This is the South West corner of the Bronchiosauras enclosure.
 Exit Rooms: N-Bronchiosauras_NW, E-Bronchiosauras_SE
-Room Name: Triceratops_NE
-Room Description: This is the North East corner of the Triceratops enclosure.
-Exit Rooms: E-River 1_SW, S-Triceratops_SE, W-Triceratops_NW
+Room Name: Dilophosaurus_NE
+Room Description: This is the North East corner of the Dilophosaurus enclosure.
+Exit Rooms: E-River 1_SW, S-Dilophosaurus_SE, W-Dilophosaurus_NW
+Room Name: Dilophosaurus_NW
+Room Description: This is the North West corner of the Dilophosaurus enclosure.
+Exit Rooms: N-Hallway 10, E-Dilophosaurus_NE, S-Dilophosaurus_SW, W-Hallway 9
+Room Name: Dilophosaurus_SW
+Room Description: This is the South West corner of the Dilophosaurus enclosure.
+Exit Rooms: N-Dilophosaurus_NW, E-Dilophosaurus_SE
+Room Name: Dilophosaurus_SE
+Room Description: This is the South East corner of the Dilophosaurus enclosure.
+Exit Rooms: N-Dilophosaurus_NE, E-Dilophosaurus Control, S-Hallway 7, W-Dilophosaurus_SW
 Room Name: Triceratops_NW
 Room Description: This is the North West corner of the Triceratops enclosure.
-Exit Rooms: N-Hallway 10, E-Triceratops_NE, S-Triceratops_SW, W-Hallway 9
-Room Name: Triceratops_SW
-Room Description: This is the South West corner of the Triceratops enclosure.
-Exit Rooms: N-Triceratops_NW, E-Triceratops_SE
+Exit Rooms: E-Triceratops_NE, S-Triceratops_SW, W-Hallway 13
+Room Name: Triceratops_NE
+Room Description: This is the North East corner of the Triceratops enclosure.
+Exit Rooms: E-Triceratops Control, S-Triceratops_SE, W-Triceratops_NW
 Room Name: Triceratops_SE
 Room Description: This is the South East corner of the Triceratops enclosure.
-Exit Rooms: N-Triceratops_NE, E-Triceratops Control, S-Hallway 7, W-Triceratops_SW
-Room Name: Dilophasauras_NW
-Room Description: This is the North West corner of the Dilophasauras enclosure.
-Exit Rooms: E-Dilophasauras_NE, S-Dilophasauras_SW, W-Hallway 13
-Room Name: Dilophasauras_NE
-Room Description: This is the North East corner of the Dilophasauras enclosure.
-Exit Rooms: E-Dilophasauras Control, S-Dilophasauras_SE, W-Dilophasauras_NW
-Room Name: Dilophasauras_SE
-Room Description: This is the South East corner of the Dilophasauras enclosure.
-Exit Rooms: N-Dilophasauras_NE, W-Dilophasauras_SW
-Room Name: Dilophasauras_SW
-Room Description: This is the South West corner of the Dilophasauras enclosure.
-Exit Rooms: N-Dilophasauras_NW, E-Dilophasauras_SE, S-Hallway 10
+Exit Rooms: N-Triceratops_NE, W-Triceratops_SW
+Room Name: Triceratops_SW
+Room Description: This is the South West corner of the Triceratops enclosure.
+Exit Rooms: N-Triceratops_NW, E-Triceratops_SE, S-Hallway 10
 Room Name: Pterodactyl_NW
 Room Description: This is the North West corner of the Pterodactyl enclosure.
 Exit Rooms: E-Pterodactyl_NE, S-Pterodactyl_SW, W-Bridge_S
