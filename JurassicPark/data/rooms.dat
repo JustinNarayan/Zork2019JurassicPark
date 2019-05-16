@@ -2,94 +2,94 @@ Room Name: Hallway 1
 Room Description: You are on a pathway. In front of you is the Visitor Centre, behind is the Boat Landing.
 Exit Rooms: N-Visitor Centre_SE, S-Boat Landing_B
 Room Name: Hallway 2
-Room Description:  You are on a pathway. To the left are the Staff Quarters and to your right is the Visitor Centre.
+Room Description:  You are on a pathway. To the left are the Staff Quarters and to the right is the Visitor Centre.
 Exit Rooms: E-Visitor Centre_NW, W-Staff Quarters_NE
 Room Name: Hallway 3
-Room Description:  You are on a pathway. To the left is the Visitor Centre and to your right is the Bronchiosauras enclosure.
+Room Description:  You are on a pathway. To the left is the Visitor Centre and to the right is the Bronchiosauras enclosure.
 Exit Rooms: E-Bronchiosauras_NW, W-Visitor Centre_NE
 Room Name: Hallway 4
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Bronchiosauras enclosure and to the right is the Beach.
 Exit Rooms: E-Beach 1_S, W-Bronchiosauras_NE
 Room Name: Hallway 5
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Beach and to the right is the Aquatic Centre.
 Exit Rooms: E-Aquatic_NW, W-Beach 1_S
 Room Name: Hallway 6
-Room Description:  You are on a pathway. In front of you is an Equipment Yard, behind you is the Staff Quaters.
+Room Description:  You are on a pathway. In front of you is an Equipment Yard and behind you is the Staff Quaters.
 Exit Rooms: N-Equipment Yard, S-Staff Quarters_NW
 Room Name: Hallway 7
-Room Description:  This is a hallway.
+Room Description: You are on a pathway. In front of you is the Triceratops enclosure and behind you is the Visitor Centre.
 Exit Rooms: N-Triceratops_NE, S-Visitor Centre_NW
 Room Name: Hallway 8
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Beach and to the right is the Spinosaurus enclosure.
 Exit Rooms: E-Spinosauras_SW, W-Beach 1_N
 Room Name: Hallway 9
-Room Description:  You are on a pathway. To the left is the Quarry, to the right is the Triceratops enclosure.
+Room Description:  You are on a pathway. To the left is the Quarry and to the right is the Triceratops enclosure.
 Exit Rooms: E-Triceratops_NW, W-Quarry_S
 Room Name: Hallway 10
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Dilophosauras enclosure and behind you is the Triceratops enclosure.
 Exit Rooms: N-Dilophosauras_SW, S-Triceratops_NW
 Room Name: Hallway 11
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is are the plains and behind you is the Spinosauras enclosure.
 Exit Rooms: N-Plains_W, S-Spinosauras_NE
 Room Name: Hallway 12
-Room Description:  You are on a pathway. In front of you is the Pterodactyl enclosure, behind you is the Quarry
+Room Description:  You are on a pathway. In front of you is the Pterodactyl enclosure and behind you is the Quarry
 Exit Rooms: N-Pterodactyl_SE, S-Quarry_N
 Room Name: Hallway 13
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Pteradactyl enclosure and to the right is the Dilophosauras enclosure. 
 Exit Rooms: E-Dilophosauras_NW, W-Pterodactyl_SE
 Room Name: Hallway 14
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Server Room and behind you is the Mechanical Room.
 Exit Rooms: N-Server Room, S-Mechanical Room_W
 Room Name: Hallway 15
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Mechanical Room and to the right is the Munitions Shed. 
 Exit Rooms: E-Munitions Shed_NW, W-Mechanical Room_E
 Room Name: Hallway 16
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Communications Centre and behind you is the Munitions Shed. 
 Exit Rooms: N-Communications Centre_SE, S-Munitions Shed_NW
 Room Name: Hallway 17
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Server Room and to the right is the Communications Centre. 
 Exit Rooms: E-Communications Centre_SW, W-Server Room
 Room Name: Hallway 18
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is a Lake and to the right is the Server Room.
 Exit Rooms: E-Server Room, W-Lake
 Room Name: Hallway 19
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Stegosauas enclosure and behind you is a Lake. 
 Exit Rooms: N-Stegosauras_SE, S-Lake
 Room Name: Hallway 20
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the T-Rex enclosure and behind you is the Communications Centre. 
 Exit Rooms: N-Trex_SE, S-Communications Centre_NW
 Room Name: Hallway 21
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Stegosauas enclosure and to the right is the T-Rex enclosure.
 Exit Rooms: E-Trex_SW, W-Stegosauras_NE
 Room Name: Hallway 22
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Records room and behind you is the Stegosauras enclosure. 
 Exit Rooms: N-Records_E, S-Stegosauras_NE
 Room Name: Hallway 23
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the T-Rex enclosure and to the right are the Cabins. 
 Exit Rooms: E-Cabin, W-Trex_NE
 Room Name: Hallway 24
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Waterfall and behind you are the Cabins.
 Exit Rooms: N-Waterfall, S-Cabin
 Room Name: Hallway 25
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the right is a Cliff and behind you is the Records Room.
 Exit Rooms: E-Cliff 2_W, S-Records_E
 Room Name: Hallway 26
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is the Main Control Centre. To the left is the Waterfall.
 Exit Rooms: E-Waterfall, W-Main Control Centre_SE
 Room Name: Hallway 27
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the right is a Cliff and behind you is the Velociraptor enclosure. 
 Exit Rooms: E-Cliff 1_SW, S-Velociraptor_NE
 Room Name: Hallway 28
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. To the left is a Cliff and behind you is the Breeding Centre.
 Exit Rooms: S-Breeding Centre_W, W-Cliff 1_SE
 Room Name: Hallway 29
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Breeding Centre and behind you are the Hills. 
 Exit Rooms: N-Breeding Centre_C, S-Hills_NE
 Room Name: Hallway 30
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. to the left is the Jungle and to the right are the Hills.
 Exit Rooms: E-Hills_NW, W-Jungle_SE
 Room Name: Hallway 31
-Room Description:  This is a hallway.
+Room Description:  You are on a pathway. In front of you is the Jungle and behind you is the Observatory. 
 Exit Rooms: N-Jungle_SE, S-Observatory_E
 Room Name: Boat Landing_A
 Room Description: This is the Boat Landing, where you start. To your right is a shed which looked to have supply in it.
@@ -98,7 +98,7 @@ Room Name: Supply Shed
 Room Description:  This is the Boat Landing, where you start. To your right is a shed which looked to have supply in it and there appears to be a clearing ahead of you.
 Exit Rooms: W-Boat Landing_B
 Room Name: Boat Landing_B
-Room Description: You have entered the facility, good luck.
+Room Description: You have entered the facility, good luck. In front of you, you can see the Visitor Centre in the distance.
 Exit Rooms: N-Hallway 1, E-Supply Shed
 Room Name: Visitor Centre_SE
 Room Description: You have entered the South East corner of the Visitor Centre. 
