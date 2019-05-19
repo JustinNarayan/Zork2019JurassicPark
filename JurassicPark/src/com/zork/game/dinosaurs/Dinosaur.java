@@ -1,7 +1,9 @@
 package com.zork.game.dinosaurs;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import com.zork.game.Game;
 import com.zork.game.Room;
 
 public abstract class Dinosaur {
@@ -19,6 +21,9 @@ public abstract class Dinosaur {
 	protected ArrayList<Room> roomsInRange;
 	
 	
+	protected HashMap<String, Room> getMap() {
+		return Game.getMasterRoomMap();
+	}
 	
 	public Room getCurrentRoom() {
 		return currentRoom;
@@ -34,6 +39,7 @@ public abstract class Dinosaur {
 
 	public void setStartRoom(Room startRoom) {
 		this.startRoom = startRoom;
+		this.startRoom.getRoomInventory().addDinosaur(this);
 	}
 	
 	

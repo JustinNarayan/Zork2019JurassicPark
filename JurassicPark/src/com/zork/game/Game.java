@@ -10,6 +10,7 @@ import java.util.Scanner;
 import com.zork.game.dinosaurs.Bronchiosaurus;
 import com.zork.game.dinosaurs.Dilophosaurus;
 import com.zork.game.dinosaurs.Dinosaur;
+import com.zork.game.dinosaurs.DinosaurController;
 import com.zork.game.dinosaurs.Pterodactyl;
 import com.zork.game.dinosaurs.Spinosaurus;
 import com.zork.game.dinosaurs.Stegosaurus;
@@ -43,7 +44,7 @@ public class Game {
 	private final int TIME_IN_HOUR = 60;
 	private final String SIREN_POSITION = "Supply Shed";
 
-	private Dinosaur test;
+	private DinosaurController dinosaurController;
 
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -132,9 +133,8 @@ public class Game {
 		// Enter the main command loop. Here we repeatedly read commands and execute
 		// them until the game is over.
 
-		test = new Velociraptor(masterRoomMap.get("BREEDING_CENTRE_C"));
-		masterRoomMap.get("HALLWAY_27").getRoomInventory().addDinosaur(new TyrannosaurusRex(masterRoomMap.get("HALLWAY_27")));
-
+		dinosaurController = new DinosaurController();
+		
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
@@ -185,8 +185,7 @@ public class Game {
 		String commandWord = command.getCommandWord();
 		switch(commandWord) {
 		case "test":
-			test.moveToNewRoom();
-			test.printCurrentRoom();
+			dinosaurController.printAllDinosaurs();
 			break;
 		case "help":
 			printHelp();

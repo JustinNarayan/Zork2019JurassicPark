@@ -8,7 +8,7 @@ import com.zork.game.Room;
 
 public class TyrannosaurusRex extends Dinosaur {
 	
-	public TyrannosaurusRex(Room startRoom) {
+	public TyrannosaurusRex(Room startRoom, String name) {
 		roomsInRange = new ArrayList<Room>();
 		roomsInRange.add(getMap().get("TREX_SW"));
 		roomsInRange.add(getMap().get("TREX_SC"));
@@ -24,10 +24,7 @@ public class TyrannosaurusRex extends Dinosaur {
 		
 		this.startRoom = startRoom;
 		this.currentRoom = startRoom;
-	}
-
-	private HashMap<String, Room> getMap() {
-		return Game.getMasterRoomMap();
+		this.name = name;
 	}
 
 	public String toString() {

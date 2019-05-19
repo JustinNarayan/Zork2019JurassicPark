@@ -8,22 +8,20 @@ import com.zork.game.Room;
 
 public class Bronchiosaurus extends Dinosaur {
 	
-	public Bronchiosaurus(Room startRoom) {
+	public Bronchiosaurus(Room startRoom, String name) {
 		roomsInRange = new ArrayList<Room>();
 		roomsInRange.add(getMap().get("BRONCHIOSAURUS_NW"));	
 		roomsInRange.add(getMap().get("BRONCHIOSAURUS_SW"));	
 		roomsInRange.add(getMap().get("BRONCHIOSAURUS_NE"));	
 		roomsInRange.add(getMap().get("BRONCHIOSAURUS_SE"));	
 		roomsInRange.add(getMap().get("HALLWAY_3"));	
-		roomsInRange.add(getMap().get("HALLWAY_4"));	
+		roomsInRange.add(getMap().get("HALLWAY_4"));
+		
 		this.startRoom = startRoom;
 		this.currentRoom = startRoom;
+		this.name = name;
 	}
-
-	private HashMap<String, Room> getMap() {
-		return Game.getMasterRoomMap();
-	}
-
+	
 	public String toString() {
 		return super.toString("Bronchiosaurus");
 	}
