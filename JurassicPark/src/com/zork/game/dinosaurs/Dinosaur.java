@@ -1,6 +1,8 @@
-package com.zork.game;
+package com.zork.game.dinosaurs;
 
 import java.util.ArrayList;
+
+import com.zork.game.Room;
 
 public abstract class Dinosaur {
 	//The room in which the dinosaur currently is
@@ -53,7 +55,6 @@ public abstract class Dinosaur {
 				direction="east";
 				break;
 			}
-			
 			Room nextRoom = currentRoom.nextRoom(direction);
 			if(nextRoom==null) {
 				//The dinosaur cannot move in this direction because there is no room
@@ -63,6 +64,7 @@ public abstract class Dinosaur {
 				//It will go in the loop until it moves into a valid position
 			} else {
 				//This is a valid room to move to
+				
 				if(!nextRoom.getRoomInventory().hasDinosaurs()) {
 					currentRoom.getRoomInventory().removeDinosaur(this);
 					currentRoom = nextRoom;
