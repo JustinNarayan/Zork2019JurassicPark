@@ -7,9 +7,15 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import com.zork.game.dinosaurs.Bronchiosaurus;
+import com.zork.game.dinosaurs.Dilophosaurus;
 import com.zork.game.dinosaurs.Dinosaur;
+import com.zork.game.dinosaurs.Pterodactyl;
+import com.zork.game.dinosaurs.Spinosaurus;
 import com.zork.game.dinosaurs.Stegosaurus;
+import com.zork.game.dinosaurs.Triceratops;
 import com.zork.game.dinosaurs.TyrannosaurusRex;
+import com.zork.game.dinosaurs.Velociraptor;
 
 import javazoom.jl.player.Player;
 
@@ -126,8 +132,8 @@ public class Game {
 		// Enter the main command loop. Here we repeatedly read commands and execute
 		// them until the game is over.
 
-		test = new Stegosaurus(masterRoomMap.get("CLIFF_2_W"));
-		masterRoomMap.get("CLIFF_2_E").getRoomInventory().addDinosaur(new TyrannosaurusRex(masterRoomMap.get("CLIFF_2_E")));
+		test = new Velociraptor(masterRoomMap.get("BREEDING_CENTRE_C"));
+		masterRoomMap.get("HALLWAY_27").getRoomInventory().addDinosaur(new TyrannosaurusRex(masterRoomMap.get("HALLWAY_27")));
 
 		boolean finished = false;
 		while (!finished) {
