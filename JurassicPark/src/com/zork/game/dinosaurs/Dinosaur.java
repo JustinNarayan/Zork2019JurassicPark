@@ -8,6 +8,9 @@ public abstract class Dinosaur {
 	//The room in which the dinosaur currently is
 	protected Room currentRoom;
 	
+	//East name to identify
+	protected String name;
+	
 	//The room in which the dinosaur's range moves out from
 	protected Room startRoom;
 	
@@ -75,6 +78,10 @@ public abstract class Dinosaur {
 				return currentRoom;
 			}
 		}
+	}
+	
+	public String toString(String s) {
+		return(s + " named " + name);
 	}
 	
 	//For testing purposes

@@ -45,6 +45,6 @@ public class Velociraptor extends Dinosaur {
 	}
 
 	public String toString() {
-		return "Velociraptor";
+		return super.toString("Velociraptor");
 	}
 }

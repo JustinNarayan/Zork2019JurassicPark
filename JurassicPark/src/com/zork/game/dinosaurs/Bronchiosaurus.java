@@ -25,6 +25,6 @@ public class Bronchiosaurus extends Dinosaur {
 	}
 
 	public String toString() {
-		return "Bronchiosaurus";
+		return super.toString("Bronchiosaurus");
 	}
 }

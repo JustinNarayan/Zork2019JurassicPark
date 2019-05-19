@@ -31,6 +31,6 @@ public class Stegosaurus extends Dinosaur {
 	}
 
 	public String toString() {
-		return "Stegosaurus";
+		return super.toString("Stegosaurus");
 	}
 }

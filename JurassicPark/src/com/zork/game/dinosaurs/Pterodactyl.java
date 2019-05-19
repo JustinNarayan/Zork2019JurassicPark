@@ -27,6 +27,6 @@ public class Pterodactyl extends Dinosaur {
 	}
 
 	public String toString() {
-		return "Pterodactyl";
+		return super.toString("Pterodactyl");
 	}
 }

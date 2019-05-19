@@ -28,6 +28,6 @@ public class Spinosaurus extends Dinosaur {
 	}
 
 	public String toString() {
-		return "Spinosaurus";
+		return super.toString("Spinosaurus");
 	}
 }

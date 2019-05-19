@@ -25,6 +25,6 @@ public class Triceratops extends Dinosaur {
 	}
 
 	public String toString() {
-		return "Triceratops";
+		return super.toString("Triceratops");
 	}
 }

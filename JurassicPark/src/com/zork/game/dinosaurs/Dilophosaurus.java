@@ -30,6 +30,6 @@ public class Dilophosaurus extends Dinosaur {
 	}
 
 	public String toString() {
-		return "Dilophosaurus";
+		return super.toString("Dilophosaurus");
 	}
 }
