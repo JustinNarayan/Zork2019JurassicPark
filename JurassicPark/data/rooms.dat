@@ -5,11 +5,11 @@ Room Name: Hallway 2
 Room Description:  You are on a pathway. To the left are the Staff Quarters and to the right is the Visitor Centre.
 Exit Rooms: E-Visitor Centre_NW, W-Staff Quarters_NE
 Room Name: Hallway 3
-Room Description:  You are on a pathway. To the left is the Visitor Centre and to the right is the Bronchiosauras enclosure.
-Exit Rooms: E-Bronchiosauras_NW, W-Visitor Centre_NE
+Room Description:  You are on a pathway. To the left is the Visitor Centre and to the right is the Bronchiosaurus enclosure.
+Exit Rooms: E-Bronchiosaurus_NW, W-Visitor Centre_NE
 Room Name: Hallway 4
-Room Description:  You are on a pathway. To the left is the Bronchiosauras enclosure and to the right is the Beach.
-Exit Rooms: E-Beach 1_S, W-Bronchiosauras_NE
+Room Description:  You are on a pathway. To the left is the Bronchiosaurus enclosure and to the right is the Beach.
+Exit Rooms: E-Beach 1_S, W-Bronchiosaurus_NE
 Room Name: Hallway 5
 Room Description:  You are on a pathway. To the left is the Beach and to the right is the Aquatic Centre.
 Exit Rooms: E-Aquatic_NW, W-Beach 1_S
@@ -21,7 +21,7 @@ Room Description: You are on a pathway. In front of you is the Dilophosaurus enc
 Exit Rooms: N-Dilophosaurus_NE, S-Visitor Centre_NW
 Room Name: Hallway 8
 Room Description:  You are on a pathway. To the left is the Beach and to the right is the Spinosaurus enclosure.
-Exit Rooms: E-Spinosauras_SW, W-Beach 1_N
+Exit Rooms: E-Spinosaurus_SW, W-Beach 1_N
 Room Name: Hallway 9
 Room Description:  You are on a pathway. To the left is the Quarry and to the right is the Dilophosaurus enclosure.
 Exit Rooms: E-Dilophosaurus_NW, W-Quarry_S
@@ -29,8 +29,8 @@ Room Name: Hallway 10
 Room Description:  You are on a pathway. In front of you is the Triceratops enclosure and behind you is the Dilophosaurus enclosure.
 Exit Rooms: N-Triceratops_SW, S-Dilophosaurus_NW
 Room Name: Hallway 11
-Room Description:  You are on a pathway. In front of you is are the plains and behind you is the Spinosauras enclosure.
-Exit Rooms: N-Plains_W, S-Spinosauras_NE
+Room Description:  You are on a pathway. In front of you is are the plains and behind you is the Spinosaurus enclosure.
+Exit Rooms: N-Plains_W, S-Spinosaurus_NE
 Room Name: Hallway 12
 Room Description:  You are on a pathway. In front of you is the Pterodactyl enclosure and behind you is the Quarry
 Exit Rooms: N-Pterodactyl_SE, S-Quarry_N
@@ -54,16 +54,16 @@ Room Description:  You are on a pathway. To the left is a Lake and to the right 
 Exit Rooms: E-Server Room, W-Lake
 Room Name: Hallway 19
 Room Description:  You are on a pathway. In front of you is the Stegosauas enclosure and behind you is a Lake. 
-Exit Rooms: N-Stegosauras_SE, S-Lake
+Exit Rooms: N-Stegosaurus_SE, S-Lake
 Room Name: Hallway 20
 Room Description:  You are on a pathway. In front of you is the T-Rex enclosure and behind you is the Communications Centre. 
 Exit Rooms: N-Trex_SE, S-Communications Centre_NW
 Room Name: Hallway 21
 Room Description:  You are on a pathway. To the left is the Stegosauas enclosure and to the right is the T-Rex enclosure.
-Exit Rooms: E-Trex_SW, W-Stegosauras_NE
+Exit Rooms: E-Trex_SW, W-Stegosaurus_NE
 Room Name: Hallway 22
-Room Description:  You are on a pathway. In front of you is the Records room and behind you is the Stegosauras enclosure. 
-Exit Rooms: N-Records_E, S-Stegosauras_NE
+Room Description:  You are on a pathway. In front of you is the Records room and behind you is the Stegosaurus enclosure. 
+Exit Rooms: N-Records_E, S-Stegosaurus_NE
 Room Name: Hallway 23
 Room Description:  You are on a pathway. To the left is the T-Rex enclosure and to the right are the Cabins. 
 Exit Rooms: E-Cabin, W-Trex_NE
@@ -210,7 +210,7 @@ Room Description: This is the east end of the records room.
 Exit Rooms: N-Hallway 25, S-Hallway 22, W-Records_W
 Room Name: Cliff 2_W
 Room Description: This is the west end of the cliff.
-Exit Rooms: E-Cliff 2_, W-Hallway 25
+Exit Rooms: E-Cliff 2_E, W-Hallway 25
 Room Name: Cliff 2_E
 Room Description: This is the East end of the cliff.
 Exit Rooms: E-Main Control Centre_SW, W-Cliff 2_W
@@ -328,9 +328,9 @@ Exit Rooms: N-Beach 1_N, S-Beach 1_S
 Room Name: Beach 1_S
 Room Description: This is the south end of a beach.
 Exit Rooms: N-Beach 1_C, E-Hallway 5, W-Hallway 4
-Room Name: Bronchiosauras Control
-Room Description: This is the control centre for the Bronchiosauras enclosure.
-Exit Rooms: N-Bronchiosauras_SE
+Room Name: Bronchiosaurus Control
+Room Description: This is the control centre for the Bronchiosaurus enclosure.
+Exit Rooms: N-Bronchiosaurus_SE
 Room Name: Dilophosaurus Control
 Room Description: This is the control centre for the Dilophosaurus enclosure.
 Exit Rooms: W-Dilophosaurus_SE
@@ -340,30 +340,30 @@ Exit Rooms: W-Triceratops_NE
 Room Name: Pterodactyl Control
 Room Description: This is the control centre for the Pterodactyl enclosure.
 Exit Rooms: E-Pterodactyl_SW
-Room Name: Stegosauras Control
-Room Description: This is the control centre for the Stegosauras enclosure.
-Exit Rooms: W-Stegosauras_SE
+Room Name: Stegosaurus Control
+Room Description: This is the control centre for the Stegosaurus enclosure.
+Exit Rooms: W-Stegosaurus_SE
 Room Name: Trex Control
 Room Description: This is the control centre for the Trex enclosure.
 Exit Rooms: W-Trex_SE
 Room Name: Velociraptor Control
 Room Description: This is the control centre for the Velociraptor enclosure.
 Exit Rooms: S-Velociraptor_NW
-Room Name: Spinosauras Control
-Room Description: This is the control centre for the Spinosauras enclosure.
-Exit Rooms: W-Spinosauras_NE
-Room Name: Bronchiosauras_NW
-Room Description: This is the North West corner of the Bronchiosauras enclosure.
-Exit Rooms: E-Bronchiosauras_NE, S-Bronchiosauras_SW, W-Hallway 3
-Room Name: Bronchiosauras_NE
-Room Description: This is the North East corner of the Bronchiosauras enclosure.
-Exit Rooms: E-Hallway 4, S-Bronchiosauras_SE, W-Bronchiosauras_NW
-Room Name: Bronchiosauras_SE
-Room Description: This is the South East corner of the Bronchiosauras enclosure.
-Exit Rooms: N-Bronchiosauras_NE, S-Bronchiosauras Control, W-Bronchiosauras_SW
-Room Name: Bronchiosauras_SW
-Room Description: This is the South West corner of the Bronchiosauras enclosure.
-Exit Rooms: N-Bronchiosauras_NW, E-Bronchiosauras_SE
+Room Name: Spinosaurus Control
+Room Description: This is the control centre for the Spinosaurus enclosure.
+Exit Rooms: W-Spinosaurus_NE
+Room Name: Bronchiosaurus_NW
+Room Description: This is the North West corner of the Bronchiosaurus enclosure.
+Exit Rooms: E-Bronchiosaurus_NE, S-Bronchiosaurus_SW, W-Hallway 3
+Room Name: Bronchiosaurus_NE
+Room Description: This is the North East corner of the Bronchiosaurus enclosure.
+Exit Rooms: E-Hallway 4, S-Bronchiosaurus_SE, W-Bronchiosaurus_NW
+Room Name: Bronchiosaurus_SE
+Room Description: This is the South East corner of the Bronchiosaurus enclosure.
+Exit Rooms: N-Bronchiosaurus_NE, S-Bronchiosaurus Control, W-Bronchiosaurus_SW
+Room Name: Bronchiosaurus_SW
+Room Description: This is the South West corner of the Bronchiosaurus enclosure.
+Exit Rooms: N-Bronchiosaurus_NW, E-Bronchiosaurus_SE
 Room Name: Dilophosaurus_NE
 Room Description: This is the North East corner of the Dilophosaurus enclosure.
 Exit Rooms: E-River 1_SW, S-Dilophosaurus_SE, W-Dilophosaurus_NW
@@ -400,18 +400,18 @@ Exit Rooms: N-Pterodactyl_NE, E-Hallway 13, S-Hallway 12, W-Pterodactyl_SW
 Room Name: Pterodactyl_SW
 Room Description: This is the South West corner of the Pterodactyl enclosure.
 Exit Rooms: N-Pterodactyl_NW, E-Pterodactyl_SE, W-Pterodactyl Control
-Room Name: Stegosauras_NW
-Room Description: This is the North West corner of the Stegosauras enclosure.
-Exit Rooms: E-Stegosauras_NE, S-Stegosauras_SW
-Room Name: Stegosauras_NE
-Room Description: This is the North East corner of the Stegosauras enclosure.
-Exit Rooms: E-Hallway 21, S-Stegosauras_SE, W-Stegosauras_NW, N-Hallway 22
-Room Name: Stegosauras_SW
-Room Description: This is the South West corner of the Stegosauras enclosure.
-Exit Rooms: E-Stegosauras_SE, N-Stegosauras
-Room Name: Stegosauras_SE
-Room Description: This is the North West corner of the Stegosauras enclosure.
-Exit Rooms: E-Stegosauras_Control, S-Hallway 19, W-Stegosauras_SW, N-Stegosauras_NE
+Room Name: Stegosaurus_NW
+Room Description: This is the North West corner of the Stegosaurus enclosure.
+Exit Rooms: E-Stegosaurus_NE, S-Stegosaurus_SW
+Room Name: Stegosaurus_NE
+Room Description: This is the North East corner of the Stegosaurus enclosure.
+Exit Rooms: E-Hallway 21, S-Stegosaurus_SE, W-Stegosaurus_NW, N-Hallway 22
+Room Name: Stegosaurus_SW
+Room Description: This is the South West corner of the Stegosaurus enclosure.
+Exit Rooms: E-Stegosaurus_SE, N-Stegosaurus
+Room Name: Stegosaurus_SE
+Room Description: This is the North West corner of the Stegosaurus enclosure.
+Exit Rooms: E-Stegosaurus_Control, S-Hallway 19, W-Stegosaurus_SW, N-Stegosaurus_NE
 Room Name: Trex_NW
 Room Description: This is the North West corner of the T-Rex enclosure.
 Exit Rooms: S-Trex_SW, E-Trex_NC
@@ -430,15 +430,15 @@ Exit Rooms: W-Trex_NC, S-Trex_SE, E-Hallway 23
 Room Name: Trex_SE
 Room Description: This is the South East corner of the T-Rex enclosure.
 Exit Rooms: N-Trex_NE, S-Hallway 20, W-Trex_SC, E-Trex_Control
-Room Name: Spinosauras_NE
-Room Description: This is the North East corner of the Spinosauras enclosure.
-Exit Rooms: W-Spinosauras_NW, N-Hallway 11, E-Spinosauras Control
-Room Name: Spinosauras_NW
-Room Description: This is the North West corner of the Spinosauras enclosure.
-Exit Rooms: S-Spinosauras_SW, E-Spinosauras_NE
-Room Name: Spinosauras_SW
-Room Description: This is the South West corner of the Spinosauras enclosure.
-Exit Rooms: N-Spinosauras_NW, W-Hallway 8
+Room Name: Spinosaurus_NE
+Room Description: This is the North East corner of the Spinosaurus enclosure.
+Exit Rooms: W-Spinosaurus_NW, N-Hallway 11, E-Spinosaurus Control
+Room Name: Spinosaurus_NW
+Room Description: This is the North West corner of the Spinosaurus enclosure.
+Exit Rooms: S-Spinosaurus_SW, E-Spinosaurus_NE
+Room Name: Spinosaurus_SW
+Room Description: This is the South West corner of the Spinosaurus enclosure.
+Exit Rooms: N-Spinosaurus_NW, W-Hallway 8
 Room Name: Aquatic_NW
 Room Description: This is the North West corner of the Aquatic.
 Exit Rooms: W-Hallway 5, S-Aquatic_SW

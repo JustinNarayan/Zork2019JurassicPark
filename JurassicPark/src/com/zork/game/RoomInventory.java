@@ -2,6 +2,8 @@ package com.zork.game;
 
 import java.util.ArrayList;
 
+import com.zork.game.dinosaurs.Dinosaur;
+
 public class RoomInventory extends Inventory {
 	private ArrayList<Dinosaur> dinosaurs = new ArrayList<Dinosaur>();
 	

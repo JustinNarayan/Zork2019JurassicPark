@@ -6,6 +6,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
+
+import com.zork.game.dinosaurs.Dinosaur;
+import com.zork.game.dinosaurs.Stegosaurus;
+import com.zork.game.dinosaurs.TyrannosaurusRex;
+
 import javazoom.jl.player.Player;
 
 /**
@@ -24,7 +29,7 @@ import javazoom.jl.player.Player;
  * creates the parser and starts the game. It also evaluates the commands that
  * the parser returns.
  */
-class Game {
+public class Game {
 	private Parser parser;
 	private Room currentRoom;
 	private int timeLeft = -1; // -1 means time has not been initialized; 1440 minutes when really initialized
@@ -121,8 +126,8 @@ class Game {
 		// Enter the main command loop. Here we repeatedly read commands and execute
 		// them until the game is over.
 
-		test = new TyrannosaurusRex(masterRoomMap.get("TREX_NW"));
-		masterRoomMap.get("TREX_NC").getRoomInventory().addDinosaur(new TyrannosaurusRex(masterRoomMap.get("TREX_NC")));
+		test = new Stegosaurus(masterRoomMap.get("CLIFF_2_W"));
+		masterRoomMap.get("CLIFF_2_E").getRoomInventory().addDinosaur(new TyrannosaurusRex(masterRoomMap.get("CLIFF_2_E")));
 
 		boolean finished = false;
 		while (!finished) {
