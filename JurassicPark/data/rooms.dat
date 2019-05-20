@@ -95,7 +95,7 @@ Room Name: Boat Landing_A
 Room Description: This is the Boat Landing, where you start. To your right is a shed which looked to have supply in it.
 Exit Rooms: E-Supply Shed
 Room Name: Supply Shed
-Room Description:  This is the Boat Landing, where you start. To your right is a shed which looked to have supply in it and there appears to be a clearing ahead of you.
+Room Description:  
 Exit Rooms: W-Boat Landing_B
 Room Name: Boat Landing_B
 Room Description: You have entered the facility, good luck. In front of you, you can see the Visitor Centre in the distance.
@@ -269,13 +269,13 @@ Room Name: Cliff 1_SE
 Room Description: This is the South East corner of the cliff.
 Exit Rooms: E-Hallway 28, W-Cliff 1_SW
 Room Name: Breeding Centre_W
-Room Description: This is the west end of the breeding centre.
+Room Description: You are in the Breeding Centre. In front of you is a door which leads to an out door pathway and to the building extends further to your right.
 Exit Rooms: N-Hallway 28, E-Breeding Centre_C
 Room Name: Breeding Centre_C
-Room Description: This is the centre of the breeding centre.
+Room Description: You are in the Breeding Centre. The building extends further to your left and right. Behind you is a door which leads to the hills. 
 Exit Rooms: E-Breeding Centre_E, S-Hallway 29, W-Breeding Centre_W
 Room Name: Breeding Centre_E
-Room Description: This is the east end of the breeding centre.
+Room Description: You are in the Breeding Centre. To your left, the building extends further. 
 Exit Rooms: W-Breeding Centre_C
 Room Name: Hills_NW
 Room Description: This is the North West corner of the hills.
@@ -308,13 +308,13 @@ Room Name: Jungle_SW
 Room Description: This is the South West corner of the jungle.
 Exit Rooms: N-Jungle_NW, E-Jungle_SE
 Room Name: Observatory_E
-Room Description: This is the east end of the observatory.
+Room Description: You are in the Observatory. In front of you is a door, in the distance you can see a jungle. The observatory extends further to the left. 
 Exit Rooms: N-Hallway 31, W-Observatory_W
 Room Name: Observatory_W
-Room Description: This is the west end of the observatory.
+Room Description: You are in the Observatory. Behind you there is a door which leads to the mountain peak and the observatory extends further to the right.
 Exit Rooms: E-Observatory_E, S-Mountain Top
 Room Name: Mountain Top
-Room Description: You are at the peak of the mountain. In front of you is the obvervatory and behind you is a cave.
+Room Description: You are at the peak of the mountain. In front of you is the observatory and behind you is a cave.
 Exit Rooms: N-Observatory_W, S-Cave 2
 Room Name: Cave 2
 Room Description: You have stumbled upon a cave. In front of the cave is the mountain top and behind you is the north end of the beach.
@@ -329,28 +329,28 @@ Room Name: Beach 1_S
 Room Description: You are on a Beach. In the distance you can see the Aquatic Centre to the right and the Beach extends quite a bit further in front of you.
 Exit Rooms: N-Beach 1_C, E-Hallway 5, W-Hallway 4
 Room Name: Bronchiosaurus Control
-Room Description: This is the control centre for the Bronchiosaurus enclosure.
+Room Description: You are in the control centre for the Bronchiosaurus enclosure, the exit is in front of you.
 Exit Rooms: N-Bronchiosaurus_SE
 Room Name: Dilophosaurus Control
-Room Description: This is the control centre for the Dilophosaurus enclosure.
+Room Description: You are in the control centre for the Dilophosaurus enclosure, the exit is to your left.
 Exit Rooms: W-Dilophosaurus_SE
 Room Name: Triceratops Control
-Room Description: This is the control centre for the Triceratops enclosure.
+Room Description: You are in the control centre for the Triceratops enclosure, the exit is to your left.
 Exit Rooms: W-Triceratops_NE
 Room Name: Pterodactyl Control
-Room Description: This is the control centre for the Pterodactyl enclosure.
+Room Description: You are in the control centre for the Pterodactyl enclosure, the exit is to your right.
 Exit Rooms: E-Pterodactyl_SW
 Room Name: Stegosaurus Control
-Room Description: This is the control centre for the Stegosaurus enclosure.
+Room Description: You are in the control centre for the Stegosaurus enclosure, the exit is to your left.
 Exit Rooms: W-Stegosaurus_SE
 Room Name: Trex Control
-Room Description: This is the control centre for the Trex enclosure.
+Room Description: You are in the control centre for the T-Rex enclosure, the exit is to your left.
 Exit Rooms: W-Trex_SE
 Room Name: Velociraptor Control
-Room Description: This is the control centre for the Velociraptor enclosure.
+Room Description: You are in the control centre for the Velociraptor enclosure, the exit is behind you.
 Exit Rooms: S-Velociraptor_NW
 Room Name: Spinosaurus Control
-Room Description: This is the control centre for the Spinosaurus enclosure.
+Room Description: You are in the control centre for the Stegosaurus enclosure, the exit is to your left.
 Exit Rooms: W-Spinosaurus_NE
 Room Name: Bronchiosaurus_NW
 Room Description: This is the North West corner of the Bronchiosaurus enclosure.
