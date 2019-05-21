@@ -203,10 +203,10 @@ Room Name: Cabin
 Room Description: You are in a Cabin. To your left you can see the T-Rex enclosure in the distance and in front of you, you can see a waterfall in the distance.
 Exit Rooms: N-Hallway 24, W-Hallway 23
 Room Name: Records_W
-Room Description: This is the west end of the records room.
+Room Description: You are in the Records Room. The room extends further to the right.
 Exit Rooms: E-Records_E
 Room Name: Records_E
-Room Description: This is the east end of the records room.
+Room Description: You are in the Record Room. The room extends furhter to the left, in front of you and behind you are pathways.
 Exit Rooms: N-Hallway 25, S-Hallway 22, W-Records_W
 Room Name: Cliff 2_W
 Room Description: You are on a cliff. To your left is a pathway and to the right is more of the cliff. 
@@ -260,13 +260,13 @@ Room Name: Helipad
 Room Description: You are on a helipad. Behind you is a cliff and to your left is the airstrip. 
 Exit Rooms: S-Cliff 1_NW, W-Airstrip_S
 Room Name: Cliff 1_NW
-Room Description: This is the North West corner of the cliff.
+Room Description: You are on the North West end of the Cliff. In front of you is a cliff and the cliff extends further behind you.
 Exit Rooms: N-Helipad, S-Cliff 1_SW
 Room Name: Cliff 1_SW
-Room Description: This is the South West corner of the cliff.
+Room Description: You are on the South West end of the Cliff. The cliff extends further in front of you and to the right and there is a pathway to the left. 
 Exit Rooms: N-Cliff 1_NW, E-Cliff 1_SE, W-Hallway 27
 Room Name: Cliff 1_SE
-Room Description: This is the South East corner of the cliff.
+Room Description: You are on the South East corner of the Cliff. The cliff extends further to the left and there's a pathway which may lead to the Breeding Centre behind you.
 Exit Rooms: E-Hallway 28, W-Cliff 1_SW
 Room Name: Breeding Centre_W
 Room Description: You are in the Breeding Centre. In front of you is a door which leads to an out door pathway and to the building extends further to your right.
@@ -278,34 +278,34 @@ Room Name: Breeding Centre_E
 Room Description: You are in the Breeding Centre. To your left, the building extends further. 
 Exit Rooms: W-Breeding Centre_C
 Room Name: Hills_NW
-Room Description: This is the North West corner of the hills.
+Room Description: You are on the hills. They go on further to the east and south. To the west is a pathway which leads to the Jungle.
 Exit Rooms: E-Hills_NE, S-Hills_SW, W-Hallway 30
 Room Name: Hills_NE
-Room Description: This is the North East corner of the hills.
+Room Description: You are on the hills. They go on further to the west and south. To the norht is a pathway which leads to the Breeding Centre.
 Exit Rooms: N-Hallway 29, S-Hills_SE, W-Hills_NW
 Room Name: Hills_SE
-Room Description: This is the South East corner of the hills
+Room Description: You are on the hills. They go on further to the north and west. There are plains to the south.
 Exit Rooms: N-Hills_NE, S-Plains_E, W-Hills_SW
 Room Name: Hills_SW
-Room Description: This is the South West corner of the hills
+Room Description: You are on the hills. They go further to the north and east. There are plains to the south.
 Exit Rooms: N-Hills_NW, E-Hills_SE, S-Plains_W
 Room Name: Plains_W
-Room Description: This is the west end of the plains.
+Room Description: You are on the plains. In front of you are hills, behind you is a pathway and to your right are more plains.
 Exit Rooms: N-Hills_SW, E-Plains_E, S-Hallway 11
 Room Name: Plains_E
-Room Description: This is the east end of the plains.
+Room Description: You are on the plains. In front of you are the hills and to your left and more plains. 
 Exit Rooms: N-Hills_SE, W-Plains_W
 Room Name: Jungle_NW
-Room Description: This is the North West corner of the jungle.
+Room Description: You are in a Jungle. There is the Velociraptor enclosure to your left and in front of you. The Jungle extends further south and east.
 Exit Rooms: N-Velociraptor_NE, E-Jungle_NE, S-Jungle_SW, W-Velociraptor_SC
 Room Name: Jungle_NE
-Room Description: This is the North East corner of the jungle.
+Room Description: You are in a Jungle. The jungle extends further south and west.
 Exit Rooms: S-Jungle_SE, W-Jungle_NW
 Room Name: Jungle_SE
-Room Description: This is the South East corner of the jungle.
+Room Description: You are in a Jungle. The jungle extends further west and north. There are pathways to the south and east. 
 Exit Rooms: N-Jungle_NE, E-Hallway 30, S-Hallway 31, W-Jungle_SW
 Room Name: Jungle_SW
-Room Description: This is the South West corner of the jungle.
+Room Description: You are in a Jungle. The jungle extends further north and east.
 Exit Rooms: N-Jungle_NW, E-Jungle_SE
 Room Name: Observatory_E
 Room Description: You are in the Observatory. In front of you is a door, in the distance you can see a jungle. The observatory extends further to the left. 
@@ -353,16 +353,16 @@ Room Name: Spinosaurus Control
 Room Description: You are in the control centre for the Stegosaurus enclosure, the exit is to your left.
 Exit Rooms: W-Spinosaurus_NE
 Room Name: Bronchiosaurus_NW
-Room Description: This is the North West corner of the Bronchiosaurus enclosure.
+Room Description: You are in the Bronchiosaurus enclosure. To the left is a pathway which leads to the Visitor Centre and the enclosure extends further south and east.
 Exit Rooms: E-Bronchiosaurus_NE, S-Bronchiosaurus_SW, W-Hallway 3
 Room Name: Bronchiosaurus_NE
-Room Description: This is the North East corner of the Bronchiosaurus enclosure.
+Room Description: You are in the Bronchiosaurus enclosure. To the right is a pathway which leads to the Beach and the enclosure extends further south and west.
 Exit Rooms: E-Hallway 4, S-Bronchiosaurus_SE, W-Bronchiosaurus_NW
 Room Name: Bronchiosaurus_SE
-Room Description: This is the South East corner of the Bronchiosaurus enclosure.
+Room Description: You are in the Bronchiosaurus enclosure. The enclosure extends further north, south and west. 
 Exit Rooms: N-Bronchiosaurus_NE, S-Bronchiosaurus Control, W-Bronchiosaurus_SW
 Room Name: Bronchiosaurus_SW
-Room Description: This is the South West corner of the Bronchiosaurus enclosure.
+Room Description: You are in the Bronchiosaurus enclosure. The enclosure extend further north and east.
 Exit Rooms: N-Bronchiosaurus_NW, E-Bronchiosaurus_SE
 Room Name: Dilophosaurus_NE
 Room Description: This is the North East corner of the Dilophosaurus enclosure.
@@ -431,22 +431,22 @@ Room Name: Trex_SE
 Room Description: This is the South East corner of the T-Rex enclosure.
 Exit Rooms: N-Trex_NE, S-Hallway 20, W-Trex_SC, E-Trex_Control
 Room Name: Spinosaurus_NE
-Room Description: This is the North East corner of the Spinosaurus enclosure.
+Room Description: You are in the Spinosaurus enclosure. In front of you is a pathway, to your right is the Spinosaurus Control Room and the enclosure extends further south.
 Exit Rooms: W-Spinosaurus_NW, N-Hallway 11, E-Spinosaurus Control
 Room Name: Spinosaurus_NW
-Room Description: This is the North West corner of the Spinosaurus enclosure.
+Room Description: You are in the Spinosaurus enclosure. The enclosure extends further south and east.
 Exit Rooms: S-Spinosaurus_SW, E-Spinosaurus_NE
 Room Name: Spinosaurus_SW
-Room Description: This is the South West corner of the Spinosaurus enclosure.
+Room Description: You are in the Spinosaurus enclosure. The enclosure extends further north and there is a pathway to the left.
 Exit Rooms: N-Spinosaurus_NW, W-Hallway 8
 Room Name: Aquatic_NW
-Room Description: This is the North West corner of the Aquatic.
+Room Description: You are in the Aquatic Centre. The building extends further behind you and there is a pathway to the left.
 Exit Rooms: W-Hallway 5, S-Aquatic_SW
 Room Name: Aquatic_SW
-Room Description: This is the South West corner of the Aquatic.
+Room Description: You are in the Aquatic Centre. The building extends further in front of you and to the right.
 Exit Rooms: N-Aquatic_NW, E-Aquatic_SE
 Room Name: Aquatic_SE
-Room Description: This is the South East corner of the Aquatic.
+Room Description: You are in the Aquatic Centre. The building extends further to the left.
 Exit Rooms: W-Aquatic_SW
 Room Name: Velociraptor_NW
 Room Description: This is the North West corner of the Velociraptor enclosure.
