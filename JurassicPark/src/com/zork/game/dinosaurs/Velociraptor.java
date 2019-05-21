@@ -9,6 +9,7 @@ import com.zork.game.Room;
 public class Velociraptor extends Dinosaur {
 	
 	public Velociraptor(Room startRoom, String name) {
+		super(startRoom);
 		roomsInRange = new ArrayList<Room>();
 		roomsInRange.add(getMap().get("VELOCIRAPTOR_NW"));	
 		roomsInRange.add(getMap().get("VELOCIRAPTOR_SW"));	
@@ -33,7 +34,6 @@ public class Velociraptor extends Dinosaur {
 		roomsInRange.add(getMap().get("BREEDING_CENTRE_C"));
 		roomsInRange.add(getMap().get("BREEDING_CENTRE_E"));
 		
-		this.startRoom = startRoom;
 		this.currentRoom = startRoom;
 		this.name = name;
 	}

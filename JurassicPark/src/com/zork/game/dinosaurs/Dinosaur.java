@@ -21,6 +21,13 @@ public abstract class Dinosaur {
 	protected ArrayList<Room> roomsInRange;
 	
 	
+	
+	public Dinosaur(Room startRoom) {
+		setStartRoom(startRoom);
+	}
+	
+	
+	
 	protected HashMap<String, Room> getMap() {
 		return Game.getMasterRoomMap();
 	}
@@ -40,8 +47,7 @@ public abstract class Dinosaur {
 	public void setStartRoom(Room startRoom) {
 		this.startRoom = startRoom;
 		this.startRoom.getRoomInventory().addDinosaur(this);
-	}
-	
+	}	
 	
 
 	//Picks a random direction until finds a direction it can move to

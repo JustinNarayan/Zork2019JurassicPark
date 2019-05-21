@@ -9,6 +9,7 @@ import com.zork.game.Room;
 public class Stegosaurus extends Dinosaur {
 	
 	public Stegosaurus(Room startRoom, String name) {
+		super(startRoom);
 		roomsInRange = new ArrayList<Room>();
 		roomsInRange.add(getMap().get("STEGOSAURUS_NW"));	
 		roomsInRange.add(getMap().get("STEGOSAURUS_SW"));	
@@ -23,7 +24,6 @@ public class Stegosaurus extends Dinosaur {
 		roomsInRange.add(getMap().get("CLIFF_2_W"));	
 		roomsInRange.add(getMap().get("CLIFF_2_E"));	
 		
-		this.startRoom = startRoom;
 		this.currentRoom = startRoom;
 		this.name = name;
 	}
