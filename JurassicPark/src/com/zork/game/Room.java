@@ -32,6 +32,7 @@ public class Room {
 	public Room(String description) {
 		this.description = description;
 		exits = new HashMap<String, Room>();
+		roomInventory = new RoomInventory(new ArrayList<Object>(), new ArrayList<Object>());
 	}
 
 	public Room() {
@@ -143,8 +144,12 @@ public class Room {
 		this.description = description;
 	}
 	
-	public void addRoomInventory
-		roomInventory = new RoomInventory(environment, items);
+	public void addRoomEnvironment(Object e) {
+		roomInventory.addItemEnvironment(e);
+	}
+	
+	public void addRoomItems(Object e) {
+		roomInventory.addItemItems(e);
 	}
 	
 	public RoomInventory getRoomInventory() {

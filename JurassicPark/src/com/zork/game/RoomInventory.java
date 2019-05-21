@@ -31,4 +31,30 @@ public class RoomInventory extends Inventory {
 			return false;
 		}
 	}
+	
+	public Object addItemEnvironment(Object e) {
+		environment.add(e);
+		return e;
+	}
+	
+	public Object addItemItems(Object e) {
+		items.add(e);
+		return e;
+	}
+	
+	//Takes in toString() essentially
+	public boolean environmentHasItem(String s) {
+		for(Object obj : environment) {
+			if(obj.toString().equalsIgnoreCase(s)) return true;
+		}
+		return false;
+	}
+	
+	//Takes in toString() essentially
+	public boolean itemsHasItem(String s) {
+		for(Object obj : items) {
+			if(obj.toString().equalsIgnoreCase(s)) return true;
+		}
+		return false;
+	}
 }
