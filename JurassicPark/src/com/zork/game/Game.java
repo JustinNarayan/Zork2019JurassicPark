@@ -312,10 +312,10 @@ public class Game {
 		System.out.println(LOOK_PHRASES.get((int) (Math.random()*LOOK_PHRASES.size())));
 		
 		//Look at environment
-		ArrayList<Object> env = currentRoom.getRoomInventory().getEnvironment();
+		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
 		if(env.size()==1) {
 			System.out.print(ENV_PHRASES.get((int) (Math.random()*ENV_PHRASES.size())) + "only ");
-			for(Object obj : env) System.out.print(obj.toString());
+			for(EnvironmentItem obj : env) System.out.print(obj.toString());
 			System.out.println(". ");
 		} else if(env.size() > 1) {
 			System.out.print(ENV_PHRASES.get((int) (Math.random()*ENV_PHRASES.size())));

@@ -32,7 +32,7 @@ public class Room {
 	public Room(String description) {
 		this.description = description;
 		exits = new HashMap<String, Room>();
-		roomInventory = new RoomInventory(new ArrayList<Object>(), new ArrayList<Object>());
+		roomInventory = new RoomInventory(new ArrayList<EnvironmentItem>(), new ArrayList<Object>());
 	}
 
 	public Room() {
@@ -40,7 +40,7 @@ public class Room {
 		roomName = "DEFAULT ROOM";
 		description = "DEFAULT DESCRIPTION";
 		exits = new HashMap<String, Room>();
-		roomInventory = new RoomInventory(new ArrayList<Object>(), new ArrayList<Object>());
+		roomInventory = new RoomInventory(new ArrayList<EnvironmentItem>(), new ArrayList<Object>());
 	}
 
 	public void setExit(char direction, Room r) throws Exception {
@@ -144,7 +144,11 @@ public class Room {
 		this.description = description;
 	}
 	
-	public void addRoomEnvironment(Object e) {
+	
+	
+	
+	
+	public void addRoomEnvironmentItem(EnvironmentItem e) {
 		roomInventory.addItemEnvironment(e);
 	}
 	
