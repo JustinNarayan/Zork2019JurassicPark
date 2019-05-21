@@ -227,28 +227,28 @@ Room Name: Main Control Centre_SE
 Room Description: You are in the Main Control Centre. To the right you can see a waterfall in the distance and the centre extends further in front of you and to the left.
 Exit Rooms: N-Main Control Centre_NE, E-Hallway 26, W-Main Control Centre_SW
 Room Name: Waterfall
-Room Description: This is the waterfall.
+Room Description: You are at a waterfall. To your right is a river. Behind you, you can see a cabin in the distance and to your left, you can see the Main Control Centre in the distance.
 Exit Rooms: E-River 2_W, S-Hallway 24, W-Hallway 26
 Room Name: River 2_W
-Room Description: This is the west end of the river.
+Room Description: You are at the west end of the river. To your left is a waterfall and the river extends further to your right. 
 Exit Rooms: E-River_E, W-Waterfall
 Room Name: River 2_E
-Room Description: This is the east end of the river.
+Room Description: You are at the east end of the river. To your left is the Shipyard and the river extends further to your left.
 Exit Rooms: E-Shipyard_N, W-River 2_W
 Room Name: Shipyard_N
-Room Description: This is the north end of the shipyard.
+Room Description: You are at the north end of the Shipyard. To your left is a river and the shipyard extends further south.
 Exit Rooms: S-Shipyard_S, W-River 2_E
 Room Name: Shipyard_S
-Room Description: This is the south end of the shipyard.
+Room Description: You are at the south end of the Shipyard. Behind you is the beach and the shipyard extends further north.
 Exit Rooms: N-Shipyard_N, S-Beach 2_N
 Room Name: Beach 2_N
-Room Description: This is the north end of the beach.
+Room Description: You are on a beach. In front of you is the Shipyard and the beach extends further behind you.
 Exit Rooms: N-Shipyard_S, S-Beach 2_S
 Room Name: Beach 2_S
-Room Description: This is the south end of the beach.
+Room Description: You are on a beach. Behind you is a cave and the beach extends further north.
 Exit Rooms: N-Beach 2_N, S-Cave 1
 Room Name: Cave 1
-Room Description: This is a cave.
+Room Description: You have stumbled upon a cave. In front of you is a beach and to your right is the north end of the airstrip. 
 Exit Rooms: N-Beach 2_S, E-Airstrip_N
 Room Name: Airstrip_N
 Room Description: You are on the north end of the airstrip. The airstrip extends further behind you and there is a cave to your left. 
