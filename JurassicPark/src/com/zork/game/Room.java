@@ -1,5 +1,8 @@
 package com.zork.game;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 /*
  * Class Room - a room in an adventure game.
  *
@@ -15,14 +18,12 @@ package com.zork.game;
  * to the neighbouring room, or null if there is no exit in that direction.
  */
 import java.util.Set;
-import java.util.HashMap;
-import java.util.Iterator;
 
 public class Room {
 	private String roomName;
 	private String description;
 	private HashMap<String, Room> exits; // stores exits of this room.
-	private RoomInventory roomInventory = new RoomInventory();
+	private RoomInventory roomInventory;
 
 	/**
 	 * Create a room described "description". Initially, it has no exits.
@@ -38,6 +39,7 @@ public class Room {
 		roomName = "DEFAULT ROOM";
 		description = "DEFAULT DESCRIPTION";
 		exits = new HashMap<String, Room>();
+		roomInventory = new RoomInventory(new ArrayList<Object>(), new ArrayList<Object>());
 	}
 
 	public void setExit(char direction, Room r) throws Exception {
@@ -139,6 +141,10 @@ public class Room {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public void setRoomInventory(ArrayList<Object> environment, ArrayList<Object> items) {
+		roomInventory = new RoomInventory(environment, items);
 	}
 	
 	public RoomInventory getRoomInventory() {
