@@ -4,19 +4,12 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import com.zork.game.dinosaurs.Bronchiosaurus;
-import com.zork.game.dinosaurs.Dilophosaurus;
-import com.zork.game.dinosaurs.Dinosaur;
 import com.zork.game.dinosaurs.DinosaurController;
-import com.zork.game.dinosaurs.Pterodactyl;
-import com.zork.game.dinosaurs.Spinosaurus;
-import com.zork.game.dinosaurs.Stegosaurus;
-import com.zork.game.dinosaurs.Triceratops;
-import com.zork.game.dinosaurs.TyrannosaurusRex;
-import com.zork.game.dinosaurs.Velociraptor;
 
 import javazoom.jl.player.Player;
 
@@ -45,6 +38,12 @@ public class Game {
 	private final String SIREN_POSITION = "Supply Shed";
 
 	private DinosaurController dinosaurController;
+	
+	private static final ArrayList<String> LOOK_PHRASES = new ArrayList<String>(Arrays.asList("You take a look around.", "You observe your surroundings.", "You look around.", "You scan the area.", "You examine your surroundings.", "You observe the area.", "You take a glance at the area."));
+	private static final ArrayList<String> ENV_PHRASES = new ArrayList<String>(Arrays.asList("You are surrounded by ", "You see ", "The area is filled with ", "Around you, you find "));
+	
+	
+	
 
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -227,7 +226,7 @@ public class Game {
 				if(!inFight) { //the following commands are for when you are not in battle
 					switch(commandWord) {
 					case "look":
-						//look(command);
+						look(command);
 					case "search":
 						//search(command);						
 					case "heal":
@@ -309,6 +308,39 @@ public class Game {
 		}
 	}
 
+	private void look(Command command) {
+		System.out.println(LOOK_PHRASES.get((int) (Math.random()*LOOK_PHRASES.size())));
+		
+		//Look at environment
+		ArrayList<Object> env = currentRoom.getRoomInventory().getEnvironment();
+		if(env.size()==1) {
+			System.out.print(ENV_PHRASES.get((int) (Math.random()*ENV_PHRASES.size())) + "only ");
+			for(Object obj : env) System.out.print(obj.toString());
+			System.out.println(". ");
+		} else if(env.size() > 1) {
+			System.out.print(ENV_PHRASES.get((int) (Math.random()*ENV_PHRASES.size())));
+			for(int i = 0; i < env.size(); i++) {
+				if(i<env.size()-1) System.out.print(env.get(i).toString()+", ");
+				else System.out.print("and "+env.get(i).toString());
+			}
+			System.out.println(". ");
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	private int getTimeLeft() {
 		return timeLeft;
 	}

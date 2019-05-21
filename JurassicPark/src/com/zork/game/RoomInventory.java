@@ -32,6 +32,19 @@ public class RoomInventory extends Inventory {
 		}
 	}
 	
+	
+	
+	
+	public ArrayList<Object> getEnvironment() {
+		return environment;
+	}
+	
+	public ArrayList<Object> getItems() {
+		return items;
+	}
+	
+	
+	
 	public Object addItemEnvironment(Object e) {
 		environment.add(e);
 		return e;
