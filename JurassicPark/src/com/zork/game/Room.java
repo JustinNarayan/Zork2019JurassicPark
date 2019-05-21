@@ -144,12 +144,17 @@ public class Room {
 		this.description = description;
 	}
 	
+<<<<<<< Upstream, based on origin/master
 	public void addRoomEnvironment(Object e) {
 		roomInventory.addItemEnvironment(e);
 	}
 	
 	public void addRoomItems(Object e) {
 		roomInventory.addItemItems(e);
+=======
+	public void addRoomInventory() {
+		roomInventory = new RoomInventory(environment, items);
+>>>>>>> 21c0ab3 room merge
 	}
 	
 	public RoomInventory getRoomInventory() {

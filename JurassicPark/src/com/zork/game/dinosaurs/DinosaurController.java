@@ -31,7 +31,7 @@ public class DinosaurController {
 		
 		dinosaurs.add(new TyrannosaurusRex(getMap().get("TREX_NE"), "TyrannosaurusRex1"));
 		
-		dinosaurs.add(new Velociraptor(getMap().get("VELOCIRAPTOR_NW"), "Velociraptor1"));
+		dinosaurs.add(new Velociraptor(getMap().get("VELOCIRAPTOR_NW"), "Eileen"));
 		dinosaurs.add(new Velociraptor(getMap().get("CLIFF_1_SE"), "Velociraptor2"));
 		dinosaurs.add(new Velociraptor(getMap().get("HILLS_NE"), "Velociraptor3"));
 	}
