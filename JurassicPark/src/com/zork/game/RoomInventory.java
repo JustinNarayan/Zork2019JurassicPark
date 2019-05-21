@@ -6,10 +6,10 @@ import com.zork.game.dinosaurs.Dinosaur;
 
 public class RoomInventory extends Inventory {
 	private ArrayList<Dinosaur> dinosaurs = new ArrayList<Dinosaur>();
-	private ArrayList<Object> environment;
+	private ArrayList<EnvironmentItem> environment;
 	private ArrayList<Object> items;
 	
-	public RoomInventory(ArrayList<Object> environment, ArrayList<Object> items) {
+	public RoomInventory(ArrayList<EnvironmentItem> environment, ArrayList<Object> items) {
 		this.environment = environment;
 		this.items = items;
 	}
@@ -35,7 +35,7 @@ public class RoomInventory extends Inventory {
 	
 	
 	
-	public ArrayList<Object> getEnvironment() {
+	public ArrayList<EnvironmentItem> getEnvironment() {
 		return environment;
 	}
 	
@@ -45,7 +45,7 @@ public class RoomInventory extends Inventory {
 	
 	
 	
-	public Object addItemEnvironment(Object e) {
+	public Object addItemEnvironment(EnvironmentItem e) {
 		environment.add(e);
 		return e;
 	}
@@ -57,7 +57,7 @@ public class RoomInventory extends Inventory {
 	
 	//Takes in toString() essentially
 	public boolean environmentHasItem(String s) {
-		for(Object obj : environment) {
+		for(EnvironmentItem obj : environment) {
 			if(obj.toString().equalsIgnoreCase(s)) return true;
 		}
 		return false;

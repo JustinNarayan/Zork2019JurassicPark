@@ -38,12 +38,12 @@ public class Game {
 	private final String SIREN_POSITION = "Supply Shed";
 
 	private DinosaurController dinosaurController;
-	
-	private static final ArrayList<String> LOOK_PHRASES = new ArrayList<String>(Arrays.asList("You take a look around.", "You observe your surroundings.", "You look around.", "You scan the area.", "You examine your surroundings.", "You observe the area.", "You take a glance at the area."));
-	private static final ArrayList<String> ENV_PHRASES = new ArrayList<String>(Arrays.asList("You are surrounded by ", "You see ", "The area is filled with ", "Around you, you find "));
-	
-	
-	
+
+	private static final ArrayList<String> LOOK_PHRASES = new ArrayList<String>(Arrays.asList("You take a look around.",
+			"You observe your surroundings.", "You look around.", "You scan the area.",
+			"You examine your surroundings.", "You observe the area.", "You take a glance at the area."));
+	private static final ArrayList<String> ENV_PHRASES = new ArrayList<String>(
+			Arrays.asList("You are surrounded by ", "You see ", "The area is filled with ", "Around you, you find "));
 
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -133,7 +133,7 @@ public class Game {
 		// them until the game is over.
 
 		dinosaurController = new DinosaurController();
-		
+
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
@@ -174,7 +174,8 @@ public class Game {
 	/**
 	 * Given a command, process (that is: execute) the command. If this command ends
 	 * the game, true is returned, otherwise false is returned.
-	 * @param inFight 
+	 * 
+	 * @param inFight
 	 */
 	private boolean processCommand(Command command, boolean inFight) {
 		if (command.isUnknown()) {
@@ -182,7 +183,7 @@ public class Game {
 			return false;
 		}
 		String commandWord = command.getCommandWord();
-		switch(commandWord) {
+		switch (commandWord) {
 		case "test":
 			dinosaurController.printAllDinosaurs();
 			break;
@@ -200,53 +201,50 @@ public class Game {
 				System.out.println("Quit what?");
 			else
 				return true; // signal that we want to quit
-			break;		
+			break;
 		case "use":
-			//use(command);
+			// use(command);
 			break;
 		case "climb":
-			//climb(command);
+			// climb(command);
 			break;
 		case "inventory":
-			//checkInventory(command);
+			// checkInventory(command);
 			break;
 		case "ammo":
-			//checkAmmo(command);
-			break;			
+			// checkAmmo(command);
+			break;
 		case "drop":
-			//drop(command);
+			// drop(command);
 			break;
 		case "grab":
-			//grab(command);
+			// grab(command);
 			break;
 		case "attack":
-			//attack(command);	
-			
-		default:
-				if(!inFight) { //the following commands are for when you are not in battle
-					switch(commandWord) {
-					case "look":
-						look(command);
-					case "search":
-						//search(command);						
-					case "heal":
-						//heal(command);		
-						break;
-					case "time":
-						//checkTime(command);
-						break;
-					}
-					} else {
-						System.out.println("You must do a battle command!");
-						
-							
-						}
-					
-						
-					}
-				
+			// attack(command);
 
-	return false;
+		default:
+			if (!inFight) { // the following commands are for when you are not in battle
+				switch (commandWord) {
+				case "look":
+					look(command);
+				case "search":
+					// search(command);
+				case "heal":
+					// heal(command);
+					break;
+				case "time":
+					// checkTime(command);
+					break;
+				}
+			} else {
+				System.out.println("You must do a battle command!");
+
+			}
+
+		}
+
+		return false;
 
 	}
 
@@ -309,38 +307,27 @@ public class Game {
 	}
 
 	private void look(Command command) {
-		System.out.println(LOOK_PHRASES.get((int) (Math.random()*LOOK_PHRASES.size())));
-		
-		//Look at environment
-		ArrayList<Object> env = currentRoom.getRoomInventory().getEnvironment();
-		if(env.size()==1) {
-			System.out.print(ENV_PHRASES.get((int) (Math.random()*ENV_PHRASES.size())) + "only ");
-			for(Object obj : env) System.out.print(obj.toString());
+		System.out.println(LOOK_PHRASES.get((int) (Math.random() * LOOK_PHRASES.size())));
+
+		// Look at environment
+		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
+		if (env.size() == 1) {
+			System.out.print(ENV_PHRASES.get((int) (Math.random() * ENV_PHRASES.size())) + "only ");
+			for (EnvironmentItem obj : env)
+				System.out.print(obj.toString());
 			System.out.println(". ");
-		} else if(env.size() > 1) {
-			System.out.print(ENV_PHRASES.get((int) (Math.random()*ENV_PHRASES.size())));
-			for(int i = 0; i < env.size(); i++) {
-				if(i<env.size()-1) System.out.print(env.get(i).toString()+", ");
-				else System.out.print("and "+env.get(i).toString());
+		} else if (env.size() > 1) {
+			System.out.print(ENV_PHRASES.get((int) (Math.random() * ENV_PHRASES.size())));
+			for (int i = 0; i < env.size(); i++) {
+				if (i < env.size() - 1)
+					System.out.print(env.get(i).toString() + ", ");
+				else
+					System.out.print("and " + env.get(i).toString());
 			}
 			System.out.println(". ");
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	private int getTimeLeft() {
 		return timeLeft;
 	}
