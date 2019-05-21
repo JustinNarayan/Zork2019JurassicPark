@@ -143,7 +143,7 @@ public class Room {
 		this.description = description;
 	}
 	
-	public void setRoomInventory(ArrayList<Object> environment, ArrayList<Object> items) {
+	public void addRoomInventory
 		roomInventory = new RoomInventory(environment, items);
 	}
 	
