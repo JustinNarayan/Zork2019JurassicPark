@@ -164,16 +164,16 @@ Room Name: Bridge_N
 Room Description: You are on a rickety bridge, be careful because there are Ptyrodactyls nearby.
 Exit Rooms: N-Forest_W, S-Bridge_C
 Room Name: Forest_W
-Room Description: This is the west side of the forest.
+Room Description: You are in a forest. Behind you is a a rickety bridge and to your right, the forest goes on.
 Exit Rooms: E-Forest_E, S-Brige_N
 Room Name: Forest_E
-Room Description: This is the east side of the forest.
+Room Description: You are in a forest. In front of you is a lake and to your left, the forest goes on.
 Exit Rooms: N-Lake, W-Forest_W
 Room Name: Lake
-Room Description: This is the lake.
+Room Description: You are in a Lake. Behind you is a forest, in the distance you can see a server room to the right and the Stegosaurus enclosure in front of you.
 Exit Rooms: N-Hallway 19, E-Hallway 18, S-Forest_NE
 Room Name: Server Room
-Room Description: This is the server room.
+Room Description: You are in the Server Room. In the distance, you can see a lake to your left, the Mechanical Room behind you and the the Communications Centre to the right.
 Exit Rooms: E-Hallway 17, S-Hallway 14, W-Hallway 18
 Room Name: Mechanical Room_W
 Room Description: You are in the Mechanical Room. In the distance, you can see the Server Room in front of you and the Mechanical Room extends further to your right.
@@ -182,25 +182,25 @@ Room Name: Mechanical Room_E
 Room Description: You are in the Mechanical Room. In the distance, you can see the Munitions Shed to the right and the Mechanical Room extends further to your left. 
 Exit Rooms: E-Hallway 15, W-Mechanical Room_W
 Room Name: Munitions Shed_NW
-Room Description: This is the North West corner of the munitions shed.
+Room Description: you are in the Munitions Shed. Look around to find some munitions which could help you. The shed extends further to the right and behind you. You can see the Communications Centre in the distance in front of you and the Mechanical Room in the distance to the left. 
 Exit Rooms: N-Hallway 16, E-Munitions Shed_NE, S-Munitions Shed_SW, W-Hallway 15
 Room Name: Munitions Shed_NE
-Room Description: This is the North East corner of the munitions shed.
+Room Description: You are in the Munitions Shed. It extends further to your left.
 Exit Rooms: W-Munitions Shed_NW
 Room Name: Munitions Shed_SW
-Room Description: This is the South West corner of the munitions shed.
+Room Description: You are in the Munitions Shed. It extends further in front of you. 
 Exit Rooms: N-Munitions Shed_NW
 Room Name: Communications Centre_SW
-Room Description: This is the South West corner of the Communications Centre.
+Room Description: You are in the South West corner of the Communications Centre. The centre extends further to your right and in front of you. In the distance, you can see the Server Room to the left. 
 Exit Rooms: N-Communications Centre_NW, E-Communications Centre_SE, W-Hallway 17
 Room Name: Communications Centre_SE
-Room Description: This is the South East corner of the Communications Centre.
+Room Description: You are in the South East corner of the Communications Centre. The centre extends further to your left. You can see the Munitions shed in the distance behind you. 
 Exit Rooms: S-Hallway 16, W-Communications Centre_SW
 Room Name: Communications Centre_NW
-Room Description: This is the North West corner of the Communications Centre.
+Room Description: You are in the North West corner of the Communications Centre. The centre extends further behind you. You can see T-Rex enclosure in front of you in the distance. 
 Exit Rooms: N-Hallway 20, S-Communications Centre_SW
 Room Name: Cabin
-Room Description: This is the cabin.
+Room Description: You are in a Cabin. To your left you can see the T-Rex enclosure in the distance and in front of you, you can see a waterfall in the distance.
 Exit Rooms: N-Hallway 24, W-Hallway 23
 Room Name: Records_W
 Room Description: This is the west end of the records room.
@@ -209,22 +209,22 @@ Room Name: Records_E
 Room Description: This is the east end of the records room.
 Exit Rooms: N-Hallway 25, S-Hallway 22, W-Records_W
 Room Name: Cliff 2_W
-Room Description: This is the west end of the cliff.
+Room Description: You are on a cliff. To your left is a pathway and to the right is more of the cliff. 
 Exit Rooms: E-Cliff 2_E, W-Hallway 25
 Room Name: Cliff 2_E
-Room Description: This is the East end of the cliff.
+Room Description: You are on a cliff. To your right is the Main control centre and to the left is more of the cliff.
 Exit Rooms: E-Main Control Centre_SW, W-Cliff 2_W
 Room Name: Main Control Centre_SW
-Room Description: This is the South West corner of the Main Control Centre.
+Room Description: You are in the Main Control Centre. To the left is a cliff and the control centre extends in front of you and to your right.
 Exit Rooms: N-Main Control Centre_NW, E-Main Control Centre_SE, W-Cliff 2_E
 Room Name: Main Control Centre_NW
-Room Description: This is the North West corner of the Main Control Centre.
+Room Description: You are in the Main Control Centre. The centre extends further behind you and to your right.
 Exit Rooms: E-Main Control Centre_NE, S-Main Control Centre_SW
 Room Name: Main Control Centre_NE
-Room Description: This is the North East corner of the Main Control Centre.
+Room Description: You are in the Main Control Centre. The centre extends further behind you and to your left.
 Exit Rooms: S-Main Control Centre_SE, W-Main Control Centre_NW
 Room Name: Main Control Centre_SE
-Room Description: This is the South East corner of the Main Control Centre.
+Room Description: You are in the Main Control Centre. To the right you can see a waterfall in the distance and the centre extends further in front of you and to the left.
 Exit Rooms: N-Main Control Centre_NE, E-Hallway 26, W-Main Control Centre_SW
 Room Name: Waterfall
 Room Description: This is the waterfall.
@@ -251,13 +251,13 @@ Room Name: Cave 1
 Room Description: This is a cave.
 Exit Rooms: N-Beach 2_S, E-Airstrip_N
 Room Name: Airstrip_N
-Room Description: This is the north end of the airstrip.
+Room Description: You are on the north end of the airstrip. The airstrip extends further behind you and there is a cave to your left. 
 Exit Rooms: S-Airstrip_S, W-Cave 1
 Room Name: Airstrip_S
-Room Description: This is the south end of the airstrip.
+Room Description: You are on the south end of the airstrip. The airstrip extends further in front of you and the helipad is to your right.
 Exit Rooms: N-Airstrip_N, E-Helipad
 Room Name: Helipad
-Room Description: This is the helipad.
+Room Description: You are on a helipad. Behind you is a cliff and to your left is the airstrip. 
 Exit Rooms: S-Cliff 1_NW, W-Airstrip_S
 Room Name: Cliff 1_NW
 Room Description: This is the North West corner of the cliff.
