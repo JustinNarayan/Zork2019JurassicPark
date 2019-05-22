@@ -203,25 +203,25 @@ public class Game {
 				return true; // signal that we want to quit
 			break;
 		case "use":
-			// use(command);
+			use(command);
 			break;
 		case "climb":
-			// climb(command);
+			climb(command);
 			break;
 		case "inventory":
-			// checkInventory(command);
+			checkInventory(command);
 			break;
 		case "ammo":
-			// checkAmmo(command);
+			checkAmmo(command);
 			break;
 		case "drop":
-			// drop(command);
+			 drop(command);
 			break;
 		case "grab":
-			// grab(command);
+			grab(command);
 			break;
 		case "attack":
-			// attack(command);
+			attack(command);
 
 		default:
 			if (!inFight) { // the following commands are for when you are not in battle
@@ -229,12 +229,12 @@ public class Game {
 				case "look":
 					look(command);
 				case "search":
-					// search(command);
+					search(command);
 				case "heal":
-					// heal(command);
+					heal(command);
 					break;
 				case "time":
-					// checkTime(command);
+					checkTime(command);
 					break;
 				}
 			} else {
@@ -248,7 +248,38 @@ public class Game {
 
 	}
 
-// implementations of user commands:
+	private void checkTime(Command command) {
+	}
+
+	private void heal(Command command) {
+	}
+
+	private void search(Command command) {
+	}
+
+	private void grab(Command command) {
+	}
+
+	private void attack(Command command) {
+	}
+
+	private void drop(Command command) {
+	}
+
+	private void checkAmmo(Command command) {
+	}
+
+	private void checkInventory(Command command) {
+	}
+
+	private void climb(Command command) {
+	}
+
+	private void use(Command command) {
+
+	}
+
+	// implementations of user commands:
 	/**
 	 * Print out some help information. Here we print some stupid, cryptic message
 	 * and a list of the command words.
