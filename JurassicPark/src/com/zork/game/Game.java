@@ -222,6 +222,10 @@ public class Game {
 			break;
 		case "attack":
 			attack(command);
+		case "eqiup":
+			equip(command);
+		case "unequip":
+			unequip(command);
 
 		default:
 			if (!inFight) { // the following commands are for when you are not in battle
@@ -246,6 +250,15 @@ public class Game {
 
 		return false;
 
+	}
+
+	private void equip(Command command) {
+		if(!command.hasSecondWord()){
+			System.out.println("what do you want to equip?");
+		//}else if(!player.)
+	}
+
+	private void unequip(Command command) {
 	}
 
 	private void checkTime(Command command) {
