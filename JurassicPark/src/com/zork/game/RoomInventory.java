@@ -7,9 +7,9 @@ import com.zork.game.dinosaurs.Dinosaur;
 public class RoomInventory extends Inventory {
 	private ArrayList<Dinosaur> dinosaurs = new ArrayList<Dinosaur>();
 	private ArrayList<EnvironmentItem> environment;
-	private ArrayList<Object> items;
+	private ArrayList<RoomItem> items;
 	
-	public RoomInventory(ArrayList<EnvironmentItem> environment, ArrayList<Object> items) {
+	public RoomInventory(ArrayList<EnvironmentItem> environment, ArrayList<RoomItem> items) {
 		this.environment = environment;
 		this.items = items;
 	}
@@ -39,18 +39,18 @@ public class RoomInventory extends Inventory {
 		return environment;
 	}
 	
-	public ArrayList<Object> getItems() {
+	public ArrayList<RoomItem> getItems() {
 		return items;
 	}
 	
 	
 	
-	public Object addItemEnvironment(EnvironmentItem e) {
+	public EnvironmentItem addItemEnvironment(EnvironmentItem e) {
 		environment.add(e);
 		return e;
 	}
 	
-	public Object addItemItems(Object e) {
+	public RoomItem addRoomItem(RoomItem e) {
 		items.add(e);
 		return e;
 	}
@@ -64,10 +64,30 @@ public class RoomInventory extends Inventory {
 	}
 	
 	//Takes in toString() essentially
-	public boolean itemsHasItem(String s) {
-		for(Object obj : items) {
+	public boolean roomHasItem(String s) {
+		for(RoomItem obj : items) {
 			if(obj.toString().equalsIgnoreCase(s)) return true;
 		}
 		return false;
+	}
+	
+	//Takes in toString() essentially
+	public EnvironmentItem getEnvironmentItem(String s) {
+		if(environmentHasItem(s)) {
+			for(EnvironmentItem obj : environment) {
+				if(obj.toString().equalsIgnoreCase(s)) return obj;
+			}
+		}
+		return null;
+	}
+	
+	//Takes in toString() essentially
+	public RoomItem getRoomItem(String s) {
+		if(roomHasItem(s)) {
+			for(RoomItem obj : items) {
+				if(obj.toString().equalsIgnoreCase(s)) return obj;
+			}
+		}
+		return null;
 	}
 }
