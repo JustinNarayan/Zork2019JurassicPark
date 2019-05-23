@@ -47,7 +47,8 @@ public class Game {
 	private static final ArrayList<String> LOOK_ITEMS_PHRASES = new ArrayList<String>();
 	private static final ArrayList<String> LOOK_NOTHING_PHRASES = new ArrayList<String>(Arrays.asList("There's practically nothing here.", 
 			"The area is mostly empty.", "You can't find very much.", "You have found nothing.", "There isn't anything there."));
-	
+	private static final ArrayList<String> LOOK_IN_ENV_PHRASES = new ArrayList<String>(Arrays.asList("You observe something in the ",
+			"You think you see something in the ", "You think you'll find something in the ", "You notice a glint in the "));
 	
 
 	// This is a MASTER object that contains all of the rooms and is easily
@@ -361,6 +362,7 @@ public class Game {
 
 		// Look at environment
 		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
+		//List all the environmentItems in the room
 		if (env.size() == 1) {
 			System.out.print(LOOK_ENV_PHRASES.get((int) (Math.random() * LOOK_ENV_PHRASES.size())) + "only ");
 			for (EnvironmentItem obj : env)
@@ -378,6 +380,16 @@ public class Game {
 			}
 			System.out.println(". ");
 		}
+		String seeInEnvironment = "";
+		for(EnvironmentItem obj : env) {
+			if(obj.getItems().size()>0) {
+				if(seeInEnvironment.equals("")) {
+					seeInEnvironment += LOOK_IN_ENV_PHRASES.get((int) (Math.random() * LOOK_IN_ENV_PHRASES.size()));
+				} else seeInEnvironment += "and ";
+				seeInEnvironment += obj.toString() + " ";
+			}
+		}
+		if(!seeInEnvironment.equals("")) System.out.println(seeInEnvironment.substring(0,seeInEnvironment.length()-1)+".");
 		
 		
 		
