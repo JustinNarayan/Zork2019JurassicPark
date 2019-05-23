@@ -37,19 +37,7 @@ public class Game {
 	private final int TIME_IN_HOUR = 60;
 	private final String SIREN_POSITION = "Supply Shed";
 
-	private DinosaurController dinosaurController;
-
-	private static final ArrayList<String> LOOK_PHRASES = new ArrayList<String>(Arrays.asList("You take a look around.",
-			"You observe your surroundings.", "You look around.", "You scan the area.",
-			"You examine your surroundings.", "You observe the area.", "You take a glance at the area."));
-	private static final ArrayList<String> LOOK_ENV_PHRASES = new ArrayList<String>(Arrays.asList("You are surrounded by ", 
-			"You see ", "The area is filled with ", "Around you, you find "));
-	private static final ArrayList<String> LOOK_ITEMS_PHRASES = new ArrayList<String>();
-	private static final ArrayList<String> LOOK_NOTHING_PHRASES = new ArrayList<String>(Arrays.asList("There's practically nothing here.", 
-			"The area is mostly empty.", "You can't find very much.", "You have found nothing.", "There isn't anything there."));
-	private static final ArrayList<String> LOOK_IN_ENV_PHRASES = new ArrayList<String>(Arrays.asList("You observe something in the ",
-			"You think you see something in the ", "You think you'll find something in the ", "You notice a glint in the "));
-	
+	private DinosaurController dinosaurController;	
 
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -358,18 +346,18 @@ public class Game {
 	}
 
 	private void look(Command command) {
-		System.out.println(LOOK_PHRASES.get((int) (Math.random() * LOOK_PHRASES.size())));
+		System.out.println(Phrases.getLook().get((int) (Math.random() * Phrases.getLook().size())));
 
 		// Look at environment
 		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
 		//List all the environmentItems in the room
 		if (env.size() == 1) {
-			System.out.print(LOOK_ENV_PHRASES.get((int) (Math.random() * LOOK_ENV_PHRASES.size())) + "only ");
+			System.out.print(Phrases.getLookEnv().get((int) (Math.random() * Phrases.getLookEnv().size())) + "only ");
 			for (EnvironmentItem obj : env)
 				System.out.print(obj.toString());
 			System.out.println(". ");
 		} else if (env.size() > 1) {
-			System.out.print(LOOK_ENV_PHRASES.get((int) (Math.random() * LOOK_ENV_PHRASES.size())));
+			System.out.print(Phrases.getLookEnv().get((int) (Math.random() * Phrases.getLookEnv().size())));
 			for (int i = 0; i < env.size(); i++) {
 				if (i < env.size() - 1) {
 					System.out.print(env.get(i).toString());
@@ -384,7 +372,7 @@ public class Game {
 		for(EnvironmentItem obj : env) {
 			if(obj.getItems().size()>0) {
 				if(seeInEnvironment.equals("")) {
-					seeInEnvironment += LOOK_IN_ENV_PHRASES.get((int) (Math.random() * LOOK_IN_ENV_PHRASES.size()));
+					seeInEnvironment += Phrases.getLookInEnv().get((int) (Math.random() * Phrases.getLookInEnv().size()));
 				} else seeInEnvironment += "and ";
 				seeInEnvironment += obj.toString() + " ";
 			}
@@ -394,12 +382,12 @@ public class Game {
 		
 		
 		//Look at roomItems
-		ArrayList<RoomItem> items = currentRoom.getRoomInventory().getItems();
+		ArrayList<UsableItem> items = currentRoom.getRoomInventory().getItems();
 		
 		
 		//Check both
 		if(env.size()==0 && items.size()==0) {
-			System.out.println(LOOK_NOTHING_PHRASES.get((int) (Math.random() * LOOK_NOTHING_PHRASES.size())));
+			System.out.println(Phrases.getLookNothing().get((int) (Math.random() * Phrases.getLookNothing().size())));
 		}
 		
 	}

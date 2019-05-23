@@ -5,40 +5,40 @@ import java.util.ArrayList;
 public class EnvironmentItem {
 	private Room room;
 	private String type;
-	private ArrayList<RoomItem> items;;
+	private ArrayList<UsableItem> items;;
 	
 	
 	public EnvironmentItem(String type, Room room) {
 		this.type = type;
 		this.room = room;
-		this.items = new ArrayList<RoomItem>();
+		this.items = new ArrayList<UsableItem>();
 		
 		//DEBUG
-		this.addItem(new RoomItem());
+		this.addItem(new UsableItem());
 	}
 	
-	public EnvironmentItem(String type, Room room, ArrayList<RoomItem> items) {
+	public EnvironmentItem(String type, Room room, ArrayList<UsableItem> items) {
 		this.type = type;
 		this.room = room;
 		this.items = items;
 	}
 	
-	public ArrayList<RoomItem> getItems() {
+	public ArrayList<UsableItem> getItems() {
 		return items;
 	}
 	
 	public boolean hasItem(String s) {
-		for(RoomItem r : items) {
+		for(UsableItem r : items) {
 			if(r.toString().equalsIgnoreCase(s)) return true;
 		}
 		return false;
 	}
 	
-	public void addItem(RoomItem r) {
+	public void addItem(UsableItem r) {
 		items.add(r);
 	}
 	
-	public RoomItem removeItem(RoomItem item) {
+	public UsableItem removeItem(UsableItem item) {
 		if(hasItem(item.toString())) {
 			for(int i = 0; i < items.size(); i++) {
 				if(items.get(i).toString().equalsIgnoreCase(item.toString())) {
