@@ -42,8 +42,13 @@ public class Game {
 	private static final ArrayList<String> LOOK_PHRASES = new ArrayList<String>(Arrays.asList("You take a look around.",
 			"You observe your surroundings.", "You look around.", "You scan the area.",
 			"You examine your surroundings.", "You observe the area.", "You take a glance at the area."));
-	private static final ArrayList<String> ENV_PHRASES = new ArrayList<String>(
-			Arrays.asList("You are surrounded by ", "You see ", "The area is filled with ", "Around you, you find "));
+	private static final ArrayList<String> LOOK_ENV_PHRASES = new ArrayList<String>(Arrays.asList("You are surrounded by ", 
+			"You see ", "The area is filled with ", "Around you, you find "));
+	private static final ArrayList<String> LOOK_ITEMS_PHRASES = new ArrayList<String>();
+	private static final ArrayList<String> LOOK_NOTHING_PHRASES = new ArrayList<String>(Arrays.asList("There's practically nothing here.", 
+			"The area is mostly empty.", "You can't find very much.", "You have found nothing.", "There isn't anything there."));
+	
+	
 
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -357,12 +362,12 @@ public class Game {
 		// Look at environment
 		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
 		if (env.size() == 1) {
-			System.out.print(ENV_PHRASES.get((int) (Math.random() * ENV_PHRASES.size())) + "only ");
+			System.out.print(LOOK_ENV_PHRASES.get((int) (Math.random() * LOOK_ENV_PHRASES.size())) + "only ");
 			for (EnvironmentItem obj : env)
 				System.out.print(obj.toString());
 			System.out.println(". ");
 		} else if (env.size() > 1) {
-			System.out.print(ENV_PHRASES.get((int) (Math.random() * ENV_PHRASES.size())));
+			System.out.print(LOOK_ENV_PHRASES.get((int) (Math.random() * LOOK_ENV_PHRASES.size())));
 			for (int i = 0; i < env.size(); i++) {
 				if (i < env.size() - 1) {
 					System.out.print(env.get(i).toString());
@@ -373,6 +378,18 @@ public class Game {
 			}
 			System.out.println(". ");
 		}
+		
+		
+		
+		//Look at roomItems
+		ArrayList<RoomItem> items = currentRoom.getRoomInventory().getItems();
+		
+		
+		//Check both
+		if(env.size()==0 && items.size()==0) {
+			System.out.println(LOOK_NOTHING_PHRASES.get((int) (Math.random() * LOOK_NOTHING_PHRASES.size())));
+		}
+		
 	}
 
 	private int getTimeLeft() {
