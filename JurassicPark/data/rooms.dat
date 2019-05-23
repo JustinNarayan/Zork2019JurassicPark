@@ -141,7 +141,7 @@ Room Description: You are in a river and are wet. The river extends further to t
 Exit Rooms: N-River 1_NE, W-River 1_SW
 Room Name: River 1_NE
 Room Description: You are in a river and are wet. To the left is a clearing and behind you is more river.
-Exit Rooms: E-Clearing 1, S-River 1_SE
+Exit Rooms: E-Clearing, S-River 1_SE
 Room Name: Clearing
 Room Description: You have stumbled upon a clearing amongst trees. In front of you is a hotel and to your left is a river. 
 Exit Rooms: N-Hotel_S, W-River 1_NE
