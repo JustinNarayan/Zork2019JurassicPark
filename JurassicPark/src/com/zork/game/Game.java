@@ -133,6 +133,7 @@ public class Game {
 		// them until the game is over.
 
 		dinosaurController = new DinosaurController();
+		RoomItemInit.initRooms();
 
 		boolean finished = false;
 		while (!finished) {
@@ -363,9 +364,11 @@ public class Game {
 		} else if (env.size() > 1) {
 			System.out.print(ENV_PHRASES.get((int) (Math.random() * ENV_PHRASES.size())));
 			for (int i = 0; i < env.size(); i++) {
-				if (i < env.size() - 1)
-					System.out.print(env.get(i).toString() + ", ");
-				else
+				if (i < env.size() - 1) {
+					System.out.print(env.get(i).toString());
+					if(env.size()>2) System.out.print(", ");
+					else System.out.print(" ");
+				} else
 					System.out.print("and " + env.get(i).toString());
 			}
 			System.out.println(". ");

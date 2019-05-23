@@ -1,14 +1,16 @@
 package com.zork.game;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RoomItemInit {
 
-	private ArrayList<String> roomsWithTrees;
-	private ArrayList<String> roomsWithWater;
+	private static ArrayList<String> roomsWithTrees;
+	private static ArrayList<String> roomsWithWater;
 
-	public RoomItemInit() {
+	public static void initRooms() {
 		roomsWithTrees = new ArrayList<String>();
+		roomsWithWater = new ArrayList<String>();
 
 		// All hallways/pathways have trees in them
 		roomsWithTrees.add("HALLWAY_1");
@@ -66,9 +68,11 @@ public class RoomItemInit {
 		roomsWithTrees.add("VELOCIRAPTOR_SC");
 
 		// Specific rooms with trees in them
-		roomsWithTrees.add("EQUIPTMENT_YARD");
+		roomsWithTrees.add("EQUIPMENT_YARD");
 		roomsWithTrees.add("QUARRY_N");
 		roomsWithTrees.add("QUARRY_S");
+		roomsWithTrees.add("BEACH_1_S");
+		roomsWithTrees.add("BEACH_1_C");
 		roomsWithTrees.add("MOUNTAIN_TOP");
 		roomsWithTrees.add("PLAINS_E");
 		roomsWithTrees.add("PLAINS_W");
@@ -83,6 +87,8 @@ public class RoomItemInit {
 		roomsWithTrees.add("FOREST_E");
 		roomsWithTrees.add("FOREST_W");
 		roomsWithTrees.add("CABIN");
+		roomsWithTrees.add("RIVER_1_SW");
+		roomsWithTrees.add("RIVER_1_SE");
 
 		// Rooms with water
 		roomsWithWater.add("WATERFALL");
@@ -102,9 +108,26 @@ public class RoomItemInit {
 		roomsWithWater.add("TREX_SC");
 		roomsWithWater.add("STEGOSAURUS_SW");
 		roomsWithWater.add("VELOCIRAPTOR_SW");
-		roomsWithWater.add("SPINOSAURUS_SW	");
+		roomsWithWater.add("SPINOSAURUS_SW");
 		roomsWithWater.add("BRONCHIOSAURUS_SE");
 		roomsWithWater.add("TRICERATOPS_SE");
+		
+		
+		
+		
+		
+		//Add all of these items to room
+		for(String s : roomsWithTrees) {
+			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("trees", getMap().get(s)));
+		}
+		
+		for(String s : roomsWithWater) {
+			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("water", getMap().get(s)));
+		}
 
+	}
+	
+	private static HashMap<String, Room> getMap() {
+		return Game.getMasterRoomMap();
 	}
 }
