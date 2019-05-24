@@ -36,8 +36,9 @@ public class Game {
 	private final int MAX_TIME = 1440;
 	private final int TIME_IN_HOUR = 60;
 	private final String SIREN_POSITION = "Supply Shed";
+	private Player player;
 
-	private DinosaurController dinosaurController;	
+	private DinosaurController dinosaurController;
 
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -108,6 +109,8 @@ public class Game {
 	 * Create the game and initialise its internal map.
 	 */
 	public Game() {
+		// init player
+		player = new Player(); // the parameters have not been made yet
 		try {
 			initRooms("data/rooms.dat");
 			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
@@ -210,7 +213,7 @@ public class Game {
 			checkAmmo(command);
 			break;
 		case "drop":
-			 drop(command);
+			drop(command);
 			break;
 		case "grab":
 			grab(command);
@@ -248,9 +251,13 @@ public class Game {
 	}
 
 	private void equip(Command command) {
-		if(!command.hasSecondWord()){
-			System.out.println("what do you want to equip?");
-		//}else if(!player.)
+		if (!command.hasSecondWord()) {
+			System.out.println("you must say what you want to equip.");
+		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
+			System.out.println("That item is not in your inventory.");
+		} else if(!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
+			System.out.println("You can not equip that item");
+		}
 	}
 
 	private void unequip(Command command) {
@@ -312,7 +319,7 @@ public class Game {
 			return;
 		}
 		String direction = command.getSecondWord();
-// Try to leave current room.
+		// Try to leave current room.
 		Room nextRoom = currentRoom.nextRoom(direction);
 		if (nextRoom == null)
 			System.out.println("You cannot go that way!");
@@ -350,7 +357,7 @@ public class Game {
 
 		// Look at environment
 		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
-		//List all the environmentItems in the room
+		// List all the environmentItems in the room
 		if (env.size() == 1) {
 			System.out.print(Phrases.getLookEnv().get((int) (Math.random() * Phrases.getLookEnv().size())) + "only ");
 			for (EnvironmentItem obj : env)
@@ -361,35 +368,37 @@ public class Game {
 			for (int i = 0; i < env.size(); i++) {
 				if (i < env.size() - 1) {
 					System.out.print(env.get(i).toString());
-					if(env.size()>2) System.out.print(", ");
-					else System.out.print(" ");
+					if (env.size() > 2)
+						System.out.print(", ");
+					else
+						System.out.print(" ");
 				} else
 					System.out.print("and " + env.get(i).toString());
 			}
 			System.out.println(". ");
 		}
 		String seeInEnvironment = "";
-		for(EnvironmentItem obj : env) {
-			if(obj.getItems().size()>0) {
-				if(seeInEnvironment.equals("")) {
-					seeInEnvironment += Phrases.getLookInEnv().get((int) (Math.random() * Phrases.getLookInEnv().size()));
-				} else seeInEnvironment += "and ";
+		for (EnvironmentItem obj : env) {
+			if (obj.getItems().size() > 0) {
+				if (seeInEnvironment.equals("")) {
+					seeInEnvironment += Phrases.getLookInEnv()
+							.get((int) (Math.random() * Phrases.getLookInEnv().size()));
+				} else
+					seeInEnvironment += "and ";
 				seeInEnvironment += obj.toString() + " ";
 			}
 		}
-		if(!seeInEnvironment.equals("")) System.out.println(seeInEnvironment.substring(0,seeInEnvironment.length()-1)+".");
-		
-		
-		
-		//Look at roomItems
-		ArrayList<UsableItem> items = currentRoom.getRoomInventory().getItems();
-		
-		
-		//Check both
-		if(env.size()==0 && items.size()==0) {
+		if (!seeInEnvironment.equals(""))
+			System.out.println(seeInEnvironment.substring(0, seeInEnvironment.length() - 1) + ".");
+
+		// Look at roomItems
+		ArrayList<Item> items = currentRoom.getRoomInventory().getItems();
+
+		// Check both
+		if (env.size() == 0 && items.size() == 0) {
 			System.out.println(Phrases.getLookNothing().get((int) (Math.random() * Phrases.getLookNothing().size())));
 		}
-		
+
 	}
 
 	private int getTimeLeft() {
