@@ -6,7 +6,7 @@ import java.util.Arrays;
 import javax.swing.text.Document;
 
 public class Inventory {
-	private static final int NUM_INVENTORIES = 2;
+	private static final int NUM_INVENTORIES = 3;
 
 	private ArrayList<Object> inventoryItems = new ArrayList<Object>();
 
@@ -30,8 +30,8 @@ public class Inventory {
 	}
 
 	// Returns the object that you search for and delete
-	// If item does not exist returns null
-	public Object removeInventoryItem(Object item) {
+		// If item does not exist returns null
+	/*public Object removeInventoryItem(Object item) {
 		int position = isInInventory(item);
 		if (position == -1)
 			return null;
@@ -39,16 +39,20 @@ public class Inventory {
 			return inventoryItems.remove(position);
 		}
 	}
-
+*/
 	// Returns the index of the item in the ArrayList
 	// If does not exist, returns -1
-	public int isInInventory(Object item) {
-		for (int i = 0; i < inventoryItems.size(); i++) {
-			if (item.toString().equalsIgnoreCase(inventoryItems.get(i).toString())) {
-				return i;
+	public boolean isInInventory(Object item) {
+		
+			for(ArrayList<Item> i :masterInventory){
+				for(Item j: i){
+					if(j.equals(item)){
+						return true;
+					}	
+				}
+				
 			}
-		}
-		return -1;
+		return false;
 	}
 
 	// Prints out a startstring such as "This room contains:" followed
@@ -60,9 +64,9 @@ public class Inventory {
 		}
 	}
 
-	public void printMaster(){
-		for(ArrayList<Item> i :masterInventory){
-			for(Item j: i){
+	public void printMaster() {
+		for (ArrayList<Item> i : masterInventory) {
+			for (Item j : i) {
 				System.out.println(j.name);
 			}
 		}
@@ -96,10 +100,10 @@ public class Inventory {
 	}
 
 	public Consumables getConsumable(String name) {
-		int index = indiviusalIndex(consumablesInventory,name);
-		if(index<0){
+		int index = indiviusalIndex(consumablesInventory, name);
+		if (index < 0) {
 			return null;
-		}else{
+		} else {
 			return consumablesInventory.get(index);
 		}
 	}

@@ -181,6 +181,8 @@ public class Game {
 			return false;
 		}
 		String commandWord = command.getCommandWord();
+		String word2 = command.getSecondWord();
+		
 		switch (commandWord) {
 		case "test":
 			dinosaurController.printAllDinosaurs();
@@ -220,18 +222,25 @@ public class Game {
 			break;
 		case "attack":
 			attack(command);
-		case "eqiup":
+			break;
+		case "equip":
 			equip(command);
+			break;
 		case "unequip":
 			unequip(command);
-
+			break;
+		case "suicide":
+			killSelf();
+			return true;
 		default:
 			if (!inFight) { // the following commands are for when you are not in battle
 				switch (commandWord) {
 				case "look":
 					look(command);
+					break;
 				case "search":
 					search(command);
+					break;
 				case "time":
 					checkTime(command);
 					break;
@@ -248,13 +257,14 @@ public class Game {
 	}
 
 	private void equip(Command command) {
+		System.out.println(command.getSecondWord()!=null);
 		if (!command.hasSecondWord()) {
 			System.out.println("you must say what you want to equip.");
-		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
+		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
 			System.out.println("You can not equip that item");
-		} else if ((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
+		} else if ((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquipped())) {
 			System.out.println("That item is already equiped.");
 		}else{
 			player.equip(player.getInventory().getItem(command.getSecondWord()));
@@ -264,11 +274,11 @@ public class Game {
 	private void unequip(Command command) {
 		if (!command.hasSecondWord()) {
 			System.out.println("you must say what you want to equip.");
-		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
+		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
 			System.out.println("You can not unequip that item");
-		} else if (!(((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
+		} else if (!(((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquipped())) {
 			System.out.println("That item is already unequiped.");
 		}else{
 			player.unequip(command.getSecondWord());
@@ -281,7 +291,7 @@ public class Game {
 	private void use(Command command) {
 		if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to heal with.");
-		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
+		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Consumables)) {
 			System.out.println("you can not heal with that item.");
@@ -427,6 +437,12 @@ public class Game {
 
 	private void setTimeLeft(int newTime) {
 		timeLeft = newTime;
+	}
+	
+	public void killSelf() {
+		System.out.println("You have killed yourself");
+		System.out.println("GG m8");
+		
 	}
 
 }
