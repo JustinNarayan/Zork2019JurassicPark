@@ -2,3 +2,7 @@ all item classes
 3 word parser
 commands
 player classes
+dino ai
+populate rooms with items
+work on game end
+fix siren supply shed once
