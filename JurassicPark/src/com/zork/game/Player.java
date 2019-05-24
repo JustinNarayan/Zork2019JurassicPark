@@ -1,13 +1,20 @@
 package com.zork.game;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+
 public class Player {
     private Inventory inventory;
 
-    public Player(){
+    public Player(BufferedInputStream bis){
         inventory = new Inventory();
+
     }
     
-    public Inventory getInventory(){
+    public Player() {
+	}
+
+	public Inventory getInventory(){
         return inventory;
     }
 

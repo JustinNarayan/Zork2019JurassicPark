@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import com.zork.game.dinosaurs.DinosaurController;
 
-import javazoom.jl.player.Player;
+//import javazoom.jl.player.Player;
 
 /**
  * Class Game - the main class of the "Zork" game.
@@ -162,7 +162,7 @@ public class Game {
 			FileInputStream fis = new FileInputStream(filename);
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			Player player = new Player(bis);
-			player.play();
+			//player.play();
 		} catch (Exception e) {
 			System.out.println("Problem playing file " + filename);
 			System.out.println(e);
@@ -257,10 +257,21 @@ public class Game {
 			System.out.println("That item is not in your inventory.");
 		} else if(!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
 			System.out.println("You can not equip that item");
+		}else if((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
+			System.out.println("That item is already equiped.");
 		}
 	}
 
 	private void unequip(Command command) {
+		if (!command.hasSecondWord()) {
+			System.out.println("you must say what you want to equip.");
+		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
+			System.out.println("That item is not in your inventory.");
+		} else if(!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
+			System.out.println("You can not unequip that item");
+		}else if(!(((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
+			System.out.println("That item is already unequiped.");
+		}
 	}
 
 	private void checkTime(Command command) {
