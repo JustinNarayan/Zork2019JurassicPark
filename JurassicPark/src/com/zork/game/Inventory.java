@@ -12,15 +12,17 @@ public class Inventory {
 
 	public ArrayList<Weapons> weaponsInventory;
 	public ArrayList<Documents> docInventory;
+	public ArrayList<Consumables> consumablesInventory;
 	public ArrayList[] masterInventory;
 
 	public Inventory() {
 		docInventory = new ArrayList<Documents>();
 		weaponsInventory = new ArrayList<Weapons>();
-
+		consumablesInventory = new ArrayList<Consumables>();
 		masterInventory = new ArrayList[NUM_INVENTORIES];
 		masterInventory[0] = docInventory;
 		masterInventory[1] = weaponsInventory;
+		masterInventory[2] = consumablesInventory;
 	}
 
 	public void addInventoryItem(Object item) {
@@ -58,6 +60,14 @@ public class Inventory {
 		}
 	}
 
+	public void printMaster(){
+		for(ArrayList<Item> i :masterInventory){
+			for(Item j: i){
+				System.out.println(j.name);
+			}
+		}
+	}
+
 	public Item getItem(String name) {
 		int inventoryNum = getInventoryType(name);
 		int index = indiviusalIndex(masterInventory[inventoryNum], name);
@@ -68,10 +78,11 @@ public class Inventory {
 	public int getInventoryType(String name) {
 		if (Arrays.asList(docInventory).indexOf(name) != -1) {
 			return 0;
-		} else {
+		} else if (Arrays.asList(weaponsInventory).indexOf(name) != -1) {
 			return 1;
+		} else {
+			return 2;
 		}
-	}
 
 	}
 
@@ -82,6 +93,15 @@ public class Inventory {
 			}
 		}
 		return -1;
+	}
+
+	public Consumables getConsumable(String name) {
+		int index = indiviusalIndex(consumablesInventory,name);
+		if(index<0){
+			return null;
+		}else{
+			return consumablesInventory.get(index);
+		}
 	}
 
 }

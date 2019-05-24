@@ -115,7 +115,7 @@ public class Game {
 			initRooms("data/rooms.dat");
 			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		parser = new Parser();
@@ -162,7 +162,7 @@ public class Game {
 			FileInputStream fis = new FileInputStream(filename);
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			Player player = new Player(bis);
-			//player.play();
+			// player.play();
 		} catch (Exception e) {
 			System.out.println("Problem playing file " + filename);
 			System.out.println(e);
@@ -232,9 +232,6 @@ public class Game {
 					look(command);
 				case "search":
 					search(command);
-				case "heal":
-					heal(command);
-					break;
 				case "time":
 					checkTime(command);
 					break;
@@ -255,10 +252,12 @@ public class Game {
 			System.out.println("you must say what you want to equip.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
 			System.out.println("That item is not in your inventory.");
-		} else if(!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
+		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
 			System.out.println("You can not equip that item");
-		}else if((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
+		} else if ((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
 			System.out.println("That item is already equiped.");
+		}else{
+			player.equip(player.getInventory().getItem(command.getSecondWord()));
 		}
 	}
 
@@ -267,17 +266,29 @@ public class Game {
 			System.out.println("you must say what you want to equip.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
 			System.out.println("That item is not in your inventory.");
-		} else if(!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
+		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
 			System.out.println("You can not unequip that item");
-		}else if(!(((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
+		} else if (!(((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquiped())) {
 			System.out.println("That item is already unequiped.");
+		}else{
+			player.unequip(command.getSecondWord());
 		}
 	}
 
 	private void checkTime(Command command) {
 	}
 
-	private void heal(Command command) {
+	private void use(Command command) {
+		if (!command.hasSecondWord()) {
+			System.out.println("You must say what you want to heal with.");
+		} else if (!(player.getInventory().isInInventory(command.getSecondWord()) > -1)) {
+			System.out.println("That item is not in your inventory.");
+		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Consumables)) {
+			System.out.println("you can not heal with that item.");
+		} else {
+			Consumables current = player.getInventory().getConsumable(command.getSecondWord());
+			player.use(current);
+		}
 	}
 
 	private void search(Command command) {
@@ -296,13 +307,11 @@ public class Game {
 	}
 
 	private void checkInventory(Command command) {
+	
+		player.getInventory().printMaster();
 	}
 
 	private void climb(Command command) {
-	}
-
-	private void use(Command command) {
-
 	}
 
 	// implementations of user commands:

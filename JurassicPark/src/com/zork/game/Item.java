@@ -5,4 +5,5 @@ public class Item {
 	private String state;
 	private Room room;
 	private EnvironmentItem environmentItem;
+	public String name;
 }
