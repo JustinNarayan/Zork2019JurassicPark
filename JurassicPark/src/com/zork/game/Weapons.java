@@ -2,11 +2,11 @@ package com.zork.game;
 
 public class Weapons extends Item{
 
-    public boolean equiped;
+    public boolean equipped;
 
-    //contructor needs to be done
+    //constructor needs to be done
 
-    public boolean isEquiped(){
-        return equiped;        
+    public boolean isEquipped(){
+        return equipped;        
     }
 }
