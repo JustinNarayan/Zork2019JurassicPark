@@ -8,6 +8,7 @@ import com.zork.game.Room;
 
 public class TyrannosaurusRex extends Dinosaur {
 	private final double MOBILITY = 0.65;
+	private final double AWARENESS = 0.5;
 	
 	public TyrannosaurusRex(Room startRoom, String name) {
 		super(startRoom);
@@ -27,6 +28,7 @@ public class TyrannosaurusRex extends Dinosaur {
 		this.currentRoom = startRoom;
 		this.name = name;
 		mobility = MOBILITY;
+		awareness = AWARENESS;
 	}
 
 	public String toString() {

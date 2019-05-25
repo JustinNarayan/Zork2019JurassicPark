@@ -8,6 +8,7 @@ import com.zork.game.Room;
 
 public class Stegosaurus extends Dinosaur {
 	private final double MOBILITY = 0.4;
+	private final double AWARENESS = 0;
 	
 	public Stegosaurus(Room startRoom, String name) {
 		super(startRoom);
@@ -28,6 +29,7 @@ public class Stegosaurus extends Dinosaur {
 		this.currentRoom = startRoom;
 		this.name = name;
 		mobility = MOBILITY;
+		awareness = AWARENESS;
 	}
 
 	public String toString() {

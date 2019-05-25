@@ -23,6 +23,9 @@ public abstract class Dinosaur {
 	//Percentage chance that dino will move each term
 	protected double mobility;
 	
+	//Chance each turn they become aware of player
+	protected double awareness;
+	
 	
 	
 	public Dinosaur(Room startRoom) {
