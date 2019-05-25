@@ -257,10 +257,12 @@ public class Game {
 	}
 
 	private void equip(Command command) {
-		System.out.println(command.getSecondWord()!=null);
-		if (!command.hasSecondWord()) {
+		if(player.getInventory()==null){
+			System.out.println("you have nothing to equip.");
+		}
+		else if (!command.hasSecondWord()) {
 			System.out.println("you must say what you want to equip.");
-		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
+		} else if ((!(player.getInventory().isInInventory(command.getSecondWord())))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
 			System.out.println("You can not equip that item");
@@ -270,8 +272,10 @@ public class Game {
 			player.equip(player.getInventory().getItem(command.getSecondWord()));
 		}
 	}
+	
 
 	private void unequip(Command command) {
+		
 		if (!command.hasSecondWord()) {
 			System.out.println("you must say what you want to equip.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
@@ -289,7 +293,10 @@ public class Game {
 	}
 
 	private void use(Command command) {
-		if (!command.hasSecondWord()) {
+		if(player.getInventory()==null){
+			System.out.println("you have nothing to use.");
+		}
+		else if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to heal with.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");

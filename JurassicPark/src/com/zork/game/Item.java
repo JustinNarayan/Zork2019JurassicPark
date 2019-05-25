@@ -6,4 +6,8 @@ public class Item {
 	private Room room;
 	private EnvironmentItem environmentItem;
 	public String name;
+
+	public String getName(){
+		return name;
+	}
 }

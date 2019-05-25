@@ -13,7 +13,7 @@ public class Inventory {
 	public ArrayList<Weapons> weaponsInventory;
 	public ArrayList<Documents> docInventory;
 	public ArrayList<Consumables> consumablesInventory;
-	public ArrayList[] masterInventory;
+	public static ArrayList[] masterInventory;
 
 	public Inventory() {
 		docInventory = new ArrayList<Documents>();
@@ -30,30 +30,14 @@ public class Inventory {
 	}
 
 	// Returns the object that you search for and delete
-		// If item does not exist returns null
-	/*public Object removeInventoryItem(Object item) {
-		int position = isInInventory(item);
-		if (position == -1)
-			return null;
-		else {
-			return inventoryItems.remove(position);
-		}
-	}
-*/
+	// If item does not exist returns null
+	/*
+	 * public Object removeInventoryItem(Object item) { int position =
+	 * isInInventory(item); if (position == -1) return null; else { return
+	 * inventoryItems.remove(position); } }
+	 */
 	// Returns the index of the item in the ArrayList
 	// If does not exist, returns -1
-	public boolean isInInventory(Object item) {
-		
-			for(ArrayList<Item> i :masterInventory){
-				for(Item j: i){
-					if(j.equals(item)){
-						return true;
-					}	
-				}
-				
-			}
-		return false;
-	}
 
 	// Prints out a startstring such as "This room contains:" followed
 	// by every item's toString() on its own line
@@ -71,6 +55,21 @@ public class Inventory {
 			}
 		}
 	}
+
+	public boolean isInInventory(String item) {
+		
+		if(masterInventory == null){
+			return false;
+		}
+		for (int i =0; i<masterInventory.length;i++) {
+			if (indiviusalIndex(masterInventory[i], item) != -1) {
+				return true;
+			}
+		}
+		return false;
+		}
+			
+	
 
 	public Item getItem(String name) {
 		int inventoryNum = getInventoryType(name);

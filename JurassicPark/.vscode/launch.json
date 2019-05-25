@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Zork",
+            "request": "launch",
+            "mainClass": "com.zork.game.Zork",
+            "projectName": "JurassicPark",
+            "console": "integratedTerminal"
+        }
+    ]
+}
