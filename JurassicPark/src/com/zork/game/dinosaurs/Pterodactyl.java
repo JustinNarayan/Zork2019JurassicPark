@@ -7,6 +7,7 @@ import com.zork.game.Game;
 import com.zork.game.Room;
 
 public class Pterodactyl extends Dinosaur {
+	private final double MOBILITY = 1;
 	
 	public Pterodactyl(Room startRoom, String name) {
 		super(startRoom);
@@ -22,6 +23,7 @@ public class Pterodactyl extends Dinosaur {
 		
 		this.currentRoom = startRoom;
 		this.name = name;
+		mobility = MOBILITY;
 	}
 
 	public String toString() {

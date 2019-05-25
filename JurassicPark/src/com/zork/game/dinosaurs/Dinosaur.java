@@ -20,6 +20,9 @@ public abstract class Dinosaur {
 	//Hand-created by game designers
 	protected ArrayList<Room> roomsInRange;
 	
+	//Percentage chance that dino will move each term
+	protected double mobility;
+	
 	
 	
 	public Dinosaur(Room startRoom) {
