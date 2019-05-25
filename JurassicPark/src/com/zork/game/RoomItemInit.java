@@ -7,10 +7,17 @@ public class RoomItemInit {
 
 	private static ArrayList<String> roomsWithTrees;
 	private static ArrayList<String> roomsWithWater;
+	private static ArrayList<String> roomsWithDesks;
 
 	public static void initRooms() {
 		roomsWithTrees = new ArrayList<String>();
 		roomsWithWater = new ArrayList<String>();
+		roomsWithDesks = new ArrayList<String>();
+		
+		initEnvironmentItems();
+	}
+	
+	public static void initEnvironmentItems() {
 
 		// All hallways/pathways have trees in them
 		roomsWithTrees.add("HALLWAY_1");
@@ -129,5 +136,13 @@ public class RoomItemInit {
 	
 	private static HashMap<String, Room> getMap() {
 		return Game.getMasterRoomMap();
+	}
+	
+	public boolean addInRoomEnvironment(Room room, Item item, String type) {
+		if(room.getRoomInventory().getEnvironmentItem(type) != null) {
+			room.getRoomInventory().getEnvironmentItem(type).addItem(item);
+			return true;
+		}
+		else return false;
 	}
 }
