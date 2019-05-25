@@ -31,13 +31,10 @@ import com.zork.game.dinosaurs.DinosaurController;
  */
 public class Game {
 	private Parser parser;
+	private Timer timer;
 	private Room currentRoom;
-	private int timeLeft = -1; // -1 means time has not been initialized; 1440 minutes when really initialized
-	private final int MAX_TIME = 1440;
-	private final int TIME_IN_HOUR = 60;
 	private final String SIREN_POSITION = "Supply Shed";
 	private Player player;
-
 	private DinosaurController dinosaurController;
 
 	// This is a MASTER object that contains all of the rooms and is easily
@@ -119,6 +116,8 @@ public class Game {
 			e.printStackTrace();
 		}
 		parser = new Parser();
+		timer = new Timer();
+		dinosaurController = new DinosaurController();
 	}
 
 	/**
@@ -128,10 +127,7 @@ public class Game {
 		printWelcome();
 		// Enter the main command loop. Here we repeatedly read commands and execute
 		// them until the game is over.
-
-		dinosaurController = new DinosaurController();
 		RoomItemInit.initRooms();
-
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
@@ -194,6 +190,7 @@ public class Game {
 			printHelp();
 			break;
 		case "go":
+			timer.reduceTime(timer.TIME_TO_GO);
 			goRoom(command);
 			break;
 		case "quit":
@@ -203,9 +200,11 @@ public class Game {
 				return true; // signal that we want to quit
 			break;
 		case "use":
+			timer.reduceTime(timer.TIME_TO_USE);
 			use(command);
 			break;
 		case "climb":
+			timer.reduceTime(timer.TIME_TO_CLIMB);
 			climb(command);
 			break;
 		case "inventory":
@@ -215,18 +214,23 @@ public class Game {
 			checkAmmo(command);
 			break;
 		case "drop":
+			timer.reduceTime(timer.TIME_TO_DROP);
 			drop(command);
 			break;
 		case "grab":
+			timer.reduceTime(timer.TIME_TO_GRAB);
 			grab(command);
 			break;
 		case "attack":
+			timer.reduceTime(timer.TIME_TO_ATTACK);
 			attack(command);
 			break;
 		case "equip":
+			timer.reduceTime(timer.TIME_TO_EQUIP);
 			equip(command);
 			break;
 		case "unequip":
+			timer.reduceTime(timer.TIME_TO_UNEQUIP);
 			unequip(command);
 			break;
 		case "suicide":
@@ -236,9 +240,11 @@ public class Game {
 			if (!inFight) { // the following commands are for when you are not in battle
 				switch (commandWord) {
 				case "look":
+					timer.reduceTime(timer.TIME_TO_LOOK);
 					look(command);
 					break;
 				case "search":
+					timer.reduceTime(timer.TIME_TO_SEARCH);
 					search(command);
 					break;
 				case "time":
@@ -290,6 +296,11 @@ public class Game {
 	}
 
 	private void checkTime(Command command) {
+		if(timer.getTimeLeft()==-1) 
+			System.out.println("It is midday on the island.");
+		else
+			System.out.println("You have " + Formatter.properTime(timer.getTimeLeft()) + " until you have to "
+				+ "leave the island. Get going!");
 	}
 
 	private void use(Command command) {
@@ -332,7 +343,6 @@ public class Game {
 	}
 
 	private void checkInventory(Command command) {
-		
 		player.getInventory().printMaster();
 	}
 
@@ -371,13 +381,13 @@ public class Game {
 		else {
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());
-
+			
 			// Print out the siren message in-story to open the facilities
 			if (currentRoom.getRoomName().equals(SIREN_POSITION)) {
-				if (getTimeLeft() == -1)
-					setTimeLeft(MAX_TIME);
+				if (timer.getTimeLeft() == -1) {
+					timer.initTime();
 
-				System.out.println(Formatter.blockText("Inside the shed, you hear sirens begin to blare and an alert "
+				System.out.println(Formatter.blockText("\nInside the shed, you hear sirens begin to blare and an alert "
 						+ "message sounds through the speakers:", Formatter.getCutoff(), "") + "\n");
 				System.out.println(Formatter.blockText("\"Attention! Attention everyone on Jurassic Park! Worsening "
 						+ "conditions have made it unsafe to continue work here. All staff personnel must evacuate "
@@ -385,14 +395,15 @@ public class Game {
 						+ "are forcing all personnel to make their way to the northeast shipyard. "
 						+ "I repeat, all personnel to the northeast shipyard. Control centers are losing power, "
 						+ "meaning enclosure doors may be starting to open due to technical malfunctions. "
-						+ "The last personnel ship will evacuate in " + getTimeLeft() / TIME_IN_HOUR
-						+ " hours. I repeat, you have " + getTimeLeft() / TIME_IN_HOUR
+						+ "The last personnel ship will evacuate in " + timer.getTimeLeft() / timer.getTimeInHour()
+						+ " hours. I repeat, you have " + timer.getTimeLeft() / timer.getTimeInHour()
 						+ " hours to get off the island. Over and out.\"", Formatter.getCutoff(), "\t") + "\n");
 				System.out.println(Formatter.blockText("You hear clanging of metal outside of the shed - the security "
 						+ "doors have opened. You have limited time to gather information on the island before you "
-						+ "need to escape. You'll need to evade the creaters unleashed on the island, and if not, face death.",
+						+ "need to escape. The more documents and artifacts you acquire, the more successful your article"
+						+ "will be. You'll need to evade the creaters unleashed on the island, and if not, face death.",
 						Formatter.getCutoff(), " ") + "\n");
-
+				}
 			}
 		}
 	}
@@ -444,14 +455,6 @@ public class Game {
 			System.out.println(Phrases.getLookNothing().get((int) (Math.random() * Phrases.getLookNothing().size())));
 		}
 
-	}
-
-	private int getTimeLeft() {
-		return timeLeft;
-	}
-
-	private void setTimeLeft(int newTime) {
-		timeLeft = newTime;
 	}
 	
 	public void killSelf() {

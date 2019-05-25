@@ -53,24 +53,24 @@ public class Formatter {
 	 * @return				The time in the format of hh:mm
 	 */
 	
-	public static String properTime(int minutes) {
+	public static String properTime(int seconds) {
 		String time = "";
-		int hours = minutes/60;
+		int hours = seconds/3600;
 		if(hours<10) time = "0"+hours;
 		else time = ""+hours;
 		time += ":";
-		int mins = minutes%60;
+		int mins = (seconds/60)%60;
 		if(mins<10) time += "0"+mins;
 		else time += mins;
+		time += ":";
+		int secs = seconds%60;
+		if(secs<10) time += "0"+secs;
+		else time += secs;
 		return time;
 	}
 	
 	public static int getCutoff() {
 		return FORMAT_BLOCK_TEXT_CUTOFF;
-	}
-	
-	public static void main(String[] args) {
-		System.out.println(properTime(78));
 	}
 	
 }
