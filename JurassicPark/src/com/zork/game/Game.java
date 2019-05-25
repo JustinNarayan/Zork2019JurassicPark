@@ -182,6 +182,7 @@ public class Game {
 		switch (commandWord) {
 		case "test":
 			dinosaurController.printAllDinosaurs();
+			dinosaurController.getDinosaurAwareness();
 			break;
 		case "help":
 			printHelp();
@@ -380,7 +381,13 @@ public class Game {
 			System.out.println("You cannot go that way!");
 		else {
 			currentRoom = nextRoom;
-			System.out.println(currentRoom.longDescription());
+			System.out.println(currentRoom.longDescription());			
+			
+			
+			//Move dinosaurs
+			dinosaurController.moveDinosaurs();
+			
+			
 			
 			// Print out the siren message in-story to open the facilities
 			if (currentRoom.getRoomName().equals(SIREN_POSITION)) {

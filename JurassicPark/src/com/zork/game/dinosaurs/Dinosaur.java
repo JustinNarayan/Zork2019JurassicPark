@@ -26,6 +26,9 @@ public abstract class Dinosaur {
 	//Chance each turn they become aware of player
 	protected double awareness;
 	
+	//If they are aware player is in room
+	protected boolean aware;
+	
 	
 	
 	public Dinosaur(Room startRoom) {
@@ -57,46 +60,83 @@ public abstract class Dinosaur {
 	
 
 	//Picks a random direction until finds a direction it can move to
-	public Room moveToNewRoom() {
-		while(true) {
-			int random = (int)(Math.random()*4);
-			
-			String direction;
-			switch(random) {
-			case 1:
-				direction="north";
-				break;
-			case 2:
-				direction="west";
-				break;
-			case 3:
-				direction="south";
-				break;
-			default:
-				direction="east";
-				break;
-			}
-			Room nextRoom = currentRoom.nextRoom(direction);
-			if(nextRoom==null) {
-				//The dinosaur cannot move in this direction because there is no room
-				//It will go in the loop until it moves into a valid position
-			} else if(!roomsInRange.contains(nextRoom)){
-				//The dinosaur cannot move in this direction because it's out of range
-				//It will go in the loop until it moves into a valid position
-			} else {
-				//This is a valid room to move to
+	public Room moveToNewRoom(DinosaurController c) {
+		if(!aware) {
+			while(true) {
+				int random = (int)(Math.random()*4);
 				
-				if(!nextRoom.getRoomInventory().hasDinosaurs()) {
-					currentRoom.getRoomInventory().removeDinosaur(this);
-					currentRoom = nextRoom;
-					currentRoom.getRoomInventory().addDinosaur(this);				
-				} else {
-					System.out.println(nextRoom.getRoomName()+" has dinos.");
+				String direction;
+				switch(random) {
+				case 1:
+					direction="north";
+					break;
+				case 2:
+					direction="west";
+					break;
+				case 3:
+					direction="south";
+					break;
+				default:
+					direction="east";
+					break;
 				}
-				return currentRoom;
+				Room nextRoom = currentRoom.nextRoom(direction);
+				if(nextRoom==null) {
+					//The dinosaur cannot move in this direction because there is no room
+					//It will go in the loop until it moves into a valid position
+				} else if(!roomsInRange.contains(nextRoom)){
+					//The dinosaur cannot move in this direction because it's out of range
+					//It will go in the loop until it moves into a valid position
+				} else {
+					//This is a valid room to move to
+					
+					if(!nextRoom.getRoomInventory().hasDinosaurs()) {
+						currentRoom.getRoomInventory().removeDinosaur(this);
+						currentRoom = nextRoom;
+						currentRoom.getRoomInventory().addDinosaur(this);				
+					}
+					return currentRoom;
+				}
+			}
+		} else {
+			//Lost the trail
+			if(Math.random()>awareness) {
+				aware = false;
+				c.setStatus(toString(), "lost");
+			} else {
+				//Follow player
+				if(roomsInRange.contains(Game.getCurrentRoom())) {
+					currentRoom.getRoomInventory().removeDinosaur(this);
+					currentRoom = Game.getCurrentRoom();
+					currentRoom.getRoomInventory().addDinosaur(this);		
+					c.setStatus(toString(), "follow");
+				} else {
+					//Lost the trail
+					aware = false;
+					c.setStatus(toString(), "lost");
+				}
 			}
 		}
+		return currentRoom;
 	}
+	
+	public void determineAwareness(DinosaurController c) {
+		if(currentRoom == Game.getCurrentRoom()) {
+			System.out.println(toString());
+			if(!aware) {
+				if(Math.random()<awareness && c.isAware()==false) {
+					aware = true;
+					c.setStatus(toString(), "aware");
+				} else {
+					c.setStatus(toString(), "unaware");
+				}
+			}
+			c.setStatus(toString(), "unaware");
+		} else {
+			aware = false;
+		}
+	}
+	
 	
 	public String toString(String s) {
 		return(s + " named " + name);

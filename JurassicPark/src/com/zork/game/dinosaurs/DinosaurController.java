@@ -10,8 +10,12 @@ public class DinosaurController {
 	
 	//An arraylist containing all of the dinosaurs in the game
 	private ArrayList<Dinosaur> dinosaurs = new ArrayList<Dinosaur>();
+	
+	private boolean aware;
 
 	public DinosaurController() {
+		aware = false;
+		
 		//Initialize all dinosaurs position in specific rooms in different enclosures
 		dinosaurs.add(new Bronchiosaurus(getMap().get("BRONCHIOSAURUS_SW"), "Bronchiosaurus1"));
 	
@@ -36,8 +40,37 @@ public class DinosaurController {
 		dinosaurs.add(new Velociraptor(getMap().get("HILLS_NE"), "Velociraptor3"));
 	}
 	
+	public boolean isAware() {
+		return aware;
+	}
+	
 	protected HashMap<String, Room> getMap() {
 		return Game.getMasterRoomMap();
+	}
+	
+	public void getDinosaurAwareness() {
+		for(Dinosaur d : dinosaurs) {
+			d.determineAwareness(this);
+		}
+	}
+	
+	public void moveDinosaurs() {
+		for(Dinosaur d : dinosaurs) {
+			d.determineAwareness(this);
+			d.moveToNewRoom(this);
+		}
+	}
+	
+	public void setStatus(String dino, String s) {
+		if(s=="unaware") {
+			System.out.println("There is a " + dino + " within view! Fortunately, it hasn't noticed you yet...");
+		} else if(s=="aware") {
+			System.out.println("Look out! There is a " + dino + " in the room and it's spotted you!");
+		} else if(s=="lost" ) {
+			System.out.println("The " + dino + " has lost your location, for now...");
+		} else if(s=="follow") {
+			System.out.println("The " + dino + " has followed you into this new area!");
+		}
 	}
 	
 	public void printAllDinosaurs() {
