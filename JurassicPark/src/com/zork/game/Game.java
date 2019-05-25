@@ -318,13 +318,21 @@ public class Game {
 	}
 
 	private void drop(Command command) {
+		if(!command.hasSecondWord()){
+			System.out.println("you must include what you want to drop.");
+		}else if(!(player.getInventory().isInInventory(command.getSecondWord()))){
+			System.out.println("That item is not in your inventory.");
+		}else{
+			System.err.println(command.getSecondWord() + " has been removed.");
+			player.getInventory().removeItem(command.getSecondWord());
+		}
 	}
 
 	private void checkAmmo(Command command) {
 	}
 
 	private void checkInventory(Command command) {
-	
+		
 		player.getInventory().printMaster();
 	}
 

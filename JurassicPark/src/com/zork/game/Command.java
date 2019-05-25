@@ -60,6 +60,10 @@ class Command
     {
         return (commandWord == null);
     }
+    public String getThirdWord()
+    {
+        return thirdWord;
+    }
 /**
      * Return true if the command has a second word.
      */

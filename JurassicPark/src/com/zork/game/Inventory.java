@@ -49,6 +49,9 @@ public class Inventory {
 	}
 
 	public void printMaster() {
+		if(masterInventory==null){
+			System.out.println("The enventory is empty");
+		}
 		for (ArrayList<Item> i : masterInventory) {
 			for (Item j : i) {
 				System.out.println(j.name);
@@ -105,6 +108,12 @@ public class Inventory {
 		} else {
 			return consumablesInventory.get(index);
 		}
+	}
+
+	public Item removeItem(String name) {
+		int inventoryNum = getInventoryType(name);
+		int index = indiviusalIndex(masterInventory[inventoryNum], name);
+		return (Item) masterInventory[inventoryNum].remove(index);
 	}
 
 }
