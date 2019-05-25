@@ -32,7 +32,7 @@ import com.zork.game.dinosaurs.DinosaurController;
 public class Game {
 	private Parser parser;
 	private Timer timer;
-	private Room currentRoom;
+	private static Room currentRoom;
 	private final String SIREN_POSITION = "Supply Shed";
 	private Player player;
 	private DinosaurController dinosaurController;
@@ -460,7 +460,10 @@ public class Game {
 	public void killSelf() {
 		System.out.println("You have killed yourself");
 		System.out.println("GG m8");
-		
+	}
+	
+	public static Room getCurrentRoom() {
+		return currentRoom;
 	}
 
 }
