@@ -269,7 +269,27 @@ public class RoomItemInit {
 	
 	
 	public static void initWeapons() {
-		//weapons.add(new Weapons("gun", getMap().get("MUNITIONS_SW")));
+		//guns
+		weapons.add(new Weapons("gun", getMap().get("MUNITIONS_SHED_NE")));
+		weapons.add(new Weapons("gun", getMap().get("STAFF_QUARTERS_SE")));
+		weapons.add(new Weapons("gun", getMap().get("HELIPAD")));
+		
+		//knives
+		weapons.add(new Weapons("knife", getMap().get("SUPPLY_SHED")));
+		weapons.add(new Weapons("knife", getMap().get("FOREST_W")));
+		weapons.add(new Weapons("knife", getMap().get("SPINOSAURUS_CONTROL")));
+		
+		//flashlights
+		weapons.add(new Weapons("flashlight", getMap().get("EQUIPEMENT_YARD")));
+		weapons.add(new Weapons("flashlight", getMap().get("VISITOR_CENTRE_SE")));
+		weapons.add(new Weapons("flashlight", getMap().get("STAFF_QUARTERS_SW")));
+		
+		//flares
+		weapons.add(new Weapons("flare", getMap().get("CAVE_2")));
+		weapons.add(new Weapons("flare", getMap().get("SERVER_ROOM")));
+		weapons.add(new Weapons("flare", getMap().get("BEACH_2_N")));
+		weapons.add(new Weapons("flare", getMap().get("RECORDS_W")));
+		weapons.add(new Weapons("flare", getMap().get("CABIN")));
 	}
 	
 	
