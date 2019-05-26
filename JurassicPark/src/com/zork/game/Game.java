@@ -394,30 +394,39 @@ public class Game {
 	 * @param command
 	 */
 	private void climb(Command command) {
-	if(!command.getSecondWord().equals("tree")||!command.getSecondWord().equals("trees")){
-		System.out.println("you can only climb trees.");
-	
-	}else if (!currentRoom.getRoomInventory().roomHasItem("tree")) {
-			System.out.println("the room does not have any trees to climb.");
-		} else {
+		if(!command.hasSecondWord() || (command.getSecondWord().equals("up") && !command.hasThirdWord()) ) {
+			System.out.println("What do you want to climb?");
+		} else if(command.getSecondWord().equals("down")) {
+			if(player.inTree) {
+				System.out.println("You have climbed down the tree.");
+				player.inTree = false;
+			} else {
+				System.out.println("You haven't climbed anything yet!");
+			}
+		} else if( (!command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees")) && (!command.hasThirdWord() && !command.getSecondWord().equals("up") && !command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees"))  ){
+			System.out.println("You can only climb trees.");
+		}else if (!currentRoom.getRoomInventory().environmentHasItem("trees")) {
+			System.out.println("You don't see any trees to climb.");
+		} else if(!player.inTree){
 			if (inFight) {
 				if ((int) (Math.random() * 15) == 1) { //1/15 chance that they fall and die
-					System.out.println(
-							"In you panic to escape the dinosaur you fell down broke you legs, and got eaten.");
-							dead= true;
+					System.out.println(	"In your panic to escape the dinosaur, you fell down, broke your legs, and got eaten.");
+					dead= true;
 				}else{
-					System.out.println("you have climbed the tree.");
+					System.out.println("You have climbed the tree.");
 					player.inTree = true;
 				}
 			} else {
 				if ((int) (Math.random() * 20) == 1) {
-					System.out.println("you have fallen and have died a painfull death");
+					System.out.println("A branch snapped and you have fallen to a painful death.");
 					dead = true;
 				}else{
-					System.out.println("you have climbed the tree.");
+					System.out.println("You have climbed the tree.");
 					player.inTree=true;;
 				}
 			}
+		} else {
+			System.out.println("You are already in a tree!");
 		}
 	}
 
