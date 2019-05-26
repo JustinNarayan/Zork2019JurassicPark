@@ -8,6 +8,7 @@ public class RoomItemInit {
 	private static ArrayList<String> roomsWithTrees;
 	private static ArrayList<String> roomsWithWater;
 	private static ArrayList<String> roomsWithDesks;
+	private static ArrayList<Artifacts> artifacts;
 
 	public static void initRooms() {
 		roomsWithTrees = new ArrayList<String>();
@@ -15,9 +16,13 @@ public class RoomItemInit {
 		roomsWithDesks = new ArrayList<String>();
 		
 		initEnvironmentItems();
+		
+		artifacts = new ArrayList<Artifacts>();
+		
+		initArtifacts();
 	}
 	
-	public static void initEnvironmentItems() {
+	private static void initEnvironmentItems() {
 
 		// All hallways/pathways have trees in them
 		roomsWithTrees.add("HALLWAY_1");
@@ -148,7 +153,25 @@ public class RoomItemInit {
 			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("water", getMap().get(s)));
 		}
 		
+		for(String s : roomsWithDesks) {
+			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("a desk", getMap().get(s)));
+		}
+		
 	}
+	
+	private static void initArtifacts() {
+		
+		//artifacts.add(new Artifacts("name", points, getMap().get("ROOM_NAME"), getMap.get("ROOM_NAME").getRoomInventory().getEnvironmentItem("a desk OR trees OR water"));
+		//artifacts.add(new Artifacts("Personnel records", 0, getMap().get("RECORDS_W"), getMap.get("RECORDS_W").getRoomInventory().getEnvironmentItem("a desk"));
+		//artifacts.add(new Artifacts("Dinosaur eggshell", 0, getMap().get("AQUATIC_SW"), getMap.get("AQUATIC_SW").getRoomInventory().getEnvironmentItem("water"));
+		//artifacts.add(new Artifacts("Dinosaur tooth", 0, getMap().get("FOREST_E"), getMap.get("FOREST_E").getRoomInventory().getEnvironmentItem("trees"));
+		
+	}
+	
+	
+	
+	
+	
 	
 	private static HashMap<String, Room> getMap() {
 		return Game.getMasterRoomMap();

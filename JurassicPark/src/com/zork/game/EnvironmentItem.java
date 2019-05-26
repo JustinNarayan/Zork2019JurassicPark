@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class EnvironmentItem {
 	private Room room;
 	private String type;
-	private ArrayList<Item> items;;
+	private ArrayList<Item> items;
 	
 	
 	public EnvironmentItem(String type, Room room) {
@@ -13,8 +13,6 @@ public class EnvironmentItem {
 		this.room = room;
 		this.items = new ArrayList<Item>();
 		
-		//DEBUG
-		this.addItem(new Item());
 	}
 	
 	public EnvironmentItem(String type, Room room, ArrayList<Item> items) {

@@ -1,18 +1,13 @@
 package com.zork.game;
 
-public class Item {
-	private String type;
-	private String state;
-	private Room room;
-	private EnvironmentItem environmentItem;
-	public String name;
+public abstract class Item {
+	protected String state;
+	protected Room room;
+	protected EnvironmentItem environmentItem;
+	protected String name;
 	
 	public Item() {
 		//To be made
-	}
-	
-	public Item(String type, String state, EnvironmentItem environmentItem) {
-		
 	}
 
 	public String getName(){
