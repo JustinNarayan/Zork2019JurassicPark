@@ -138,9 +138,9 @@ public class RoomItemInit {
 		roomsWithDesks.add("STEGOSAURUS_CONTROL");
 		roomsWithDesks.add("VELOCIRAPTOR_CONTROL");
 		roomsWithDesks.add("SPINOSAURUS_CONTROL");
-		roomsWithDesks.add("BRONCHIOCAURUS_CONTROL");
+		roomsWithDesks.add("BRONCHIOSAURUS_CONTROL");
 		roomsWithDesks.add("DILOPHOSAURUS_CONTROL");
-		roomsWithDesks.add("PTERODACTYLE_CONTROL");
+		roomsWithDesks.add("PTERODACTYL_CONTROL");
 		roomsWithDesks.add("TRICERATOPS_CONTROL");
 
 		
