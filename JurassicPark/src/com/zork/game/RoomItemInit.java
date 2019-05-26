@@ -97,6 +97,7 @@ public class RoomItemInit {
 		roomsWithTrees.add("RIVER_1_SW");
 		roomsWithTrees.add("RIVER_1_SE");
 
+		
 		// Rooms with water
 		roomsWithWater.add("WATERFALL");
 		roomsWithWater.add("RIVER_2_E");
@@ -120,8 +121,23 @@ public class RoomItemInit {
 		roomsWithWater.add("TRICERATOPS_SE");
 		
 		
-		
-		
+		//Rooms with Desks
+		roomsWithDesks.add("MAIN_CONTROL_CENTRE_NW");
+		roomsWithDesks.add("MAIN_CONTROL_CENTRE_NE");
+		roomsWithDesks.add("RECORDS_W");
+		roomsWithDesks.add("BREEDING_CENTRE_E");
+		roomsWithDesks.add("COMMUNICATIONS_CENTRE_SE");
+		roomsWithDesks.add("AQUATIC_SE");
+		roomsWithDesks.add("MECHANICAL_ROOM_E");
+		roomsWithDesks.add("TREX_CONTROL");
+		roomsWithDesks.add("STEGOSAURUS_CONTROL");
+		roomsWithDesks.add("VELOCIRAPTOR_CONTROL");
+		roomsWithDesks.add("SPINOSAURUS_CONTROL");
+		roomsWithDesks.add("BRONCHIOCAURUS_CONTROL");
+		roomsWithDesks.add("DILOPHOSAURUS_CONTROL");
+		roomsWithDesks.add("PTERODACTYLE_CONTROL");
+		roomsWithDesks.add("TRICERATOPS_CONTROL");
+
 		
 		//Add all of these items to room
 		for(String s : roomsWithTrees) {
@@ -131,7 +147,7 @@ public class RoomItemInit {
 		for(String s : roomsWithWater) {
 			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("water", getMap().get(s)));
 		}
-
+		
 	}
 	
 	private static HashMap<String, Room> getMap() {
