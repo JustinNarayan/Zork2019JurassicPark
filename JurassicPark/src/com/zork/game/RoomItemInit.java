@@ -9,6 +9,7 @@ public class RoomItemInit {
 	private static ArrayList<String> roomsWithWater;
 	private static ArrayList<String> roomsWithDesks;
 	private static ArrayList<String> roomsWithTables;
+	private static ArrayList<String> roomsWithLeafPiles;
 	private static ArrayList<Artifacts> artifacts;
 
 	public static void initRooms() {
@@ -16,6 +17,7 @@ public class RoomItemInit {
 		roomsWithWater = new ArrayList<String>();
 		roomsWithDesks = new ArrayList<String>();
 		roomsWithTables = new ArrayList<String>();
+		roomsWithLeafPiles = new ArrayList<String>();
 		
 		initEnvironmentItems();
 		
@@ -146,12 +148,25 @@ public class RoomItemInit {
 		roomsWithDesks.add("CABIN");
 		roomsWithDesks.add("STAFF_QUARTERS_SW");
 		
-		
 		//Rooms with Tables
 		roomsWithTables.add("BREEDING_CENTRE_E");
 		roomsWithTables.add("BREEDING_CENTRE_C");
 		roomsWithTables.add("AQUATIC_NW");
 		roomsWithTables.add("MUNITIONS_SHED_SW");
+		
+		//Rooms with piles of leaves
+		roomsWithLeafPiles.add("EQUIPMENT_YARD");
+		roomsWithLeafPiles.add("HALLWAY_7");
+		roomsWithLeafPiles.add("PTERODACTYL_SW");
+		roomsWithLeafPiles.add("PTERODACTYL_NE");
+		roomsWithLeafPiles.add("QUARRY_N");
+		roomsWithLeafPiles.add("PLAINS_W");
+		roomsWithLeafPiles.add("HILLS_SW");
+		roomsWithLeafPiles.add("HALLWAY_15");
+		roomsWithLeafPiles.add("HALLWAY_16");
+		roomsWithLeafPiles.add("STEGOSAURUS_NW");
+		roomsWithLeafPiles.add("CLEARING");
+
 		
 		//Add all of these items to room
 		for(String s : roomsWithTrees) {
@@ -166,6 +181,10 @@ public class RoomItemInit {
 		
 		for(String s : roomsWithTables) {
 			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("a table", getMap().get(s)));
+		}
+		
+		for(String s : roomsWithLeafPiles) {
+			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("a pile of leaves", getMap().get(s)));
 		}
 		
 	}
@@ -188,26 +207,31 @@ public class RoomItemInit {
 		artifacts.add(new Artifacts("A tooth from a Dilophosaurus", 7, getMap().get("QUARRY_S"), getMap().get("QUARRY_S").getRoomInventory().getEnvironmentItem("trees")));
 		artifacts.add(new Artifacts("An egg shell from a Pterodactyl", 7, getMap().get("PTERODACTYL_NE"), getMap().get("PTERODACTYL_NE").getRoomInventory().getEnvironmentItem("trees")));
 		artifacts.add(new Artifacts("A bone from a Bronchisaurus", 6, getMap().get("HALLWAY_3"), getMap().get("HALLWAY_3").getRoomInventory().getEnvironmentItem("trees")));
-			
+		artifacts.add(new Artifacts("A tooth from a Pterodactyl", 6, getMap().get("FOREST_W"), getMap().get("FOREST_W").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A feather from a Pterodactyl", 7, getMap().get("FOREST_E"), getMap().get("FOREST_E").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Triceratops", 7, getMap().get("TRICERATOPS_NW"), getMap().get("TRICERATOPS_NW").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Pterodactyl", 7, getMap().get("HALLWAY_13"), getMap().get("HALLWAY_13").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A feather from a Velociraptor", 7, getMap().get("HALLWAY_27"), getMap().get("HALLWAY_27").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Velociraptor", 8, getMap().get("JUNGLE_NE"), getMap().get("JUNGLE_NE").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A twig", 0, getMap().get("BRONCHIOSAURUS_SE"), getMap().get("BRONCHIOSAURUS_SE").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Bronchiosaurus", 6, getMap().get("BRONCHIOSAURUS_SW"), getMap().get("BRONCHIOSAURUS_SW").getRoomInventory().getEnvironmentItem("trees")));
+		
 		// Artifacts in a desk
 		artifacts.add(new Artifacts("A journal kept by a member of staff", 7, getMap().get("STAFF_QUARTERS_SW"), getMap().get("STAFF_QUARTERS_SW").getRoomInventory().getEnvironmentItem("a desk")));
 		artifacts.add(new Artifacts("A journal kept by a communications staff", 8, getMap().get("COMMUNICATIONS_CENTRE_SE"), getMap().get("COMMUNICATIONS_CENTRE_SE").getRoomInventory().getEnvironmentItem("a desk")));
 		artifacts.add(new Artifacts("A journal from the server room staff", 10, getMap().get("SERVER_ROOM"), getMap().get("SERVER_ROOM").getRoomInventory().getEnvironmentItem("a desk")));
 		artifacts.add(new Artifacts("A diary from a previous resident of this cabin", 9, getMap().get("CABIN"), getMap().get("CABIN").getRoomInventory().getEnvironmentItem("a desk")));
-		
-		/*do not touch - to be added 
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		artifacts.add(new Artifacts("", , getMap().get(""), getMap().get("").getRoomInventory().getEnvironmentItem("a desk")));
-		*/
+		artifacts.add(new Artifacts("Personnel records for the T-Rex enclosure", 10, getMap().get("TREX_CONTROL"), getMap().get("TREX_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Stegosaurus enclosure", 9, getMap().get("STEGOSAURUS_CONTROL"), getMap().get("STEGOSAURUS_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Velociraptor enclosure", 9, getMap().get("VELOCIRAPTOR_CONTROL"), getMap().get("VELOCIRAPTOR_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Pterodactyl enclosure", 8, getMap().get("PTERODACTYL_CONTROL"), getMap().get("PTERODACTYL_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Triceratops enclosure", 7, getMap().get("TRICERATOPS_CONTROL"), getMap().get("TRICERATOPS_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Dilophosaurus enclosure", 6, getMap().get("DILOPHOSAURUS_CONTROL"), getMap().get("DILOPHOSAURUS_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Bronchiosaurus enclosure", 7, getMap().get("BRONCHIOSAURUS_CONTROL"), getMap().get("BRONCHIOSAURUS_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Spinosaurus enclosure", 8, getMap().get("SPINOSAURUS_CONTROL"), getMap().get("SPINOSAURUS_CONTROL").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Aquatic Centre", 6, getMap().get("AQUATIC_NW"), getMap().get("AQUATIC_NW").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the Main Control Centre", 6, getMap().get("MAIN_CONTROL_CENTRE_NE"), getMap().get("MAIN_CONTROL_CENTRE_NE").getRoomInventory().getEnvironmentItem("a desk")));
+		artifacts.add(new Artifacts("Personnel records for the entire island", 7, getMap().get("RECORDS_W"), getMap().get("RECORDS_W").getRoomInventory().getEnvironmentItem("a desk")));
 		
 		// Artifacts in water
 		artifacts.add(new Artifacts("The egg shell from a Spinosaurus", 7, getMap().get("BEACH_1_N"), getMap().get("BEACH_1_N").getRoomInventory().getEnvironmentItem("water")));
@@ -215,13 +239,29 @@ public class RoomItemInit {
 		artifacts.add(new Artifacts("A tooth from the T-Rex", 10, getMap().get("TREX_SC"), getMap().get("TREX_SC").getRoomInventory().getEnvironmentItem("water")));
 		artifacts.add(new Artifacts("A tooth from the T-Rex", 8, getMap().get("RIVER_W"), getMap().get("RIVER_2_W").getRoomInventory().getEnvironmentItem("water")));
 		artifacts.add(new Artifacts("A tooth from a Velociraptor", 8, getMap().get("BEACH_2_N"), getMap().get("BEACH_2_N").getRoomInventory().getEnvironmentItem("water")));
-		
+		artifacts.add(new Artifacts("A twig", 0, getMap().get("WATERFALL"), getMap().get("WATERFALL").getRoomInventory().getEnvironmentItem("water")));
 		
 		// Artifacts on a table
 		artifacts.add(new Artifacts("An aquatic dinosaur's bone", 6, getMap().get("AQUATIC_NW"), getMap().get("AQUATIC_NW").getRoomInventory().getEnvironmentItem("a table")));
 		artifacts.add(new Artifacts("A set of personnel records for the security agency", 6, getMap().get("MUNITIONS_SHED_SW"), getMap().get("MUNITIONS_SHED_SW").getRoomInventory().getEnvironmentItem("a table")));
 		artifacts.add(new Artifacts("The egg shell from a Velociraptor", 8, getMap().get("BREEDING_CENTRE_E"), getMap().get("BREEDING_CENTRE_E").getRoomInventory().getEnvironmentItem("a table")));
 		artifacts.add(new Artifacts("The egg shell from a Bronchiosaurus", 5, getMap().get("BREEDING_CENTRE_C"), getMap().get("BREEDING_CENTRE_C").getRoomInventory().getEnvironmentItem("a table")));
+		artifacts.add(new Artifacts("The fossiles from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_SW"), getMap().get("VISITOR_CENTRE_SW").getRoomInventory().getEnvironmentItem("a table")));
+		artifacts.add(new Artifacts("The fossiles from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_NW"), getMap().get("VISITOR_CENTRE_NW").getRoomInventory().getEnvironmentItem("a table")));
+		
+		// Artifacts in piles of leaves
+		artifacts.add(new Artifacts("A twig", 0, getMap().get("EQUIPMENT_YARD"), getMap().get("EQUIPMENT_YARD").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A twig", 0, getMap().get("QUARRY_N"), getMap().get("QUARRY_N").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A Triceratops' horn", 7, getMap().get("HALLWAY_7"), getMap().get("HALLWAY_7").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A feather form a Dilophosaurus", 6, getMap().get("DILOPHOSAURUS_NE"), getMap().get("DILOPHOSAURUS_NE").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A feather from a Dilophosaurus", 6, getMap().get("CLEARING"), getMap().get("CLEARING").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("An egg shell from a Pterodactyl", 7, getMap().get("PTERODACTYL_SW"), getMap().get("PTERODACTYL_SW").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A feather from a Pterodactyl", 7, getMap().get("PTERODACTYL_NE"), getMap().get("PTERODACTYL_NE").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A twig", 0, getMap().get("HILLS_SW"), getMap().get("HILLS_SW").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A twig", 0, getMap().get("PLAINS_W"), getMap().get("PLAINS_W").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A shell from a bullet", 0, getMap().get("HALLWAY_15"), getMap().get("HALLWAY_15").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A shell from a bullet", 0, getMap().get("HALLWAY_16"), getMap().get("HALLWAY_16").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("The fin from a Stegosaurus", 0, getMap().get("STEGOSAURUS_NW"), getMap().get("STEGOSAURUS_NW").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 	}
 	
 	private static HashMap<String, Room> getMap() {
