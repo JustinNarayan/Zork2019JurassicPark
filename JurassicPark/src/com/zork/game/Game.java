@@ -291,13 +291,13 @@ public class Game {
 	 */
 	private void equip(Command command) {
 		if (player.getInventory() == null) {
-			System.out.println("you have nothing to equip.");
+			System.out.println("You have nothing to equip.");
 		} else if (!command.hasSecondWord()) {
-			System.out.println("you must say what you want to equip.");
+			System.out.println("You must say what you want to equip.");
 		} else if ((!(player.getInventory().isInInventory(command.getSecondWord())))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
-			System.out.println("You can not equip that item");
+			System.out.println("You can not equip that item.");
 		} else if ((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquipped())) {
 			System.out.println("That item is already equiped.");
 		} else {
@@ -306,14 +306,13 @@ public class Game {
 	}
 
 	/**
-	 * this method is used to unequid a specified item
+	 * this method is used to unequip a specified item
 	 * 
 	 * @param command
 	 */
 	private void unequip(Command command) {
-
 		if (!command.hasSecondWord()) {
-			System.out.println("you must say what you want to equip.");
+			System.out.println("You must say what you want to equip.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
@@ -344,14 +343,19 @@ public class Game {
 	 * @param command
 	 */
 	private void use(Command command) {
+		if(player.inTree) {
+			System.out.println("You cannot use items while you're in a tree!");
+			return;
+		}
+		
 		if (player.getInventory() == null) {
-			System.out.println("you have nothing to use.");
+			System.out.println("You have nothing to use.");
 		} else if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to heal with.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Consumables)) {
-			System.out.println("you can not heal with that item.");
+			System.out.println("You can not heal with that item.");
 		} else {
 			Consumables current = player.getInventory().getConsumable(command.getSecondWord());
 			player.use(current);
@@ -367,6 +371,11 @@ public class Game {
 	 * @param command the users command
 	 */
 	private void grab(Command command) {
+		if(player.inTree) {
+			System.out.println("You cannot grab items while you're in a tree!");
+			return;
+		}
+		
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to grab.");
 		} else if (!(currentRoom.getRoomInventory().roomHasItem(command.getSecondWord()))) {
@@ -430,9 +439,9 @@ public class Game {
 		}
 	}
 
-	private void drop(Command command) {
+	private void drop(Command command) {		
 		if (!command.hasSecondWord()) {
-			System.out.println("you must include what you want to drop.");
+			System.out.println("You must include what you want to drop.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else {
@@ -460,6 +469,12 @@ public class Game {
 	 * otherwise print an error message.
 	 */
 	private void goRoom(Command command) {
+		if(player.inTree) {
+			System.out.println("You cannot leave the area while you're in a tree!");
+			return;
+		}
+		
+		
 		if (!command.hasSecondWord()) {
 			// if there is no second word, we don't know where to go...
 			System.out.println("Go where?");
