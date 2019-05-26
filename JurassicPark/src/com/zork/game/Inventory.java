@@ -11,16 +11,16 @@ public class Inventory {
 	private ArrayList<Object> inventoryItems = new ArrayList<Object>();
 
 	public ArrayList<Weapons> weaponsInventory;
-	public ArrayList<Documents> docInventory;
+	public ArrayList<Artifacts> artifactInventory;
 	public ArrayList<Consumables> consumablesInventory;
 	public static ArrayList[] masterInventory;
 
 	public Inventory() {
-		docInventory = new ArrayList<Documents>();
+		artifactInventory = new ArrayList<Artifacts>();
 		weaponsInventory = new ArrayList<Weapons>();
 		consumablesInventory = new ArrayList<Consumables>();
 		masterInventory = new ArrayList[NUM_INVENTORIES];
-		masterInventory[0] = docInventory;
+		masterInventory[0] = artifactInventory;
 		masterInventory[1] = weaponsInventory;
 		masterInventory[2] = consumablesInventory;
 	}
@@ -82,7 +82,7 @@ public class Inventory {
 	}
 
 	public int getInventoryType(String name) {
-		if (Arrays.asList(docInventory).indexOf(name) != -1) {
+		if (Arrays.asList(artifactInventory).indexOf(name) != -1) {
 			return 0;
 		} else if (Arrays.asList(weaponsInventory).indexOf(name) != -1) {
 			return 1;
