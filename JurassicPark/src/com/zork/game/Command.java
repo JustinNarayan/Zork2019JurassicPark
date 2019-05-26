@@ -71,4 +71,9 @@ class Command
     {
         return (secondWord != null);
     }
+    
+    public boolean hasThirdWord()
+    {
+        return (thirdWord != null);
+    }
 }

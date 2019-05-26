@@ -36,7 +36,6 @@ public class Game {
 	private final String SIREN_POSITION = "Supply Shed";
 	private Player player;
 	private DinosaurController dinosaurController;
-	private boolean dead;
 	private boolean inFight;
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -227,6 +226,10 @@ public class Game {
 			timer.reduceTime(timer.TIME_TO_DROP);
 			drop(command);
 			break;
+		case "throw":
+			timer.reduceTime(timer.TIME_TO_DROP);
+			doThrow(command); //throw is a java word
+			break;
 		case "grab":
 			timer.reduceTime(timer.TIME_TO_GRAB);
 			grab(command);
@@ -280,7 +283,7 @@ public class Game {
 
 		}
 
-		return dead;
+		return player.isDead();
 
 	}
 
@@ -291,13 +294,13 @@ public class Game {
 	 */
 	private void equip(Command command) {
 		if (player.getInventory() == null) {
-			System.out.println("you have nothing to equip.");
+			System.out.println("You have nothing to equip.");
 		} else if (!command.hasSecondWord()) {
-			System.out.println("you must say what you want to equip.");
+			System.out.println("You must say what you want to equip.");
 		} else if ((!(player.getInventory().isInInventory(command.getSecondWord())))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
-			System.out.println("You can not equip that item");
+			System.out.println("You can not equip that item.");
 		} else if ((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquipped())) {
 			System.out.println("That item is already equiped.");
 		} else {
@@ -306,14 +309,13 @@ public class Game {
 	}
 
 	/**
-	 * this method is used to unequid a specified item
+	 * this method is used to unequip a specified item
 	 * 
 	 * @param command
 	 */
 	private void unequip(Command command) {
-
 		if (!command.hasSecondWord()) {
-			System.out.println("you must say what you want to equip.");
+			System.out.println("You must say what you want to equip.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Weapons)) {
@@ -344,14 +346,19 @@ public class Game {
 	 * @param command
 	 */
 	private void use(Command command) {
+		if(player.inTree) {
+			System.out.println("You cannot use items while you're in a tree!");
+			return;
+		}
+		
 		if (player.getInventory() == null) {
-			System.out.println("you have nothing to use.");
+			System.out.println("You have nothing to use.");
 		} else if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to heal with.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else if (!(player.getInventory().getItem(command.getSecondWord()) instanceof Consumables)) {
-			System.out.println("you can not heal with that item.");
+			System.out.println("You can not heal with that item.");
 		} else {
 			Consumables current = player.getInventory().getConsumable(command.getSecondWord());
 			player.use(current);
@@ -367,6 +374,11 @@ public class Game {
 	 * @param command the users command
 	 */
 	private void grab(Command command) {
+		if(player.inTree) {
+			System.out.println("You cannot grab items while you're in a tree!");
+			return;
+		}
+		
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to grab.");
 		} else if (!(currentRoom.getRoomInventory().roomHasItem(command.getSecondWord()))) {
@@ -394,36 +406,45 @@ public class Game {
 	 * @param command
 	 */
 	private void climb(Command command) {
-	if(!command.getSecondWord().equals("tree")||!command.getSecondWord().equals("trees")){
-		System.out.println("you can only climb trees.");
-	
-	}else if (!currentRoom.getRoomInventory().roomHasItem("tree")) {
-			System.out.println("the room does not have any trees to climb.");
-		} else {
+		if(!command.hasSecondWord() || (command.getSecondWord().equals("up") && !command.hasThirdWord()) ) {
+			System.out.println("What do you want to climb?");
+		} else if(command.getSecondWord().equals("down")) {
+			if(player.inTree) {
+				System.out.println("You have climbed down the tree.");
+				player.inTree = false;
+			} else {
+				System.out.println("You haven't climbed anything yet!");
+			}
+		} else if( (!command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees")) && (!command.hasThirdWord() && !command.getSecondWord().equals("up") && !command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees"))  ){
+			System.out.println("You can only climb trees.");
+		}else if (!currentRoom.getRoomInventory().environmentHasItem("trees")) {
+			System.out.println("You don't see any trees to climb.");
+		} else if(!player.inTree){
 			if (inFight) {
 				if ((int) (Math.random() * 15) == 1) { //1/15 chance that they fall and die
-					System.out.println(
-							"In you panic to escape the dinosaur you fell down broke you legs, and got eaten.");
-							dead= true;
+					System.out.println(	"In your panic to escape the dinosaur, you fell down, broke your legs, and got eaten.");
+					player.hasDied();
 				}else{
-					System.out.println("you have climbed the tree.");
+					System.out.println("You have climbed the tree.");
 					player.inTree = true;
 				}
 			} else {
 				if ((int) (Math.random() * 20) == 1) {
-					System.out.println("you have fallen and have died a painfull death");
-					dead = true;
+					System.out.println("A branch snapped and you have fallen to a painful death.");
+					player.hasDied();
 				}else{
-					System.out.println("you have climbed the tree.");
+					System.out.println("You have climbed the tree.");
 					player.inTree=true;;
 				}
 			}
+		} else {
+			System.out.println("You are already in a tree!");
 		}
 	}
 
-	private void drop(Command command) {
+	private void drop(Command command) {		
 		if (!command.hasSecondWord()) {
-			System.out.println("you must include what you want to drop.");
+			System.out.println("You must include what you want to drop.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
 		} else {
@@ -431,6 +452,17 @@ public class Game {
 			player.getInventory().removeItem(command.getSecondWord());
 		}
 	}
+	
+	private void doThrow(Command command) {
+		if(command.hasSecondWord() && command.getSecondWord().equals("flare") && player.getInventory().isInInventory(command.getSecondWord())) {
+			//Do stuff
+		} else {
+			//Default to the drop command
+			drop(command);
+		}
+	}
+	
+	
 
 	// implementations of user commands:
 	/**
@@ -451,6 +483,12 @@ public class Game {
 	 * otherwise print an error message.
 	 */
 	private void goRoom(Command command) {
+		if(player.inTree) {
+			System.out.println("You cannot leave the area while you're in a tree!");
+			return;
+		}
+		
+		
 		if (!command.hasSecondWord()) {
 			// if there is no second word, we don't know where to go...
 			System.out.println("Go where?");
@@ -557,7 +595,7 @@ public class Game {
 		}
 		System.out.println("You have killed yourself");
 		System.out.println("GG m8");
-		dead = true;
+		player.hasDied();
 
 	}
 

@@ -6,10 +6,12 @@ import java.io.BufferedReader;
 public class Player {
 	private Inventory inventory;
 	public boolean inTree;
+	private boolean dead;
 
     public Player(BufferedInputStream bis){
         inventory = new Inventory();
-
+        dead = false;
+        inTree = false;
     }
     
     public Player() {
@@ -29,7 +31,15 @@ public class Player {
 	}
 
 	public void isInTree(boolean b) {
-	inTree =b;
+		inTree = b;
+	}
+	
+	public void hasDied() {
+		dead = true;
+	}
+	
+	public boolean isDead() {
+		return dead;
 	}
 
 

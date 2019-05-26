@@ -32,6 +32,6 @@ public class TyrannosaurusRex extends Dinosaur {
 	}
 
 	public String toString() {
-		return super.toString("TyrannosaurusRex");
+		return super.toString("Tyrannosaurus Rex");
 	}
 }
