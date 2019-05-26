@@ -2,13 +2,12 @@ all item classes
 3 word parser
 commands
 player classes
-dino ai
 populate rooms with items
 work on game end
+dino attack
 music?
 
-make some dinos passive
-make sure awareness works and movement too
-
 bugs:
-all actions, even if can't do, take time
+all actions, even if you can't do them or input wrong, take time
+sometimes the exits leave an extra space before appearing
+some room descriptions have periods while others do not
