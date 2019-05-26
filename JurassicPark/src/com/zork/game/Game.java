@@ -36,7 +36,6 @@ public class Game {
 	private final String SIREN_POSITION = "Supply Shed";
 	private Player player;
 	private DinosaurController dinosaurController;
-	private boolean dead;
 	private boolean inFight;
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
@@ -227,6 +226,10 @@ public class Game {
 			timer.reduceTime(timer.TIME_TO_DROP);
 			drop(command);
 			break;
+		case "throw":
+			timer.reduceTime(timer.TIME_TO_DROP);
+			doThrow(command); //throw is a java word
+			break;
 		case "grab":
 			timer.reduceTime(timer.TIME_TO_GRAB);
 			grab(command);
@@ -280,7 +283,7 @@ public class Game {
 
 		}
 
-		return dead;
+		return player.isDead();
 
 	}
 
@@ -420,7 +423,7 @@ public class Game {
 			if (inFight) {
 				if ((int) (Math.random() * 15) == 1) { //1/15 chance that they fall and die
 					System.out.println(	"In your panic to escape the dinosaur, you fell down, broke your legs, and got eaten.");
-					dead= true;
+					player.hasDied();
 				}else{
 					System.out.println("You have climbed the tree.");
 					player.inTree = true;
@@ -428,7 +431,7 @@ public class Game {
 			} else {
 				if ((int) (Math.random() * 20) == 1) {
 					System.out.println("A branch snapped and you have fallen to a painful death.");
-					dead = true;
+					player.hasDied();
 				}else{
 					System.out.println("You have climbed the tree.");
 					player.inTree=true;;
@@ -449,6 +452,17 @@ public class Game {
 			player.getInventory().removeItem(command.getSecondWord());
 		}
 	}
+	
+	private void doThrow(Command command) {
+		if(command.hasSecondWord() && command.getSecondWord().equals("flare") && player.getInventory().isInInventory(command.getSecondWord())) {
+			//Do stuff
+		} else {
+			//Default to the drop command
+			drop(command);
+		}
+	}
+	
+	
 
 	// implementations of user commands:
 	/**
@@ -581,7 +595,7 @@ public class Game {
 		}
 		System.out.println("You have killed yourself");
 		System.out.println("GG m8");
-		dead = true;
+		player.hasDied();
 
 	}
 
