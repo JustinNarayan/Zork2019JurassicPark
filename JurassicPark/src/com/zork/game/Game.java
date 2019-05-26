@@ -484,6 +484,7 @@ public class Game {
 	public void killSelf() {
 		System.out.println("You have killed yourself");
 		System.out.println("GG m8");
+		
 	}
 	
 	public static Room getCurrentRoom() {
