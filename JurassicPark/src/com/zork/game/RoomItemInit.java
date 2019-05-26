@@ -289,7 +289,7 @@ public class RoomItemInit {
 		weapons.add(new Weapons("flare", getMap().get("SERVER_ROOM")));
 		weapons.add(new Weapons("flare", getMap().get("BEACH_2_N")));
 		weapons.add(new Weapons("flare", getMap().get("RECORDS_W")));
-		weapons.add(new Weapons("flare", getMap().get("CABIN")));
+		weapons.add(new Weapons("flare", getMap().get("BOAT_LANDING_B")));
 	}
 	
 	
