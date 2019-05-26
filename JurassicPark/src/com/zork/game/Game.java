@@ -131,6 +131,7 @@ public class Game {
 		RoomItemInit.initRooms();
 		boolean finished = false;
 		while (!finished) {
+			
 			Command command = parser.getCommand();
 			finished = processCommand(command); // FALSE is for inFight variable, not yet implemented
 		}
@@ -228,7 +229,7 @@ public class Game {
 			break;
 		case "throw":
 			timer.reduceTime(timer.TIME_TO_DROP);
-			doThrow(command); //throw is a java word
+			doThrow(command); // throw is a java word
 			break;
 		case "grab":
 			timer.reduceTime(timer.TIME_TO_GRAB);
@@ -346,11 +347,11 @@ public class Game {
 	 * @param command
 	 */
 	private void use(Command command) {
-		if(player.inTree) {
+		if (player.inTree) {
 			System.out.println("You cannot use items while you're in a tree!");
 			return;
 		}
-		
+
 		if (player.getInventory() == null) {
 			System.out.println("You have nothing to use.");
 		} else if (!command.hasSecondWord()) {
@@ -366,6 +367,32 @@ public class Game {
 	}
 
 	private void search(Command command) {
+		// Look at environment
+		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
+		if (!command.hasSecondWord()) {
+			System.out.println("You must included what you want to search");
+			return;
+		}
+		for (int i =0; i<env.size();i++){
+			EnvironmentItem temp = env.get(i);
+			if (temp.toString().equals(command.getSecondWord())) {
+				if (temp.getItems().size() > 0) {
+					System.out.print("You search the " + command.getSecondWord() + " and find: ");
+					for (int j = 0; j < temp.getItems().size(); j++) {
+						System.out.print(temp.getItems().get(j).getName() + " ");
+						player.inventory.addInventoryItem(temp.getItems().get(j));
+						currentRoom.getRoomInventory().getEnvironment().remove(j);
+					}
+					System.out.println();
+				} else {
+					System.out.println("You searched the " + command.getSecondWord() + " and found nothing.");
+				}
+
+			}else {
+				System.out.println("You can not search that");
+			}
+		}
+
 	}
 
 	/**
@@ -374,11 +401,11 @@ public class Game {
 	 * @param command the users command
 	 */
 	private void grab(Command command) {
-		if(player.inTree) {
+		if (player.inTree) {
 			System.out.println("You cannot grab items while you're in a tree!");
 			return;
 		}
-		
+
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to grab.");
 		} else if (!(currentRoom.getRoomInventory().roomHasItem(command.getSecondWord()))) {
@@ -406,25 +433,28 @@ public class Game {
 	 * @param command
 	 */
 	private void climb(Command command) {
-		if(!command.hasSecondWord() || (command.getSecondWord().equals("up") && !command.hasThirdWord()) ) {
+		if (!command.hasSecondWord() || (command.getSecondWord().equals("up") && !command.hasThirdWord())) {
 			System.out.println("What do you want to climb?");
-		} else if(command.getSecondWord().equals("down")) {
-			if(player.inTree) {
+		} else if (command.getSecondWord().equals("down")) {
+			if (player.inTree) {
 				System.out.println("You have climbed down the tree.");
 				player.inTree = false;
 			} else {
 				System.out.println("You haven't climbed anything yet!");
 			}
-		} else if( (!command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees")) && (!command.hasThirdWord() && !command.getSecondWord().equals("up") && !command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees"))  ){
+		} else if ((!command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees"))
+				&& (!command.hasThirdWord() && !command.getSecondWord().equals("up")
+						&& !command.getSecondWord().equals("tree") && !command.getSecondWord().equals("trees"))) {
 			System.out.println("You can only climb trees.");
-		}else if (!currentRoom.getRoomInventory().environmentHasItem("trees")) {
+		} else if (!currentRoom.getRoomInventory().environmentHasItem("trees")) {
 			System.out.println("You don't see any trees to climb.");
-		} else if(!player.inTree){
+		} else if (!player.inTree) {
 			if (inFight) {
-				if ((int) (Math.random() * 15) == 1) { //1/15 chance that they fall and die
-					System.out.println(	"In your panic to escape the dinosaur, you fell down, broke your legs, and got eaten.");
+				if ((int) (Math.random() * 15) == 1) { // 1/15 chance that they fall and die
+					System.out.println(
+							"In your panic to escape the dinosaur, you fell down, broke your legs, and got eaten.");
 					player.hasDied();
-				}else{
+				} else {
 					System.out.println("You have climbed the tree.");
 					player.inTree = true;
 				}
@@ -432,9 +462,10 @@ public class Game {
 				if ((int) (Math.random() * 20) == 1) {
 					System.out.println("A branch snapped and you have fallen to a painful death.");
 					player.hasDied();
-				}else{
+				} else {
 					System.out.println("You have climbed the tree.");
-					player.inTree=true;;
+					player.inTree = true;
+					;
 				}
 			}
 		} else {
@@ -442,7 +473,7 @@ public class Game {
 		}
 	}
 
-	private void drop(Command command) {		
+	private void drop(Command command) {
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to drop.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
@@ -452,17 +483,16 @@ public class Game {
 			player.getInventory().removeItem(command.getSecondWord());
 		}
 	}
-	
+
 	private void doThrow(Command command) {
-		if(command.hasSecondWord() && command.getSecondWord().equals("flare") && player.getInventory().isInInventory(command.getSecondWord())) {
-			//Do stuff
+		if (command.hasSecondWord() && command.getSecondWord().equals("flare")
+				&& player.getInventory().isInInventory(command.getSecondWord())) {
+			// Do stuff
 		} else {
-			//Default to the drop command
+			// Default to the drop command
 			drop(command);
 		}
 	}
-	
-	
 
 	// implementations of user commands:
 	/**
@@ -483,12 +513,11 @@ public class Game {
 	 * otherwise print an error message.
 	 */
 	private void goRoom(Command command) {
-		if(player.inTree) {
+		if (player.inTree) {
 			System.out.println("You cannot leave the area while you're in a tree!");
 			return;
 		}
-		
-		
+
 		if (!command.hasSecondWord()) {
 			// if there is no second word, we don't know where to go...
 			System.out.println("Go where?");
@@ -591,9 +620,12 @@ public class Game {
 	public void killSelf() {
 		if (player.inTree == true) {
 			System.out.println(
-					"you have pursued your dream of flying by jumping out a tree... until gravity did something about it.");
+					"You have pursued your dream of flying by jumping out a tree... until gravity did something about it.");
+		} else {
+			System.out.println("You look around for something to kill yourself with.");
+			System.out.println("You have picked up a small pebble and lodged it in your throat");
 		}
-		System.out.println("You have killed yourself");
+		System.out.println("You are dead...");
 		System.out.println("GG m8");
 		player.hasDied();
 

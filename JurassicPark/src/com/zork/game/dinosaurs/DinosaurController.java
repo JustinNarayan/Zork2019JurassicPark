@@ -25,11 +25,12 @@ public class DinosaurController {
 		lastDinosaur = null;
 		
 		//Initialize all dinosaurs position in specific rooms in different enclosures
-		dinosaurs.add(new Bronchiosaurus(getMap().get("BRONCHIOSAURUS_SW"), "Bronchiosaurus1"));
+	
 	
 		dinosaurs.add(new Dilophosaurus(getMap().get("QUARRY_S"), "Dilophosaurus1"));
 		dinosaurs.add(new Dilophosaurus(getMap().get("RIVER_1_SE"), "Dilophosaurus2"));
-		
+		dinosaurs.add(new Bronchiosaurus(getMap().get("BRONCHIOSAURUS_SW"), "Bronchiosaurus1"));
+	
 		dinosaurs.add(new Pterodactyl(getMap().get("BRIDGE_N"), "Pterodactyl1"));
 		dinosaurs.add(new Pterodactyl(getMap().get("PTERODACTYL_NE"), "Pterodactyl2"));
 		

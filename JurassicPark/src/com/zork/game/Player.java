@@ -4,7 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 
 public class Player {
-	private Inventory inventory;
+	public Inventory inventory;
 	public boolean inTree;
 	private boolean dead;
 
@@ -15,6 +15,9 @@ public class Player {
     }
     
     public Player() {
+    	inventory = new Inventory();
+        dead = false;
+        inTree = false;
 	}
 
 	public Inventory getInventory(){
