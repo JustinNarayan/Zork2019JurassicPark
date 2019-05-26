@@ -93,27 +93,34 @@ public abstract class Dinosaur {
 					if(!nextRoom.getRoomInventory().hasDinosaurs()) {
 						currentRoom.getRoomInventory().removeDinosaur(this);
 						currentRoom = nextRoom;
-						currentRoom.getRoomInventory().addDinosaur(this);				
+						currentRoom.getRoomInventory().addDinosaur(this);	
+						
+						//Check to see if you left a room and have to tell the player
+						if(c.getLastDinosaur()==this && c.getLastStatus().equals("unaware")) {
+							c.setStatus(this, "left");
+						}
 					}
 					return currentRoom;
 				}
 			}
 		} else {
+			double followChance = awareness + (1-awareness)/2;
+			
 			//Lost the trail
-			if(Math.random()>awareness) {
+			if(Math.random()>followChance) {
 				aware = false;
-				c.setStatus(toString(), "lost");
+				c.setStatus(this, "lost");
 			} else {
 				//Follow player
-				if(roomsInRange.contains(Game.getCurrentRoom())) {
+				if(roomsInRange.contains(Game.getCurrentRoom()) && !Game.getCurrentRoom().getRoomInventory().hasDinosaurs()) {
 					currentRoom.getRoomInventory().removeDinosaur(this);
 					currentRoom = Game.getCurrentRoom();
 					currentRoom.getRoomInventory().addDinosaur(this);		
-					c.setStatus(toString(), "follow");
+					c.setStatus(this, "follow");
 				} else {
 					//Lost the trail
 					aware = false;
-					c.setStatus(toString(), "lost");
+					c.setStatus(this, "lost");
 				}
 			}
 		}
@@ -122,24 +129,31 @@ public abstract class Dinosaur {
 	
 	public void determineAwareness(DinosaurController c) {
 		if(currentRoom == Game.getCurrentRoom()) {
-			System.out.println(toString());
-			if(!aware) {
-				if(Math.random()<awareness && c.isAware()==false) {
-					aware = true;
-					c.setStatus(toString(), "aware");
-				} else {
-					c.setStatus(toString(), "unaware");
+			if(awareness==0.0) {
+				c.setStatus(this, "peace");
+			} else {
+				if(!aware) {
+					if(Math.random()<awareness && c.isAware()==false) {
+						aware = true;
+						c.setStatus(this, "aware");
+					} else {
+						c.setStatus(this, "unaware");
+					}
 				}
 			}
-			c.setStatus(toString(), "unaware");
 		} else {
 			aware = false;
 		}
 	}
 	
+	public boolean isAware() {
+		return aware;
+	}
+	
 	
 	public String toString(String s) {
-		return(s + " named " + name);
+		//return(s + " named " + name);
+		return s;
 	}
 	
 	//For testing purposes

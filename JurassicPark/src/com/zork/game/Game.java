@@ -182,7 +182,6 @@ public class Game {
 		switch (commandWord) {
 		case "test":
 			dinosaurController.printAllDinosaurs();
-			dinosaurController.getDinosaurAwareness();
 			break;
 		case "help":
 			printHelp();
@@ -191,6 +190,8 @@ public class Game {
 			printHelp();
 			break;
 		case "go":
+			//Dinos do move here, but only if you move successfully
+			
 			timer.reduceTime(timer.TIME_TO_GO);
 			goRoom(command);
 			break;
@@ -200,13 +201,19 @@ public class Game {
 			else
 				return true; // signal that we want to quit
 			break;
-		case "use":
+		case "use":			
 			timer.reduceTime(timer.TIME_TO_USE);
 			use(command);
+			
+			//Dinos can become aware here no matter what you say
+			dinosaurController.checkDinosaurAwareness();
 			break;
 		case "climb":
 			timer.reduceTime(timer.TIME_TO_CLIMB);
 			climb(command);
+			
+			//Dinos can become aware here no matter what you say
+			dinosaurController.checkDinosaurAwareness();
 			break;
 		case "inventory":
 			checkInventory(command);
@@ -220,11 +227,17 @@ public class Game {
 			break;
 		case "grab":
 			timer.reduceTime(timer.TIME_TO_GRAB);
-			grab(command);
+			grab(command);			
+			
+			//Dinos can become aware here no matter what you say
+			dinosaurController.checkDinosaurAwareness();
 			break;
-		case "attack":
+		case "attack":			
 			timer.reduceTime(timer.TIME_TO_ATTACK);
 			attack(command);
+			
+			//Dinos can become aware here no matter what you say
+			dinosaurController.checkDinosaurAwareness();
 			break;
 		case "equip":
 			timer.reduceTime(timer.TIME_TO_EQUIP);
@@ -243,10 +256,16 @@ public class Game {
 				case "look":
 					timer.reduceTime(timer.TIME_TO_LOOK);
 					look(command);
+					
+					//Dinos can move here because it takes so long to look
+					dinosaurController.moveDinosaurs();
 					break;
 				case "search":
 					timer.reduceTime(timer.TIME_TO_SEARCH);
 					search(command);
+					
+					//Dinos can move here because it takes so long to search
+					dinosaurController.moveDinosaurs();
 					break;
 				case "time":
 					checkTime(command);
@@ -379,16 +398,10 @@ public class Game {
 		Room nextRoom = currentRoom.nextRoom(direction);
 		if (nextRoom == null)
 			System.out.println("You cannot go that way!");
-		else {
+		else {		
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());			
-			
-			
-			//Move dinosaurs
-			dinosaurController.moveDinosaurs();
-			
-			
-			
+						
 			// Print out the siren message in-story to open the facilities
 			if (currentRoom.getRoomName().equals(SIREN_POSITION)) {
 				if (timer.getTimeLeft() == -1) {
@@ -412,6 +425,10 @@ public class Game {
 						Formatter.getCutoff(), " ") + "\n");
 				}
 			}
+			
+			
+			//Move dinos - only if you make a move
+			dinosaurController.moveDinosaurs();
 		}
 	}
 

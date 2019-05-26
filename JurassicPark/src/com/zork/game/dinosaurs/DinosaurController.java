@@ -12,9 +12,17 @@ public class DinosaurController {
 	private ArrayList<Dinosaur> dinosaurs = new ArrayList<Dinosaur>();
 	
 	private boolean aware;
+	
+	//Last updated dino and status
+	private String lastStatus;
+	private Dinosaur lastDinosaur;
+	
+	
 
 	public DinosaurController() {
 		aware = false;
+		lastStatus = "";
+		lastDinosaur = null;
 		
 		//Initialize all dinosaurs position in specific rooms in different enclosures
 		dinosaurs.add(new Bronchiosaurus(getMap().get("BRONCHIOSAURUS_SW"), "Bronchiosaurus1"));
@@ -48,29 +56,59 @@ public class DinosaurController {
 		return Game.getMasterRoomMap();
 	}
 	
-	public void getDinosaurAwareness() {
+	public void checkDinosaurAwareness() {
+		setStatus(null,"");
+		
 		for(Dinosaur d : dinosaurs) {
 			d.determineAwareness(this);
 		}
 	}
 	
 	public void moveDinosaurs() {
+		
+		ArrayList<Dinosaur> temp = new ArrayList<Dinosaur>();
 		for(Dinosaur d : dinosaurs) {
-			d.determineAwareness(this);
+			//Updates the awareness for dinos already on your trail - this should be the prioritized over new dinos
+			if(d.isAware()) {
+				d.moveToNewRoom(this);
+				d.determineAwareness(this);
+			} else {
+				temp.add(d);
+			}
+		}
+		
+		for(Dinosaur d : temp) {
+			//Go through all other dinos
 			d.moveToNewRoom(this);
+			d.determineAwareness(this);
 		}
 	}
 	
-	public void setStatus(String dino, String s) {
-		if(s=="unaware") {
+	public void setStatus(Dinosaur dino, String s) {
+		System.out.println("");
+		if(s.equals("unaware")) {
 			System.out.println("There is a " + dino + " within view! Fortunately, it hasn't noticed you yet...");
-		} else if(s=="aware") {
+		} else if(s.equals("aware")) {
 			System.out.println("Look out! There is a " + dino + " in the room and it's spotted you!");
-		} else if(s=="lost" ) {
+		} else if(s.equals("lost")) {
 			System.out.println("The " + dino + " has lost your location, for now...");
-		} else if(s=="follow") {
+		} else if(s.equals("follow")) {
 			System.out.println("The " + dino + " has followed you into this new area!");
+		} else if(s.equals("peace")) {
+			System.out.println("There is a peaceful " + dino + " within view. It means you no harm.");
+		} else if(s.equals("left")) {
+			System.out.println("The " + dino + " has quietly left the area.");
 		}
+		lastStatus = s;
+		lastDinosaur = dino;
+	}
+	
+	public Dinosaur getLastDinosaur() {
+		return lastDinosaur;
+	}
+	
+	public String getLastStatus() {
+		return lastStatus;
 	}
 	
 	public void printAllDinosaurs() {
