@@ -4,7 +4,8 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 
 public class Player {
-    private Inventory inventory;
+	private Inventory inventory;
+	public boolean inTree;
 
     public Player(BufferedInputStream bis){
         inventory = new Inventory();
@@ -25,6 +26,10 @@ public class Player {
 	}
 
 	public void unequip(String secondWord) {
+	}
+
+	public void isInTree(boolean b) {
+	inTree =b;
 	}
 
 

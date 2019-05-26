@@ -30,10 +30,7 @@ public class RoomInventory extends Inventory {
 		} else {
 			return false;
 		}
-	}
-	
-	
-	
+	}	
 	
 	public ArrayList<EnvironmentItem> getEnvironment() {
 		return environment;

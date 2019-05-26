@@ -36,7 +36,8 @@ public class Game {
 	private final String SIREN_POSITION = "Supply Shed";
 	private Player player;
 	private DinosaurController dinosaurController;
-
+	private boolean dead;
+	private boolean inFight;
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -112,12 +113,13 @@ public class Game {
 			initRooms("data/rooms.dat");
 			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 		parser = new Parser();
 		timer = new Timer();
 		dinosaurController = new DinosaurController();
+		inFight = false;
 	}
 
 	/**
@@ -131,7 +133,7 @@ public class Game {
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
-			finished = processCommand(command, false); // FALSE is for inFight variable, not yet implemented
+			finished = processCommand(command); // FALSE is for inFight variable, not yet implemented
 		}
 		System.out.println("Thank you for playing.");
 	}
@@ -171,14 +173,14 @@ public class Game {
 	 * 
 	 * @param inFight
 	 */
-	private boolean processCommand(Command command, boolean inFight) {
+	private boolean processCommand(Command command) {
 		if (command.isUnknown()) {
 			System.out.println("I don't know what you mean...");
 			return false;
 		}
 		String commandWord = command.getCommandWord();
 		String word2 = command.getSecondWord();
-		
+
 		switch (commandWord) {
 		case "test":
 			dinosaurController.printAllDinosaurs();
@@ -190,8 +192,8 @@ public class Game {
 			printHelp();
 			break;
 		case "go":
-			//Dinos do move here, but only if you move successfully
-			
+			// Dinos do move here, but only if you move successfully
+
 			timer.reduceTime(timer.TIME_TO_GO);
 			goRoom(command);
 			break;
@@ -201,18 +203,18 @@ public class Game {
 			else
 				return true; // signal that we want to quit
 			break;
-		case "use":			
+		case "use":
 			timer.reduceTime(timer.TIME_TO_USE);
 			use(command);
-			
-			//Dinos can become aware here no matter what you say
+
+			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
 			break;
 		case "climb":
 			timer.reduceTime(timer.TIME_TO_CLIMB);
 			climb(command);
-			
-			//Dinos can become aware here no matter what you say
+
+			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
 			break;
 		case "inventory":
@@ -227,16 +229,16 @@ public class Game {
 			break;
 		case "grab":
 			timer.reduceTime(timer.TIME_TO_GRAB);
-			grab(command);			
-			
-			//Dinos can become aware here no matter what you say
+			grab(command);
+
+			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
 			break;
-		case "attack":			
+		case "attack":
 			timer.reduceTime(timer.TIME_TO_ATTACK);
 			attack(command);
-			
-			//Dinos can become aware here no matter what you say
+
+			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
 			break;
 		case "equip":
@@ -249,22 +251,22 @@ public class Game {
 			break;
 		case "suicide":
 			killSelf();
-			return true;
+
 		default:
 			if (!inFight) { // the following commands are for when you are not in battle
 				switch (commandWord) {
 				case "look":
 					timer.reduceTime(timer.TIME_TO_LOOK);
 					look(command);
-					
-					//Dinos can move here because it takes so long to look
+
+					// Dinos can move here because it takes so long to look
 					dinosaurController.moveDinosaurs();
 					break;
 				case "search":
 					timer.reduceTime(timer.TIME_TO_SEARCH);
 					search(command);
-					
-					//Dinos can move here because it takes so long to search
+
+					// Dinos can move here because it takes so long to search
 					dinosaurController.moveDinosaurs();
 					break;
 				case "time":
@@ -278,15 +280,19 @@ public class Game {
 
 		}
 
-		return false;
+		return dead;
 
 	}
 
+	/**
+	 * this method is used to equid a specified item
+	 * 
+	 * @param command
+	 */
 	private void equip(Command command) {
-		if(player.getInventory()==null){
+		if (player.getInventory() == null) {
 			System.out.println("you have nothing to equip.");
-		}
-		else if (!command.hasSecondWord()) {
+		} else if (!command.hasSecondWord()) {
 			System.out.println("you must say what you want to equip.");
 		} else if ((!(player.getInventory().isInInventory(command.getSecondWord())))) {
 			System.out.println("That item is not in your inventory.");
@@ -294,14 +300,18 @@ public class Game {
 			System.out.println("You can not equip that item");
 		} else if ((((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquipped())) {
 			System.out.println("That item is already equiped.");
-		}else{
+		} else {
 			player.equip(player.getInventory().getItem(command.getSecondWord()));
 		}
 	}
-	
 
+	/**
+	 * this method is used to unequid a specified item
+	 * 
+	 * @param command
+	 */
 	private void unequip(Command command) {
-		
+
 		if (!command.hasSecondWord()) {
 			System.out.println("you must say what you want to equip.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
@@ -310,24 +320,33 @@ public class Game {
 			System.out.println("You can not unequip that item");
 		} else if (!(((Weapons) player.getInventory().getItem(command.getSecondWord())).isEquipped())) {
 			System.out.println("That item is already unequiped.");
-		}else{
+		} else {
 			player.unequip(command.getSecondWord());
 		}
 	}
 
+	/**
+	 * check the amount of time the player has left
+	 * 
+	 * @param command
+	 */
 	private void checkTime(Command command) {
-		if(timer.getTimeLeft()==-1) 
+		if (timer.getTimeLeft() == -1)
 			System.out.println("It is midday on the island.");
 		else
 			System.out.println("You have " + Formatter.properTime(timer.getTimeLeft()) + " until you have to "
-				+ "leave the island. Get going!");
+					+ "leave the island. Get going!");
 	}
 
+	/**
+	 * this method is for the player to be able to use medical or food supplies
+	 * 
+	 * @param command
+	 */
 	private void use(Command command) {
-		if(player.getInventory()==null){
+		if (player.getInventory() == null) {
 			System.out.println("you have nothing to use.");
-		}
-		else if (!command.hasSecondWord()) {
+		} else if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to heal with.");
 		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 			System.out.println("That item is not in your inventory.");
@@ -342,21 +361,24 @@ public class Game {
 	private void search(Command command) {
 	}
 
+	/**
+	 * this method grabs an specific object
+	 * 
+	 * @param command the users command
+	 */
 	private void grab(Command command) {
+		if (!command.hasSecondWord()) {
+			System.out.println("You must include what you want to grab.");
+		} else if (!(currentRoom.getRoomInventory().roomHasItem(command.getSecondWord()))) {
+			System.out.println("That item is not here.");
+		} else {
+			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getItem(command.getSecondWord()));
+			currentRoom.getRoomInventory().removeItem(command.getSecondWord());
+			System.out.println("you picked up " + command.getSecondWord());
+		}
 	}
 
 	private void attack(Command command) {
-	}
-
-	private void drop(Command command) {
-		if(!command.hasSecondWord()){
-			System.out.println("you must include what you want to drop.");
-		}else if(!(player.getInventory().isInInventory(command.getSecondWord()))){
-			System.out.println("That item is not in your inventory.");
-		}else{
-			System.err.println(command.getSecondWord() + " has been removed.");
-			player.getInventory().removeItem(command.getSecondWord());
-		}
 	}
 
 	private void checkAmmo(Command command) {
@@ -366,7 +388,48 @@ public class Game {
 		player.getInventory().printMaster();
 	}
 
+	/**
+	 * this methods allows the player to climb trees
+	 * 
+	 * @param command
+	 */
 	private void climb(Command command) {
+	if(!command.getSecondWord().equals("tree")||!command.getSecondWord().equals("trees")){
+		System.out.println("you can only climb trees.");
+	
+	}else if (!currentRoom.getRoomInventory().roomHasItem("tree")) {
+			System.out.println("the room does not have any trees to climb.");
+		} else {
+			if (inFight) {
+				if ((int) (Math.random() * 15) == 1) { //1/15 chance that they fall and die
+					System.out.println(
+							"In you panic to escape the dinosaur you fell down broke you legs, and got eaten.");
+							dead= true;
+				}else{
+					System.out.println("you have climbed the tree.");
+					player.inTree = true;
+				}
+			} else {
+				if ((int) (Math.random() * 20) == 1) {
+					System.out.println("you have fallen and have died a painfull death");
+					dead = true;
+				}else{
+					System.out.println("you have climbed the tree.");
+					player.inTree=true;;
+				}
+			}
+		}
+	}
+
+	private void drop(Command command) {
+		if (!command.hasSecondWord()) {
+			System.out.println("you must include what you want to drop.");
+		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
+			System.out.println("That item is not in your inventory.");
+		} else {
+			System.err.println(command.getSecondWord() + " has been removed.");
+			player.getInventory().removeItem(command.getSecondWord());
+		}
 	}
 
 	// implementations of user commands:
@@ -398,36 +461,42 @@ public class Game {
 		Room nextRoom = currentRoom.nextRoom(direction);
 		if (nextRoom == null)
 			System.out.println("You cannot go that way!");
-		else {		
+		else {
 			currentRoom = nextRoom;
-			System.out.println(currentRoom.longDescription());			
-						
+			System.out.println(currentRoom.longDescription());
+
 			// Print out the siren message in-story to open the facilities
 			if (currentRoom.getRoomName().equals(SIREN_POSITION)) {
 				if (timer.getTimeLeft() == -1) {
 					timer.initTime();
 
-				System.out.println(Formatter.blockText("\nInside the shed, you hear sirens begin to blare and an alert "
-						+ "message sounds through the speakers:", Formatter.getCutoff(), "") + "\n");
-				System.out.println(Formatter.blockText("\"Attention! Attention everyone on Jurassic Park! Worsening "
-						+ "conditions have made it unsafe to continue work here. All staff personnel must evacuate "
-						+ "the island immediately. Approaching storms from the south of the island "
-						+ "are forcing all personnel to make their way to the northeast shipyard. "
-						+ "I repeat, all personnel to the northeast shipyard. Control centers are losing power, "
-						+ "meaning enclosure doors may be starting to open due to technical malfunctions. "
-						+ "The last personnel ship will evacuate in " + timer.getTimeLeft() / timer.getTimeInHour()
-						+ " hours. I repeat, you have " + timer.getTimeLeft() / timer.getTimeInHour()
-						+ " hours to get off the island. Over and out.\"", Formatter.getCutoff(), "\t") + "\n");
-				System.out.println(Formatter.blockText("You hear clanging of metal outside of the shed - the security "
-						+ "doors have opened. You have limited time to gather information on the island before you "
-						+ "need to escape. The more documents and artifacts you acquire, the more successful your article"
-						+ "will be. You'll need to evade the creaters unleashed on the island, and if not, face death.",
-						Formatter.getCutoff(), " ") + "\n");
+					System.out
+							.println(Formatter
+									.blockText("\nInside the shed, you hear sirens begin to blare and an alert "
+											+ "message sounds through the speakers:", Formatter.getCutoff(), "")
+									+ "\n");
+					System.out.println(Formatter
+							.blockText("\"Attention! Attention everyone on Jurassic Park! Worsening "
+									+ "conditions have made it unsafe to continue work here. All staff personnel must evacuate "
+									+ "the island immediately. Approaching storms from the south of the island "
+									+ "are forcing all personnel to make their way to the northeast shipyard. "
+									+ "I repeat, all personnel to the northeast shipyard. Control centers are losing power, "
+									+ "meaning enclosure doors may be starting to open due to technical malfunctions. "
+									+ "The last personnel ship will evacuate in "
+									+ timer.getTimeLeft() / timer.getTimeInHour() + " hours. I repeat, you have "
+									+ timer.getTimeLeft() / timer.getTimeInHour()
+									+ " hours to get off the island. Over and out.\"", Formatter.getCutoff(), "\t")
+							+ "\n");
+					System.out.println(Formatter.blockText(
+							"You hear clanging of metal outside of the shed - the security "
+									+ "doors have opened. You have limited time to gather information on the island before you "
+									+ "need to escape. The more documents and artifacts you acquire, the more successful your article"
+									+ "will be. You'll need to evade the creaters unleashed on the island, and if not, face death.",
+							Formatter.getCutoff(), " ") + "\n");
 				}
 			}
-			
-			
-			//Move dinos - only if you make a move
+
+			// Move dinos - only if you make a move
 			dinosaurController.moveDinosaurs();
 		}
 	}
@@ -480,13 +549,18 @@ public class Game {
 		}
 
 	}
-	
+
 	public void killSelf() {
+		if (player.inTree == true) {
+			System.out.println(
+					"you have pursued your dream of flying by jumping out a tree... until gravity did something about it.");
+		}
 		System.out.println("You have killed yourself");
 		System.out.println("GG m8");
-		
+		dead = true;
+
 	}
-	
+
 	public static Room getCurrentRoom() {
 		return currentRoom;
 	}

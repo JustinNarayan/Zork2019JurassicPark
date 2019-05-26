@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestClass",
+            "request": "launch",
+            "mainClass": "com.zork.testing.TestClass",
+            "projectName": "JurassicPark"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Zork",
             "request": "launch",
             "mainClass": "com.zork.game.Zork",
