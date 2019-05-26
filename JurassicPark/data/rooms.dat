@@ -231,7 +231,7 @@ Room Description: You are at a waterfall. To your right is a river. Behind you, 
 Exit Rooms: E-River 2_W, S-Hallway 24, W-Hallway 26
 Room Name: River 2_W
 Room Description: You are at the west end of the river. To your left is a waterfall and the river extends further to your right. 
-Exit Rooms: E-River_E, W-Waterfall
+Exit Rooms: E-River 2_E, W-Waterfall
 Room Name: River 2_E
 Room Description: You are at the east end of the river. To your left is the Shipyard and the river extends further to your left.
 Exit Rooms: E-Shipyard_N, W-River 2_W
