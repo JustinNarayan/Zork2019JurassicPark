@@ -11,6 +11,7 @@ public class RoomItemInit {
 	private static ArrayList<String> roomsWithTables;
 	private static ArrayList<String> roomsWithLeafPiles;
 	private static ArrayList<Artifacts> artifacts;
+	private static ArrayList<Weapons> weapons;
 
 	public static void initRooms() {
 		roomsWithTrees = new ArrayList<String>();
@@ -24,6 +25,8 @@ public class RoomItemInit {
 		artifacts = new ArrayList<Artifacts>();
 		
 		initArtifacts();
+		
+		weapons = new ArrayList<Weapons>();
 	}
 	
 	private static void initEnvironmentItems() {
@@ -246,8 +249,8 @@ public class RoomItemInit {
 		artifacts.add(new Artifacts("A set of personnel records for the security agency", 6, getMap().get("MUNITIONS_SHED_SW"), getMap().get("MUNITIONS_SHED_SW").getRoomInventory().getEnvironmentItem("a table")));
 		artifacts.add(new Artifacts("The egg shell from a Velociraptor", 8, getMap().get("BREEDING_CENTRE_E"), getMap().get("BREEDING_CENTRE_E").getRoomInventory().getEnvironmentItem("a table")));
 		artifacts.add(new Artifacts("The egg shell from a Bronchiosaurus", 5, getMap().get("BREEDING_CENTRE_C"), getMap().get("BREEDING_CENTRE_C").getRoomInventory().getEnvironmentItem("a table")));
-		artifacts.add(new Artifacts("The fossiles from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_SW"), getMap().get("VISITOR_CENTRE_SW").getRoomInventory().getEnvironmentItem("a table")));
-		artifacts.add(new Artifacts("The fossiles from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_NW"), getMap().get("VISITOR_CENTRE_NW").getRoomInventory().getEnvironmentItem("a table")));
+		artifacts.add(new Artifacts("The fossils from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_SW"), getMap().get("VISITOR_CENTRE_SW").getRoomInventory().getEnvironmentItem("a table")));
+		artifacts.add(new Artifacts("The fossils from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_NW"), getMap().get("VISITOR_CENTRE_NW").getRoomInventory().getEnvironmentItem("a table")));
 		
 		// Artifacts in piles of leaves
 		artifacts.add(new Artifacts("A twig", 0, getMap().get("EQUIPMENT_YARD"), getMap().get("EQUIPMENT_YARD").getRoomInventory().getEnvironmentItem("a pile of leaves")));
@@ -259,10 +262,17 @@ public class RoomItemInit {
 		artifacts.add(new Artifacts("A feather from a Pterodactyl", 7, getMap().get("PTERODACTYL_NE"), getMap().get("PTERODACTYL_NE").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 		artifacts.add(new Artifacts("A twig", 0, getMap().get("HILLS_SW"), getMap().get("HILLS_SW").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 		artifacts.add(new Artifacts("A twig", 0, getMap().get("PLAINS_W"), getMap().get("PLAINS_W").getRoomInventory().getEnvironmentItem("a pile of leaves")));
-		artifacts.add(new Artifacts("A shell from a bullet", 0, getMap().get("HALLWAY_15"), getMap().get("HALLWAY_15").getRoomInventory().getEnvironmentItem("a pile of leaves")));
-		artifacts.add(new Artifacts("A shell from a bullet", 0, getMap().get("HALLWAY_16"), getMap().get("HALLWAY_16").getRoomInventory().getEnvironmentItem("a pile of leaves")));
-		artifacts.add(new Artifacts("The fin from a Stegosaurus", 0, getMap().get("STEGOSAURUS_NW"), getMap().get("STEGOSAURUS_NW").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A shell from a bullet", 2, getMap().get("HALLWAY_15"), getMap().get("HALLWAY_15").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A shell from a bullet", 2, getMap().get("HALLWAY_16"), getMap().get("HALLWAY_16").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("The fin from a Stegosaurus", 6, getMap().get("STEGOSAURUS_NW"), getMap().get("STEGOSAURUS_NW").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 	}
+	
+	
+	public static void initWeapons() {
+		//weapons.add(new Weapons("gun", getMap().get("MUNITIONS_SW")));
+	}
+	
+	
 	
 	private static HashMap<String, Room> getMap() {
 		return Game.getMasterRoomMap();
