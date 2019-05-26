@@ -6,5 +6,8 @@ dino ai
 populate rooms with items
 work on game end
 
+make some dinos passive
+make sure awareness works and movement too
+
 bugs:
 all actions, even if can't do, take time
