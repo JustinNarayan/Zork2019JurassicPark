@@ -127,9 +127,8 @@ public class RoomItemInit {
 		roomsWithDesks.add("RECORDS_W");
 		roomsWithDesks.add("BREEDING_CENTRE_E");
 		roomsWithDesks.add("COMMUNICATIONS_CENTRE_SE");
-		roomsWithDesks.add("AQUATIC_CENTRE_SE");
+		roomsWithDesks.add("AQUATIC_SE");
 		roomsWithDesks.add("MECHANICAL_ROOM_E");
-		roomsWithDesks.add("OBSERVATORY_E");
 		roomsWithDesks.add("TREX_CONTROL");
 		roomsWithDesks.add("STEGOSAURUS_CONTROL");
 		roomsWithDesks.add("VELOCIRAPTOR_CONTROL");
@@ -149,10 +148,6 @@ public class RoomItemInit {
 			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("water", getMap().get(s)));
 		}
 		
-		for(String s : roomsWithDesks) {
-			getMap().get(s).getRoomInventory().addItemEnvironment(new EnvironmentItem("desk", getMap().get(s)));
-		}
-
 	}
 	
 	private static HashMap<String, Room> getMap() {
