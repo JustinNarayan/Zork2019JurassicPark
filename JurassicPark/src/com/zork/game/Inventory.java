@@ -8,7 +8,7 @@ import javax.swing.text.Document;
 public class Inventory {
 	private static final int NUM_INVENTORIES = 3;
 
-	private ArrayList<Object> inventoryItems = new ArrayList<Object>();
+	private ArrayList<Item> inventoryItems = new ArrayList<Item>();
 
 	public ArrayList<Weapons> weaponsInventory;
 	public ArrayList<Artifacts> artifactInventory;
@@ -25,7 +25,7 @@ public class Inventory {
 		masterInventory[2] = consumablesInventory;
 	}
 
-	public void addInventoryItem(Object item) {
+	public void addInventoryItem(Item item) {
 		inventoryItems.add(item);
 	}
 
@@ -44,9 +44,9 @@ public class Inventory {
 	public void printInventory(String startstring, boolean showNumber) {
 		System.out.println(startstring);
 		int i = 1;
-		for (Object o : inventoryItems) {
+		for (Item o : inventoryItems) {
 			if(showNumber) System.out.print("Item "+i+": ");
-			System.out.println(o.toString());
+			System.out.println(o.getNameLowerCase());
 			i++;
 		}
 	}
@@ -122,7 +122,7 @@ public class Inventory {
 		return (Item) inventoryItems.remove(i);
 	}
 	
-	public ArrayList<Object> getInventoryItems() {
+	public ArrayList<Item> getInventoryItems() {
 		return inventoryItems;
 	}
 
