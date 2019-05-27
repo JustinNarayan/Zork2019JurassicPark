@@ -49,8 +49,8 @@ public class Player {
 
 	public int calculatePoints() {
 		int points = 0;
-		ArrayList<Object> temp = inventory.getInventoryItems();
-		for(Object obj : temp) {
+		ArrayList<Item> temp = inventory.getInventoryItems();
+		for(Item obj : temp) {
 			if(obj instanceof Artifacts) points+=((Artifacts) obj).getPointsAmount();
 		}
 		return points;
