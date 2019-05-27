@@ -10,4 +10,3 @@ read function
 bugs:
 all actions, even if you can't do them or input wrong, take time
 sometimes the exits leave an extra space before appearing
-some room descriptions have periods while others do not

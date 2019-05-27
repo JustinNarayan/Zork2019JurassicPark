@@ -32,7 +32,7 @@ Room Name: Hallway 11
 Room Description:  You are on a pathway. In front of you is are the plains and behind you is the Spinosaurus enclosure.
 Exit Rooms: N-Plains_W, S-Spinosaurus_NE
 Room Name: Hallway 12
-Room Description:  You are on a pathway. In front of you is the Pterodactyl enclosure and behind you is the Quarry
+Room Description:  You are on a pathway. In front of you is the Pterodactyl enclosure and behind you is the Quarry.
 Exit Rooms: N-Pterodactyl_SE, S-Quarry_N
 Room Name: Hallway 13
 Room Description:  You are on a pathway. To the left is the Pteradactyl enclosure and to the right is the Triceratops enclosure. 
@@ -119,7 +119,7 @@ Room Name: Staff Quarters_NW
 Room Description:   You are in the North West Corner of the Staff Quarters. In front of you is a glass door; in the distance, you can see an Equipment Yard. 
 Exit Rooms: N-Hallway 6, E-Staff Quarters_NE, S-Staff Quarters_SW
 Room Name: Staff Quarters_SE
-Room Description:   You are in the South East Corner of the Staff Quarters. In front of you and to the left is the Staff Quarters
+Room Description:   You are in the South East Corner of the Staff Quarters. In front of you and to the left is the Staff Quarters.
 Exit Rooms: N-Staff Quarters_NE, W-Staff Quarters_SW
 Room Name: Staff Quarters_SW
 Room Description:   You are in the South West Corner of the Staff Quarters. In front of you and to the right is the Staff Quarters. 
