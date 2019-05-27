@@ -18,6 +18,15 @@ public abstract class Item {
 		return room;
 	}
 	
+	public void setRoom(Room room) {
+		this.room = room;
+		this.room.getRoomInventory().addRoomItem(this);
+	}
+	
+	public void setEnvironmentItem(EnvironmentItem env) {
+		this.environmentItem = env;
+	}
+	
 	public String getPoints() {
 		return "";
 	}
