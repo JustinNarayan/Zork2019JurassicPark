@@ -17,4 +17,8 @@ public abstract class Item {
 	public Room getRoom() {
 		return room;
 	}
+	
+	public String toString() {
+		return getName();
+	}
 }
