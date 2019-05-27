@@ -32,9 +32,10 @@ public class Game {
 	private Timer timer;
 	private static Room currentRoom;
 	private final String SIREN_POSITION = "Supply Shed";
-	private Player player;
+	private static Player player;
 	private DinosaurController dinosaurController;
 	private boolean inFight;
+	private static final int winPoints = 50;
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -128,10 +129,20 @@ public class Game {
 		// them until the game is over.
 		RoomItemInit.initRooms();
 		boolean finished = false;
-		while (!finished) {
-			
+		while (!finished) {			
 			Command command = parser.getCommand();
 			finished = processCommand(command); // FALSE is for inFight variable, not yet implemented
+			if(timer.isOutOfTime()) {
+				endGame("time");
+				finished = false;
+			}
+			if(player.hasSucceeded()) {
+				endGame("success");
+				finished = false;
+			}
+			if(player.isDead()) {
+				finished = false;
+			}
 		}
 		System.out.println("Thank you for playing.");
 	}
@@ -695,6 +706,21 @@ public class Game {
 
 	public static Room getCurrentRoom() {
 		return currentRoom;
+	}
+	
+	private static void endGame(String s) {
+		if(s.equals("time")) {
+			System.out.println(Formatter.blockText("\nYou are too late! The last boat off the island has left and you have been trapped on the island with no escape"
+					+ " to fend for yourself among the park's dinosaurs. As your last hope for survival sails away in the distance, you are remember all the artifacts you recovered"
+					+ " and how close you came to exposing the horrors around you.",Formatter.getCutoff(),""));
+		} else if(s.equals("success")) {
+			System.out.println(Formatter.blockText("\nYou have successfully left the island! You have snuck aboard an escaping ship yet again, and must hope no one finds you"
+					+ " until you can safely reach land. You have got out with your life and enough evidence to shut the park down for good.", Formatter.getCutoff(), ""));
+		}
+		System.out.println("You have gained " + player.calculatePoints() + " from all the artifacts you recovered.");
+		if(s.equals("success")) {
+			System.out.println("You have gained " + Game.winPoints + " for escaping the island.");
+		}
 	}
 
 }

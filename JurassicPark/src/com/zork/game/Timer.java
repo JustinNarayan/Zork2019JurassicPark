@@ -34,4 +34,8 @@ public class Timer {
 		if(timeLeft > -1) timeLeft -= amount;
 		//time = 0
 	}
+	
+	public boolean isOutOfTime() {
+		return timeLeft <= 0;
+	}
 }

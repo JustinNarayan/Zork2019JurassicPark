@@ -7,11 +7,13 @@ public class Player {
 	public Inventory inventory;
 	public boolean inTree;
 	private boolean dead;
+	private boolean success;
 
     public Player(BufferedInputStream bis){
         inventory = new Inventory();
         dead = false;
         inTree = false;
+        success = false;
     }
     
     public Player() {
@@ -45,6 +47,17 @@ public class Player {
 		return dead;
 	}
 
+	public int calculatePoints() {
+		return 0;
+	}
+	
+	public void gainSuccess() {
+		success = true;
+	}
+	
+	public boolean hasSucceeded() {
+		return success;
+	}
 
 
 }
