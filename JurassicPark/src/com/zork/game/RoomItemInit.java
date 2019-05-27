@@ -202,26 +202,26 @@ public class RoomItemInit {
 		
 		// Artifacts in a tree
 		artifacts.add(new Artifacts("A bone from a Stegosaurus", "You can't read a bone...", 7, getMap().get("HALLWAY_25"), getMap().get("HALLWAY_25").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from the T-Rex", 9, getMap().get("HALLWAY_23"), getMap().get("HALLWAY_23").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Stegosaurus", 7, getMap().get("STEGOSAURUS_SW"), getMap().get("STEGOSAURUS_SW").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Stegosaurus", 6, getMap().get("HALLWAY_14"), getMap().get("HALLWAY_14").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Velociraptor", 8, getMap().get("VELOCIRAPTOR_SW"), getMap().get("VELOCIRAPTOR_SW").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Velociraptor", 8, getMap().get("JUNGLE_SE"), getMap().get("JUNGLE_SE").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Triceratops", 7, getMap().get("TRICERATOPS_SW"), getMap().get("TRICERATOPS_SW").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A bone from a Velociraptor", 8, getMap().get("HILLS_SE"), getMap().get("HILLS_SE").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A bone from a Spinosaurus", 6, getMap().get("PLAINS_E"), getMap().get("PLAINS_E").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A bone from a Spinosaurus", 6, getMap().get("MOUNTAIN_TOP"), getMap().get("MOUNTAIN_TOP").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Dilophosaurus", 7, getMap().get("QUARRY_S"), getMap().get("QUARRY_S").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("An egg shell from a Pterodactyl", 7, getMap().get("PTERODACTYL_NE"), getMap().get("PTERODACTYL_NE").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A bone from a Bronchisaurus", 6, getMap().get("HALLWAY_3"), getMap().get("HALLWAY_3").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Pterodactyl", 6, getMap().get("FOREST_W"), getMap().get("FOREST_W").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A feather from a Pterodactyl", 7, getMap().get("FOREST_E"), getMap().get("FOREST_E").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Triceratops", 7, getMap().get("TRICERATOPS_NW"), getMap().get("TRICERATOPS_NW").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Pterodactyl", 7, getMap().get("HALLWAY_13"), getMap().get("HALLWAY_13").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A feather from a Velociraptor", 7, getMap().get("HALLWAY_27"), getMap().get("HALLWAY_27").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Velociraptor", 8, getMap().get("JUNGLE_NE"), getMap().get("JUNGLE_NE").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A twig", 0, getMap().get("BRONCHIOSAURUS_SE"), getMap().get("BRONCHIOSAURUS_SE").getRoomInventory().getEnvironmentItem("trees")));
-		artifacts.add(new Artifacts("A tooth from a Bronchiosaurus", 6, getMap().get("BRONCHIOSAURUS_SW"), getMap().get("BRONCHIOSAURUS_SW").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from the T-Rex", "You can't read a tooth...",9, getMap().get("HALLWAY_23"), getMap().get("HALLWAY_23").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Stegosaurus", "You can't read a tooth...",7, getMap().get("STEGOSAURUS_SW"), getMap().get("STEGOSAURUS_SW").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Stegosaurus", "You can't read a tooth...",6, getMap().get("HALLWAY_14"), getMap().get("HALLWAY_14").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Velociraptor", "You can't read a tooth...",8, getMap().get("VELOCIRAPTOR_SW"), getMap().get("VELOCIRAPTOR_SW").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Velociraptor", "You can't read a tooth...",8, getMap().get("JUNGLE_SE"), getMap().get("JUNGLE_SE").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Triceratops", "You can't read a tooth...",7, getMap().get("TRICERATOPS_SW"), getMap().get("TRICERATOPS_SW").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A bone from a Velociraptor", "You can't read a bone...",8, getMap().get("HILLS_SE"), getMap().get("HILLS_SE").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A bone from a Spinosaurus", "You can't read a bone...",6, getMap().get("PLAINS_E"), getMap().get("PLAINS_E").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A bone from a Spinosaurus", "You can't read a bone...",6, getMap().get("MOUNTAIN_TOP"), getMap().get("MOUNTAIN_TOP").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Dilophosaurus", "You can't read a tooth...",7, getMap().get("QUARRY_S"), getMap().get("QUARRY_S").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("An egg shell from a Pterodactyl", "You can't read an egg shell...",7, getMap().get("PTERODACTYL_NE"), getMap().get("PTERODACTYL_NE").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A bone from a Bronchisaurus", "You can't read a bone...",6, getMap().get("HALLWAY_3"), getMap().get("HALLWAY_3").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Pterodactyl", "You can't read a tooth...",6, getMap().get("FOREST_W"), getMap().get("FOREST_W").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A feather from a Pterodactyl", "You can't read a feather...",7, getMap().get("FOREST_E"), getMap().get("FOREST_E").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Triceratops", "You can't read a tooth...",7, getMap().get("TRICERATOPS_NW"), getMap().get("TRICERATOPS_NW").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Pterodactyl", "You can't read a tooth...",7, getMap().get("HALLWAY_13"), getMap().get("HALLWAY_13").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A feather from a Velociraptor", "You can't read a feather...",7, getMap().get("HALLWAY_27"), getMap().get("HALLWAY_27").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Velociraptor", "You can't read a tooth...",8, getMap().get("JUNGLE_NE"), getMap().get("JUNGLE_NE").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A twig", "You can't read a twig...",0, getMap().get("BRONCHIOSAURUS_SE"), getMap().get("BRONCHIOSAURUS_SE").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A tooth from a Bronchiosaurus", "You can't read a tooth...",6, getMap().get("BRONCHIOSAURUS_SW"), getMap().get("BRONCHIOSAURUS_SW").getRoomInventory().getEnvironmentItem("trees")));
 		
 		// Artifacts in a desk
 		artifacts.add(new Artifacts("A journal kept by a member of staff", 7, getMap().get("STAFF_QUARTERS_SW"), getMap().get("STAFF_QUARTERS_SW").getRoomInventory().getEnvironmentItem("a desk")));
