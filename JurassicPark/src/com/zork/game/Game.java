@@ -32,6 +32,7 @@ public class Game {
 	private Timer timer;
 	private static Room currentRoom;
 	private final String SIREN_POSITION = "Supply Shed";
+	private final String LEAVE_POSITION = "Shipyard_N";
 	private static Player player;
 	private DinosaurController dinosaurController;
 	private boolean inFight;
@@ -229,6 +230,9 @@ public class Game {
 			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
 			break;
+		case "check":
+			check(command);
+			break;
 		case "inventory":
 			checkInventory(command);
 			break;
@@ -277,6 +281,9 @@ public class Game {
 			break;
 		case "where":
 			whereIsPlayer();
+			break;
+		case "leave":
+			leave(command);
 			break;
 		default:
 			if (!inFight) { // the following commands are for when you are not in battle
@@ -463,6 +470,21 @@ public class Game {
 
 	private void checkAmmo(Command command) {
 	}
+	
+	private void check(Command command) {
+		if((command.hasSecondWord() && (command.getSecondWord().equals("inventory") ||
+				command.getSecondWord().equals("items"))) ||
+				(command.hasThirdWord() && (command.getThirdWord().equals("inventory") ||
+				command.getThirdWord().equals("items")))) {
+			checkInventory(command);
+		} else if((command.hasSecondWord() && command.getSecondWord().equals("ammo")) || (command.hasThirdWord()&&command.getThirdWord().equals("ammo"))) {
+			checkAmmo(command);
+		} else if(!command.hasSecondWord()) {
+			System.out.println("You must include what you want to check.");
+		} else {
+			search(command);
+		}
+	}
 
 	private void checkInventory(Command command) {
 		player.getInventory().printInventory("Here are the items in your inventory: ", true);
@@ -636,6 +658,9 @@ public class Game {
 									+ "will be. You'll need to evade the creaters unleashed on the island, and if not, face death.",
 							Formatter.getCutoff(), " ") + "\n");
 				}
+			} else if(currentRoom.getRoomName().equals(LEAVE_POSITION)) {
+				System.out.println(Formatter.blockText("\nThis is it! You can leave the island from here if you wish, you can sneak aboard a boat to safety. "
+						+ "If you wish to remain and search for more artifacts, you have " + Formatter.properTime(timer.getTimeLeft()) + " to do so.", Formatter.getCutoff(), ""));
 			}
 
 			// Move dinos - only if you make a move
@@ -741,6 +766,21 @@ public class Game {
 	public void whereIsPlayer() {
 		System.out.println(currentRoom.longDescription());
 	}
+	
+	public void leave(Command command) {
+		if(!command.hasSecondWord()) {
+			System.out.println("Where do you want to leave?");
+		} else {
+			if(command.getSecondWord().equals("isla") || command.getSecondWord().equals("island") || command.getSecondWord().equals("here")) {
+				/*if(currentRoom.getRoomName().equals(LEAVE_POSITION)) {
+					player.gainSuccess();
+				} else {
+					System.out.println("You can't leave the island from here!");
+				}*/
+			}
+		}
+	}
+	
 
 	public static Room getCurrentRoom() {
 		return currentRoom;
