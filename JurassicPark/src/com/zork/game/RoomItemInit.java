@@ -244,8 +244,8 @@ public class RoomItemInit {
 		// Artifacts in water
 		artifacts.add(new Artifacts("The egg shell from a Spinosaurus", "You can't read an egg shell...", 7, getMap().get("BEACH_1_N"), getMap().get("BEACH_1_N").getRoomInventory().getEnvironmentItem("water")));
 		artifacts.add(new Artifacts("A tooth from a Stegosaurus", "You can't read a tooth...", 8, getMap().get("LAKE"), getMap().get("LAKE").getRoomInventory().getEnvironmentItem("water")));
-		artifacts.add(new Artifacts("A tooth from the T-Rex", "You can't read a tooth...", 10, getMap().get("TREX_SC"), getMap().get("TREX_SC").getRoomInventory().getEnvironmentItem("water")));
-		artifacts.add(new Artifacts("A tooth from the T-Rex", "You can't read a tooth...", 8, getMap().get("RIVER_W"), getMap().get("RIVER_2_W").getRoomInventory().getEnvironmentItem("water")));
+		artifacts.add(new Artifacts("A tooth from the T-Rex", "You can't read a tooth...", 9, getMap().get("TREX_SC"), getMap().get("TREX_SC").getRoomInventory().getEnvironmentItem("water")));
+		artifacts.add(new Artifacts("A tooth from the T-Rex", "You can't read a tooth...", 9, getMap().get("RIVER_W"), getMap().get("RIVER_2_W").getRoomInventory().getEnvironmentItem("water")));
 		artifacts.add(new Artifacts("A tooth from a Velociraptor", "You can't read a tooth...", 8, getMap().get("BEACH_2_N"), getMap().get("BEACH_2_N").getRoomInventory().getEnvironmentItem("water")));
 		artifacts.add(new Artifacts("A twig", "You can't read a twig...", 0, getMap().get("WATERFALL"), getMap().get("WATERFALL").getRoomInventory().getEnvironmentItem("water")));
 		
