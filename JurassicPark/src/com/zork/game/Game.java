@@ -236,6 +236,13 @@ public class Game {
 			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
 			break;
+		case "take": //same as grab
+			timer.reduceTime(timer.TIME_TO_GRAB);
+			grab(command);
+
+			// Dinos can become aware here no matter what you say
+			dinosaurController.checkDinosaurAwareness();
+			break;
 		case "attack":
 			timer.reduceTime(timer.TIME_TO_ATTACK);
 			attack(command);
@@ -370,26 +377,29 @@ public class Game {
 		// Look at environment
 		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
 		if (!command.hasSecondWord()) {
-			System.out.println("You must included what you want to search");
+			System.out.println("You must include what you want to search.");
 			return;
 		}
-		for (int i =0; i<env.size();i++){
-			EnvironmentItem temp = env.get(i);
-			if (temp.toString().equals(command.getSecondWord()) || (temp.toString().equals("trees") && command.getSecondWord().equals("tree")) || (temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && command.getSecondWord().contentEquals(temp.toString().substring(2)))) {
-				if (temp.getItems().size() > 0) {
-					System.out.print("You search the " + command.getSecondWord() + " and find: ");
-					for (int j = 0; j < temp.getItems().size(); j++) {
-						System.out.print(temp.getItems().get(j).getName() + " ");
-						player.inventory.addInventoryItem(temp.getItems().get(j));
-						temp.removeItem(j);
+		if(env.size()==0) System.out.println("There is nothing here to search.");
+		else {
+			for (int i =0; i<env.size();i++){
+				EnvironmentItem temp = env.get(i);
+				if (temp.toString().equals(command.getSecondWord()) || (temp.toString().equals("trees") && command.getSecondWord().equals("tree")) || (temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && command.getSecondWord().equals(temp.toString().substring(2)))) {
+					if (temp.getItems().size() > 0) {
+						System.out.print("You search the " + command.getSecondWord() + " and find: ");
+						for (int j = 0; j < temp.getItems().size(); j++) {
+							System.out.print(temp.getItems().get(j).getName() + " ");
+							player.inventory.addInventoryItem(temp.getItems().get(j));
+							temp.removeItem(j);
+						}
+						System.out.println();
+					} else {
+						System.out.println("You searched the " + command.getSecondWord() + " and found nothing.");
 					}
-					System.out.println();
-				} else {
-					System.out.println("You searched the " + command.getSecondWord() + " and found nothing.");
+	
+				}else {
+					System.out.println("You cannot search that.");
 				}
-
-			}else {
-				System.out.println("You can not search that");
 			}
 		}
 
@@ -585,7 +595,15 @@ public class Game {
 	}
 
 	private void look(Command command) {
-		System.out.println(Phrases.getLook().get((int) (Math.random() * Phrases.getLook().size())));
+		//Check if should be a search
+		if(command.hasSecondWord() && command.hasThirdWord()) {
+			if(command.getSecondWord().equals("inside") || command.getSecondWord().equals("in")) {
+				search(new Command(command.getCommandWord(), command.getThirdWord(), null));
+				return;
+			}
+		}
+		
+		System.out.println(Phrases.getLook().get((int) (Math.random() * Phrases.getLook().size())));		
 
 		// Look at environment
 		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
