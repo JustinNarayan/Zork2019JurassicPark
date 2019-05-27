@@ -772,11 +772,11 @@ public class Game {
 			System.out.println("Where do you want to leave?");
 		} else {
 			if(command.getSecondWord().equals("isla") || command.getSecondWord().equals("island") || command.getSecondWord().equals("here")) {
-				/*if(currentRoom.getRoomName().equals(LEAVE_POSITION)) {
+				if(currentRoom.getRoomName().equals(LEAVE_POSITION)) {
 					player.gainSuccess();
 				} else {
 					System.out.println("You can't leave the island from here!");
-				}*/
+				}
 			}
 		}
 	}
