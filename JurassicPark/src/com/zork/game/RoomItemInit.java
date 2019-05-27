@@ -172,6 +172,7 @@ public class RoomItemInit {
 		roomsWithLeafPiles.add("HALLWAY_15");
 		roomsWithLeafPiles.add("HALLWAY_16");
 		roomsWithLeafPiles.add("STEGOSAURUS_NW");
+		roomsWithLeafPiles.add("DILOPHOSAURUS_NE");
 		roomsWithLeafPiles.add("CLEARING");
 
 		
@@ -263,7 +264,7 @@ public class RoomItemInit {
 		artifacts.add(new Artifacts("A twig", "You can't read a twig...",0, getMap().get("EQUIPMENT_YARD"), getMap().get("EQUIPMENT_YARD").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 		artifacts.add(new Artifacts("A twig", "You can't read a twig...",0, getMap().get("QUARRY_N"), getMap().get("QUARRY_N").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 		artifacts.add(new Artifacts("A Triceratops' horn", "You can't read the horn of a Triceratops...", 7, getMap().get("HALLWAY_7"), getMap().get("HALLWAY_7").getRoomInventory().getEnvironmentItem("a pile of leaves")));
-		artifacts.add(new Artifacts("A feather form a Dilophosaurus", "You can't read a feather...", 6, getMap().get("DILOPHOSAURUS_NE"), getMap().get("DILOPHOSAURUS_NE").getRoomInventory().getEnvironmentItem("a pile of leaves")));
+		artifacts.add(new Artifacts("A feather from a Dilophosaurus", "You can't read a feather...", 6, getMap().get("DILOPHOSAURUS_NE"), getMap().get("DILOPHOSAURUS_NE").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 		artifacts.add(new Artifacts("A feather from a Dilophosaurus", "You can't read a feather...",6, getMap().get("CLEARING"), getMap().get("CLEARING").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 		artifacts.add(new Artifacts("An egg shell from a Pterodactyl", "You can't read an egg shell...",7, getMap().get("PTERODACTYL_SW"), getMap().get("PTERODACTYL_SW").getRoomInventory().getEnvironmentItem("a pile of leaves")));
 		artifacts.add(new Artifacts("A feather from a Pterodactyl", "You can't read a feather...",7, getMap().get("PTERODACTYL_NE"), getMap().get("PTERODACTYL_NE").getRoomInventory().getEnvironmentItem("a pile of leaves")));

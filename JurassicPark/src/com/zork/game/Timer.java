@@ -5,16 +5,16 @@ public class Timer {
 	private final int MAX_TIME = 10800;
 	private final int TIME_IN_HOUR = 3600;
 	
-	public final int TIME_TO_GO = 10;
-	public final int TIME_TO_USE = 4;
-	public final int TIME_TO_LOOK = 5;
-	public final int TIME_TO_GRAB = 2;
-	public final int TIME_TO_DROP = 2;
+	public final int TIME_TO_GO = 30;
+	public final int TIME_TO_USE = 5;
+	public final int TIME_TO_LOOK = 10;
+	public final int TIME_TO_GRAB = 3;
+	public final int TIME_TO_DROP = 3;
 	public final int TIME_TO_ATTACK = 5;
-	public final int TIME_TO_SEARCH = 5;
-	public final int TIME_TO_CLIMB = 10;
-	public final int TIME_TO_EQUIP = 2;
-	public final int TIME_TO_UNEQUIP = 2;
+	public final int TIME_TO_SEARCH = 10;
+	public final int TIME_TO_CLIMB = 20;
+	public final int TIME_TO_EQUIP = 3;
+	public final int TIME_TO_UNEQUIP = 3;
 	
 	
 	
