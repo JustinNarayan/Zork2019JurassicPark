@@ -101,7 +101,7 @@ Room Name: Boat Landing_B
 Room Description: You have entered the facility, good luck. In front of you, you can see the Visitor Centre in the distance.
 Exit Rooms: N-Hallway 1, E-Supply Shed
 Room Name: Visitor Centre_SE
-Room Description: You are in the South East corner of the Visitor Centre. Behind you, you can see the Boat Landing in the distance. In front of you and to the left is the Visitor Centre.
+Room Description: You are in the South East corner of the Visitor Centre. Behind you, you can see the Boat Landing in the distance. In front of you and to the left is the Visitor Centre. You see an empty table that should hold documents with information on the dinosaurs of the island.
 Exit Rooms: N-Visitor Centre_NE, S-Hallway 1, W-Visitor Centre_SW
 Room Name: Visitor Centre_NE
 Room Description: You are in the North East Corner of the Visitor Centre. To the right is a glass door; in the distance, you can see the Bronchiosaurus enclosure.

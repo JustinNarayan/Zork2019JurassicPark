@@ -257,7 +257,7 @@ public class RoomItemInit {
 		artifacts.add(new Artifacts("The fossils from a Stegosaurus", "You can't read a bone...",5, getMap().get("VISITOR_CENTRE_NW"), getMap().get("VISITOR_CENTRE_NW").getRoomInventory().getEnvironmentItem("a table")));
 		
 		// Weakness document
-		artifacts.add(new Artifacts("A document about all the island's dinosaurs", Artifacts.getDinosaurInfo(), 0, getMap().get("VISITOR_CENTRE_SE"), getMap().get("VISITOR_CENTRE_SE").getRoomInventory().getEnvironmentItem("a table")));		
+		artifacts.add(new Artifacts("A valuable document about all the island's dinosaurs", Artifacts.getDinosaurInfo(), 0, getMap().get("VISITOR_CENTRE_SE"), getMap().get("VISITOR_CENTRE_SE").getRoomInventory().getEnvironmentItem("a table")));		
 		
 		// Artifacts in piles of leaves
 		artifacts.add(new Artifacts("A twig", "You can't read a twig...",0, getMap().get("EQUIPMENT_YARD"), getMap().get("EQUIPMENT_YARD").getRoomInventory().getEnvironmentItem("a pile of leaves")));
