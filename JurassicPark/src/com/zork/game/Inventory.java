@@ -119,7 +119,10 @@ public class Inventory {
 	}
 	
 	public Item removeItem(int i) {
-		return (Item) inventoryItems.remove(i);
+		Item item = (Item) inventoryItems.remove(i);
+		item.setEnvironmentItem(null);
+		item.setRoom(Game.getCurrentRoom());
+		return item;
 	}
 	
 	public ArrayList<Item> getInventoryItems() {
