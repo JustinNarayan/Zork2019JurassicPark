@@ -125,6 +125,26 @@ public class Room {
 	 * "direction". If there is no room in that direction, return null.
 	 */
 	public Room nextRoom(String direction) {
+		if( !(direction.equals("north")||direction.equals("south")||direction.equals("east")||direction.equals("west")) ) {
+			switch(direction) {
+			case "forward":
+				direction="north";
+				break;
+			case "backward":
+				direction="south";
+				break;
+			case "left":
+				direction="west";
+				break;
+			case "right":
+				direction="east";
+				break;
+			default:
+				direction="";
+				break;
+			}
+		}
+		
 		return (Room) exits.get(direction);
 	}
 
