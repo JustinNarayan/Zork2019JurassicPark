@@ -418,6 +418,7 @@ public class Game {
 	}
 
 	private void attack(Command command) {
+		
 	}
 
 	private void checkAmmo(Command command) {
