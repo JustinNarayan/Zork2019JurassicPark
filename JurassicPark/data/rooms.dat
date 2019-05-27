@@ -92,13 +92,13 @@ Room Name: Hallway 31
 Room Description:  You are on a pathway. In front of you is the Jungle and behind you is the Observatory. 
 Exit Rooms: N-Jungle_SE, S-Observatory_E
 Room Name: Boat Landing_A
-Room Description: This is the boat landing, where you start. To your right is a shed which looked to have supply in it.
+Room Description: This is the boat landing, where you start. To your right is a shed which looked to have supply in it. In front of you is a locked gate that you can't seem to get open.
 Exit Rooms: E-Supply Shed
 Room Name: Supply Shed
 Room Description: You are in the boat supply shed just off of the boat landing. To your left is the room's only exit.
 Exit Rooms: W-Boat Landing_B
 Room Name: Boat Landing_B
-Room Description: You have entered the facility, good luck. In front of you, you can see the Visitor Centre in the distance.
+Room Description: You have entered the facility, good luck. In front of you, you can see the Visitor Centre in the distance through the now-opened gate.
 Exit Rooms: N-Hallway 1, E-Supply Shed
 Room Name: Visitor Centre_SE
 Room Description: You are in the South East corner of the Visitor Centre. Behind you, you can see the Boat Landing in the distance. In front of you and to the left is the Visitor Centre. You see an empty table that should hold documents with information on the dinosaurs of the island.
