@@ -18,6 +18,10 @@ public abstract class Item {
 		return room;
 	}
 	
+	public String getPoints() {
+		return "";
+	}
+	
 	public String toString() {
 		return getName();
 	}

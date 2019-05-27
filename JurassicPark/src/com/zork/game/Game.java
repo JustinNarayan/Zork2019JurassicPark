@@ -448,8 +448,8 @@ public class Game {
 			System.out.println("That item is not here.");
 		} else {
 			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getRoomItem(word));
+			System.out.println("You picked up " + word + currentRoom.getRoomInventory().getRoomItem(word).getPoints()+ ".");
 			currentRoom.getRoomInventory().removeRoomItem(word);
-			System.out.println("You picked up " + word + ".");
 		}
 	}
 

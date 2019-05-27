@@ -7,6 +7,9 @@ work on game end
 dino attack
 music?
 
+make points calculate in player
+make it say points when item pickup
+
 bugs:
 all actions, even if you can't do them or input wrong, take time
 sometimes the exits leave an extra space before appearing
