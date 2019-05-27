@@ -4,6 +4,7 @@ public class Artifacts extends Item {
 	private int points;
 	private String read;
 	private static String dinosaurInfo;
+	private static final String DINOSAUR_INFORMATION = Formatter.blockText("",Formatter.getCutoff(),"\t");
 	
     public Artifacts(String name, String read, int points, Room room, EnvironmentItem environmentItem) {
     	this.name = name;
@@ -22,6 +23,10 @@ public class Artifacts extends Item {
     	}
     }
     
+    public String getDinosaurInfo() {
+    	return DINOSAUR_INFORMATION;
+    }
+    
     public String getPoints() {
     	return " for " + points + " points";
     }
@@ -29,8 +34,5 @@ public class Artifacts extends Item {
     public int getPointsAmount() {
     	return points;
     }
-    
-    public static String getDinosaurInfo() {
-    	return dinosaurInfo;
-    }
+   
 }
