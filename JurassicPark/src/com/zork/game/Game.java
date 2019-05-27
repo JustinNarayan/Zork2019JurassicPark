@@ -408,7 +408,7 @@ public class Game {
 				EnvironmentItem temp = env.get(i);
 				if (temp.toString().equals(command.getSecondWord()) || 
 						(temp.toString().equals("trees") && command.getSecondWord().equals("tree")) || 
-						(temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && command.getSecondWord().equals(temp.toString().substring(2)))) {
+						(temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && (command.getSecondWord().equals(temp.toString().substring(2)) || (temp.toString().indexOf(" ", 2)>2 && command.getSecondWord().equals(temp.toString().substring(2,command.getSecondWord().indexOf(" "))))))) {
 					if (temp.getItems().size() > 0) {
 						System.out.print("You search the " + command.getSecondWord() + " and find ");
 						for (int j = 0; j < temp.getItems().size(); j++) {
