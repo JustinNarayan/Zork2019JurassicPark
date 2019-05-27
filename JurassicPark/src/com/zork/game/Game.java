@@ -11,8 +11,6 @@ import java.util.Scanner;
 
 import com.zork.game.dinosaurs.DinosaurController;
 
-//import javazoom.jl.player.Player;
-
 /**
  * Class Game - the main class of the "Zork" game.
  *
