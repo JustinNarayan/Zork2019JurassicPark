@@ -22,6 +22,10 @@ public abstract class Item {
 		return "";
 	}
 	
+	public String getNameLowerCase() {
+		return name.substring(0,1).toLowerCase() + name.substring(1);
+	}
+	
 	public String toString() {
 		return getName();
 	}
