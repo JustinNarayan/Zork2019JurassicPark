@@ -6,6 +6,7 @@ populate rooms with items
 work on game end
 dino attack
 read function
+dino info
 
 bugs:
 all actions, even if you can't do them or input wrong, take time

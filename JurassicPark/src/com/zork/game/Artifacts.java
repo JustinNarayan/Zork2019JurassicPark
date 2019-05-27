@@ -23,7 +23,7 @@ public class Artifacts extends Item {
     	}
     }
     
-    public String getDinosaurInfo() {
+    public static String getDinosaurInfo() {
     	return DINOSAUR_INFORMATION;
     }
     
