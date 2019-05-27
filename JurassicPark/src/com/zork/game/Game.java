@@ -36,6 +36,8 @@ public class Game {
 	private DinosaurController dinosaurController;
 	private boolean inFight;
 	private static final int winPoints = 50;
+	private boolean gameStarted;
+	
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -107,6 +109,7 @@ public class Game {
 	public Game() {
 		// init player
 		player = new Player(); // the parameters have not been made yet
+		gameStarted = false;
 		try {
 			initRooms("data/rooms.dat");
 			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
@@ -132,19 +135,19 @@ public class Game {
 		while (!finished) {			
 			Command command = parser.getCommand();
 			finished = processCommand(command); // FALSE is for inFight variable, not yet implemented
-			if(timer.isOutOfTime()) {
+			if(timer.isOutOfTime() && gameStarted) {
 				endGame("time");
-				finished = false;
+				finished = true;
 			}
 			if(player.hasSucceeded()) {
 				endGame("success");
-				finished = false;
+				finished = true;
 			}
 			if(player.isDead()) {
-				finished = false;
+				finished = true;
 			}
 		}
-		System.out.println("Thank you for playing.");
+		System.out.println("\nThank you for playing.");
 	}
 
 	/**
@@ -397,13 +400,13 @@ public class Game {
 				EnvironmentItem temp = env.get(i);
 				if (temp.toString().equals(command.getSecondWord()) || (temp.toString().equals("trees") && command.getSecondWord().equals("tree")) || (temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && command.getSecondWord().equals(temp.toString().substring(2)))) {
 					if (temp.getItems().size() > 0) {
-						System.out.print("You search the " + command.getSecondWord() + " and find: ");
+						System.out.print("You search the " + command.getSecondWord() + " and find ");
 						for (int j = 0; j < temp.getItems().size(); j++) {
-							System.out.print(temp.getItems().get(j).getName() + " ");
+							System.out.print(temp.getItems().get(j).getNameLowerCase() + temp.getItems().get(j).getPoints());
 							player.inventory.addInventoryItem(temp.getItems().get(j));
 							temp.removeItem(j);
 						}
-						System.out.println();
+						System.out.print(".\n");
 					} else {
 						System.out.println("You searched the " + command.getSecondWord() + " and found nothing.");
 					}
@@ -573,6 +576,7 @@ public class Game {
 			if (currentRoom.getRoomName().equals(SIREN_POSITION)) {
 				if (timer.getTimeLeft() == -1) {
 					timer.initTime();
+					gameStarted = true;
 
 					System.out
 							.println(Formatter
