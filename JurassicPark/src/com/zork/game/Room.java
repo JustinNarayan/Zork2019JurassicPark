@@ -101,7 +101,7 @@ public class Room {
 	}
 
 	/**
-	 * Return a long description of this room, on the form: You are in the kitchen.
+	 * Return a long desption of this room, on the form: You are in the kitchen.
 	 * Exits: north west
 	 */
 	public String longDescription() {
