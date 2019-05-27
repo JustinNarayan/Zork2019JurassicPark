@@ -375,13 +375,13 @@ public class Game {
 		}
 		for (int i =0; i<env.size();i++){
 			EnvironmentItem temp = env.get(i);
-			if (temp.toString().equals(command.getSecondWord())) {
+			if (temp.toString().equals(command.getSecondWord()) || (temp.toString().equals("trees") && command.getSecondWord().equals("tree")) || (temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && command.getSecondWord().contentEquals(temp.toString().substring(2)))) {
 				if (temp.getItems().size() > 0) {
 					System.out.print("You search the " + command.getSecondWord() + " and find: ");
 					for (int j = 0; j < temp.getItems().size(); j++) {
 						System.out.print(temp.getItems().get(j).getName() + " ");
 						player.inventory.addInventoryItem(temp.getItems().get(j));
-						currentRoom.getRoomInventory().getEnvironment().remove(j);
+						temp.removeItem(j);
 					}
 					System.out.println();
 				} else {
@@ -602,7 +602,8 @@ public class Game {
 							.get((int) (Math.random() * Phrases.getLookInEnv().size()));
 				} else
 					seeInEnvironment += "and ";
-				seeInEnvironment += obj.toString() + " ";
+				if(obj.toString().length()>1 && obj.toString().substring(0,2).equals("a ")) seeInEnvironment += obj.toString().substring(2) + " ";
+				else seeInEnvironment += obj.toString() + " ";
 			}
 		}
 		if (!seeInEnvironment.equals(""))

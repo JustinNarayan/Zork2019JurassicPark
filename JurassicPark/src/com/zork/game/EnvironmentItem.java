@@ -12,7 +12,6 @@ public class EnvironmentItem {
 		this.type = type;
 		this.room = room;
 		this.items = new ArrayList<Item>();
-		
 	}
 	
 	public EnvironmentItem(String type, Room room, ArrayList<Item> items) {
@@ -34,6 +33,21 @@ public class EnvironmentItem {
 	
 	public void addItem(Item r) {
 		items.add(r);
+	}
+	
+	public Item getItem(Item item) {
+		if(hasItem(item.toString())) {
+			for(int i = 0; i < items.size(); i++) {
+				if(items.get(i).toString().equalsIgnoreCase(item.toString())) {
+					return items.get(i);
+				}
+			}
+		}
+		return null;
+	}	
+	
+	public Item removeItem(int i) {
+		return items.remove(i);
 	}
 	
 	public Item removeItem(Item item) {

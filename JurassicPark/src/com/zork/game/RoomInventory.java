@@ -55,7 +55,7 @@ public class RoomInventory extends Inventory {
 	//Takes in toString() essentially
 	public boolean environmentHasItem(String s) {
 		for(EnvironmentItem obj : environment) {
-			if(obj.toString().equalsIgnoreCase(s)) return true;
+			if(obj.toString().equalsIgnoreCase(s) || (obj.toString().length()>1 && obj.toString().substring(2).equals(s))) return true;
 		}
 		return false;
 	}
@@ -72,7 +72,7 @@ public class RoomInventory extends Inventory {
 	public EnvironmentItem getEnvironmentItem(String s) {
 		if(environmentHasItem(s)) {
 			for(EnvironmentItem obj : environment) {
-				if(obj.toString().equalsIgnoreCase(s)) return obj;
+				if(obj.toString().equalsIgnoreCase(s) || (obj.toString().length()>1 && obj.toString().substring(2).equals(s))) return obj;
 			}
 		}
 		return null;
