@@ -253,6 +253,8 @@ public class Game {
 			break;
 		case "suicide":
 			killSelf();
+		case "where":
+			whereIsPlayer();
 
 		default:
 			if (!inFight) { // the following commands are for when you are not in battle
@@ -628,6 +630,10 @@ public class Game {
 		System.out.println("GG m8");
 		player.hasDied();
 
+	}
+	
+	public void whereIsPlayer() {
+		System.out.println(currentRoom.longDescription());
 	}
 
 	public static Room getCurrentRoom() {
