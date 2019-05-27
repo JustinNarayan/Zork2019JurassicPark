@@ -87,4 +87,22 @@ public class RoomInventory extends Inventory {
 		}
 		return null;
 	}
+	
+	//Takes in toString() essentially
+	public Item removeRoomItem(String s) {
+		if(roomHasItem(s)) {
+			for(int i = 0; i < items.size(); i++) {
+				if(items.get(i).toString().equalsIgnoreCase(s)) {
+					return items.remove(i);
+				}
+			}
+		}
+		return null;
+	}
+	
+	public void list() {
+		for(Item obj: items) {
+			System.out.println(obj);
+		}
+	}
 }

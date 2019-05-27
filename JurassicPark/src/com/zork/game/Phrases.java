@@ -9,7 +9,8 @@ public class Phrases {
 			"You examine your surroundings.", "You observe the area.", "You take a glance at the area."));
 	private static final ArrayList<String> LOOK_ENV = new ArrayList<String>(Arrays.asList("You are surrounded by ", 
 			"You see ", "The area is filled with ", "Around you, you find "));
-	private static final ArrayList<String> LOOK_ITEMS = new ArrayList<String>();
+	private static final ArrayList<String> LOOK_ITEMS = new ArrayList<String>(Arrays.asList("You spot ", "You observe ", "You notice ", 
+			"You find ", "Upon inspection, you see "));
 	private static final ArrayList<String> LOOK_NOTHING = new ArrayList<String>(Arrays.asList("There's practically nothing here.", 
 			"The area is mostly empty.", "You can't find very much.", "You have found nothing.", "There isn't anything there."));
 	private static final ArrayList<String> LOOK_IN_ENV = new ArrayList<String>(Arrays.asList("You observe something in the ",

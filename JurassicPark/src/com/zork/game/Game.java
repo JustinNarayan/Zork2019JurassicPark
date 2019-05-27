@@ -405,15 +405,30 @@ public class Game {
 			System.out.println("You cannot grab items while you're in a tree!");
 			return;
 		}
-
+		
+		
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to grab.");
-		} else if (!(currentRoom.getRoomInventory().roomHasItem(command.getSecondWord()))) {
+			return;
+		}
+		
+		//Determine the item
+		String word;
+		String real;
+		if(command.getSecondWord().equals("a") || command.getSecondWord().equals("the")) {
+			real = command.getThirdWord();
+			word = "a " + real;
+		} else {
+			real = command.getSecondWord();
+			word = "a " + command.getSecondWord();
+		}
+		 
+		if (!currentRoom.getRoomInventory().roomHasItem(word)) {
 			System.out.println("That item is not here.");
 		} else {
-			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getItem(command.getSecondWord()));
-			currentRoom.getRoomInventory().removeItem(command.getSecondWord());
-			System.out.println("you picked up " + command.getSecondWord());
+			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getRoomItem(word));
+			currentRoom.getRoomInventory().removeRoomItem(word);
+			System.out.println("You picked up " + word + ".");
 		}
 	}
 
@@ -609,9 +624,32 @@ public class Game {
 		if (!seeInEnvironment.equals(""))
 			System.out.println(seeInEnvironment.substring(0, seeInEnvironment.length() - 1) + ".");
 
+		
+		
+		
 		// Look at roomItems
 		ArrayList<Item> items = currentRoom.getRoomInventory().getItems();
-
+		// List all the items in the room
+		if (items.size() == 1) {
+			System.out.print(Phrases.getLookItems().get((int) (Math.random() * Phrases.getLookItems().size())) + "only ");
+			for (Item obj : items)
+				System.out.print(obj.getName());
+			System.out.println(". ");
+		} else if (items.size() > 1) {
+			System.out.print(Phrases.getLookItems().get((int) (Math.random() * Phrases.getLookItems().size())));
+			for (int i = 0; i < items.size(); i++) {
+				if (i < items.size() - 1) {
+					System.out.print(items.get(i).getName());
+					if (items.size() > 2)
+						System.out.print(", ");
+					else
+						System.out.print(" ");
+				} else
+					System.out.print("and " + items.get(i).getName());
+			}
+			System.out.println(". ");
+		}		
+		
 		// Check both
 		if (env.size() == 0 && items.size() == 0) {
 			System.out.println(Phrases.getLookNothing().get((int) (Math.random() * Phrases.getLookNothing().size())));

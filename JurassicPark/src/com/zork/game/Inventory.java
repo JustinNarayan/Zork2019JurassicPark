@@ -65,7 +65,7 @@ public class Inventory {
 			return false;
 		}
 		for (int i =0; i<masterInventory.length;i++) {
-			if (indiviusalIndex(masterInventory[i], item) != -1) {
+			if (individualIndex(masterInventory[i], item) != -1) {
 				return true;
 			}
 		}
@@ -76,7 +76,7 @@ public class Inventory {
 
 	public Item getItem(String name) {
 		int inventoryNum = getInventoryType(name);
-		int index = indiviusalIndex(masterInventory[inventoryNum], name);
+		int index = individualIndex(masterInventory[inventoryNum], name);
 		return (Item) masterInventory[inventoryNum].get(index);
 
 	}
@@ -92,7 +92,7 @@ public class Inventory {
 
 	}
 
-	private int indiviusalIndex(ArrayList arr, String name) {
+	private int individualIndex(ArrayList arr, String name) {
 		for (int i = 0; i < arr.size(); i++) {
 			if (arr.get(i).equals(name)) {
 				return i;
@@ -102,7 +102,7 @@ public class Inventory {
 	}
 
 	public Consumables getConsumable(String name) {
-		int index = indiviusalIndex(consumablesInventory, name);
+		int index = individualIndex(consumablesInventory, name);
 		if (index < 0) {
 			return null;
 		} else {
@@ -112,7 +112,7 @@ public class Inventory {
 
 	public Item removeItem(String name) {
 		int inventoryNum = getInventoryType(name);
-		int index = indiviusalIndex(masterInventory[inventoryNum], name);
+		int index = individualIndex(masterInventory[inventoryNum], name);
 		return (Item) masterInventory[inventoryNum].remove(index);
 	}
 
