@@ -105,7 +105,7 @@ public class Room {
 	 * Exits: north west
 	 */
 	public String longDescription() {
-		return roomName + "\n" + Formatter.blockText(description, Formatter.getCutoff(), "") + "\n" + exitString();
+		return Formatter.blockText(description, Formatter.getCutoff(), "");
 	}
 
 	/**
