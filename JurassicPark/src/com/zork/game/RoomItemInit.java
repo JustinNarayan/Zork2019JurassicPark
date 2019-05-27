@@ -159,6 +159,7 @@ public class RoomItemInit {
 		roomsWithTables.add("MUNITIONS_SHED_SW");
 		roomsWithTables.add("VISITOR_CENTRE_SW");
 		roomsWithTables.add("VISITOR_CENTRE_NW");
+		roomsWithTables.add("VISITOR_CENTRE_SE");
 		
 		//Rooms with piles of leaves
 		roomsWithLeafPiles.add("EQUIPMENT_YARD");
@@ -200,7 +201,7 @@ public class RoomItemInit {
 		//artifacts.add(new Artifacts("NAME", points, getMap().get("ROOM NAME"), getMap().get("ROOM NAME").getRoomInventory().getEnvironmentItem("LOCATION")));
 		
 		// Artifacts in a tree
-		artifacts.add(new Artifacts("A bone from a Stegosaurus", 7, getMap().get("HALLWAY_25"), getMap().get("HALLWAY_25").getRoomInventory().getEnvironmentItem("trees")));
+		artifacts.add(new Artifacts("A bone from a Stegosaurus", "You can't read a bone...", 7, getMap().get("HALLWAY_25"), getMap().get("HALLWAY_25").getRoomInventory().getEnvironmentItem("trees")));
 		artifacts.add(new Artifacts("A tooth from the T-Rex", 9, getMap().get("HALLWAY_23"), getMap().get("HALLWAY_23").getRoomInventory().getEnvironmentItem("trees")));
 		artifacts.add(new Artifacts("A tooth from a Stegosaurus", 7, getMap().get("STEGOSAURUS_SW"), getMap().get("STEGOSAURUS_SW").getRoomInventory().getEnvironmentItem("trees")));
 		artifacts.add(new Artifacts("A tooth from a Stegosaurus", 6, getMap().get("HALLWAY_14"), getMap().get("HALLWAY_14").getRoomInventory().getEnvironmentItem("trees")));
@@ -254,6 +255,9 @@ public class RoomItemInit {
 		artifacts.add(new Artifacts("The egg shell from a Bronchiosaurus", 5, getMap().get("BREEDING_CENTRE_C"), getMap().get("BREEDING_CENTRE_C").getRoomInventory().getEnvironmentItem("a table")));
 		artifacts.add(new Artifacts("The fossils from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_SW"), getMap().get("VISITOR_CENTRE_SW").getRoomInventory().getEnvironmentItem("a table")));
 		artifacts.add(new Artifacts("The fossils from a Stegosaurus", 5, getMap().get("VISITOR_CENTRE_NW"), getMap().get("VISITOR_CENTRE_NW").getRoomInventory().getEnvironmentItem("a table")));
+		
+		// Weakness document
+		artifacts.add(new Artifacts("A document about all the island's dinosaurs", Artifacts.getDinosaurInfo(), 0, getMap().get("VISITOR_CENTRE_SE"), getMap().get("VISITOR_CENTRE_SE").getRoomInventory().getEnvironmentItem("a table")));		
 		
 		// Artifacts in piles of leaves
 		artifacts.add(new Artifacts("A twig", 0, getMap().get("EQUIPMENT_YARD"), getMap().get("EQUIPMENT_YARD").getRoomInventory().getEnvironmentItem("a pile of leaves")));
