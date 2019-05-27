@@ -404,11 +404,13 @@ public class Game {
 		}
 		if(env.size()==0) System.out.println("There is nothing here to search.");
 		else {
+			boolean canSearch = false;
 			for (int i = 0; i<env.size();i++){
 				EnvironmentItem temp = env.get(i);
 				if (temp.toString().equals(command.getSecondWord()) || 
 						(temp.toString().equals("trees") && command.getSecondWord().equals("tree")) || 
-						(temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && (command.getSecondWord().equals(temp.toString().substring(2)) || (temp.toString().indexOf(" ", 2)>2 && command.getSecondWord().equals(temp.toString().substring(2,command.getSecondWord().indexOf(" "))))))) {
+						(temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && (command.getSecondWord().equals(temp.toString().substring(2)) || (temp.toString().indexOf(" ", 2)>2 && command.getSecondWord().equals(temp.toString().substring(2,temp.toString().indexOf(" ",2))))))) {
+					canSearch = true;
 					if (temp.getItems().size() > 0) {
 						System.out.print("You search the " + command.getSecondWord() + " and find ");
 						for (int j = 0; j < temp.getItems().size(); j++) {
@@ -421,10 +423,9 @@ public class Game {
 						System.out.println("You searched the " + command.getSecondWord() + " and found nothing.");
 					}
 	
-				} else {
-					System.out.println("You cannot search that.");
 				}
 			}
+			if(!canSearch) System.out.println("You can't search that.");
 		}
 
 	}
