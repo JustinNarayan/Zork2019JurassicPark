@@ -5,10 +5,6 @@ player classes
 populate rooms with items
 work on game end
 dino attack
-music?
-
-make points calculate in player
-make it say points when item pickup
 
 bugs:
 all actions, even if you can't do them or input wrong, take time
