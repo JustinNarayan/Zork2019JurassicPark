@@ -63,7 +63,9 @@ public class RoomInventory extends Inventory {
 	//Takes in toString() essentially
 	public boolean roomHasItem(String s) {
 		for(Item obj : items) {
-			if(obj.toString().equalsIgnoreCase(s)) return true;
+			if(obj.toString().equalsIgnoreCase(s) || (obj.toString().substring(0,2).equalsIgnoreCase("a ") && obj.toString().indexOf(" ",2)>2 && obj.toString().substring(0,obj.toString().indexOf(" ",2)).equalsIgnoreCase(s))) {
+				return true;
+			}
 		}
 		return false;
 	}
@@ -82,7 +84,7 @@ public class RoomInventory extends Inventory {
 	public Item getRoomItem(String s) {
 		if(roomHasItem(s)) {
 			for(Item obj : items) {
-				if(obj.toString().equalsIgnoreCase(s)) return obj;
+				if(obj.toString().equalsIgnoreCase(s) || (obj.toString().substring(0,2).equalsIgnoreCase("a ") && obj.toString().indexOf(" ",2)>2 && obj.toString().substring(0,obj.toString().indexOf(" ",2)).equalsIgnoreCase(s))) return obj;
 			}
 		}
 		return null;
@@ -92,7 +94,7 @@ public class RoomInventory extends Inventory {
 	public Item removeRoomItem(String s) {
 		if(roomHasItem(s)) {
 			for(int i = 0; i < items.size(); i++) {
-				if(items.get(i).toString().equalsIgnoreCase(s)) {
+				if(items.get(i).toString().equalsIgnoreCase(s) || (items.get(i).toString().substring(0,2).equalsIgnoreCase("a ") && items.get(i).toString().indexOf(" ",2)>2 && items.get(i).toString().substring(0,items.get(i).toString().indexOf(" ",2)).equalsIgnoreCase(s))) {
 					return items.remove(i);
 				}
 			}

@@ -46,7 +46,7 @@ public class Inventory {
 		int i = 1;
 		for (Item o : inventoryItems) {
 			if(showNumber) System.out.print("Item "+i+": ");
-			System.out.println(o.getNameLowerCase());
+			System.out.println(o.getNameLowerCase()+o.getPoints());
 			i++;
 		}
 	}

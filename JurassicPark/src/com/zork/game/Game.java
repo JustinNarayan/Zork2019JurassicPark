@@ -113,7 +113,7 @@ public class Game {
 		gameStarted = false;
 		try {
 			initRooms("data/rooms.dat");
-			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
+			currentRoom = masterRoomMap.get("TREX_NC");
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -462,7 +462,7 @@ public class Game {
 			System.out.println("That item is not here.");
 		} else {
 			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getRoomItem(word));
-			System.out.println("You picked up " + word + currentRoom.getRoomInventory().getRoomItem(word).getPoints()+ ".");
+			System.out.println("You picked up " + currentRoom.getRoomInventory().getRoomItem(word).getNameLowerCase() + currentRoom.getRoomInventory().getRoomItem(word).getPoints()+ ".");
 			currentRoom.getRoomInventory().removeRoomItem(word);
 		}
 	}
@@ -728,19 +728,19 @@ public class Game {
 		if (items.size() == 1) {
 			System.out.print(Phrases.getLookItems().get((int) (Math.random() * Phrases.getLookItems().size())) + "only ");
 			for (Item obj : items)
-				System.out.print(obj.getName());
+				System.out.print(obj.getNameLowerCase());
 			System.out.println(". ");
 		} else if (items.size() > 1) {
 			System.out.print(Phrases.getLookItems().get((int) (Math.random() * Phrases.getLookItems().size())));
 			for (int i = 0; i < items.size(); i++) {
 				if (i < items.size() - 1) {
-					System.out.print(items.get(i).getName());
+					System.out.print(items.get(i).getNameLowerCase());
 					if (items.size() > 2)
 						System.out.print(", ");
 					else
 						System.out.print(" ");
 				} else
-					System.out.print("and " + items.get(i).getName());
+					System.out.print("and " + items.get(i).getNameLowerCase());
 			}
 			System.out.println(". ");
 		}		
