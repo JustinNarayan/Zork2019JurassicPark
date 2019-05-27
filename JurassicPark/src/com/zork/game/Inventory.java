@@ -41,20 +41,23 @@ public class Inventory {
 
 	// Prints out a startstring such as "This room contains:" followed
 	// by every item's toString() on its own line
-	public void printInventory(String startstring) {
+	public void printInventory(String startstring, boolean showNumber) {
 		System.out.println(startstring);
+		int i = 1;
 		for (Object o : inventoryItems) {
+			if(showNumber) System.out.print("Item "+i+": ");
 			System.out.println(o.toString());
+			i++;
 		}
 	}
 
 	public void printMaster() {
 		if(masterInventory==null){
-			System.out.println("The enventory is empty");
+			System.out.println("The inventory is empty");
 		}
 		for (ArrayList<Item> i : masterInventory) {
 			for (Item j : i) {
-				System.out.println(j.name);
+				System.out.println(j.getName());
 			}
 		}
 	}
@@ -78,7 +81,6 @@ public class Inventory {
 		int inventoryNum = getInventoryType(name);
 		int index = individualIndex(masterInventory[inventoryNum], name);
 		return (Item) masterInventory[inventoryNum].get(index);
-
 	}
 
 	public int getInventoryType(String name) {
@@ -114,6 +116,14 @@ public class Inventory {
 		int inventoryNum = getInventoryType(name);
 		int index = individualIndex(masterInventory[inventoryNum], name);
 		return (Item) masterInventory[inventoryNum].remove(index);
+	}
+	
+	public Item removeItem(int i) {
+		return (Item) inventoryItems.remove(i);
+	}
+	
+	public ArrayList<Object> getInventoryItems() {
+		return inventoryItems;
 	}
 
 }

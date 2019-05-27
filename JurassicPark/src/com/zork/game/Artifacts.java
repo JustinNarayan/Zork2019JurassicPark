@@ -26,6 +26,10 @@ public class Artifacts extends Item {
     	return " for " + points + " points";
     }
     
+    public int getPointsAmount() {
+    	return points;
+    }
+    
     public static String getDinosaurInfo() {
     	return dinosaurInfo;
     }

@@ -274,9 +274,10 @@ public class Game {
 			break;
 		case "suicide":
 			killSelf();
+			break;
 		case "where":
 			whereIsPlayer();
-
+			break;
 		default:
 			if (!inFight) { // the following commands are for when you are not in battle
 				switch (commandWord) {
@@ -464,7 +465,7 @@ public class Game {
 	}
 
 	private void checkInventory(Command command) {
-		player.getInventory().printMaster();
+		player.getInventory().printInventory("Here are the items in your inventory: ", true);
 	}
 
 	/**
@@ -516,11 +517,44 @@ public class Game {
 	private void drop(Command command) {
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to drop.");
-		} else if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
-			System.out.println("That item is not in your inventory.");
 		} else {
-			System.err.println(command.getSecondWord() + " has been removed.");
-			player.getInventory().removeItem(command.getSecondWord());
+			//If the second word is a number in the inventory 
+			try {
+				int number = Integer.parseInt(command.getSecondWord());
+				if(number <= player.getInventory().getInventoryItems().size()) {
+					System.out.println("Item " + number + ", " + player.getInventory().removeItem(number-1).toString() + ", has been removed from your inventory.");
+					return;
+				} else {
+					System.out.println("There aren't that many items in your inventory!");
+					return;
+				}
+			} catch(Exception e) {
+				//The second word wasn't a number
+			}
+			
+			//If the third word is a number in the inventory
+			if(command.hasThirdWord()) {
+				try {
+					int number = Integer.parseInt(command.getThirdWord());
+					if(number <= player.getInventory().getInventoryItems().size()) {
+						System.out.println("Item " + number + ", " + player.getInventory().removeItem(number-1).toString() + ", has been removed from your inventory.");
+						return;
+					} else {
+						System.out.println("There aren't that many items in your inventory!");
+						return;
+					}
+				} catch(Exception e) {
+					//The second word wasn't a number
+				}
+			}
+			
+			
+			if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
+				System.out.println("That item is not in your inventory.");
+			} else {
+				System.out.println(command.getSecondWord() + " has been removed.");
+				player.getInventory().removeItem(command.getSecondWord());
+			}
 		}
 	}
 
@@ -701,7 +735,7 @@ public class Game {
 		System.out.println("You are dead...");
 		System.out.println("GG m8");
 		player.hasDied();
-
+		endGame("");
 	}
 	
 	public void whereIsPlayer() {

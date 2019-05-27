@@ -1,7 +1,7 @@
 package com.zork.game;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
+import java.util.ArrayList;
 
 public class Player {
 	public Inventory inventory;
@@ -48,7 +48,12 @@ public class Player {
 	}
 
 	public int calculatePoints() {
-		return 0;
+		int points = 0;
+		ArrayList<Object> temp = inventory.getInventoryItems();
+		for(Object obj : temp) {
+			if(obj instanceof Artifacts) points+=((Artifacts) obj).getPointsAmount();
+		}
+		return points;
 	}
 	
 	public void gainSuccess() {
