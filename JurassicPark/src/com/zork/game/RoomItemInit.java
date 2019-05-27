@@ -132,7 +132,6 @@ public class RoomItemInit {
 		roomsWithWater.add("BRONCHIOSAURUS_SE");
 		roomsWithWater.add("TRICERATOPS_SE");
 		
-		
 		//Rooms with Desks
 		roomsWithDesks.add("MAIN_CONTROL_CENTRE_NW");
 		roomsWithDesks.add("MAIN_CONTROL_CENTRE_NE");
@@ -156,6 +155,8 @@ public class RoomItemInit {
 		roomsWithTables.add("BREEDING_CENTRE_C");
 		roomsWithTables.add("AQUATIC_NW");
 		roomsWithTables.add("MUNITIONS_SHED_SW");
+		roomsWithTables.add("VISITOR_CENTRE_SW");
+		roomsWithTables.add("VISITOR_CENTRE_NW");
 		
 		//Rooms with piles of leaves
 		roomsWithLeafPiles.add("EQUIPMENT_YARD");
