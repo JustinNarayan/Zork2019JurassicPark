@@ -101,7 +101,7 @@ Room Name: Boat Landing_B
 Room Description: You have entered the facility, good luck. In front of you, you can see the Visitor Centre in the distance.
 Exit Rooms: N-Hallway 1, E-Supply Shed
 Room Name: Visitor Centre_SE
-Room Description: You are in the South East corner of the Visitor Centre. Behind you, you cvan see the Boat Landing in the distance. Infront of you and to the left is the Visitor Centre.
+Room Description: You are in the South East corner of the Visitor Centre. Behind you, you can see the Boat Landing in the distance. In front of you and to the left is the Visitor Centre.
 Exit Rooms: N-Visitor Centre_NE, S-Hallway 1, W-Visitor Centre_SW
 Room Name: Visitor Centre_NE
 Room Description: You are in the North East Corner of the Visitor Centre. To the right is a glass door; in the distance, you can see the Bronchiosaurus enclosure.
@@ -413,22 +413,22 @@ Room Name: Stegosaurus_SE
 Room Description: You are in the North West corner of the Stegosaurus enclosure. The enclosure extends further to the right and behind you.
 Exit Rooms: E-Stegosaurus_Control, S-Hallway 19, W-Stegosaurus_SW, N-Stegosaurus_NE
 Room Name: Trex_NW
-Room Description: You are in the North West corner of the T-Rex enclosure.
+Room Description: You are in the North West corner of the T-Rex enclosure. Behind you and to the right is the T-Rex enclosure. 
 Exit Rooms: S-Trex_SW, E-Trex_NC
 Room Name: Trex_SW
-Room Description: You are in the South West corner of the T-Rex enclosure.
+Room Description: You are in the South West corner of the T-Rex enclosure. To the left is a path way, and in front of you and to the right is the T-Rex enclosure. 
 Exit Rooms: W-Hallway 21, N-Trex_NW, E-Trex_SC
 Room Name: Trex_NC
-Room Description: You are in the center of the North half of the T-Rex enclosure.
+Room Description: You are in the center of the North half of the T-Rex enclosure. The T-Rex enclosure extends further behind of you and to either side of you.
 Exit Rooms: W-Trex_NW, S-Trex_SC, E-Trex_NE
 Room Name: Trex_SC
-Room Description: You are in the center of the South half of the T-Rex enclosure.
+Room Description: You are in the center of the South half of the T-Rex enclosure. The T-Rex enclosure extends in front of you and to either side of you.
 Exit Rooms: W-Trex_SW, N-Trex_NC, E-Trex_SE
 Room Name: Trex_NE
-Room Description: You are in the North East corner of the T-Rex enclosure. 
+Room Description: You are in the North East corner of the T-Rex enclosure. The T-Rex enclosure extends further to the left and behind you. There is a pathway to the right.
 Exit Rooms: W-Trex_NC, S-Trex_SE, E-Hallway 23
 Room Name: Trex_SE
-Room Description: You are in the South East corner of the T-Rex enclosure.
+Room Description: You are in the South East corner of the T-Rex enclosure. The T-Rex enclosure control room is to right, behind you is a pathway. The T-Rex enclosure surround you to the left and in front of you.
 Exit Rooms: N-Trex_NE, S-Hallway 20, W-Trex_SC, E-Trex_Control
 Room Name: Spinosaurus_NE
 Room Description: You are in the Spinosaurus enclosure. In front of you is a pathway, to your right is the Spinosaurus Control Room and the enclosure extends further south.
@@ -449,17 +449,17 @@ Room Name: Aquatic_SE
 Room Description: You are in the Aquatic Centre. The building extends further to the left.
 Exit Rooms: W-Aquatic_SW
 Room Name: Velociraptor_NW
-Room Description: You are in the North West corner of the Velociraptor enclosure.
+Room Description: You are in the North West corner of the Velociraptor enclosure. In front of you is the Velociraptor enclosure control room, the enclosure extends furhter behind you and to the right.
 Exit Rooms: N-Velociraptor Control, E-Velociraptor_NC, S-Velociraptor_SW
 Room Name: Velociraptor_NC
-Room Description: You are in the North Center corner of the Velociraptor enclosure.
+Room Description: You are in the North Center area of the Velociraptor enclosure. Behind, to the right and left, the enclosure extends further. 
 Exit Rooms: W-Velociraptor_NW, S-Velociraptor_SC, E-Velociraptor_NE
 Room Name: Velociraptor_NE
-Room Description: You are in the North East corner of the Velociraptor enclosure.
+Room Description: You are in the North East corner of the Velociraptor enclosure. Behind you is the Jungle, in front of you is a pathway, and the enclosure extends further to the left. 
 Exit Rooms: N-Hallway 27, S-Jungle_NW, W-Velociraptor_NC
 Room Name: Velociraptor_SW
-Room Description:You are in the South West corner of the Velociraptor enclosure.
+Room Description:You are in the South West corner of the Velociraptor enclosure. The enclosure extends further to in front of you and to the right. 
 Exit Rooms: N-Velociraptor_NW, E-Velociraptor_SC
 Room Name: Velociraptor_SC
-Room Description: You are in the South Center corner of the Velociraptor enclosure.
+Room Description: You are in the South Center area of the Velociraptor enclosure. The enclosure extends further in front and to the left of you. There is a jungle to the right.
 Exit Rooms: N-Velociraptor_NC, W-Velociraptor_SW, E-Jungle_NW
