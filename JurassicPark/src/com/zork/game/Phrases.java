@@ -39,4 +39,19 @@ public class Phrases {
 	public static ArrayList<String> getLookInEnv() {
 		return LOOK_IN_ENV;
 	}
+	public static String getTrexFlare() {
+		return TREX_FLARE;
+	}
+	public static String getEvadeTrex() {
+		return EVADE_TREX;
+	}
+	public static String getEvadeSpinosaurus() {
+		return EVADE_SPINOSAURUS;
+	}
+	public static String getEvadePterodactyl() {
+		return EVADE_PTERODACTYL;
+	}
+	public static String getEvadeDilophosaurus() {
+		return EVADE_DILOPHOSAURUS;
+	}
 }
