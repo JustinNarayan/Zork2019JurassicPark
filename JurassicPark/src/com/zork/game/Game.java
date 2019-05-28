@@ -113,7 +113,7 @@ public class Game {
 		gameStarted = false;
 		try {
 			initRooms("data/rooms.dat");
-			currentRoom = masterRoomMap.get("TREX_NC");
+			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -242,6 +242,10 @@ public class Game {
 		case "drop":
 			timer.reduceTime(timer.TIME_TO_DROP);
 			drop(command);
+			break;
+		case "read":
+			timer.reduceTime(timer.TIME_TO_READ);
+			read(command);
 			break;
 		case "throw":
 			timer.reduceTime(timer.TIME_TO_DROP);
@@ -582,6 +586,72 @@ public class Game {
 			}
 		}
 	}
+	
+	private void read(Command command) {
+		if(!command.hasSecondWord()) {
+			System.out.println("You must include what you want to read.");
+		} else {
+			//If the second word is a number in the inventory 
+			try {
+				int number = Integer.parseInt(command.getSecondWord());
+				if(number <= player.getInventory().getInventoryItems().size()) {
+					Item i = player.getInventory().getItem(number-1);
+					if(i!=null && i instanceof Artifacts) {
+						System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+						System.out.println(((Artifacts) i).getRead());
+					} else {
+						System.out.println("You can't read that!");
+					}
+					return;
+				} else {
+					System.out.println("There aren't that many items in your inventory!");
+					return;
+				}
+			} catch(Exception e) {
+				//The second word wasn't a number
+			}
+			
+			//If the third word is a number in the inventory
+			if(command.hasThirdWord()) {
+				try {
+					int number = Integer.parseInt(command.getThirdWord());
+					if(number <= player.getInventory().getInventoryItems().size()) {
+						Item i = player.getInventory().getItem(number-1);
+						if(i!=null && i instanceof Artifacts) {
+							System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+							System.out.println(((Artifacts) i).getRead());
+						} else {
+							System.out.println("You can't read that!");
+						}
+						return;
+					} else {
+						System.out.println("There aren't that many items in your inventory!");
+						return;
+					}
+				} catch(Exception e) {
+					//The third word wasn't a number
+				}
+			}
+			
+			//See if they type a word
+			Item i = player.getInventory().getItem(command.getSecondWord());
+			if(i!=null && i instanceof Artifacts) {
+				System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+				System.out.println(((Artifacts) i).getRead());
+			} else if(command.hasThirdWord()) {
+				i = player.getInventory().getItem(command.getThirdWord());
+				if(i!=null && i instanceof Artifacts) {
+					System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+					System.out.println(((Artifacts) i).getRead());
+				} else System.out.println("That item isn't in your inventory.");
+			} else {
+				System.out.println("That item isn't in your inventory.");
+			}
+		}
+	}
+	
+	
+	
 
 	private void doThrow(Command command) {
 		if (command.hasSecondWord() && command.getSecondWord().equals("flare")

@@ -78,10 +78,21 @@ public class Inventory {
 	
 
 	public Item getItem(String name) {
-		int inventoryNum = getInventoryType(name);
+		/*int inventoryNum = getInventoryType(name);
 		int index = individualIndex(masterInventory[inventoryNum], name);
-		return (Item) masterInventory[inventoryNum].get(index);
+		return (Item) masterInventory[inventoryNum].get(index);*/
+		
+		for(Item i : inventoryItems) {
+			if(i.getNameLowerCase().indexOf(name)>-1) return i;
+		}
+		return null;
 	}
+	
+	public Item getItem(int i) {
+		return inventoryItems.get(i);
+	}
+	
+	
 
 	public int getInventoryType(String name) {
 		if (Arrays.asList(artifactInventory).indexOf(name) != -1) {

@@ -10,6 +10,7 @@ public class Timer {
 	public final int TIME_TO_LOOK = 10;
 	public final int TIME_TO_GRAB = 3;
 	public final int TIME_TO_DROP = 3;
+	public final int TIME_TO_READ = 45;
 	public final int TIME_TO_ATTACK = 5;
 	public final int TIME_TO_SEARCH = 10;
 	public final int TIME_TO_CLIMB = 20;
