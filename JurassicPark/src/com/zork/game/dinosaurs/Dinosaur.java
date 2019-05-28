@@ -161,7 +161,7 @@ public abstract class Dinosaur {
 						resetTurn();
 					}
 				} else {
-					if(currentTurn<turnToKill) c.setStatus(this, "here");
+					if(currentTurn<turnToKill-1) c.setStatus(this, "here");
 				}
 			}
 		} else {
@@ -178,7 +178,13 @@ public abstract class Dinosaur {
 			currentTurn++;
 			if(currentTurn==turnToKill) ((Carnivore) this).killPlayer();
 		}
-		System.out.println(currentTurn);
+	}
+	
+	public void evade(DinosaurController c) {
+		resetTurn();
+		aware = false;
+		moveToNewRoom(c);
+		c.setStatus(this, "left");
 	}
 	
 	public void resetTurn() {
