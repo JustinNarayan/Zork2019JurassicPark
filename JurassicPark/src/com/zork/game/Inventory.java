@@ -12,17 +12,14 @@ public class Inventory {
 
 	public ArrayList<Weapons> weaponsInventory;
 	public ArrayList<Artifacts> artifactInventory;
-	public ArrayList<Consumables> consumablesInventory;
 	public static ArrayList[] masterInventory;
 
 	public Inventory() {
 		artifactInventory = new ArrayList<Artifacts>();
 		weaponsInventory = new ArrayList<Weapons>();
-		consumablesInventory = new ArrayList<Consumables>();
 		masterInventory = new ArrayList[NUM_INVENTORIES];
 		masterInventory[0] = artifactInventory;
 		masterInventory[1] = weaponsInventory;
-		masterInventory[2] = consumablesInventory;
 	}
 
 	public void addInventoryItem(Item item) {
@@ -121,15 +118,6 @@ public class Inventory {
 			}
 		}
 		return -1;
-	}
-
-	public Consumables getConsumable(String name) {
-		int index = individualIndex(consumablesInventory, name);
-		if (index < 0) {
-			return null;
-		} else {
-			return consumablesInventory.get(index);
-		}
 	}
 
 	public Item removeItem(String name) {

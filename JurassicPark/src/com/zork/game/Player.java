@@ -26,9 +26,6 @@ public class Player {
         return inventory;
     }
 
-	public void use(Consumables current) {
-	}
-
 	public void equip(Item item) {
 	}
 
