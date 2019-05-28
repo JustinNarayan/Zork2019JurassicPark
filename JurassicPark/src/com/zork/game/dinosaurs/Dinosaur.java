@@ -7,6 +7,7 @@ import com.zork.game.Game;
 import com.zork.game.Room;
 
 public abstract class Dinosaur {
+	
 	//The room in which the dinosaur currently is
 	protected Room currentRoom;
 	
@@ -28,6 +29,12 @@ public abstract class Dinosaur {
 	
 	//If they are aware player is in room
 	protected boolean aware;
+	
+	//The turn, perhaps different per dino, on which the dino will attack
+	protected int turnToKill;
+	
+	//The current turn
+	protected int currentTurn;
 	
 	
 	
@@ -156,6 +163,7 @@ public abstract class Dinosaur {
 		return aware;
 	}
 	
+	//public void 
 	
 	public String toString(String s) {
 		//return(s + " named " + name);

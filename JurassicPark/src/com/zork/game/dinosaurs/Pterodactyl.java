@@ -3,12 +3,14 @@ package com.zork.game.dinosaurs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
-public class Pterodactyl extends Dinosaur {
+public class Pterodactyl extends Dinosaur implements Carnivore {
 	private final double MOBILITY = 1;
 	private final double AWARENESS = 0.6;
+	private final int TURN_TO_KILL = 2;
 	
 	public Pterodactyl(Room startRoom, String name) {
 		super(startRoom);
@@ -26,6 +28,12 @@ public class Pterodactyl extends Dinosaur {
 		this.name = name;
 		mobility = MOBILITY;
 		awareness = AWARENESS;
+		turnToKill = TURN_TO_KILL;
+	}
+	
+	public void killPlayer() {
+		System.out.println(Formatter.blockText("The Pterodactyl has swooped down and snatched you in its talons. You are brought to its nest and devoured "
+				+ "by a group of ravenous dinosaurs. You are found bland and unappetizing at best.", Formatter.getCutoff(),""));
 	}
 
 	public String toString() {

@@ -3,12 +3,14 @@ package com.zork.game.dinosaurs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
-public class Spinosaurus extends Dinosaur {
+public class Spinosaurus extends Dinosaur implements Carnivore {
 	private final double MOBILITY = 0.5;
 	private final double AWARENESS = 0.3;
+	private final int TURN_TO_KILL = 3;
 	
 	public Spinosaurus(Room startRoom, String name) {
 		super(startRoom);
@@ -26,6 +28,12 @@ public class Spinosaurus extends Dinosaur {
 		this.name = name;
 		mobility = MOBILITY;
 		awareness = AWARENESS;
+		turnToKill = TURN_TO_KILL;
+	}
+	
+	public void killPlayer() {
+		System.out.println(Formatter.blockText("The Spinosaurus has pinned you to the ground and devoured you appendage "
+				+ "by appendage. You did not have a fun time.", Formatter.getCutoff(),""));
 	}
 
 	public String toString() {
