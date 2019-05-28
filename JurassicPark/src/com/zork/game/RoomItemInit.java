@@ -87,6 +87,10 @@ public class RoomItemInit {
 		roomsWithTrees.add("VELOCIRAPTOR_NC");
 		roomsWithTrees.add("VELOCIRAPTOR_SW");
 		roomsWithTrees.add("VELOCIRAPTOR_SC");
+		
+		roomsWithTrees.add("SPINOSAURUS_SW");
+		roomsWithTrees.add("SPINOSAURUS_NW");
+		roomsWithTrees.add("SPINOSAURUS_NE");
 
 		// Specific rooms with trees in them
 		roomsWithTrees.add("EQUIPMENT_YARD");
@@ -94,6 +98,7 @@ public class RoomItemInit {
 		roomsWithTrees.add("QUARRY_S");
 		roomsWithTrees.add("BEACH_1_S");
 		roomsWithTrees.add("BEACH_1_C");
+		roomsWithTrees.add("BEACH_1_N");
 		roomsWithTrees.add("MOUNTAIN_TOP");
 		roomsWithTrees.add("PLAINS_E");
 		roomsWithTrees.add("PLAINS_W");

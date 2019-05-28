@@ -31,11 +31,13 @@ public class Dilophosaurus extends Dinosaur implements Carnivore {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = false;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The Dilophosaurus has spit acid and blinded you to make you easy prey. You are "
 				+ "slowly and painfully eaten as the acid melts away your flesh. You have died.", Formatter.getCutoff(),""));
+		Game.endGame("");
 	}
 
 	public String toString() {

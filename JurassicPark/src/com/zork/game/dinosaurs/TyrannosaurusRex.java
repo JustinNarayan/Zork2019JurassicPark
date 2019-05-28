@@ -9,7 +9,7 @@ import com.zork.game.Room;
 
 public class TyrannosaurusRex extends Dinosaur implements Carnivore {
 	private final double MOBILITY = 0.65;
-	private final double AWARENESS = 0.5;
+	private final double AWARENESS = 0.85;
 	private final int TURN_TO_KILL = 2;
 	
 	public TyrannosaurusRex(Room startRoom, String name) {
@@ -32,11 +32,13 @@ public class TyrannosaurusRex extends Dinosaur implements Carnivore {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = true;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The Tyrannosaurus Rex has snatched you up and swallowed you whole. "
 				+ "You have died an extremely painful death.", Formatter.getCutoff(),""));
+		Game.endGame("");
 	}
 
 	public String toString() {

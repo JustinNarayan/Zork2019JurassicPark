@@ -26,6 +26,7 @@ public class Bronchiosaurus extends Dinosaur {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = true;
 	}
 	
 	public String toString() {

@@ -62,6 +62,14 @@ public class DinosaurController {
 		
 		for(Dinosaur d : dinosaurs) {
 			d.determineAwareness(this);
+			if(d.isAware()) d.incrementTurn();
+		}
+	}
+	
+	public void killAll() {
+		for(int i = 0; i < dinosaurs.size(); i++) {
+			dinosaurs.get(i).die(this);
+			i--;
 		}
 	}
 	
@@ -73,6 +81,7 @@ public class DinosaurController {
 			if(d.isAware()) {
 				d.moveToNewRoom(this);
 				d.determineAwareness(this);
+				if(d.isAware()) d.incrementTurn();
 			} else {
 				temp.add(d);
 			}
@@ -112,6 +121,10 @@ public class DinosaurController {
 	
 	public String getLastStatus() {
 		return lastStatus;
+	}
+	
+	public void removeDinosaur(Dinosaur d) {
+		dinosaurs.remove(d);
 	}
 	
 	public void printAllDinosaurs() {

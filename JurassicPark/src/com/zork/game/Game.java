@@ -113,7 +113,7 @@ public class Game {
 		gameStarted = false;
 		try {
 			initRooms("data/rooms.dat");
-			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
+			currentRoom = masterRoomMap.get("TREX_NC");
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -490,26 +490,27 @@ public class Game {
 	private boolean playerAttack(Command command) {
 		Dinosaur currentDino = currentRoom.getRoomInventory().getDinosaur();
 		boolean commandBad = true;
-		if(!command.hasSecondWord()) {
+		if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to attack.");
-		}else if((!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals(command.getSecondWord())&&
-					(!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dino"))
-					&&(!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dinosaur")))) {
+		} else if ((!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase()
+				.equals(command.getSecondWord())
+				&& (!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dino"))
+				&& (!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dinosaur")))) {
 			System.out.println("That enemy is not in here.");
-		}else if(command.hasThirdWord()) {
+		} else if (command.hasThirdWord()) {
 			System.out.println("You must say what you want to attack with.");
-		}else if(player.getInventory().isInInventory(command.getThirdWord())) {
+		} else if (player.getInventory().isInInventory(command.getThirdWord())) {
 			System.out.println("That weapon is not in your inventory");
-		}else {
+		} else {
 			Weapons current = (Weapons) player.getInventory().getItem(command.getThirdWord());
-			if(current instanceof Melee) {
-				if((int)(Math.random()*5)==1){
+			if (current instanceof Melee) {
+				if ((int) (Math.random() * 5) == 1) {
 					System.out.println("While trying to stab the dinosaur you were attacked and got killed.");
-				}else {
-					
+				} else {
+
 				}
 			}
-			
+
 		}
 		return false;
 	}
@@ -914,11 +915,7 @@ public class Game {
 					"\nYou have successfully left the island! You have snuck aboard an escaping ship yet again, and must hope no one finds you"
 							+ " until you can safely reach land. You have got out with your life and enough evidence to shut the park down for good.",
 					Formatter.getCutoff(), ""));
-		}
-		System.out.println("You have gained " + player.calculatePoints() + " from all the artifacts you recovered.");
-		if (s.equals("success")) {
-			System.out.println("You have gained " + Game.winPoints + " for escaping the island.");
+
 		}
 	}
-
 }

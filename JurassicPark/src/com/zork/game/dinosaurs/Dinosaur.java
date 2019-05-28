@@ -36,10 +36,14 @@ public abstract class Dinosaur {
 	//The current turn
 	protected int currentTurn;
 	
+	protected boolean isDead;
+	
+	protected boolean invincible;
 	
 	
 	public Dinosaur(Room startRoom) {
 		setStartRoom(startRoom);
+		isDead = false;
 	}
 	
 	
@@ -68,6 +72,8 @@ public abstract class Dinosaur {
 
 	//Picks a random direction until finds a direction it can move to
 	public Room moveToNewRoom(DinosaurController c) {
+		if(isDead) return currentRoom;
+		
 		if(!aware) {
 			while(true) {
 				int random = (int)(Math.random()*4);
@@ -105,21 +111,21 @@ public abstract class Dinosaur {
 						//Check to see if you left a room and have to tell the player
 						if(c.getLastDinosaur()==this && c.getLastStatus().equals("unaware")) {
 							c.setStatus(this, "left");
+							resetTurn();
 						}
 					}
 					return currentRoom;
 				}
 			}
 		} else {
-			if(currentRoom == Game.getCurrentRoom()) {
-				c.setStatus(this, "here");
-			} else {
+			if(currentRoom != Game.getCurrentRoom()) {
 				double followChance = awareness + (1-awareness)/2;
 				
 				//Lost the trail
 				if(Math.random()>followChance) {
 					aware = false;
 					c.setStatus(this, "lost");
+					resetTurn();
 				} else {
 					//Follow player
 					if(roomsInRange.contains(Game.getCurrentRoom()) && !Game.getCurrentRoom().getRoomInventory().hasDinosaurs()) {
@@ -131,6 +137,7 @@ public abstract class Dinosaur {
 						//Lost the trail
 						aware = false;
 						c.setStatus(this, "lost");
+						resetTurn();
 					}
 				}
 			}
@@ -139,6 +146,8 @@ public abstract class Dinosaur {
 	}
 	
 	public void determineAwareness(DinosaurController c) {
+		if(isDead) return;
+		
 		if(currentRoom == Game.getCurrentRoom()) {
 			if(awareness==0.0) {
 				c.setStatus(this, "peace");
@@ -149,9 +158,10 @@ public abstract class Dinosaur {
 						c.setStatus(this, "aware");
 					} else {
 						c.setStatus(this, "unaware");
+						resetTurn();
 					}
 				} else {
-					c.setStatus(this, "here");
+					if(currentTurn<turnToKill) c.setStatus(this, "here");
 				}
 			}
 		} else {
@@ -163,7 +173,28 @@ public abstract class Dinosaur {
 		return aware;
 	}
 	
-	//public void 
+	public void incrementTurn() {
+		if(this instanceof Carnivore) {
+			currentTurn++;
+			if(currentTurn==turnToKill) ((Carnivore) this).killPlayer();
+		}
+		System.out.println(currentTurn);
+	}
+	
+	public void resetTurn() {
+		currentTurn=0;
+	}
+	
+	public Dinosaur die(DinosaurController c) {
+		currentRoom.getRoomInventory().removeDinosaur(this);
+		c.removeDinosaur(this);
+		isDead = true;
+		return this;
+	}
+	
+	public boolean isInvincible() {
+		return invincible;
+	}
 	
 	public String toString(String s) {
 		//return(s + " named " + name);

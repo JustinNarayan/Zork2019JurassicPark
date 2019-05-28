@@ -3,6 +3,7 @@ all item classes
 commands
 player classes
 dino attack
+make dino attacks end game properly
 
 bugs:
 all actions, even if you can't do them or input wrong, take time
