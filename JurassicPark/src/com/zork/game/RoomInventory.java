@@ -19,6 +19,11 @@ public class RoomInventory extends Inventory {
 		return false;
 	}
 	
+	public Dinosaur getDinosaur() {
+		if(hasDinosaurs()) return dinosaurs.get(0);
+		else return null;
+	}
+	
 	public void addDinosaur(Dinosaur dinosaur) {
 		dinosaurs.add(dinosaur);
 	}
