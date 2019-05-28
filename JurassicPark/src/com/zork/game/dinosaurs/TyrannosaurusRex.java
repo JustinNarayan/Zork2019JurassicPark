@@ -7,10 +7,11 @@ import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
-public class TyrannosaurusRex extends Dinosaur implements Carnivore {
+public class TyrannosaurusRex extends Dinosaur {
 	private final double MOBILITY = 0.65;
 	private final double AWARENESS = 0.85;
 	private final int TURN_TO_KILL = 2;
+	private int isStunned = 0;
 	
 	public TyrannosaurusRex(Room startRoom, String name) {
 		super(startRoom);
@@ -33,15 +34,31 @@ public class TyrannosaurusRex extends Dinosaur implements Carnivore {
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
 		invincible = true;
+		canAttackInTree = true;
+		carnivore = true;
+		isStunned = 0;
 	}
 	
 	public void killPlayer() {
 		if(Game.getPlayer().inTree) System.out.println("Even in a tree, the dinosaur can still grab you!");
 		System.out.println(Formatter.blockText("The Tyrannosaurus Rex has snatched you up and swallowed you whole. "
 				+ "You have died an extremely painful death.", Formatter.getCutoff(),""));
-		Game.endGame("");
+		super.killPlayer();
 	}
 
+	public void becomeStunned() {
+		isStunned = 2;
+	}
+	
+	public void notStunned() {
+		if(isStunned>0) isStunned--;
+	}
+	
+	public void incrementTurn(DinosaurController c) {
+		if(isStunned>0) return;
+		super.incrementTurn();
+	}
+	
 	public String toString() {
 		return super.toString("Tyrannosaurus Rex");
 	}

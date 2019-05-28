@@ -7,7 +7,7 @@ import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
-public class Spinosaurus extends Dinosaur implements Carnivore {
+public class Spinosaurus extends Dinosaur {
 	private final double MOBILITY = 0.5;
 	private final double AWARENESS = 0.3;
 	private final int TURN_TO_KILL = 3;
@@ -30,12 +30,14 @@ public class Spinosaurus extends Dinosaur implements Carnivore {
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
 		invincible = false;
+		canAttackInTree = false;
+		carnivore = true;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The Spinosaurus has pinned you to the ground and devoured you appendage "
 				+ "by appendage. You did not have a fun time.", Formatter.getCutoff(),""));
-		Game.endGame("");
+		super.killPlayer();
 	}
 
 	public String toString() {

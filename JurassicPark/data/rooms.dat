@@ -128,10 +128,10 @@ Room Name: Equipment Yard
 Room Description: You are in the Equipment Yard, you see equipment around you. In front of you is the Quarry and behind you, in the distance is the Staff Quarters. 
 Exit Rooms: N-Quarry_S, S-Hallway 6
 Room Name: Quarry_S
-Room Description: You are on the south end of the Quarry. To the right is a pathway, in the distance, you can see the Dilophosaurus enclosure.
+Room Description: You are on the south end of the Quarry. It extends in front of you. To the right is a pathway, in the distance, you can see the Dilophosaurus enclosure.
 Exit Rooms: N-Quarry_N, E-Hallway 9, S-Equipment Yard
 Room Name: Quarry_N
-Room Description: You are on the north end of the Quarry. In front of you is a pathway, in the distance, you can see the Pterodactyl enclosure.
+Room Description: You are on the north end of the Quarry. It extends behind you. In front of you is a pathway, in the distance, you can see the Pterodactyl enclosure.
 Exit Rooms: N-Hallway 12, S-Quarry_S
 Room Name: River 1_SW
 Room Description: You are in a river and are wet. To the left is the Dilophosaurus enclosure and to the right is more river. 

@@ -283,14 +283,14 @@ public class RoomItemInit {
 	
 	public static void initWeapons() {
 		//guns
-		weapons.add(new Weapons("a gun", getMap().get("MUNITIONS_SHED_NE")));
-		weapons.add(new Weapons("a gun", getMap().get("STAFF_QUARTERS_SE")));
-		weapons.add(new Weapons("a gun", getMap().get("HELIPAD")));
+		weapons.add(new Ranged("a gun", getMap().get("MUNITIONS_SHED_NE")));
+		weapons.add(new Ranged("a gun", getMap().get("STAFF_QUARTERS_SE")));
+		weapons.add(new Ranged("a gun", getMap().get("HELIPAD")));
 		
 		//knives
-		weapons.add(new Weapons("a knife", getMap().get("SUPPLY_SHED")));
-		weapons.add(new Weapons("a knife", getMap().get("FOREST_W")));
-		weapons.add(new Weapons("a knife", getMap().get("SPINOSAURUS_CONTROL")));
+		weapons.add(new Melee("a knife", getMap().get("SUPPLY_SHED")));
+		weapons.add(new Melee("a knife", getMap().get("FOREST_W")));
+		weapons.add(new Melee("a knife", getMap().get("SPINOSAURUS_CONTROL")));
 		
 		//flashlights
 		weapons.add(new Weapons("a flashlight", getMap().get("EQUIPMENT_YARD")));

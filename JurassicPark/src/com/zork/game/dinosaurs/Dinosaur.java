@@ -40,6 +40,10 @@ public abstract class Dinosaur {
 	
 	protected boolean invincible;
 	
+	protected boolean canAttackInTree;
+	
+	protected boolean carnivore;
+	
 	
 	public Dinosaur(Room startRoom) {
 		setStartRoom(startRoom);
@@ -50,6 +54,10 @@ public abstract class Dinosaur {
 	
 	protected HashMap<String, Room> getMap() {
 		return Game.getMasterRoomMap();
+	}
+	
+	public boolean isCarnivore() {
+		return carnivore;
 	}
 	
 	public Room getCurrentRoom() {
@@ -174,9 +182,12 @@ public abstract class Dinosaur {
 	}
 	
 	public void incrementTurn() {
-		if(this instanceof Carnivore) {
-			currentTurn++;
-			if(currentTurn==turnToKill) ((Carnivore) this).killPlayer();
+		if(isCarnivore()) {
+			if(currentTurn < turnToKill) currentTurn++;
+			if(currentTurn==turnToKill && (canAttackInTree || !Game.getPlayer().inTree)) {
+				killPlayer();
+				Game.getPlayer().hasDied();
+			}
 		}
 	}
 	
@@ -193,6 +204,10 @@ public abstract class Dinosaur {
 	
 	public void resetTurn() {
 		currentTurn=0;
+	}
+	
+	public void killPlayer() {
+		Game.endGame("");
 	}
 	
 	public Dinosaur die(DinosaurController c) {

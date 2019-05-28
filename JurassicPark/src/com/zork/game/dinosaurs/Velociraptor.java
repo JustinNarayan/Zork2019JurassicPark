@@ -7,7 +7,7 @@ import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
-public class Velociraptor extends Dinosaur implements Carnivore {
+public class Velociraptor extends Dinosaur {
 	private final double MOBILITY = 0.8;
 	private final double AWARENESS = 0.8;
 	private final int TURN_TO_KILL = 2;
@@ -44,12 +44,14 @@ public class Velociraptor extends Dinosaur implements Carnivore {
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
 		invincible = false;
+		canAttackInTree = false;
+		carnivore = true;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The velociraptor has jumped at you and pinned you to the ground. "
 				+ "It begins gnawing into your flesh and you quickly lose consciousness and die.", Formatter.getCutoff(),""));
-		Game.endGame("");
+		super.killPlayer();
 	}
 
 	public String toString() {

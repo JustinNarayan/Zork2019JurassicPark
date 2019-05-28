@@ -3,6 +3,7 @@ package com.zork.game.dinosaurs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
@@ -33,6 +34,14 @@ public class Stegosaurus extends Dinosaur {
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
 		invincible = false;
+		canAttackInTree = true;
+		carnivore = false;
+	}
+	
+	public void killPlayer() {
+		System.out.println(Formatter.blockText("The Stegosaurus has become enraged with your assaults and has whipped you to the floor "
+				+ "violently with its tail. You have died.", Formatter.getCutoff(),""));
+		super.killPlayer();
 	}
 
 	public String toString() {

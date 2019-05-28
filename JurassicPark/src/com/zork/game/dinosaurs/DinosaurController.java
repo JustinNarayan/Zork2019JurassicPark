@@ -95,6 +95,7 @@ public class DinosaurController {
 	}
 	
 	public void setStatus(Dinosaur dino, String s) {
+		if(Game.getPlayer().isDead()) return;
 		System.out.println("");
 		if(s.equals("unaware")) {
 			System.out.println("There is a " + dino + " within view! Fortunately, it hasn't noticed you yet...");

@@ -3,6 +3,7 @@ package com.zork.game.dinosaurs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
@@ -27,6 +28,14 @@ public class Bronchiosaurus extends Dinosaur {
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
 		invincible = true;
+		canAttackInTree = true;
+		carnivore = false;
+	}
+	
+	public void killPlayer() {
+		System.out.println(Formatter.blockText("The Bronchiosaurus has become upset with your attempted attacks and has knocked you to the ground "
+				+ "and stomped on your flailing corpse. You have died.", Formatter.getCutoff(),""));
+		super.killPlayer();
 	}
 	
 	public String toString() {

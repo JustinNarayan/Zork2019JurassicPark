@@ -62,9 +62,9 @@ public class Inventory {
 		}
 	}
 
-	public boolean isInInventory(String item) {
+	public Item isInInventory(String item) {
 		
-		if(masterInventory == null){
+		/*if(masterInventory == null){
 			return false;
 		}
 		for (int i =0; i<masterInventory.length;i++) {
@@ -72,8 +72,17 @@ public class Inventory {
 				return true;
 			}
 		}
-		return false;
+		return false;*/
+		
+		if(inventoryItems.size() == 0) {
+			return null;
 		}
+		for(Item obj : inventoryItems) {
+			if(obj.toString().equalsIgnoreCase(item) ||
+					obj.toString().toLowerCase().indexOf(item.toLowerCase())>-1) return obj;
+		}
+		return null;
+	}
 			
 	
 
@@ -124,9 +133,12 @@ public class Inventory {
 	}
 
 	public Item removeItem(String name) {
-		int inventoryNum = getInventoryType(name);
-		int index = individualIndex(masterInventory[inventoryNum], name);
-		return (Item) masterInventory[inventoryNum].remove(index);
+		if(isInInventory(name)!=null) {
+			Item i = isInInventory(name);
+			inventoryItems.remove(i);
+			return i;
+		}
+		else return null;
 	}
 	
 	public Item removeItem(int i) {
