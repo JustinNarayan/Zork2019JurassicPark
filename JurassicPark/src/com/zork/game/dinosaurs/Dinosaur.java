@@ -36,10 +36,13 @@ public abstract class Dinosaur {
 	//The current turn
 	protected int currentTurn;
 	
+	protected boolean isDead;
+	
 	
 	
 	public Dinosaur(Room startRoom) {
 		setStartRoom(startRoom);
+		isDead = false;
 	}
 	
 	
@@ -68,6 +71,8 @@ public abstract class Dinosaur {
 
 	//Picks a random direction until finds a direction it can move to
 	public Room moveToNewRoom(DinosaurController c) {
+		if(isDead) return currentRoom;
+		
 		if(!aware) {
 			while(true) {
 				int random = (int)(Math.random()*4);
@@ -139,6 +144,8 @@ public abstract class Dinosaur {
 	}
 	
 	public void determineAwareness(DinosaurController c) {
+		if(isDead) return;
+		
 		if(currentRoom == Game.getCurrentRoom()) {
 			if(awareness==0.0) {
 				c.setStatus(this, "peace");
@@ -163,7 +170,14 @@ public abstract class Dinosaur {
 		return aware;
 	}
 	
-	//public void 
+	//public void incrementTurn
+	
+	public Dinosaur die(DinosaurController c) {
+		currentRoom.getRoomInventory().removeDinosaur(this);
+		c.removeDinosaur(this);
+		isDead = true;
+		return this;
+	}
 	
 	public String toString(String s) {
 		//return(s + " named " + name);
