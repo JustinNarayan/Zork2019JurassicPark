@@ -33,9 +33,11 @@ class Command
      */
     public Command(String firstWord, String secondWord, String thirdWord)
     {
-        commandWord = firstWord;
-        this.secondWord = secondWord;
-        this.thirdWord = thirdWord;
+        commandWord = firstWord.toLowerCase();
+        if(this.secondWord!=null) this.secondWord = secondWord.toLowerCase();
+        else this.secondWord = null;
+        if(this.thirdWord!=null) this.thirdWord = thirdWord.toLowerCase();
+        else this.thirdWord = null;
     }
 /**
      * Return the command word (the first word) of this command. If the
