@@ -90,7 +90,7 @@ public class RoomItemInit {
 		
 		roomsWithTrees.add("SPINOSAURUS_SW");
 		roomsWithTrees.add("SPINOSAURUS_NW");
-		roomsWithTrees.add("SPINOSAURUS_NW");
+		roomsWithTrees.add("SPINOSAURUS_NE");
 
 		// Specific rooms with trees in them
 		roomsWithTrees.add("EQUIPMENT_YARD");
