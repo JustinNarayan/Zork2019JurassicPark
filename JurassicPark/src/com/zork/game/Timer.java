@@ -3,7 +3,7 @@ package com.zork.game;
 public class Timer {
 	private int timeLeft = -1; // -1 means time has not been initialized; 10800 seconds when really initialized
 	private final int MAX_TIME = 10800;
-	private final int TIME_IN_HOUR = 3600;
+	private final int TIME_IN_HOUR = 2400;
 	
 	public final int TIME_TO_GO = 30;
 	public final int TIME_TO_USE = 5;
