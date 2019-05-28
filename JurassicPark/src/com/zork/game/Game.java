@@ -38,7 +38,7 @@ public class Game {
 	private boolean inFight;
 	private static final int winPoints = 50;
 	private boolean gameStarted;
-	
+
 	// This is a MASTER object that contains all of the rooms and is easily
 	// accessible.
 	// The key will be the name of the room -> no spaces (Use all caps and
@@ -133,18 +133,18 @@ public class Game {
 		// them until the game is over.
 		RoomItemInit.initRooms();
 		boolean finished = false;
-		while (!finished) {			
+		while (!finished) {
 			Command command = parser.getCommand();
 			finished = processCommand(command); // FALSE is for inFight variable, not yet implemented
-			if(timer.isOutOfTime() && gameStarted) {
+			if (timer.isOutOfTime() && gameStarted) {
 				endGame("time");
 				finished = true;
 			}
-			if(player.hasSucceeded()) {
+			if (player.hasSucceeded()) {
 				endGame("success");
 				finished = true;
 			}
-			if(player.isDead()) {
+			if (player.isDead()) {
 				finished = true;
 			}
 		}
@@ -258,7 +258,7 @@ public class Game {
 			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
 			break;
-		case "take": //same as grab
+		case "take": // same as grab
 			timer.reduceTime(timer.TIME_TO_GRAB);
 			grab(command);
 
@@ -406,19 +406,24 @@ public class Game {
 			System.out.println("You must include what you want to search.");
 			return;
 		}
-		if(env.size()==0) System.out.println("There is nothing here to search.");
+		if (env.size() == 0)
+			System.out.println("There is nothing here to search.");
 		else {
 			boolean canSearch = false;
-			for (int i = 0; i<env.size();i++){
+			for (int i = 0; i < env.size(); i++) {
 				EnvironmentItem temp = env.get(i);
-				if (temp.toString().equals(command.getSecondWord()) || 
-						(temp.toString().equals("trees") && command.getSecondWord().equals("tree")) || 
-						(temp.toString().length()>1 && temp.toString().substring(0,2).equals("a ") && (command.getSecondWord().equals(temp.toString().substring(2)) || (temp.toString().indexOf(" ", 2)>2 && command.getSecondWord().equals(temp.toString().substring(2,temp.toString().indexOf(" ",2))))))) {
+				if (temp.toString().equals(command.getSecondWord())
+						|| (temp.toString().equals("trees") && command.getSecondWord().equals("tree"))
+						|| (temp.toString().length() > 1 && temp.toString().substring(0, 2).equals("a ")
+								&& (command.getSecondWord().equals(temp.toString().substring(2))
+										|| (temp.toString().indexOf(" ", 2) > 2 && command.getSecondWord().equals(
+												temp.toString().substring(2, temp.toString().indexOf(" ", 2))))))) {
 					canSearch = true;
 					if (temp.getItems().size() > 0) {
 						System.out.print("You search the " + command.getSecondWord() + " and find ");
 						for (int j = 0; j < temp.getItems().size(); j++) {
-							System.out.print(temp.getItems().get(j).getNameLowerCase() + temp.getItems().get(j).getPoints());
+							System.out.print(
+									temp.getItems().get(j).getNameLowerCase() + temp.getItems().get(j).getPoints());
 							player.inventory.addInventoryItem(temp.getItems().get(j));
 							temp.removeItem(j);
 						}
@@ -426,10 +431,11 @@ public class Game {
 					} else {
 						System.out.println("You searched the " + command.getSecondWord() + " and found nothing.");
 					}
-	
+
 				}
 			}
-			if(!canSearch) System.out.println("You can't search that.");
+			if (!canSearch)
+				System.out.println("You can't search that.");
 		}
 
 	}
@@ -444,49 +450,83 @@ public class Game {
 			System.out.println("You cannot grab items while you're in a tree!");
 			return;
 		}
-		
-		
+
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to grab.");
 			return;
 		}
-		
-		//Determine the item
+
+		// Determine the item
 		String word;
 		String real;
-		if(command.getSecondWord().equals("a") || command.getSecondWord().equals("the")) {
+		if (command.getSecondWord().equals("a") || command.getSecondWord().equals("the")) {
 			real = command.getThirdWord();
 			word = "a " + real;
 		} else {
 			real = command.getSecondWord();
 			word = "a " + command.getSecondWord();
 		}
-		 
+
 		if (!currentRoom.getRoomInventory().roomHasItem(word)) {
 			System.out.println("That item is not here.");
 		} else {
 			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getRoomItem(word));
-			System.out.println("You picked up " + currentRoom.getRoomInventory().getRoomItem(word).getNameLowerCase() + currentRoom.getRoomInventory().getRoomItem(word).getPoints()+ ".");
+			System.out.println("You picked up " + currentRoom.getRoomInventory().getRoomItem(word).getNameLowerCase()
+					+ currentRoom.getRoomInventory().getRoomItem(word).getPoints() + ".");
 			currentRoom.getRoomInventory().removeRoomItem(word);
 		}
 	}
 
 	private void attack(Command command) {
-		
+		if (currentRoom.getRoomInventory().getDinosaur() == null) {
+			System.out.println("There is nothing for you to attack.");
+		} else {
+			if (playerAttack(command)) {
+
+			}
+		}
+	}
+
+	private boolean playerAttack(Command command) {
+		Dinosaur currentDino = currentRoom.getRoomInventory().getDinosaur();
+		boolean commandBad = true;
+		if(!command.hasSecondWord()) {
+			System.out.println("You must say what you want to attack.");
+		}else if((!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals(command.getSecondWord())&&
+					(!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dino"))
+					&&(!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dinosaur")))) {
+			System.out.println("That enemy is not in here.");
+		}else if(command.hasThirdWord()) {
+			System.out.println("You must say what you want to attack with.");
+		}else if(player.getInventory().isInInventory(command.getThirdWord())) {
+			System.out.println("That weapon is not in your inventory");
+		}else {
+			Weapons current = (Weapons) player.getInventory().getItem(command.getThirdWord());
+			if(current instanceof Melee) {
+				if((int)(Math.random()*5)==1){
+					System.out.println("While trying to stab the dinosaur you were attacked and got killed.");
+				}else {
+					
+				}
+			}
+			
+		}
+		return false;
 	}
 
 	private void checkAmmo(Command command) {
 	}
-	
+
 	private void check(Command command) {
-		if((command.hasSecondWord() && (command.getSecondWord().equals("inventory") ||
-				command.getSecondWord().equals("items"))) ||
-				(command.hasThirdWord() && (command.getThirdWord().equals("inventory") ||
-				command.getThirdWord().equals("items")))) {
+		if ((command.hasSecondWord()
+				&& (command.getSecondWord().equals("inventory") || command.getSecondWord().equals("items")))
+				|| (command.hasThirdWord()
+						&& (command.getThirdWord().equals("inventory") || command.getThirdWord().equals("items")))) {
 			checkInventory(command);
-		} else if((command.hasSecondWord() && command.getSecondWord().equals("ammo")) || (command.hasThirdWord()&&command.getThirdWord().equals("ammo"))) {
+		} else if ((command.hasSecondWord() && command.getSecondWord().equals("ammo"))
+				|| (command.hasThirdWord() && command.getThirdWord().equals("ammo"))) {
 			checkAmmo(command);
-		} else if(!command.hasSecondWord()) {
+		} else if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to check.");
 		} else {
 			search(command);
@@ -547,37 +587,39 @@ public class Game {
 		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to drop.");
 		} else {
-			//If the second word is a number in the inventory 
+			// If the second word is a number in the inventory
 			try {
 				int number = Integer.parseInt(command.getSecondWord());
-				if(number <= player.getInventory().getInventoryItems().size()) {
-					System.out.println("Item " + number + ", " + player.getInventory().removeItem(number-1).toString() + ", has been removed from your inventory.");
+				if (number <= player.getInventory().getInventoryItems().size()) {
+					System.out.println("Item " + number + ", " + player.getInventory().removeItem(number - 1).toString()
+							+ ", has been removed from your inventory.");
 					return;
 				} else {
 					System.out.println("There aren't that many items in your inventory!");
 					return;
 				}
-			} catch(Exception e) {
-				//The second word wasn't a number
+			} catch (Exception e) {
+				// The second word wasn't a number
 			}
-			
-			//If the third word is a number in the inventory
-			if(command.hasThirdWord()) {
+
+			// If the third word is a number in the inventory
+			if (command.hasThirdWord()) {
 				try {
 					int number = Integer.parseInt(command.getThirdWord());
-					if(number <= player.getInventory().getInventoryItems().size()) {
-						System.out.println("Item " + number + ", " + player.getInventory().removeItem(number-1).toString() + ", has been removed from your inventory.");
+					if (number <= player.getInventory().getInventoryItems().size()) {
+						System.out.println(
+								"Item " + number + ", " + player.getInventory().removeItem(number - 1).toString()
+										+ ", has been removed from your inventory.");
 						return;
 					} else {
 						System.out.println("There aren't that many items in your inventory!");
 						return;
 					}
-				} catch(Exception e) {
-					//The second word wasn't a number
+				} catch (Exception e) {
+					// The second word wasn't a number
 				}
 			}
-			
-			
+
 			if (!(player.getInventory().isInInventory(command.getSecondWord()))) {
 				System.out.println("That item is not in your inventory.");
 			} else {
@@ -586,18 +628,18 @@ public class Game {
 			}
 		}
 	}
-	
+
 	private void read(Command command) {
-		if(!command.hasSecondWord()) {
+		if (!command.hasSecondWord()) {
 			System.out.println("You must include what you want to read.");
 		} else {
-			//If the second word is a number in the inventory 
+			// If the second word is a number in the inventory
 			try {
 				int number = Integer.parseInt(command.getSecondWord());
-				if(number <= player.getInventory().getInventoryItems().size()) {
-					Item i = player.getInventory().getItem(number-1);
-					if(i!=null && i instanceof Artifacts) {
-						System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+				if (number <= player.getInventory().getInventoryItems().size()) {
+					Item i = player.getInventory().getItem(number - 1);
+					if (i != null && i instanceof Artifacts) {
+						System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 						System.out.println(((Artifacts) i).getRead());
 					} else {
 						System.out.println("You can't read that!");
@@ -607,18 +649,18 @@ public class Game {
 					System.out.println("There aren't that many items in your inventory!");
 					return;
 				}
-			} catch(Exception e) {
-				//The second word wasn't a number
+			} catch (Exception e) {
+				// The second word wasn't a number
 			}
-			
-			//If the third word is a number in the inventory
-			if(command.hasThirdWord()) {
+
+			// If the third word is a number in the inventory
+			if (command.hasThirdWord()) {
 				try {
 					int number = Integer.parseInt(command.getThirdWord());
-					if(number <= player.getInventory().getInventoryItems().size()) {
-						Item i = player.getInventory().getItem(number-1);
-						if(i!=null && i instanceof Artifacts) {
-							System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+					if (number <= player.getInventory().getInventoryItems().size()) {
+						Item i = player.getInventory().getItem(number - 1);
+						if (i != null && i instanceof Artifacts) {
+							System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 							System.out.println(((Artifacts) i).getRead());
 						} else {
 							System.out.println("You can't read that!");
@@ -628,30 +670,28 @@ public class Game {
 						System.out.println("There aren't that many items in your inventory!");
 						return;
 					}
-				} catch(Exception e) {
-					//The third word wasn't a number
+				} catch (Exception e) {
+					// The third word wasn't a number
 				}
 			}
-			
-			//See if they type a word
+
+			// See if they type a word
 			Item i = player.getInventory().getItem(command.getSecondWord());
-			if(i!=null && i instanceof Artifacts) {
-				System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+			if (i != null && i instanceof Artifacts) {
+				System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 				System.out.println(((Artifacts) i).getRead());
-			} else if(command.hasThirdWord()) {
+			} else if (command.hasThirdWord()) {
 				i = player.getInventory().getItem(command.getThirdWord());
-				if(i!=null && i instanceof Artifacts) {
-					System.out.println("You take out " +  i.getNameLowerCase() + " and read it.\n");
+				if (i != null && i instanceof Artifacts) {
+					System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 					System.out.println(((Artifacts) i).getRead());
-				} else System.out.println("That item isn't in your inventory.");
+				} else
+					System.out.println("That item isn't in your inventory.");
 			} else {
 				System.out.println("That item isn't in your inventory.");
 			}
 		}
 	}
-	
-	
-	
 
 	private void doThrow(Command command) {
 		if (command.hasSecondWord() && command.getSecondWord().equals("flare")
@@ -731,9 +771,12 @@ public class Game {
 									+ "will be. You'll need to evade the creaters unleashed on the island, and if not, face death.",
 							Formatter.getCutoff(), " ") + "\n");
 				}
-			} else if(currentRoom.getRoomName().equals(LEAVE_POSITION)) {
-				System.out.println(Formatter.blockText("\nThis is it! You can leave the island from here if you wish, you can sneak aboard a boat to safety. "
-						+ "If you wish to remain and search for more artifacts, you have " + Formatter.properTime(timer.getTimeLeft()) + " to do so.", Formatter.getCutoff(), ""));
+			} else if (currentRoom.getRoomName().equals(LEAVE_POSITION)) {
+				System.out.println(Formatter.blockText(
+						"\nThis is it! You can leave the island from here if you wish, you can sneak aboard a boat to safety. "
+								+ "If you wish to remain and search for more artifacts, you have "
+								+ Formatter.properTime(timer.getTimeLeft()) + " to do so.",
+						Formatter.getCutoff(), ""));
 			}
 
 			// Move dinos - only if you make a move
@@ -742,15 +785,15 @@ public class Game {
 	}
 
 	private void look(Command command) {
-		//Check if should be a search
-		if(command.hasSecondWord() && command.hasThirdWord()) {
-			if(command.getSecondWord().equals("inside") || command.getSecondWord().equals("in")) {
+		// Check if should be a search
+		if (command.hasSecondWord() && command.hasThirdWord()) {
+			if (command.getSecondWord().equals("inside") || command.getSecondWord().equals("in")) {
 				search(new Command(command.getCommandWord(), command.getThirdWord(), null));
 				return;
 			}
 		}
-		
-		System.out.println(Phrases.getLook().get((int) (Math.random() * Phrases.getLook().size())));		
+
+		System.out.println(Phrases.getLook().get((int) (Math.random() * Phrases.getLook().size())));
 
 		// Look at environment
 		ArrayList<EnvironmentItem> env = currentRoom.getRoomInventory().getEnvironment();
@@ -782,21 +825,21 @@ public class Game {
 							.get((int) (Math.random() * Phrases.getLookInEnv().size()));
 				} else
 					seeInEnvironment += "and ";
-				if(obj.toString().length()>1 && obj.toString().substring(0,2).equals("a ")) seeInEnvironment += obj.toString().substring(2) + " ";
-				else seeInEnvironment += obj.toString() + " ";
+				if (obj.toString().length() > 1 && obj.toString().substring(0, 2).equals("a "))
+					seeInEnvironment += obj.toString().substring(2) + " ";
+				else
+					seeInEnvironment += obj.toString() + " ";
 			}
 		}
 		if (!seeInEnvironment.equals(""))
 			System.out.println(seeInEnvironment.substring(0, seeInEnvironment.length() - 1) + ".");
 
-		
-		
-		
 		// Look at roomItems
 		ArrayList<Item> items = currentRoom.getRoomInventory().getItems();
 		// List all the items in the room
 		if (items.size() == 1) {
-			System.out.print(Phrases.getLookItems().get((int) (Math.random() * Phrases.getLookItems().size())) + "only ");
+			System.out
+					.print(Phrases.getLookItems().get((int) (Math.random() * Phrases.getLookItems().size())) + "only ");
 			for (Item obj : items)
 				System.out.print(obj.getNameLowerCase());
 			System.out.println(". ");
@@ -813,8 +856,8 @@ public class Game {
 					System.out.print("and " + items.get(i).getNameLowerCase());
 			}
 			System.out.println(". ");
-		}		
-		
+		}
+
 		// Check both
 		if (env.size() == 0 && items.size() == 0) {
 			System.out.println(Phrases.getLookNothing().get((int) (Math.random() * Phrases.getLookNothing().size())));
@@ -835,17 +878,18 @@ public class Game {
 		player.hasDied();
 		endGame("");
 	}
-	
+
 	public void whereIsPlayer() {
 		System.out.println(currentRoom.longDescription());
 	}
-	
+
 	public void leave(Command command) {
-		if(!command.hasSecondWord()) {
+		if (!command.hasSecondWord()) {
 			System.out.println("Where do you want to leave?");
 		} else {
-			if(command.getSecondWord().equals("isla") || command.getSecondWord().equals("island") || command.getSecondWord().equals("here")) {
-				if(currentRoom.getRoomName().equals(LEAVE_POSITION)) {
+			if (command.getSecondWord().equals("isla") || command.getSecondWord().equals("island")
+					|| command.getSecondWord().equals("here")) {
+				if (currentRoom.getRoomName().equals(LEAVE_POSITION)) {
 					player.gainSuccess();
 				} else {
 					System.out.println("You can't leave the island from here!");
@@ -853,23 +897,26 @@ public class Game {
 			}
 		}
 	}
-	
 
 	public static Room getCurrentRoom() {
 		return currentRoom;
 	}
-	
-	private static void endGame(String s) {
-		if(s.equals("time")) {
-			System.out.println(Formatter.blockText("\nYou are too late! The last boat off the island has left and you have been trapped on the island with no escape"
-					+ " to fend for yourself among the park's dinosaurs. As your last hope for survival sails away in the distance, you are remember all the artifacts you recovered"
-					+ " and how close you came to exposing the horrors around you.",Formatter.getCutoff(),""));
-		} else if(s.equals("success")) {
-			System.out.println(Formatter.blockText("\nYou have successfully left the island! You have snuck aboard an escaping ship yet again, and must hope no one finds you"
-					+ " until you can safely reach land. You have got out with your life and enough evidence to shut the park down for good.", Formatter.getCutoff(), ""));
+
+	public static void endGame(String s) {
+		if (s.equals("time")) {
+			System.out.println(Formatter.blockText(
+					"\nYou are too late! The last boat off the island has left and you have been trapped on the island with no escape"
+							+ " to fend for yourself among the park's dinosaurs. As your last hope for survival sails away in the distance, you are remember all the artifacts you recovered"
+							+ " and how close you came to exposing the horrors around you.",
+					Formatter.getCutoff(), ""));
+		} else if (s.equals("success")) {
+			System.out.println(Formatter.blockText(
+					"\nYou have successfully left the island! You have snuck aboard an escaping ship yet again, and must hope no one finds you"
+							+ " until you can safely reach land. You have got out with your life and enough evidence to shut the park down for good.",
+					Formatter.getCutoff(), ""));
 		}
 		System.out.println("You have gained " + player.calculatePoints() + " from all the artifacts you recovered.");
-		if(s.equals("success")) {
+		if (s.equals("success")) {
 			System.out.println("You have gained " + Game.winPoints + " for escaping the island.");
 		}
 	}
