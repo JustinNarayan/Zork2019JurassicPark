@@ -34,9 +34,9 @@ class Command
     public Command(String firstWord, String secondWord, String thirdWord)
     {
         commandWord = firstWord.toLowerCase();
-        if(this.secondWord!=null) this.secondWord = secondWord.toLowerCase();
+        if(secondWord!=null) this.secondWord = secondWord.toLowerCase();
         else this.secondWord = null;
-        if(this.thirdWord!=null) this.thirdWord = thirdWord.toLowerCase();
+        if(thirdWord!=null) this.thirdWord = thirdWord.toLowerCase();
         else this.thirdWord = null;
     }
 /**
