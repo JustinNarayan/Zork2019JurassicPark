@@ -269,8 +269,7 @@ public class Game {
 		case "attack":
 
 			timer.reduceTime(timer.TIME_TO_ATTACK);
-			// Dinos can become aware here no matter what you say
-			dinosaurController.checkDinosaurAwareness();
+			
 			return attack(command);
 
 		case "equip":
@@ -483,11 +482,17 @@ public class Game {
 			System.out.println("There is nothing for you to attack.");
 		} else {
 			if (playerAttack(command)) {
+				// Dinos can become aware here no matter what you say
+				dinosaurController.checkDinosaurAwareness();
 				return false;
 			} else {
+				// Dinos can become aware here no matter what you say
+				dinosaurController.checkDinosaurAwareness();
 				return true;
 			}
 		}
+		// Dinos can become aware here no matter what you say
+					dinosaurController.checkDinosaurAwareness();
 		return false;
 	}
 
