@@ -3,12 +3,14 @@ package com.zork.game.dinosaurs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.zork.game.Formatter;
 import com.zork.game.Game;
 import com.zork.game.Room;
 
-public class Dilophosaurus extends Dinosaur {
+public class Dilophosaurus extends Dinosaur implements Carnivore {
 	private final double MOBILITY = 0.6;
 	private final double AWARENESS = 0.3;
+	private final int TURN_TO_KILL = 3;
 	
 	public Dilophosaurus(Room startRoom, String name) {
 		super(startRoom);
@@ -28,6 +30,12 @@ public class Dilophosaurus extends Dinosaur {
 		this.name = name;
 		mobility = MOBILITY;
 		awareness = AWARENESS;
+		turnToKill = TURN_TO_KILL;
+	}
+	
+	public void killPlayer() {
+		System.out.println(Formatter.blockText("The Dilophosaurus has spit acid and blinded you to make you easy prey. You are "
+				+ "slowly and painfully eaten as the acid melts away your flesh. You have died.", Formatter.getCutoff(),""));
 	}
 
 	public String toString() {

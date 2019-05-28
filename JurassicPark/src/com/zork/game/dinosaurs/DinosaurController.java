@@ -114,6 +114,10 @@ public class DinosaurController {
 		return lastStatus;
 	}
 	
+	public void removeDinosaur(Dinosaur d) {
+		dinosaurs.remove(d);
+	}
+	
 	public void printAllDinosaurs() {
 		for(Dinosaur d : dinosaurs) System.out.println(d.toString() + " is in " + d.getCurrentRoom().getRoomName());
 	}

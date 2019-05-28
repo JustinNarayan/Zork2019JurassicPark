@@ -9,6 +9,7 @@ import com.zork.game.Room;
 public class Bronchiosaurus extends Dinosaur {
 	private final double MOBILITY = 0.25;
 	private final double AWARENESS = 0;
+	private final int TURN_TO_KILL = -1;
 	
 	public Bronchiosaurus(Room startRoom, String name) {
 		super(startRoom);
@@ -24,6 +25,7 @@ public class Bronchiosaurus extends Dinosaur {
 		this.name = name;
 		mobility = MOBILITY;
 		awareness = AWARENESS;
+		turnToKill = TURN_TO_KILL;
 	}
 	
 	public String toString() {
