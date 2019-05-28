@@ -104,23 +104,27 @@ public abstract class Dinosaur {
 				}
 			}
 		} else {
-			double followChance = awareness + (1-awareness)/2;
-			
-			//Lost the trail
-			if(Math.random()>followChance) {
-				aware = false;
-				c.setStatus(this, "lost");
+			if(currentRoom == Game.getCurrentRoom()) {
+				c.setStatus(this, "here");
 			} else {
-				//Follow player
-				if(roomsInRange.contains(Game.getCurrentRoom()) && !Game.getCurrentRoom().getRoomInventory().hasDinosaurs()) {
-					currentRoom.getRoomInventory().removeDinosaur(this);
-					currentRoom = Game.getCurrentRoom();
-					currentRoom.getRoomInventory().addDinosaur(this);		
-					c.setStatus(this, "follow");
-				} else {
-					//Lost the trail
+				double followChance = awareness + (1-awareness)/2;
+				
+				//Lost the trail
+				if(Math.random()>followChance) {
 					aware = false;
 					c.setStatus(this, "lost");
+				} else {
+					//Follow player
+					if(roomsInRange.contains(Game.getCurrentRoom()) && !Game.getCurrentRoom().getRoomInventory().hasDinosaurs()) {
+						currentRoom.getRoomInventory().removeDinosaur(this);
+						currentRoom = Game.getCurrentRoom();
+						currentRoom.getRoomInventory().addDinosaur(this);		
+						c.setStatus(this, "follow");
+					} else {
+						//Lost the trail
+						aware = false;
+						c.setStatus(this, "lost");
+					}
 				}
 			}
 		}
@@ -139,6 +143,8 @@ public abstract class Dinosaur {
 					} else {
 						c.setStatus(this, "unaware");
 					}
+				} else {
+					c.setStatus(this, "here");
 				}
 			}
 		} else {

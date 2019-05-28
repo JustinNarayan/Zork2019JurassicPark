@@ -99,6 +99,8 @@ public class DinosaurController {
 			System.out.println("There is a peaceful " + dino + " within view. It means you no harm.");
 		} else if(s.equals("left")) {
 			System.out.println("The " + dino + " has quietly left the area.");
+		} else if(s.equals("here")) {
+			System.out.println("The " + dino + " is still there in the area, preparing to attack!");
 		}
 		lastStatus = s;
 		lastDinosaur = dino;
