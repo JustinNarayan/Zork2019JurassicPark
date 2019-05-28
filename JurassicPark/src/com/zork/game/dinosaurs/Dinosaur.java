@@ -116,9 +116,7 @@ public abstract class Dinosaur {
 				}
 			}
 		} else {
-			if(currentRoom == Game.getCurrentRoom()) {
-				c.setStatus(this, "here");
-			} else {
+			if(currentRoom != Game.getCurrentRoom()) {
 				double followChance = awareness + (1-awareness)/2;
 				
 				//Lost the trail

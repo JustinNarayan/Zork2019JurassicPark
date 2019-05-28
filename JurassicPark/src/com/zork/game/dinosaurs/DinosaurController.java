@@ -65,6 +65,13 @@ public class DinosaurController {
 		}
 	}
 	
+	public void killAll() {
+		for(int i = 0; i < dinosaurs.size(); i++) {
+			dinosaurs.get(i).die(this);
+			i--;
+		}
+	}
+	
 	public void moveDinosaurs() {
 		
 		ArrayList<Dinosaur> temp = new ArrayList<Dinosaur>();
