@@ -36,6 +36,7 @@ public class TyrannosaurusRex extends Dinosaur implements Carnivore {
 	}
 	
 	public void killPlayer() {
+		if(Game.getPlayer().inTree) System.out.println("Even in a tree, the dinosaur can still grab you!");
 		System.out.println(Formatter.blockText("The Tyrannosaurus Rex has snatched you up and swallowed you whole. "
 				+ "You have died an extremely painful death.", Formatter.getCutoff(),""));
 		Game.endGame("");

@@ -110,6 +110,8 @@ public class DinosaurController {
 			System.out.println("The " + dino + " has quietly left the area.");
 		} else if(s.equals("here")) {
 			System.out.println("The " + dino + " is still there in the area, preparing to attack!");
+		} else if(s.equals("tree")) {
+			System.out.println("The " + dino + " is set to attack, but can't reach you in the tree!");
 		}
 		lastStatus = s;
 		lastDinosaur = dino;

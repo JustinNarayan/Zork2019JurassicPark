@@ -33,6 +33,7 @@ public class Pterodactyl extends Dinosaur implements Carnivore {
 	}
 	
 	public void killPlayer() {
+		if(Game.getPlayer().inTree) System.out.println("Even in a tree, the dinosaur can still grab you!");
 		System.out.println(Formatter.blockText("The Pterodactyl has swooped down and snatched you in its talons. You are brought to its nest and devoured "
 				+ "by a group of ravenous dinosaurs. You are found bland and unappetizing at best.", Formatter.getCutoff(),""));
 		Game.endGame("");

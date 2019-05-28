@@ -52,6 +52,10 @@ public class Game {
 	public static HashMap<String, Room> getMasterRoomMap() {
 		return masterRoomMap;
 	}
+	
+	public static Player getPlayer() {
+		return player;
+	}
 
 	private void initRooms(String fileName) throws Exception {
 		masterRoomMap = new HashMap<String, Room>();
