@@ -269,7 +269,7 @@ public class Game {
 		case "attack":
 
 			timer.reduceTime(timer.TIME_TO_ATTACK);
-			
+
 			return attack(command);
 
 		case "equip":
@@ -492,7 +492,7 @@ public class Game {
 			}
 		}
 		// Dinos can become aware here no matter what you say
-					dinosaurController.checkDinosaurAwareness();
+		dinosaurController.checkDinosaurAwareness();
 		return false;
 	}
 
@@ -501,16 +501,16 @@ public class Game {
 
 		if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to attack.");
-		} else if ((!currentDino.toString().toLowerCase().equals(command.getSecondWord())
-				&& (!currentDino.toString().toLowerCase().equals("dino"))
-				&& (!currentDino.toString().toLowerCase().equals("dinosaur")))) {
+		} else if (!(player.getInventory().getItem(command.getThirdWord()) instanceof Weapons)) {
+			System.out.println("That is not a weapon.");
+		} else if ((!command.getSecondWord().toLowerCase().equals(currentDino.toString().toLowerCase())
+				&& (!command.getSecondWord().toLowerCase().equals("dino"))
+				&& (!command.getSecondWord().toLowerCase().equals("dinosaur")))) {
 			System.out.println("That enemy is not in here.");
 		} else if (command.hasThirdWord()) {
 			System.out.println("You must say what you want to attack with.");
 		} else if (player.getInventory().isInInventory(command.getThirdWord())) {
 			System.out.println("That weapon is not in your inventory");
-		} else if (!(player.getInventory().getItem(command.getThirdWord()) instanceof Weapons)) {
-			System.out.println("That is not a weapon.");
 		} else {
 			if (currentDino.isInvincible()) {
 				System.out.println("You died trying to attack this dinosaur.");
@@ -550,14 +550,14 @@ public class Game {
 			}
 
 		}
-		return false;
+		return true;
 	}
 
 	private void checkAmmo(Command command) {
 		Inventory temp = player.getInventory();
-		for(Weapons w:temp.weaponsInventory){
-			if(w instanceof Ranged){
-				System.out.println("You have: "+((Ranged) w).checkAmmo()+" ammo left");
+		for (Weapons w : temp.weaponsInventory) {
+			if (w instanceof Ranged) {
+				System.out.println("You have: " + ((Ranged) w).checkAmmo() + " ammo left");
 			}
 		}
 		System.out.println("You have no guns.");
