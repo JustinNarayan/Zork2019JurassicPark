@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import com.zork.game.dinosaurs.Dinosaur;
 import com.zork.game.dinosaurs.DinosaurController;
 
 /**
@@ -266,12 +267,12 @@ public class Game {
 			dinosaurController.checkDinosaurAwareness();
 			break;
 		case "attack":
-			timer.reduceTime(timer.TIME_TO_ATTACK);
-			attack(command);
 
+			timer.reduceTime(timer.TIME_TO_ATTACK);
 			// Dinos can become aware here no matter what you say
 			dinosaurController.checkDinosaurAwareness();
-			break;
+			return attack(command);
+
 		case "equip":
 			timer.reduceTime(timer.TIME_TO_EQUIP);
 			equip(command);
@@ -477,36 +478,68 @@ public class Game {
 		}
 	}
 
-	private void attack(Command command) {
+	private boolean attack(Command command) {
 		if (currentRoom.getRoomInventory().getDinosaur() == null) {
 			System.out.println("There is nothing for you to attack.");
 		} else {
 			if (playerAttack(command)) {
-
+				return false;
+			} else {
+				return true;
 			}
 		}
+		return false;
 	}
 
 	private boolean playerAttack(Command command) {
 		Dinosaur currentDino = currentRoom.getRoomInventory().getDinosaur();
-		boolean commandBad = true;
+
 		if (!command.hasSecondWord()) {
 			System.out.println("You must say what you want to attack.");
-		} else if ((!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase()
-				.equals(command.getSecondWord())
-				&& (!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dino"))
-				&& (!currentRoom.getRoomInventory().getDinosaur().toString().toLowerCase().equals("dinosaur")))) {
+		} else if ((!currentDino.toString().toLowerCase().equals(command.getSecondWord())
+				&& (!currentDino.toString().toLowerCase().equals("dino"))
+				&& (!currentDino.toString().toLowerCase().equals("dinosaur")))) {
 			System.out.println("That enemy is not in here.");
 		} else if (command.hasThirdWord()) {
 			System.out.println("You must say what you want to attack with.");
 		} else if (player.getInventory().isInInventory(command.getThirdWord())) {
 			System.out.println("That weapon is not in your inventory");
+		} else if (!(player.getInventory().getItem(command.getThirdWord()) instanceof Weapons)) {
+			System.out.println("That is not a weapon.");
 		} else {
-			Weapons current = (Weapons) player.getInventory().getItem(command.getThirdWord());
-			if (current instanceof Melee) {
-				if ((int) (Math.random() * 5) == 1) {
-					System.out.println("While trying to stab the dinosaur you were attacked and got killed.");
+			if (currentDino.isInvincible()) {
+				System.out.println("You died trying to attack this dinosaur.");
+				player.hasDied();
+				return false;
+			} else {
+
+				Weapons current = (Weapons) player.getInventory().getItem(command.getThirdWord());
+				if (current instanceof Melee) {
+					if ((int) (Math.random() * 5) == 1) {
+						System.out.println("While trying to stab the dinosaur you were attacked and got killed.");
+						player.hasDied();
+						return false;
+					} else {
+						if ((int) (Math.random() * 2) == 1) {
+							System.out.println("You killed the dinosaur and proved your species is superior.");
+							currentDino.die(dinosaurController);
+							return true;
+						} else {
+							System.out
+									.println("You launched a successful attack, but did not kill. Perhaps try again.");
+							return true;
+						}
+
+					}
 				} else {
+					System.out.println("You have shot the " + currentDino.toString() + " it is now dead");
+					System.out.println(
+							"You walk over the dinosaur with a sense of pride... You represented your species well");
+					System.out.println("You say \"We discovered fire first you oversized gecko\"");
+					System.out.println("You proceed to spit on the dead dinosaur.");
+					System.out.println("You have " + ((Ranged) current).checkAmmo() + " ammo left in your gun.");
+					currentDino.die(dinosaurController);
+					return true;
 
 				}
 			}
@@ -516,6 +549,7 @@ public class Game {
 	}
 
 	private void checkAmmo(Command command) {
+
 	}
 
 	private void check(Command command) {

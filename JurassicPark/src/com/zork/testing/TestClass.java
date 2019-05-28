@@ -32,12 +32,10 @@ public class TestClass {
          * System.out.println(e); }
          * 
          */
-        for(int i =0;i<10;i++){
-        if ((int) (Math.random() * 2) == 0) {
-            System.out.println("yes");
-        } else {
-            System.out.println("no");
-        }
-    }}
+    	System.out.println("You have shot the " + "dino" + ", it is now dead");
+		System.out.println("You walk over the dinosaur with a sense of pride... You represented your species well");
+		System.out.println("You say \"We discovered fire first you oversized gecko\"");
+		System.out.println("You proceed to spit on the dead dinosaur.");
+    }
 
 }
