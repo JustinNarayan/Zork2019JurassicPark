@@ -549,6 +549,13 @@ public class Game {
 	}
 
 	private void checkAmmo(Command command) {
+		Inventory temp = player.getInventory();
+		for(Weapons w:temp.weaponsInventory){
+			if(w instanceof Ranged){
+				System.out.println("You have: "+((Ranged) w).checkAmmo()+" ammo left");
+			}
+		}
+		System.out.println("You have no guns.");
 
 	}
 
