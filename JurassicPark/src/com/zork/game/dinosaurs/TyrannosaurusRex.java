@@ -9,7 +9,7 @@ import com.zork.game.Room;
 
 public class TyrannosaurusRex extends Dinosaur {
 	private final double MOBILITY = 0.65;
-	private final double AWARENESS = 0.85;
+	private final double AWARENESS = 0.95;
 	private final int TURN_TO_KILL = 2;
 	private int isStunned = 0;
 	

@@ -9,7 +9,7 @@ import com.zork.game.Room;
 
 public class Dilophosaurus extends Dinosaur {
 	private final double MOBILITY = 0.6;
-	private final double AWARENESS = 0.3;
+	private final double AWARENESS = 0.6;
 	private final int TURN_TO_KILL = 3;
 	
 	public Dilophosaurus(Room startRoom, String name) {

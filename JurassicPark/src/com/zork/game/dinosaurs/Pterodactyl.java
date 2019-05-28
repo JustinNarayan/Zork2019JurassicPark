@@ -9,7 +9,7 @@ import com.zork.game.Room;
 
 public class Pterodactyl extends Dinosaur {
 	private final double MOBILITY = 1;
-	private final double AWARENESS = 0.6;
+	private final double AWARENESS = 0.8;
 	private final int TURN_TO_KILL = 2;
 	
 	public Pterodactyl(Room startRoom, String name) {

@@ -9,7 +9,7 @@ import com.zork.game.Room;
 
 public class Velociraptor extends Dinosaur {
 	private final double MOBILITY = 0.8;
-	private final double AWARENESS = 0.8;
+	private final double AWARENESS = 1;
 	private final int TURN_TO_KILL = 2;
 	
 	public Velociraptor(Room startRoom, String name) {

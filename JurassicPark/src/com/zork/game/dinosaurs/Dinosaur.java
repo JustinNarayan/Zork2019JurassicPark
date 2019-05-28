@@ -80,7 +80,7 @@ public abstract class Dinosaur {
 
 	//Picks a random direction until finds a direction it can move to
 	public Room moveToNewRoom(DinosaurController c) {
-		if(isDead) return currentRoom;
+		if(isDead || Math.random()>mobility) return currentRoom;
 		
 		if(!aware) {
 			while(true) {

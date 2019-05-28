@@ -68,7 +68,7 @@ public class RoomInventory extends Inventory {
 	//Takes in toString() essentially
 	public boolean roomHasItem(String s) {
 		for(Item obj : items) {
-			if(obj.toString().equalsIgnoreCase(s) || (obj.toString().substring(0,2).equalsIgnoreCase("a ") && obj.toString().indexOf(" ",2)>2 && obj.toString().substring(0,obj.toString().indexOf(" ",2)).equalsIgnoreCase(s))) {
+			if(obj.toString().toLowerCase().indexOf(s.toLowerCase())>-1) {
 				return true;
 			}
 		}
@@ -79,7 +79,7 @@ public class RoomInventory extends Inventory {
 	public EnvironmentItem getEnvironmentItem(String s) {
 		if(environmentHasItem(s)) {
 			for(EnvironmentItem obj : environment) {
-				if(obj.toString().equalsIgnoreCase(s) || (obj.toString().length()>1 && obj.toString().substring(2).equals(s))) return obj;
+				if(obj.toString().toLowerCase().indexOf(s.toLowerCase())>-1) return obj;
 			}
 		}
 		return null;
@@ -89,7 +89,7 @@ public class RoomInventory extends Inventory {
 	public Item getRoomItem(String s) {
 		if(roomHasItem(s)) {
 			for(Item obj : items) {
-				if(obj.toString().equalsIgnoreCase(s) || (obj.toString().substring(0,2).equalsIgnoreCase("a ") && obj.toString().indexOf(" ",2)>2 && obj.toString().substring(0,obj.toString().indexOf(" ",2)).equalsIgnoreCase(s))) return obj;
+				if(obj.toString().toLowerCase().indexOf(s.toLowerCase())>-1) return obj;
 			}
 		}
 		return null;
