@@ -25,6 +25,7 @@ public class Triceratops extends Dinosaur {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = false;
 	}
 
 	public String toString() {

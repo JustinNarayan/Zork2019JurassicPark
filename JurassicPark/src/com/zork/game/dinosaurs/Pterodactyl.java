@@ -29,11 +29,13 @@ public class Pterodactyl extends Dinosaur implements Carnivore {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = false;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The Pterodactyl has swooped down and snatched you in its talons. You are brought to its nest and devoured "
 				+ "by a group of ravenous dinosaurs. You are found bland and unappetizing at best.", Formatter.getCutoff(),""));
+		Game.endGame("");
 	}
 
 	public String toString() {

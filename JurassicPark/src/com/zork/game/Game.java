@@ -113,7 +113,7 @@ public class Game {
 		gameStarted = false;
 		try {
 			initRooms("data/rooms.dat");
-			currentRoom = masterRoomMap.get("BOAT_LANDING_A");
+			currentRoom = masterRoomMap.get("TREX_NC");
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -859,7 +859,7 @@ public class Game {
 		return currentRoom;
 	}
 	
-	private static void endGame(String s) {
+	public static void endGame(String s) {
 		if(s.equals("time")) {
 			System.out.println(Formatter.blockText("\nYou are too late! The last boat off the island has left and you have been trapped on the island with no escape"
 					+ " to fend for yourself among the park's dinosaurs. As your last hope for survival sails away in the distance, you are remember all the artifacts you recovered"

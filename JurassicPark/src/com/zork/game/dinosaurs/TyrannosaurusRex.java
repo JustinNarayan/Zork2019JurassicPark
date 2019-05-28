@@ -32,11 +32,13 @@ public class TyrannosaurusRex extends Dinosaur implements Carnivore {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = true;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The Tyrannosaurus Rex has snatched you up and swallowed you whole. "
 				+ "You have died an extremely painful death.", Formatter.getCutoff(),""));
+		Game.endGame("");
 	}
 
 	public String toString() {

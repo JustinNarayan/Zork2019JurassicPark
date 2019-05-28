@@ -62,6 +62,7 @@ public class DinosaurController {
 		
 		for(Dinosaur d : dinosaurs) {
 			d.determineAwareness(this);
+			if(d.isAware()) d.incrementTurn();
 		}
 	}
 	
@@ -80,6 +81,7 @@ public class DinosaurController {
 			if(d.isAware()) {
 				d.moveToNewRoom(this);
 				d.determineAwareness(this);
+				if(d.isAware()) d.incrementTurn();
 			} else {
 				temp.add(d);
 			}

@@ -43,11 +43,13 @@ public class Velociraptor extends Dinosaur implements Carnivore {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = false;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The velociraptor has jumped at you and pinned you to the ground. "
 				+ "It begins gnawing into your flesh and you quickly lose consciousness and die.", Formatter.getCutoff(),""));
+		Game.endGame("");
 	}
 
 	public String toString() {

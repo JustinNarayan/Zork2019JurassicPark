@@ -38,6 +38,7 @@ public abstract class Dinosaur {
 	
 	protected boolean isDead;
 	
+	protected boolean invincible;
 	
 	
 	public Dinosaur(Room startRoom) {
@@ -110,6 +111,7 @@ public abstract class Dinosaur {
 						//Check to see if you left a room and have to tell the player
 						if(c.getLastDinosaur()==this && c.getLastStatus().equals("unaware")) {
 							c.setStatus(this, "left");
+							resetTurn();
 						}
 					}
 					return currentRoom;
@@ -123,6 +125,7 @@ public abstract class Dinosaur {
 				if(Math.random()>followChance) {
 					aware = false;
 					c.setStatus(this, "lost");
+					resetTurn();
 				} else {
 					//Follow player
 					if(roomsInRange.contains(Game.getCurrentRoom()) && !Game.getCurrentRoom().getRoomInventory().hasDinosaurs()) {
@@ -134,6 +137,7 @@ public abstract class Dinosaur {
 						//Lost the trail
 						aware = false;
 						c.setStatus(this, "lost");
+						resetTurn();
 					}
 				}
 			}
@@ -154,9 +158,10 @@ public abstract class Dinosaur {
 						c.setStatus(this, "aware");
 					} else {
 						c.setStatus(this, "unaware");
+						resetTurn();
 					}
 				} else {
-					c.setStatus(this, "here");
+					if(currentTurn<turnToKill) c.setStatus(this, "here");
 				}
 			}
 		} else {
@@ -168,13 +173,27 @@ public abstract class Dinosaur {
 		return aware;
 	}
 	
-	//public void incrementTurn
+	public void incrementTurn() {
+		if(this instanceof Carnivore) {
+			currentTurn++;
+			if(currentTurn==turnToKill) ((Carnivore) this).killPlayer();
+		}
+		System.out.println(currentTurn);
+	}
+	
+	public void resetTurn() {
+		currentTurn=0;
+	}
 	
 	public Dinosaur die(DinosaurController c) {
 		currentRoom.getRoomInventory().removeDinosaur(this);
 		c.removeDinosaur(this);
 		isDead = true;
 		return this;
+	}
+	
+	public boolean isInvincible() {
+		return invincible;
 	}
 	
 	public String toString(String s) {

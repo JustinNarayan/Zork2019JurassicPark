@@ -29,11 +29,13 @@ public class Spinosaurus extends Dinosaur implements Carnivore {
 		mobility = MOBILITY;
 		awareness = AWARENESS;
 		turnToKill = TURN_TO_KILL;
+		invincible = false;
 	}
 	
 	public void killPlayer() {
 		System.out.println(Formatter.blockText("The Spinosaurus has pinned you to the ground and devoured you appendage "
 				+ "by appendage. You did not have a fun time.", Formatter.getCutoff(),""));
+		Game.endGame("");
 	}
 
 	public String toString() {
