@@ -180,6 +180,10 @@ public abstract class Dinosaur {
 		}
 	}
 	
+	public void decrementTurn() {
+		if(currentTurn>0) currentTurn--;
+	}
+	
 	public void evade(DinosaurController c) {
 		resetTurn();
 		aware = false;
