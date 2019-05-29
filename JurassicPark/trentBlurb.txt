@@ -1,1 +1,0 @@
-Through working on the Zork ISP I learned many valuable programing practices, such as utilizing GitHub, polymorphism, and inheritance. Github is a very valuable and essential tool for working on a project with others, as it allows for easy and essential organization. I utilized polymorphism 

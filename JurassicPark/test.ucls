@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.zork.game.Parser" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Parser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="146" x="1058" y="770"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.zork.game.Game" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Game.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="693" width="247" x="1700" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.zork.game.Item" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Item.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="228" x="1874" y="2496"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.zork.game.Melee" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Melee.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="120" x="2208" y="3234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.zork.game.Artifacts" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Artifacts.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="260" x="2301" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.zork.game.Formatter" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Formatter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="224" x="198" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.zork.game.Command" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Command.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="171" x="620" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.zork.game.Timer" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Timer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="134" x="1244" y="770"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.zork.game.CommandWords" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/CommandWords.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="158" x="705" y="1197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.zork.game.Inventory" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Inventory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="198" x="2123" y="1197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.zork.game.EnvironmentItem" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/EnvironmentItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="249" x="1782" y="2213"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.zork.game.Player" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="164" x="1911" y="770"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.zork.game.Room" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Room.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="369" width="272" x="1700" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.zork.game.Zork" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Zork.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="113" x="1386" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.zork.game.Ranged" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Ranged.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="129" x="2039" y="3234"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="com.zork.game.RoomItemInit" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/RoomItemInit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="267" x="2163" y="2496"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="com.zork.game.RoomInventory" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/RoomInventory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="320" x="1761" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="com.zork.game.Weapons" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Weapons.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="138" x="2123" y="2815"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="com.zork.game.Phrases" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/Phrases.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="441" width="196" x="990" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.zork.game.dinosaurs.Dilophosaurus" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Dilophosaurus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="161" x="721" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.zork.game.dinosaurs.Dinosaur" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Dinosaur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="603" width="251" x="903" y="1197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.zork.game.dinosaurs.Stegosaurus" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Stegosaurus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="154" x="1130" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.zork.game.dinosaurs.Pterodactyl" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Pterodactyl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="146" x="1324" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.zork.game.dinosaurs.Bronchiosaurus" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Bronchiosaurus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="169" x="1510" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.zork.game.dinosaurs.Triceratops" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Triceratops.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="147" x="943" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.zork.game.dinosaurs.Velociraptor" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Velociraptor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="150" x="41" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.zork.game.dinosaurs.DinosaurController" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/DinosaurController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="187" x="1418" y="770"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="com.zork.game.dinosaurs.Spinosaurus" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/Spinosaurus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="153" x="528" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="com.zork.game.dinosaurs.TyrannosaurusRex" project="JurassicPark" 
+    file="/JurassicPark/src/com/zork/game/dinosaurs/TyrannosaurusRex.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="215" x="252" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="30">    
+    <bendpoint x="1730" y="770"/>    
+    <bendpoint x="1730" y="1197"/>    
+    <bendpoint x="1730" y="1840"/>    
+    <bendpoint x="1730" y="2213"/>    
+    <bendpoint x="1730" y="2496"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="31" name="currentRoom"/>      
+      <multiplicity id="32" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <association id="34">    
+    <bendpoint x="2061" y="2213"/>    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="35" name="items"/>      
+      <multiplicity id="36" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="38" name="room"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="41" name="items"/>      
+      <multiplicity id="42" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="44" name="weapons"/>      
+      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="46">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="47" name="timer"/>      
+      <multiplicity id="48" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="50">    
+    <bendpoint x="2111" y="1840"/>    
+    <bendpoint x="2111" y="2213"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="51" name="inventoryItems"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="54" name="dinosaurController"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="57" name="environmentItem"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="60" name="exits"/>      
+      <multiplicity id="61" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="63" name="inventory"/>      
+      <multiplicity id="64" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="65">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <generalization id="66">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <association id="67">    
+    <bendpoint x="497" y="1840"/>    
+    <bendpoint x="497" y="2213"/>    
+    <bendpoint x="497" y="2496"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="68" name="startRoom"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <association id="71">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="72" name="dinosaurs"/>      
+      <multiplicity id="73" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <association id="75">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="76" name="artifacts"/>      
+      <multiplicity id="77" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="78">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="79">    
+    <bendpoint x="912" y="1840"/>    
+    <bendpoint x="912" y="2213"/>    
+    <bendpoint x="912" y="2496"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="80" name="roomsInRange"/>      
+      <multiplicity id="81" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="82">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <association id="83">    
+    <bendpoint x="2460" y="1840"/>    
+    <bendpoint x="2460" y="2213"/>    
+    <bendpoint x="2460" y="2496"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="84" name="artifactInventory"/>      
+      <multiplicity id="85" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="86">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <association id="87">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="88" name="lastDinosaur"/>      
+      <multiplicity id="89" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="90">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="91" name="dinosaurs"/>      
+      <multiplicity id="92" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="93">    
+    <bendpoint x="1772" y="2496"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="94" name="room"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <association id="97">    
+    <bendpoint x="221" y="1840"/>    
+    <bendpoint x="221" y="2213"/>    
+    <bendpoint x="221" y="2496"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="98" name="currentRoom"/>      
+      <multiplicity id="99" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="100">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <association id="101">    
+    <bendpoint x="1709" y="770"/>    
+    <bendpoint x="1709" y="1197"/>    
+    <bendpoint x="1709" y="1840"/>    
+    <bendpoint x="1709" y="2213"/>    
+    <bendpoint x="1709" y="2496"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="102" name="masterRoomMap"/>      
+      <multiplicity id="103" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="104">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <association id="105">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="106" name="player"/>      
+      <multiplicity id="107" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="108">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="109" name="commands"/>      
+      <multiplicity id="110" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="111">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="21"/>  
+  </generalization>  
+  <association id="112">    
+    <bendpoint x="1751" y="2496"/>    
+    <bendpoint x="1751" y="2213"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="113" name="roomInventory"/>      
+      <multiplicity id="114" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="115">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="116" name="parser"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="118">    
+    <bendpoint x="2132" y="1840"/>    
+    <bendpoint x="2132" y="2213"/>    
+    <bendpoint x="2132" y="2496"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="119" name="weaponsInventory"/>      
+      <multiplicity id="120" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="121">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="122" name="environment"/>      
+      <multiplicity id="123" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
