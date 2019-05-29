@@ -971,7 +971,7 @@ public class Game {
 		if (s.equals("time")) {
 			System.out.println(Formatter.blockText(
 					"\nYou are too late! The last boat off the island has left and you have been trapped on the island with no escape"
-							+ " to fend for yourself among the park's dinosaurs. As your last hope for survival sails away in the distance, you are remember all the artifacts you recovered"
+							+ " to fend for yourself among the park's dinosaurs. As your last hope for survival sails away in the distance, you remember all the artifacts you recovered"
 							+ " and how close you came to exposing the horrors around you.",
 					Formatter.getCutoff(), ""));
 		} else if (s.equals("success")) {
@@ -979,9 +979,9 @@ public class Game {
 					"\nYou have successfully left the island! You have snuck aboard an escaping ship yet again, and must hope no one finds you"
 							+ " until you can safely reach land. You have got out with your life and what you hope will be enough evidence to shut the park down for good.",
 					Formatter.getCutoff(), ""));
-			System.out.println("You have gained " + winPoints + " from successfully escaping the island.");
+			System.out.println("\nYou have gained " + winPoints + " from successfully escaping the island.");
 
 		}
-		System.out.println("You have gained " + player.calculatePoints() + " from all the artifacts you recovered.");
+		System.out.println("\nYou have gained " + player.calculatePoints() + " points from all the artifacts you recovered.");
 	}
 }
