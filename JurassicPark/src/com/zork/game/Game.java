@@ -476,7 +476,12 @@ public class Game {
 		}
 		return false;
 	}
-
+/**
+ * it processes the players attack
+ * the user can enter either "dino", "dinosaur", or the specific name of the dino in the room
+ * @param command
+ * @return boolean if the player dies or not
+ */
 	private boolean playerAttack(Command command) {
 		Dinosaur currentDino = currentRoom.getRoomInventory().getDinosaur();
 
