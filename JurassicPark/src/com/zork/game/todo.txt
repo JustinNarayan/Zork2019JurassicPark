@@ -1,12 +1,2 @@
-all item classes
-3 word parser
-commands
-player classes
-dino attack
-make dino attacks end game properly
-if an action can't be performed, it should not reduce time
-drop item problem - just check
-infight
-
 bugs:
 sometimes it says that the pterodactyl is having trouble grabbing you before you know there's a pterodactyl in the room
