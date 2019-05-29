@@ -557,10 +557,9 @@ public class Game {
 	}
 
 	private void check(Command command) {
-		if ((command.hasSecondWord()
-				&& (command.getSecondWord().equals("inventory") || command.getSecondWord().equals("items")))
-				|| (command.hasThirdWord()
-						&& (command.getThirdWord().equals("inventory") || command.getThirdWord().equals("items")))) {
+		if ((command.hasSecondWord() && (command.getSecondWord().equals("inventory") || command.getSecondWord().equals("items")))
+				|| (command.hasThirdWord()	&& (command.getThirdWord().equals("inventory") || command.getThirdWord().equals("items")))) {
+			checkInventory(command);
 		} else if ((command.hasSecondWord() && command.getSecondWord().equals("ammo"))
 				|| (command.hasThirdWord() && command.getThirdWord().equals("ammo"))) {
 			checkAmmo(command);
@@ -727,14 +726,22 @@ public class Game {
 			}
 
 			// See if they type a word
-			Item i = player.getInventory().getItem(command.getSecondWord());
-			if (i != null && i instanceof Artifacts) {
+			Item i = player.getInventory().isInInventory(command.getSecondWord());
+			if (i != null) {
+				if(i instanceof Artifacts == false) {
+					System.out.println("You can't read that!");
+					return false;
+				}
 				System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 				System.out.println(((Artifacts) i).getRead());
 				return true;
 			} else if (command.hasThirdWord()) {
-				i = player.getInventory().getItem(command.getThirdWord());
-				if (i != null && i instanceof Artifacts) {
+				i = player.getInventory().isInInventory(command.getThirdWord());
+				if (i != null) {
+					if(i instanceof Artifacts == false) {
+						System.out.println("You can't read that!");
+						return false;
+					}
 					System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 					System.out.println(((Artifacts) i).getRead());
 					return true;
