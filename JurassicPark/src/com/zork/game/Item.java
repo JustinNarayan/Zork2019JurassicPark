@@ -21,6 +21,7 @@ public abstract class Item {
 	}
 	
 	public void setRoom(Room room) {
+		if(room==null) this.room.getRoomInventory().removeRoomItem(toString());
 		this.room = room;
 		if(room!=null) this.room.getRoomInventory().addRoomItem(this);
 	}

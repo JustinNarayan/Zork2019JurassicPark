@@ -99,7 +99,7 @@ public class RoomInventory extends Inventory {
 	public Item removeRoomItem(String s) {
 		if(roomHasItem(s)) {
 			for(int i = 0; i < items.size(); i++) {
-				if(items.get(i).toString().equalsIgnoreCase(s) || (items.get(i).toString().substring(0,2).equalsIgnoreCase("a ") && items.get(i).toString().indexOf(" ",2)>2 && items.get(i).toString().substring(0,items.get(i).toString().indexOf(" ",2)).equalsIgnoreCase(s))) {
+				if(items.get(i).toString().indexOf(s)>-1 && !s.equals("a")) {
 					return items.remove(i);
 				}
 			}

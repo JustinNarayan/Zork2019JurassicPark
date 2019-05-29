@@ -73,7 +73,7 @@ public class RoomItemInit {
 		roomsWithTrees.add("BRONCHIOSAURUS_SE");
 
 		roomsWithTrees.add("TRICERATOPS_NW");
-		roomsWithTrees.add("TRICERATOPS_NE");
+		roomsWithTrees.add("TRICERATOPS_SE");
 		roomsWithTrees.add("TRICERATOPS_SW");
 		roomsWithTrees.add("TRICERATOPS_NE");
 
@@ -285,6 +285,12 @@ public class RoomItemInit {
 		//guns
 		weapons.add(new Ranged("a gun", getMap().get("MUNITIONS_SHED_NE")));
 		weapons.add(new Ranged("a gun", getMap().get("STAFF_QUARTERS_SE")));
+		weapons.add(new Ranged("a gun", getMap().get("EQUIPMENT_YARD")));
+		weapons.add(new Ranged("a gun", getMap().get("DILOPHOSAURUS_CONTROL")));
+		weapons.add(new Ranged("a gun", getMap().get("OBSERVATORY_W")));
+		weapons.add(new Ranged("a gun", getMap().get("OBSERVATORY_E")));
+		weapons.add(new Ranged("a gun", getMap().get("RECORDS_E")));
+		weapons.add(new Ranged("a gun", getMap().get("SERVER_ROOM")));
 		weapons.add(new Ranged("a gun", getMap().get("HELIPAD")));
 		
 		//knives

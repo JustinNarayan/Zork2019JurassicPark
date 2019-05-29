@@ -80,9 +80,13 @@ public abstract class Dinosaur {
 
 	//Picks a random direction until finds a direction it can move to
 	public Room moveToNewRoom(DinosaurController c) {
-		if(isDead || Math.random()>mobility) return currentRoom;
+		if(isDead) return currentRoom;
 		
 		if(!aware) {
+			if(Math.random()>mobility) {
+				if(currentRoom == Game.getCurrentRoom()) c.setStatus(this, "left");
+				return currentRoom;
+			}
 			while(true) {
 				int random = (int)(Math.random()*4);
 				
@@ -175,6 +179,10 @@ public abstract class Dinosaur {
 		} else {
 			aware = false;
 		}
+	}
+	
+	public void makeAware() {
+		aware = true;
 	}
 	
 	public boolean isAware() {

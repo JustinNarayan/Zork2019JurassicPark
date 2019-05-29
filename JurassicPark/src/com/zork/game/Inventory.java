@@ -124,6 +124,7 @@ public class Inventory {
 		if(isInInventory(name)!=null) {
 			Item i = isInInventory(name);
 			inventoryItems.remove(i);
+			i.setRoom(Game.getCurrentRoom());
 			return i;
 		}
 		else return null;

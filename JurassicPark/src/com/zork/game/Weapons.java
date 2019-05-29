@@ -4,7 +4,6 @@ import com.zork.game.dinosaurs.Dinosaur;
 import com.zork.game.dinosaurs.TyrannosaurusRex;
 
 public class Weapons extends Item {
-    public boolean equipped;
     
     public Weapons(String name, Room room) {
     	this.name = name;
@@ -41,10 +40,4 @@ public class Weapons extends Item {
     	}
     	return false;
    }
-
-    //constructor needs to be done
-
-    public boolean isEquipped(){
-        return equipped;        
-    }
 }

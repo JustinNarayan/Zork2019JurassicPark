@@ -6,7 +6,7 @@ dino attack
 make dino attacks end game properly
 if an action can't be performed, it should not reduce time
 drop item problem - just check
+infight
 
 bugs:
-sometimes the exits leave an extra space before appearing
-when dealing with the pterodactyl, it will sometimes give message indicating you were spotted when you haven't yet been.
+sometimes it says that the pterodactyl is having trouble grabbing you before you know there's a pterodactyl in the room
