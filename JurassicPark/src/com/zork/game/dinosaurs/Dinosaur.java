@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.zork.game.Game;
+import com.zork.game.Phrases;
 import com.zork.game.Room;
 
 public abstract class Dinosaur {
@@ -145,6 +146,10 @@ public abstract class Dinosaur {
 						currentRoom = Game.getCurrentRoom();
 						currentRoom.getRoomInventory().addDinosaur(this);		
 						c.setStatus(this, "follow");
+						if(this instanceof Pterodactyl) {
+							System.out.println("\n"+Phrases.getEvadePterodactyl());
+							resetTurn();
+						}
 					} else {
 						//Lost the trail
 						aware = false;

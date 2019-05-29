@@ -39,6 +39,7 @@ public class Inventory {
 	// Prints out a startstring such as "This room contains:" followed
 	// by every item's toString() on its own line
 	public void printInventory(String startstring, boolean showNumber) {
+		sortInventory();
 		System.out.println(startstring);
 		int i = 1;
 		for (Item o : inventoryItems) {
@@ -46,6 +47,17 @@ public class Inventory {
 			System.out.println(o.getNameLowerCase()+o.getPoints());
 			i++;
 		}
+	}
+	
+	public void sortInventory() {
+		ArrayList<Item> temp = new ArrayList<Item>();
+		for(Item i : inventoryItems) {
+			if(i instanceof Weapons) temp.add(0,i);
+			else temp.add(i);
+		}
+		inventoryItems = temp;
+		
+		//Sorts weapons (inverts order every sort) then artifacts (as you found them)
 	}
 
 	public void printMaster() {

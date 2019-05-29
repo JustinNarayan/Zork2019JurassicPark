@@ -38,7 +38,6 @@ public class Game {
 	private final String LEAVE_POSITION = "Shipyard_N";
 	private static Player player;
 	private static DinosaurController dinosaurController;
-	private boolean inFight;
 	private static final int winPoints = 50;
 	private boolean gameStarted;
 
@@ -132,7 +131,6 @@ public class Game {
 		parser = new Parser();
 		timer = new Timer();
 		dinosaurController = new DinosaurController();
-		inFight = false;
 	}
 
 	/**
@@ -146,7 +144,7 @@ public class Game {
 		boolean finished = false;
 		while (!finished) {
 			Command command = parser.getCommand();
-			finished = processCommand(command); // FALSE is for inFight variable, not yet implemented
+			finished = processCommand(command);
 			if (timer.isOutOfTime() && gameStarted) {
 				endGame("time");
 				finished = true;
@@ -194,8 +192,6 @@ public class Game {
 	/**
 	 * Given a command, process (that is: execute) the command. If this command ends
 	 * the game, true is returned, otherwise false is returned.
-	 * 
-	 * @param inFight
 	 */
 	private boolean processCommand(Command command) {
 		if (command.isUnknown()) {
@@ -206,9 +202,6 @@ public class Game {
 		String word2 = command.getSecondWord();
 
 		switch (commandWord) {
-		case "test":
-			dinosaurController.printAllDinosaurs();
-			break;
 		case "help":
 			printHelp();
 			break;
@@ -253,11 +246,6 @@ public class Game {
 				timer.reduceTime(timer.TIME_TO_DROP);
 			}
 			break;
-		case "read":
-			if(read(command)) {
-				timer.reduceTime(timer.TIME_TO_READ);
-			}
-			break;
 		case "throw":
 			if(doThrow(command)) {
 				timer.reduceTime(timer.TIME_TO_DROP);
@@ -287,11 +275,8 @@ public class Game {
 		case "where":
 			whereIsPlayer();
 			break;
-		case "leave":
-			leave(command);
-			break;
 		default:
-			if (!inFight) { // the following commands are for when you are not in battle
+			if (!inFight()) { // the following commands are for when you are not in battle
 				switch (commandWord) {
 				case "look":
 					if(look(command)) {
@@ -307,6 +292,14 @@ public class Game {
 					break;
 				case "time":
 					checkTime(command);
+					break;
+				case "leave":
+					leave(command);
+					break;
+				case "read":
+					if(read(command)) {
+						timer.reduceTime(timer.TIME_TO_READ);
+					}
 					break;
 				}
 			} else {
@@ -362,6 +355,10 @@ public class Game {
 		}
 	}*/
 
+	public boolean inFight() {
+		return (currentRoom.getRoomInventory().hasDinosaurs() && currentRoom.getRoomInventory().getDinosaur().isAware());
+	}
+	
 	/**
 	 * check the amount of time the player has left
 	 * 
@@ -557,10 +554,9 @@ public class Game {
 	}
 
 	private void check(Command command) {
-		if ((command.hasSecondWord()
-				&& (command.getSecondWord().equals("inventory") || command.getSecondWord().equals("items")))
-				|| (command.hasThirdWord()
-						&& (command.getThirdWord().equals("inventory") || command.getThirdWord().equals("items")))) {
+		if ((command.hasSecondWord() && (command.getSecondWord().equals("inventory") || command.getSecondWord().equals("items")))
+				|| (command.hasThirdWord()	&& (command.getThirdWord().equals("inventory") || command.getThirdWord().equals("items")))) {
+			checkInventory(command);
 		} else if ((command.hasSecondWord() && command.getSecondWord().equals("ammo"))
 				|| (command.hasThirdWord() && command.getThirdWord().equals("ammo"))) {
 			checkAmmo(command);
@@ -598,7 +594,7 @@ public class Game {
 		} else if (!currentRoom.getRoomInventory().environmentHasItem("trees")) {
 			System.out.println("You don't see any trees to climb.");
 		} else if (!player.inTree) {
-			if (inFight) {
+			if (inFight()) {
 				if ((int) (Math.random() * 8) == 1) { // 1/8 chance that they fall and die
 					System.out.println(
 							"In your panic to escape the dinosaur, you fell down, broke your legs, and got eaten.");
@@ -727,14 +723,22 @@ public class Game {
 			}
 
 			// See if they type a word
-			Item i = player.getInventory().getItem(command.getSecondWord());
-			if (i != null && i instanceof Artifacts) {
+			Item i = player.getInventory().isInInventory(command.getSecondWord());
+			if (i != null) {
+				if(i instanceof Artifacts == false) {
+					System.out.println("You can't read that!");
+					return false;
+				}
 				System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 				System.out.println(((Artifacts) i).getRead());
 				return true;
 			} else if (command.hasThirdWord()) {
-				i = player.getInventory().getItem(command.getThirdWord());
-				if (i != null && i instanceof Artifacts) {
+				i = player.getInventory().isInInventory(command.getThirdWord());
+				if (i != null) {
+					if(i instanceof Artifacts == false) {
+						System.out.println("You can't read that!");
+						return false;
+					}
 					System.out.println("You take out " + i.getNameLowerCase() + " and read it.\n");
 					System.out.println(((Artifacts) i).getRead());
 					return true;
@@ -804,13 +808,6 @@ public class Game {
 		} else {
 			currentRoom = nextRoom;
 			System.out.println(currentRoom.longDescription());
-			
-			if(currentRoom.getRoomInventory().getDinosaur()!=null) {
-				if(currentRoom.getRoomInventory().getDinosaur() instanceof Pterodactyl) {
-				System.out.println(Phrases.getEvadePterodactyl());
-				currentRoom.getRoomInventory().getDinosaur().resetTurn();
-				}
-			}
 
 			// Print out the siren message in-story to open the facilities
 			if (currentRoom.getRoomName().equals(SIREN_POSITION)) {
