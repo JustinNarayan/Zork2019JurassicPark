@@ -15,6 +15,8 @@ public class Phrases {
 			"The area is mostly empty.", "You can't find very much.", "You have found nothing.", "There isn't anything there."));
 	private static final ArrayList<String> LOOK_IN_ENV = new ArrayList<String>(Arrays.asList("You observe something in the ",
 			"You think you see something in the ", "You think you'll find something in the ", "You notice a glint in the "));
+	private static final ArrayList<String> WAIT = new ArrayList<String>(Arrays.asList("You wait for a moment.", "You take a bit of time to think.",
+			"You sit idly for a moment.", "You do nothing for a moment.", "You choose to wait for a beat."));
 	private static final String TREX_FLARE = "You have drawn the dinosaur's attention with the flare! You must get rid of it quick otherwise it will catch on and eat you!";
 	private static final String EVADE_TREX = "The Tyrannosaurus Rex has followed the flare. You are safe!";
 	private static final String EVADE_SPINOSAURUS = "The Spinosaurus has become bored because you are now out of reach and has walked away. You are safe!";
@@ -38,6 +40,9 @@ public class Phrases {
 	}
 	public static ArrayList<String> getLookInEnv() {
 		return LOOK_IN_ENV;
+	}
+	public static ArrayList<String> getWait() {
+		return WAIT;
 	}
 	public static String getTrexFlare() {
 		return TREX_FLARE;

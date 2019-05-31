@@ -232,6 +232,12 @@ public class Game {
 				dinosaurController.checkDinosaurAwareness();
 			}			
 			break;
+		case "wait":
+			if(playerWait(command)) {
+				timer.reduceTime(timer.TIME_TO_WAIT);
+				dinosaurController.checkDinosaurAwareness();
+			}
+			break;
 		case "check":
 			check(command);
 			break;
@@ -407,7 +413,7 @@ public class Game {
 				if ( (temp.toString().indexOf(command.getSecondWord())>-1 && !command.getSecondWord().equals("a")) || (command.hasThirdWord() && temp.toString().indexOf(command.getThirdWord())>-1 && !command.getThirdWord().equals("a"))) {
 					canSearch = true;
 					if (temp.getItems().size() > 0) {
-						System.out.print("You search the " + command.getSecondWord() + " grab ");
+						System.out.print("You search the " + command.getSecondWord() + " and grab ");
 						for (int j = 0; j < temp.getItems().size(); j++) {
 							System.out.print(
 									temp.getItems().get(j).getNameLowerCase() + temp.getItems().get(j).getPoints());
@@ -453,17 +459,17 @@ public class Game {
 			word = "a " + real;
 		} else {
 			real = command.getSecondWord();
-			word = "a " + command.getSecondWord();
+			word = "a " + real;
 		}
 
-		if (!currentRoom.getRoomInventory().roomHasItem(word)) {
+		if (!currentRoom.getRoomInventory().roomHasItem(real)) {
 			System.out.println("That item is not here.");
 			return false;
 		} else {
-			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getRoomItem(word));
-			System.out.println("You picked up " + currentRoom.getRoomInventory().getRoomItem(word).getNameLowerCase()
-					+ currentRoom.getRoomInventory().getRoomItem(word).getPoints() + ".");
-			currentRoom.getRoomInventory().removeRoomItem(word);
+			player.getInventory().addInventoryItem(currentRoom.getRoomInventory().getRoomItem(real));
+			System.out.println("You picked up " + currentRoom.getRoomInventory().getRoomItem(real).getNameLowerCase()
+					+ currentRoom.getRoomInventory().getRoomItem(real).getPoints() + ".");
+			currentRoom.getRoomInventory().removeRoomItem(real);
 			return true;
 		}
 	}
@@ -607,6 +613,11 @@ public class Game {
 				} else {
 					System.out.println("You have climbed the tree.");
 					player.inTree = true;
+					
+					if(currentRoom.getRoomInventory().getDinosaur()!=null && currentRoom.getRoomInventory().getDinosaur() instanceof Spinosaurus) {
+						System.out.println(Phrases.getEvadeSpinosaurus());
+						currentRoom.getRoomInventory().getDinosaur().evade(dinosaurController);
+					}
 					return true;
 				}
 			} else {
@@ -616,11 +627,6 @@ public class Game {
 				} else {
 					System.out.println("You have climbed the tree.");
 					player.inTree = true;
-					
-					if(currentRoom.getRoomInventory().getDinosaur()!=null && currentRoom.getRoomInventory().getDinosaur() instanceof Spinosaurus) {
-						System.out.println(Phrases.getEvadeSpinosaurus());
-						currentRoom.getRoomInventory().getDinosaur().evade(dinosaurController);
-					}
 					return true;
 				}
 			}
@@ -629,6 +635,15 @@ public class Game {
 		}
 		return false;
 	}
+	
+	
+	
+	private boolean playerWait(Command command) {
+		System.out.println(Phrases.getWait().get((int) (Math.random() * Phrases.getWait().size())));
+		return true;
+	}
+	
+	
 
 	private boolean drop(Command command, boolean show) {
 		if (!command.hasSecondWord()) {
@@ -964,6 +979,8 @@ public class Game {
 				} else {
 					System.out.println("You can't leave the island from here!");
 				}
+			} else {
+				System.out.println("I don't know what you mean...");
 			}
 		}
 	}
