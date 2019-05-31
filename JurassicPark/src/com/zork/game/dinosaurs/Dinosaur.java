@@ -178,7 +178,7 @@ public abstract class Dinosaur {
 						resetTurn();
 					}
 				} else {
-					if(currentTurn<turnToKill-1) c.setStatus(this, "here");
+					if(currentTurn<turnToKill-1 || (Game.getPlayer().inTree && !canAttackInTree)) c.setStatus(this, "here");
 				}
 			}
 		} else {
@@ -198,6 +198,7 @@ public abstract class Dinosaur {
 		if(isCarnivore()) {
 			if(currentTurn < turnToKill) currentTurn++;
 			if(currentTurn==turnToKill && (canAttackInTree || !Game.getPlayer().inTree)) {
+				if(Game.getPlayer().inTree) System.out.println("Even in a tree, this dinosaur can still get you!");
 				killPlayer();
 				Game.getPlayer().hasDied();
 			}
