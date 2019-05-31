@@ -68,7 +68,7 @@ public class RoomInventory extends Inventory {
 	//Takes in toString() essentially
 	public boolean roomHasItem(String s) {
 		for(Item obj : items) {
-			if(obj.toString().toLowerCase().indexOf(s.toLowerCase())>-1) {
+			if(s!=null && obj.toString().toLowerCase().indexOf(s.toLowerCase())>-1) {
 				return true;
 			}
 		}
@@ -99,7 +99,7 @@ public class RoomInventory extends Inventory {
 	public Item removeRoomItem(String s) {
 		if(roomHasItem(s)) {
 			for(int i = 0; i < items.size(); i++) {
-				if(items.get(i).toString().indexOf(s)>-1 && !s.equals("a")) {
+				if(items.get(i).toString().toLowerCase().indexOf(s.toLowerCase())>-1 && !s.equals("a") && !s.equals("the")) {
 					return items.remove(i);
 				}
 			}

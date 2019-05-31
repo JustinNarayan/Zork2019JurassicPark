@@ -14,6 +14,7 @@ public class Timer {
 	public final int TIME_TO_ATTACK = 15;
 	public final int TIME_TO_SEARCH = 20;
 	public final int TIME_TO_CLIMB = 20;
+	public final int TIME_TO_WAIT = 30;
 	
 	
 	
